@@ -2,10 +2,10 @@
   <img src="assets/images/tacitus-logo.png" alt="TACITUS" width="180"/>
 </p>
 
-<h1 align="center">TACITUS Knowledge Pipeline</h1>
+<h1 align="center">DEMO | Open Source | TACITUS Knowledge Pipeline</h1>
 
 <p align="center">
-  <strong>Deterministic AI Reasoning over Knowledge Graphs for Conflict Intelligence</strong>
+  <strong>Deterministic AI Reasoning over Knowledge Graphs for Conflict Intelligence and Resolution</strong>
 </p>
 
 <pre align="center">
