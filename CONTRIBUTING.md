@@ -5,7 +5,7 @@ Thanks for your interest in contributing.
 ## How to Contribute
 
 1. **Fork** the repository
-2. **Create a branch** from `main` for your change
+2. **Create a working copy** of your fork for the change you want to make
 3. **Make your changes** following the guidelines below
 4. **Open a pull request** with a clear description
 

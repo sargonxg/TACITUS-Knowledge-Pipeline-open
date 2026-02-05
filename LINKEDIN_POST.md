@@ -2,50 +2,38 @@
 
 ---
 
-**Why I stopped asking LLMs to reason — and started building graphs instead.**
+**Grounding AI reasoning in conflict analysis — deterministically, auditable, reproducible.**
 
-We've been using AI wrong for analysis.
+We keep asking LLMs to *reason* about conflicts, negotiations, and complex disputes. They respond with fluent narratives — but the reasoning is opaque. No provenance. No deterministic logic. No audit trail.
 
-We feed an LLM a 50-page report and ask: "Who are the key actors? What are the contradictions? Who holds leverage?" And the model gives us a polished answer. Fluent. Confident. Unverifiable.
+**That is not analysis. That is narration.**
 
-That's not analysis. That's narration.
+So we built a different approach at TACITUS:
 
-Here's the problem: LLMs reason by predicting the next token. They don't track provenance. They don't flag contradictions unless they happen to notice. They can't tell you *why* they concluded that Actor X opposes Actor Y — because they didn't reason to that conclusion. They generated it.
+- Use an LLM strictly for **structured extraction** (actors, events, claims, relationships, evidence)
+- Store everything in a **knowledge graph** with source-span provenance
+- Run **deterministic algorithms** for reasoning:
+  - Contradictions → cosine similarity + negation analysis
+  - Influence → PageRank on relationship networks
+  - Issues → hierarchical clustering on claim embeddings
+  - Entity resolution → fuzzy string matching
 
-**So we built something different.**
+Same inputs → same outputs. Every conclusion is **traceable, reproducible, and falsifiable**.
 
-TACITUS is a knowledge graph pipeline that uses LLMs for what they're actually good at — structured extraction — then performs reasoning deterministically over a graph.
+**Why this matters:**
 
-The key insight: **separate extraction from reasoning.**
+When analysis has consequences — diplomatic conflict, legal disputes, human friction — you need to know *why* the system concluded what it did. Deterministic grounding lets you challenge, inspect, and improve the logic instead of trusting a black box.
 
-- The LLM extracts actors, events, claims, relationships, and evidence from unstructured text
-- A knowledge graph stores them with full provenance (every claim links to a source text span)
-- Deterministic algorithms do the actual reasoning:
-  - **Contradiction detection** via cosine similarity + negation analysis
-  - **Influence scoring** via PageRank on actor-relationship networks
-  - **Issue clustering** via agglomerative clustering on claim embeddings
-  - **Entity resolution** via fuzzy string matching
+**We open-sourced a simplified, publishable reference pipeline.**
 
-No temperature sampling. No hidden weights making the decision. Same inputs → same outputs. Every conclusion is traceable, reproducible, and falsifiable.
+It mirrors how TACITUS structures grounded reasoning but in a compact, customizable form so you can:
+- Tweak the **ontology** for your domain
+- Swap extractors, resolvers, and graph logic
+- Experiment with deterministic grounding on real conflict data
 
-**Why does this matter?**
+If you're exploring how to **ground LLM reasoning in a deterministic way**, this repo is a clean starting point:
 
-When the analysis has consequences — geopolitical intelligence, legal disputes, conflict mediation — you need to know:
-- Where did this conclusion come from?
-- What evidence supports it?
-- Can I challenge it?
-
-With a raw LLM, the answer to all three is "no." With a knowledge graph, every node traces back to a source document, a specific text span, and a confidence score.
-
-**We just open-sourced the pipeline.**
-
-It's a working implementation in Python: Gemini 1.5 Pro for extraction, Neo4j for the graph, FAISS for vector search, Pydantic for schema validation, NetworkX for graph algorithms.
-
-It includes theory-guided extraction (we call it OntoRAG) — the system seeds the graph with established conflict theories and selects the most relevant ones before each extraction, so the LLM gets targeted analytical context instead of a generic prompt.
-
-This is a small open-source piece of what TACITUS does. We think knowledge graphs + structured extraction is the future of AI reasoning for high-stakes domains. Not because LLMs aren't powerful — but because powerful generation without grounding isn't analysis.
-
-Check it out: github.com/sargonxg/TACITUS-Knowledge-Pipeline-open
+github.com/sargonxg/TACITUS-Knowledge-Pipeline-open
 
 ---
 
@@ -53,27 +41,22 @@ Check it out: github.com/sargonxg/TACITUS-Knowledge-Pipeline-open
 
 ---
 
-LLMs don't reason. They generate.
+LLMs generate. They don’t reason.
 
-Ask GPT/Claude/Gemini to analyze a conflict and you get fluent, confident, unverifiable narration.
+So we separated extraction from reasoning:
 
-So we stopped asking LLMs to reason. We built a knowledge graph pipeline instead:
+1. LLM extracts structured entities + evidence
+2. Knowledge graph stores provenance
+3. Deterministic algorithms do the reasoning
 
-1. LLM extracts structured entities (actors, claims, events, evidence)
-2. Knowledge graph stores them with full provenance
-3. **Deterministic algorithms** do the actual reasoning:
-   - Contradictions → cosine similarity + negation analysis
-   - Influence → PageRank on relationship networks
-   - Issues → hierarchical clustering on claim embeddings
+Same inputs → same outputs. Every conclusion traceable.
 
-Same inputs. Same outputs. Every conclusion traceable. No black boxes.
-
-We call it TACITUS. Just open-sourced the pipeline.
+We open-sourced a simplified, customizable TACITUS pipeline to test grounded AI conflict reasoning in the real world.
 
 github.com/sargonxg/TACITUS-Knowledge-Pipeline-open
 
-#AI #KnowledgeGraphs #NLP #LLM #OpenSource #ConflictAnalysis #Neo4j #DeterministicAI
+#AI #KnowledgeGraphs #LLM #DeterministicAI #ConflictAnalysis #GraphRAG #Ontology #OpenSource
 
 ---
 
-**Image suggestion:** Use the `tacitus-network.png` knowledge graph visualization as the post image. The dense, interconnected graph is visually striking and immediately communicates the concept.
+**Image suggestion:** Use the `tacitus-network.png` knowledge graph visualization as the post image.

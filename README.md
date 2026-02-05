@@ -8,6 +8,16 @@
   <strong>Deterministic AI Reasoning over Knowledge Graphs for Conflict Intelligence</strong>
 </p>
 
+<pre align="center">
+  _______    ___       ______  _______  _______  __   __  _______
+ |       |  |   |     |      ||       ||       ||  | |  ||       |
+ |_     _|  |   |     |  _    ||    ___||_     _||  | |  ||  _____|
+   |   |    |   |     | | |   ||   |___   |   |  |  |_|  || |_____
+   |   |    |   |___  | |_|   ||    ___|  |   |  |       ||_____  |
+   |   |    |       | |       ||   |___   |   |  |       | _____| |
+   |___|    |_______| |______||_______|  |___|  |_______||_______|
+</pre>
+
 <p align="center">
   <a href="https://tacitus.me">Website</a> &middot;
   <a href="#quickstart">Quickstart</a> &middot;
@@ -29,6 +39,17 @@
 > **TACITUS** turns messy, unstructured text — emails, transcripts, reports — into a
 > **time-aware, evidence-linked knowledge graph** that you can query, audit, and reason over.
 > No hallucinations. No black boxes. Every claim traces back to a source span.
+
+## Grounded Conflict Reasoning (Simplified, Publishable Reference)
+
+This repository is a **clean, simplified reference pipeline** that shows what it takes to ground AI reasoning in evidence for conflict and human-friction analysis. It mirrors the structure we use at TACITUS, but in a compact, publishable form designed for experimentation, customization, and learning — not as the full production stack.
+
+What you can explore here:
+- **Ontology customization**: adjust the conflict primitives, roles, and relationships that define your domain.
+- **Deterministic reasoning**: see how contradictions, influence, and issue clusters are derived without stochastic LLM judgment.
+- **Evidence grounding**: every claim links back to a precise source span for auditability.
+
+If you want to test what *grounded AI conflict reasoning* really means — and how to make it reproducible — this repo is the place to start.
 
 <p align="center">
   <img src="assets/images/tacitus-network.png" alt="TACITUS Knowledge Graph Visualization" width="800"/>
@@ -403,7 +424,7 @@ TACITUS-Knowledge-Pipeline-open/
 
 The name reflects the ambition: like the Roman historian Tacitus, who insisted on separating observation from interpretation, this system separates **what was extracted** from **what was concluded** — and makes both inspectable.
 
-This repository is an open-source demonstration of the TACITUS ingestion and reasoning pipeline. It shows how knowledge graphs, combined with structured LLM extraction, can enable a form of AI reasoning that is **deterministic, reproducible, and falsifiable** — qualities that matter when the analysis has consequences.
+This repository is a **clean, publishable reference implementation** of the TACITUS ingestion and reasoning pipeline — intentionally simplified so you can see the moving parts, customize the ontology, and test deterministic grounding end-to-end. It shows how knowledge graphs, combined with structured LLM extraction, can enable a form of AI reasoning that is **deterministic, reproducible, and falsifiable** — qualities that matter when the analysis has consequences.
 
 **Website:** [tacitus.me](https://tacitus.me)
 
