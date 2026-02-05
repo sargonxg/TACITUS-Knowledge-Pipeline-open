@@ -35,9 +35,9 @@
 
 ---
 
-> **TACITUS** turns messy, unstructured text — emails, transcripts, reports — into a
-> **time-aware, evidence-linked knowledge graph** that you can query, audit, and reason over.
-> No hallucinations. No black boxes. Every claim traces back to a source span.
+> **TACITUS** transforms unstructured text into deterministic structure -
+> **time-aware (in the future), evidence-linked knowledge graph** - that AI can query, audit, and reason over.
+> We aim to reduce hallucinations. No black boxes of reasoning. Every claim traces back to a source span. This is how resolution practicioners and analysts reason about conflicts and human friction.
 
 ## Grounded Conflict Reasoning (Simplified, Publishable Reference)
 
