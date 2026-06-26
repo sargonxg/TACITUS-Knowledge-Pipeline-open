@@ -35,9 +35,15 @@
 
 ---
 
-> **TACITUS** transforms unstructured text into deterministic structure -
-> **time-aware (in the future), evidence-linked knowledge graph** - that AI can query, audit, and reason over.
-> We aim to reduce hallucinations. No black boxes of reasoning. Every claim traces back to a source span. This is how resolution practicioners and analysts reason about conflicts and human friction.
+> **TACITUS** transforms unstructured text into deterministic, evidence-linked knowledge graphs that AI systems and analysts can query, audit, and reason over.
+> We aim to reduce hallucinations. No black boxes of reasoning. Every claim traces back to a source span. This is how resolution practitioners and analysts reason about conflicts and human friction.
+
+## 30-Second Read
+
+- **What it is**: a publishable notebook/reference pipeline for evidence-grounded conflict analysis.
+- **What it proves today**: LLM extraction into graph structure, source-span grounding, deterministic graph queries, contradiction/influence/issue-cluster reasoning, and a Colab-friendly workflow.
+- **What it is not**: the full TACITUS production stack or a finished product interface.
+- **Best place to start**: open the Colab badge above, then inspect the Cypher queries and example graph outputs.
 
 ## Grounded Conflict Reasoning (Simplified, Publishable Reference)
 
