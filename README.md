@@ -27,8 +27,10 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/python-3.10%2B-blue?logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/notebook-Jupyter-F37626?logo=jupyter&logoColor=white" alt="Jupyter Notebook"/>
   <img src="https://img.shields.io/badge/graph--db-Neo4j%20%7C%20FalkorDB-008CC1?logo=neo4j&logoColor=white" alt="Graph DB"/>
   <img src="https://img.shields.io/badge/LLM-Gemini%201.5%20Pro-4285F4?logo=google&logoColor=white" alt="LLM"/>
+  <img src="https://img.shields.io/badge/status-reference%20pipeline-0F766E" alt="Status"/>
   <img src="https://img.shields.io/badge/license-Apache--2.0-green" alt="License"/>
   <a href="https://colab.research.google.com/github/sargonxg/TACITUS-Knowledge-Pipeline-open/blob/main/TACITUS_PIPELINE_Workbench_v8.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 </p>
