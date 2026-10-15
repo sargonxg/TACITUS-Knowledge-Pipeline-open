@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use the TACITUS Knowledge Pipeline in research, teaching, evaluation, or derivative work, please cite this repository."
+title: "TACITUS Knowledge Pipeline"
+type: software
+authors:
+  - given-names: Giulio
+    family-names: Catanzariti
+    affiliation: TACITUS
+    email: hello@tacitus.me
+repository-code: "https://github.com/sargonxg/TACITUS-Knowledge-Pipeline-open"
+url: "https://www.tacitus.me"
+license: Apache-2.0
+abstract: >-
+  A public reference notebook and supporting resources for converting source
+  text into typed, evidence-linked knowledge graphs for policy and conflict
+  analysis, with model-assisted extraction, validation, entity resolution,
+  graph construction, and inspectable post-extraction analysis.
+keywords:
+  - policy analysis
+  - conflict analysis
+  - knowledge graphs
+  - evidence grounding
+  - provenance
+  - Jupyter
