@@ -91,6 +91,14 @@
         "analyst"
       ],
       "primitive": "Actor"
+    },
+    {
+      "id": "actor-uk-fcdo",
+      "label": "UK Foreign, Commonwealth & Development Office",
+      "roles": [
+        "treaty_reproduction_publisher"
+      ],
+      "primitive": "Actor"
     }
   ],
   "sources": [
@@ -192,22 +200,27 @@
     },
     {
       "id": "source-c190",
-      "title": "Violence and Harassment Convention, 2019 (No. 190)",
-      "url": "https://www.ilo.org/dyn/normlex/en/f?p=NORMLEXPUB%3A12100%3A0%3A%3ANO%3A%3AP12100_INSTRUMENT_ID%3A3999810",
-      "document_symbol": "ILO C190",
+      "title": "ILO Violence and Harassment Convention, 2019 (No.190), UK treaty reproduction MS No.7 (2021)",
+      "url": "https://assets.publishing.service.gov.uk/media/618cf77b8fa8f50382034c8d/MS_7.2021_ILO_Violence_Harassment_Convention_190.pdf",
+      "document_symbol": "ILO C190; carrier MS No.7 (2021), CP 555",
       "published": {
-        "value": "2019-06-21",
+        "value": "2021-11-15",
         "precision": "day"
       },
-      "publisher_id": "actor-ilo",
+      "publisher_id": "actor-uk-fcdo",
       "issuer_id": "actor-ilc",
       "genre": "international_labour_convention",
-      "verification": "indexed_candidate",
-      "verification_note": "Official NORMLEX indexed text only; direct retrieval returned a redirect loop. Candidate excerpt requires direct source check before default evidence answers; no jurisdiction or ratification research performed.",
-      "recorded_at": "2026-11-07T20:21:14Z",
+      "verification": "direct_pdf",
+      "verification_note": "Official UK treaty reproduction downloaded and inspected with pdftotext: article 6 on printed/PDF page 7; adoption date checked against the preamble and cover. Carrier publisher and 15 November 2021 publication date checked on the directly opened GOV.UK landing page. Current and legacy Normlex endpoints returned self-redirect loops; verification relies on this actually consulted government PDF, not on a Normlex retrieval. Historical cover statements about UK ratification are not assessed as current status.",
+      "recorded_at": "2026-11-07T20:33:18Z",
       "selection": "curated_short_excerpts_only",
       "full_text_retained": false,
-      "human_reviewed": false
+      "human_reviewed": false,
+      "original_document_on": "2019-06-21",
+      "adopted_on": "2019-06-21",
+      "original_sha256": "928370ebbcf38919ab2d5d810538c43bce8f587929a7673c73180b0d1c40fb9b",
+      "publication_metadata_url": "https://www.gov.uk/government/publications/ilo-violence-and-harassment-convention-2019-no190-ms-no72021",
+      "canonical_instrument_url": "https://normlex.ilo.org/dyn/nrmlx_en/f?p=NORMLEXPUB:12100:0::NO::P12100_ILO_CODE:C190"
     }
   ],
   "evidence": [
@@ -299,9 +312,9 @@
       "id": "evidence-c190-equality",
       "primitive": "Evidence",
       "source_id": "source-c190",
-      "locator": "Article 6; candidate from indexed official text, direct check pending",
+      "locator": "Article 6, printed/PDF page 7/12, official UK treaty reproduction MS No.7 (2021), CP 555",
       "text": "Each Member shall adopt laws, regulations and policies ensuring the right to equality and non-discrimination in employment and occupation",
-      "review_state": "candidate",
+      "review_state": "source_verified",
       "representation": "selected_excerpt_utf8",
       "retained_sha256": "1139f7e4c72dbf607a8caa0b47a06d6f12e43c2e5cf7b0511cf81a959f67697b",
       "human_reviewed": false,
@@ -655,12 +668,12 @@
     {
       "id": "record-hr-equality",
       "primitive": "Constraint",
-      "statement": "Candidate extraction of C190 article 6's equality and non-discrimination obligation for Members. An employer's duties cannot be determined from this excerpt alone.",
+      "statement": "C190 article 6 sets out an equality and non-discrimination obligation for Members. An employer's duties cannot be determined from this excerpt alone.",
       "attributed_to": "actor-ilc",
       "reported_by": null,
       "basis": "source_assertion",
-      "review_state": "candidate",
-      "authority": "International labour convention; direct text verification pending",
+      "review_state": "source_verified",
+      "authority": "International labour convention adopted by the International Labour Conference; article 6 wording checked in an official UK treaty reproduction, not a determination of local applicability",
       "modality": "shall",
       "document_stage": "adopted_text",
       "implementation": "not_assessed",
@@ -678,11 +691,11 @@
         "concept-equality"
       ],
       "time": {
-        "occurred_on": null,
+        "occurred_on": "2019-06-21",
         "valid_from": null,
         "valid_to": null,
         "validity_status": "not_assessed",
-        "recorded_at": "2026-11-07T20:21:14Z"
+        "recorded_at": "2026-11-07T20:33:18Z"
       },
       "applicability": {
         "status": "not_assessed",
@@ -852,7 +865,7 @@
     }
   ],
   "limits": [
-    "Four directly checked sources and one indexed candidate; selected excerpts, not a full political or media corpus.",
+    "Five directly checked source representations, including an official UK treaty reproduction of C190; selected excerpts, not a full political, legal or media corpus.",
     "Source verification by an automated research agent is distinct from human review; no human approval is asserted.",
     "Default lens queries exclude candidates and analyst drafts. Source assertions may be normative or indirectly attributed; source_verified does not certify real-world truth.",
     "Published-by filters source publication dates only, not a historical knowledge snapshot, legal validity or present applicability.",

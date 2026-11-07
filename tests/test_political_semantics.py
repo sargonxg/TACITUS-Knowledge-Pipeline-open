@@ -25,7 +25,7 @@ class PoliticalSemanticsTests(unittest.TestCase):
     def test_verified_sources_and_common_primitives_are_retained(self):
         semantic.validate(self.data)
         self.assertEqual(5, len(self.data["sources"]))
-        self.assertEqual(3, sum(x["verification"] == "direct_pdf" for x in self.data["sources"]))
+        self.assertEqual(4, sum(x["verification"] == "direct_pdf" for x in self.data["sources"]))
         primitives = {r["primitive"] for group in ("actors", "records", "evidence") for r in self.data[group]}
         self.assertEqual(semantic.PRIMITIVES, primitives)
         self.assertFalse(any(r["human_reviewed"] for r in self.data["records"]))
@@ -43,7 +43,7 @@ class PoliticalSemanticsTests(unittest.TestCase):
         self.rejects(lambda d: d["records"][6].update(attribution_chain=["missing"]), "dangling attribution chain")
 
     def test_indexed_candidate_is_not_verified_source_evidence(self):
-        self.rejects(lambda d: d["evidence"][-1].update(review_state="source_verified"), "cannot be promoted")
+        self.rejects(lambda d: d["sources"][-1].update(verification="indexed_candidate"), "cannot be promoted")
 
     def test_human_review_needs_explicit_identity_time_and_decision(self):
         self.rejects(lambda d: d["records"][0].update(review_state="human_reviewed"), "flag and state")
@@ -75,12 +75,22 @@ class PoliticalSemanticsTests(unittest.TestCase):
         self.assertIsNone(event["time"]["valid_from"])
         self.rejects(lambda d: d["records"][0]["time"].update(valid_from="2015-12-18"), "unknown validity")
 
-    def test_query_excludes_drafts_and_hr_applicability_candidates(self):
+    def test_query_excludes_drafts_and_preserves_unassessed_hr_applicability(self):
         media = semantic.query(self.data, "media_narrative")
         self.assertEqual(["record-headline", "record-reported-position"], [x["id"] for x in media["records"]])
         self.assertEqual(4, len(semantic.query(self.data, "media_narrative", include_drafts=True)["records"]))
-        self.assertEqual([], semantic.query(self.data, "hr_policy")["records"])
+        hr = semantic.query(self.data, "hr_policy")["records"]
+        self.assertEqual(["record-hr-equality"], [x["id"] for x in hr])
+        self.assertEqual("not_assessed", hr[0]["applicability"]["status"])
+        source = next(x for x in self.data["sources"] if x["id"] == "source-c190")
+        self.assertEqual("actor-ilc", source["issuer_id"])
+        self.assertEqual("actor-uk-fcdo", source["publisher_id"])
+        self.assertEqual("2021-11-15", source["published"]["value"])
+        self.assertEqual("2019-06-21", hr[0]["time"]["occurred_on"])
+        self.assertEqual([], semantic.query(self.data, "hr_policy", published_by="2020-12-31")["records"])
         self.assertEqual(1, len(semantic.query(self.data, "hr_policy", include_drafts=True)["records"]))
+        hr[0]["review_state"] = "candidate"
+        self.assertEqual([], semantic.query(self.data, "hr_policy")["records"])
         self.rejects(lambda d: d["records"][-1]["applicability"].update(status="applies"), "cannot determine HR")
 
     def test_publication_cutoff_does_not_claim_historical_truth(self):

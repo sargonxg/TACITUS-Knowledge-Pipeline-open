@@ -29,8 +29,8 @@ python -m unittest discover -s tests -p test_political_semantics.py -v
 Validation reports 5 sources, 10 semantic records and 0 human-reviewed records. The
 default mediation query returns 5 records. The default media query returns 2 records
 about published wording and attribution; `--include-drafts` also returns 2 analyst
-annotations. The default HR query returns no records because the ILO extraction
-remains a candidate; the explicit draft option reveals its applicability checklist.
+annotations. The default HR query returns 1 record with checked C190 article 6
+wording and an explicitly unassessed applicability checklist.
 
 `--corpus /path/to/selection.json` before the command loads another selection in the
 same format. Lenses and recipes are editable metadata in `corpus.json`; record lens
@@ -48,7 +48,7 @@ admitted only after the whole year has elapsed.
 | [Geneva communiqué, reproduced in resolution 2118 (2013)](https://documents.un.org/api/symbol/access?l=en&s=S/RES/2118(2013)&t=pdf) | The communiqué date and the mutual-consent condition for the transitional governing body described in paragraph 9(a) | Official English PDF inspected; annex II heading on page 9/13 and paragraph 9(a), page 11/13 |
 | [UN Guidance for Effective Mediation](https://documents.un.org/api/symbol/access?l=en&s=A/66/811&t=pdf) | Guidance on consent in voluntary mediation | Official English PDF inspected; A/66/811*, annex I, paragraph 21, page 23 |
 | [Reuters, 16 December 2024](https://www.reuters.com/world/middle-east/un-envoy-meets-syrias-sharaa-urges-inclusive-transition-2024-12-16/) | A short headline and a phrase Reuters attributes to a General Command statement | Direct article inspection; headline/byline and second paragraph. The original attributed statement is not retained |
-| [ILO Convention No. 190](https://www.ilo.org/dyn/normlex/en/f?p=NORMLEXPUB%3A12100%3A0%3A%3ANO%3A%3AP12100_INSTRUMENT_ID%3A3999810) | Candidate extraction of article 6's equality and non-discrimination provision | Official indexed text only; direct retrieval returned a redirect loop. Excluded from default evidence queries |
+| [ILO Convention No. 190, official UK treaty reproduction](https://assets.publishing.service.gov.uk/media/618cf77b8fa8f50382034c8d/MS_7.2021_ILO_Violence_Harassment_Convention_190.pdf) | Article 6's equality and non-discrimination provision | Official government PDF downloaded and inspected; article 6, printed/PDF page 7/12; MS No.7 (2021), CP 555. This is a checked reproduction, not a successful Normlex retrieval |
 
 The 2254 source reuses the original official PDF URL and receipt identity from the
 [Syria corpus at commit 4d7c6ec](https://github.com/sargonxg/Syria-political-analysis/blob/4d7c6ec55c1a1435cd7449b6e02d5640205f0d89/data/documents/receipts.json),
@@ -58,11 +58,22 @@ its review decisions.
 
 Each retained excerpt carries the source URL, symbol where relevant, publication
 date, locator and SHA-256 of its exact retained UTF-8 text. PDF line/layout whitespace
-is collapsed; this is recorded explicitly. Three `original_sha256` values identify
+is collapsed; this is recorded explicitly. Four `original_sha256` values identify
 the original downloaded PDF representations, which are not bundled. Excerpt hashes
 check local integrity, not authenticity of a remote source or accuracy of a summary.
 The Reuters retention is limited to a headline and a five-word attributed phrase;
 no full article or article-wide factual verification is provided.
+
+The C190 representation's publisher is the UK Foreign, Commonwealth & Development
+Office; its original issuer remains the International Labour Conference. Its
+[carrier publication date is 15 November 2021](https://www.gov.uk/government/publications/ilo-violence-and-harassment-convention-2019-no190-ms-no72021),
+separate from the convention's 21 June 2019 adoption date. Its PDF SHA-256 is
+`928370ebbcf38919ab2d5d810538c43bce8f587929a7673c73180b0d1c40fb9b`.
+The retained excerpt matches the directly downloaded PDF after the documented
+whitespace normalization. Current and legacy Normlex URLs returned redirect loops;
+the consulted UK reproduction and its publication metadata are recorded explicitly.
+The reproduction's historical cover statement about UK ratification is not treated
+as a present ratification assessment or evidence of any employer's duties.
 
 Example code follows this repository's Apache-2.0 license. Retained third-party
 wording remains attributed to its original sources and is not relicensed as
