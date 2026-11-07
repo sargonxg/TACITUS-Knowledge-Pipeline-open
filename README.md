@@ -26,6 +26,44 @@
 
 ## 30-second read
 
+For real source-linked data, run the [political semantic-layer example](docs/POLITICAL_SEMANTIC_LAYERS.md):
+UN resolutions, the Geneva communiqué, mediation guidance and attributed media
+wording become queryable records under policy, mediation, media and HR lenses.
+It includes recurring task recipes, source excerpts and hashes, JSON-LD, a local
+SQLite export and explicit review/applicability boundaries. Python's standard
+library is sufficient; no model account or network connection is needed.
+
+```bash
+python examples/political_semantics/semantic_layer.py validate
+python examples/political_semantics/semantic_layer.py query --lens mediation
+python examples/political_semantics/semantic_layer.py recipes
+```
+
+### Run a source-linked context example without API keys
+
+```bash
+git clone https://github.com/sargonxg/TACITUS-Knowledge-Pipeline-open.git
+cd TACITUS-Knowledge-Pipeline-open
+python examples/context_capsule.py --budget-bytes 4000 --out context-packet.json
+python -m unittest discover -s tests -v
+```
+
+Python 3.10+ and its standard library are sufficient. The fictional policy case
+keeps a proposed pilot separate from adoption, an association's assertion and
+funding status. Open `context-packet.json` to inspect selected claims, exact source
+quotations, source hashes and every omission. Try `--budget-bytes 1000` to see
+selection change. Comparison groups are retained together or omitted together;
+expired and unreviewed claims do not silently become current accepted context.
+
+The compact packet has an exact UTF-8 byte budget, including provenance metadata.
+Use `--packet-only --out context-only.json` to write those exact bounded bytes.
+The default pretty-printed inspection file also contains a receipt outside that
+budget; it is intentionally larger than the model-facing packet.
+Query-word overlap is an inspectable ranking heuristic. This example calls no
+model, establishes no political truth and makes no claim of improved generation
+quality. It is a small reproducible part of a larger source → review → context →
+answer workflow. The notebooks below cover the earlier extraction/graph pipeline.
+
 - **What it is:** a compact, inspectable pipeline that converts source text into typed graph objects linked to evidence spans.
 - **What it demonstrates:** structured extraction, entity resolution, graph construction, reusable Cypher queries, and deterministic post-extraction analysis such as graph scoring and clustering.
 - **What it is not:** a validated decision system, a complete TACITUS deployment, or proof that graph-based analysis is automatically correct.

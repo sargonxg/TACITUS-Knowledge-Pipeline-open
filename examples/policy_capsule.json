@@ -1,0 +1,16 @@
+{
+  "format": "tacitus-context-example/1",
+  "title": "Fictional corridor consultation: attribution and policy-stage distinctions",
+  "sources": [
+    {"id":"S1","title":"Fictional ministry consultation, revision 2","text":"The ministry proposes a July 2027 pilot for the corridor. Adoption remains subject to legislative approval. Funding has not been allocated."},
+    {"id":"S2","title":"Fictional association statement","text":"The association requests a January 2027 start. Its statement calls the corridor plan agreed, but does not cite an adoption instrument."},
+    {"id":"S3","title":"Fictional expired planning note","text":"An April 2026 start is the planning assumption."}
+  ],
+  "claims": [
+    {"id":"C1","text":"The ministry proposes July 2027; adoption remains conditional.","source_id":"S1","quote":"The ministry proposes a July 2027 pilot for the corridor. Adoption remains subject to legislative approval.","review":"accepted","comparison_group":"adoption-stage"},
+    {"id":"C2","text":"The association describes agreement but supplies no adoption instrument.","source_id":"S2","quote":"Its statement calls the corridor plan agreed, but does not cite an adoption instrument.","review":"accepted","comparison_group":"adoption-stage"},
+    {"id":"C3","text":"The ministry says funding has not been allocated.","source_id":"S1","quote":"Funding has not been allocated.","review":"accepted"},
+    {"id":"C4","text":"An April 2026 start was a prior planning assumption.","source_id":"S3","quote":"An April 2026 start is the planning assumption.","review":"accepted","valid_until":"2026-04-30"},
+    {"id":"C5","text":"January 2027 is an association request, not an adopted date.","source_id":"S2","quote":"The association requests a January 2027 start.","review":"proposed"}
+  ]
+}
