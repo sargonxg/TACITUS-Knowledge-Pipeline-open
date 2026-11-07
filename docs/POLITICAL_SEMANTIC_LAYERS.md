@@ -162,3 +162,37 @@ verification gates, attribution chains, temporal separation, rejected implementa
 and bias overclaims, default draft exclusion, deterministic JSON-LD, and local SQL
 foreign-key/integrity checks. No improvement in generated AI output is claimed without
 a separate evaluated task set and human-reviewed reference answers.
+
+## Compile a bounded context packet from these real sources
+
+The semantic corpus can also be selected into an exact byte-bounded packet:
+
+```bash
+python examples/political_semantics/context_packet.py --lens mediation --question "consent inclusion" --budget-bytes 8000 --out /tmp/political-packet-review.json
+python examples/political_semantics/context_packet.py --lens mediation --question "consent inclusion" --budget-bytes 8000 --packet-only --out /tmp/political-packet.json
+```
+
+The default output is an inspection wrapper containing a packet and its receipt.
+`--packet-only` writes the exact compact, sorted UTF-8 JSON bytes that the budget
+covers. The larger inspection wrapper is outside that budget. The receipt records
+the full eligible packet's size, retained bytes, both hashes, every included and
+omitted record, omission reasons, and eligible/retained primitive coverage.
+
+Each retained record stays whole, with its complete source, retained excerpt,
+actor and concept references. Shared source metadata is included once. The compiler
+excludes drafts and candidates, reuses publication filtering, preserves unknown
+validity and HR applicability, and never upgrades automated source checks into
+human approval. The corpus is validated before selection; quote/hash tampering fails.
+
+Selection uses question-token overlap on statements with a stable ID tie-break,
+then tries whole evidence bundles within the byte limit. An oversized bundle does
+not prevent later fitting evidence. This heuristic is not a political-importance
+score, optimized packing, complete topic coverage, balanced viewpoint sampling,
+or automatic contradiction/comparison-group detection. Inspect the omissions
+before using a partial packet. Bytes are not model tokens, and smaller packets
+alone do not demonstrate more efficient inference or better reasoning.
+
+`political-context-packet/1` is a local teaching format, separate from the smaller
+synthetic `tacitus-context-packet/1` example and from native PRAXIS/DIALECTICA
+ContextCapsules. It runs without a model or network and does not attach to PRAXIS
+or modify Cloudflare data.

@@ -37,7 +37,14 @@ library is sufficient; no model account or network connection is needed.
 python examples/political_semantics/semantic_layer.py validate
 python examples/political_semantics/semantic_layer.py query --lens mediation
 python examples/political_semantics/semantic_layer.py recipes
+python examples/political_semantics/context_packet.py --lens mediation --question "consent inclusion" --budget-bytes 8000 --out political-packet-review.json
 ```
+
+The real-source packet retains whole records and their source/actor/concept
+references. Its receipt reports exact payload bytes, hashes, coverage and every
+omission. Use `--packet-only` for the exact bounded JSON; the inspection wrapper
+is larger. Selection uses question-word overlap, with no model calls or measured
+reasoning-quality claim. [Packet format and limits](docs/POLITICAL_SEMANTIC_LAYERS.md#compile-a-bounded-context-packet-from-these-real-sources).
 
 ### Run a source-linked context example without API keys
 
