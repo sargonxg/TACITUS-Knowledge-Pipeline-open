@@ -26,6 +26,19 @@
 
 ## 30-second read
 
+### Open the evidence in your browser
+
+```bash
+python examples/political_semantics/build_explorer.py --out dist
+```
+
+Open `dist/index.html` directly. The single file works offline: choose a policy,
+mediation, media or HR lens, inspect attributed passages and review states, filter
+by source publication date, and download the selected JSON or complete JSON-LD
+and SQLite examples. It uses no API keys, external assets, analytics or model calls.
+The small curated selection demonstrates structure and provenance, not complete
+coverage or verified political conclusions.
+
 For real source-linked data, run the [political semantic-layer example](docs/POLITICAL_SEMANTIC_LAYERS.md):
 UN resolutions, the Geneva communiqué, mediation guidance and attributed media
 wording become queryable records under policy, mediation, media and HR lenses.

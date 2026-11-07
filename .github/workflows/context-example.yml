@@ -15,3 +15,9 @@ jobs:
       - run: python examples/political_semantics/semantic_layer.py validate
       - run: python examples/political_semantics/semantic_layer.py export --out /tmp/political-demo.jsonld
       - run: python examples/political_semantics/semantic_layer.py export-sql --out /tmp/political-demo.sql
+      - run: python examples/political_semantics/build_explorer.py --out /tmp/political-explorer
+      - uses: actions/upload-artifact@v4
+        with:
+          name: offline-political-evidence-explorer
+          path: /tmp/political-explorer/index.html
+          retention-days: 7
