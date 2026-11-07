@@ -1,0 +1,861 @@
+{
+  "schema_version": "political-demo/1",
+  "title": "Political semantic task lenses: curated teaching selection",
+  "actors": [
+    {
+      "id": "actor-unsc",
+      "label": "United Nations Security Council",
+      "roles": [
+        "issuing_body",
+        "publisher"
+      ],
+      "primitive": "Actor"
+    },
+    {
+      "id": "actor-action-group",
+      "label": "Action Group for Syria (30 June 2012)",
+      "roles": [
+        "communique_issuer"
+      ],
+      "primitive": "Actor"
+    },
+    {
+      "id": "actor-un-secretary-general",
+      "label": "United Nations Secretary-General",
+      "roles": [
+        "report_issuer"
+      ],
+      "primitive": "Actor"
+    },
+    {
+      "id": "actor-un",
+      "label": "United Nations",
+      "roles": [
+        "publisher"
+      ],
+      "primitive": "Actor"
+    },
+    {
+      "id": "actor-syrian-people",
+      "label": "Syrian people (collective as named in the text)",
+      "roles": [
+        "referenced_collective"
+      ],
+      "primitive": "Actor"
+    },
+    {
+      "id": "actor-reuters",
+      "label": "Reuters",
+      "roles": [
+        "news_publisher",
+        "reporter"
+      ],
+      "primitive": "Actor"
+    },
+    {
+      "id": "actor-timour-azhari",
+      "label": "Timour Azhari",
+      "roles": [
+        "article_byline"
+      ],
+      "primitive": "Actor"
+    },
+    {
+      "id": "actor-general-command",
+      "label": "Syrian General Command (as attributed in the 2024 article)",
+      "roles": [
+        "reported_statement_issuer"
+      ],
+      "primitive": "Actor"
+    },
+    {
+      "id": "actor-ilo",
+      "label": "International Labour Organization",
+      "roles": [
+        "convention_publisher"
+      ],
+      "primitive": "Actor"
+    },
+    {
+      "id": "actor-ilc",
+      "label": "International Labour Conference",
+      "roles": [
+        "convention_adopting_body"
+      ],
+      "primitive": "Actor"
+    },
+    {
+      "id": "actor-curator",
+      "label": "Automated teaching-example curator",
+      "roles": [
+        "analyst"
+      ],
+      "primitive": "Actor"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source-2254",
+      "title": "Security Council resolution 2254 (2015)",
+      "url": "https://documents.un.org/doc/undoc/gen/n15/443/34/pdf/n1544334.pdf",
+      "document_symbol": "S/RES/2254(2015)",
+      "published": {
+        "value": "2015-12-18",
+        "precision": "day"
+      },
+      "publisher_id": "actor-unsc",
+      "issuer_id": "actor-unsc",
+      "genre": "security_council_resolution",
+      "verification": "direct_pdf",
+      "original_sha256": "932c9614e588e910c5c23a82b4df67679aba7bbe2c47ef2edd1d02970f0faa62",
+      "upstream_receipt": {
+        "repository": "https://github.com/sargonxg/Syria-political-analysis",
+        "commit": "4d7c6ec55c1a1435cd7449b6e02d5640205f0d89",
+        "path": "data/documents/receipts.json",
+        "record_id": "doc-83ad8cbb868c0c88"
+      },
+      "verification_note": "Official English PDF downloaded and inspected with pdftotext; original hash agrees with the existing Syria corpus receipt. Source check by automated agent; no human review.",
+      "recorded_at": "2026-11-07T20:21:14Z",
+      "selection": "curated_short_excerpts_only",
+      "full_text_retained": false,
+      "human_reviewed": false
+    },
+    {
+      "id": "source-geneva",
+      "title": "Action Group for Syria Final Communiqué, reproduced in resolution 2118 annex II",
+      "url": "https://documents.un.org/api/symbol/access?l=en&s=S/RES/2118(2013)&t=pdf",
+      "document_symbol": "S/RES/2118(2013), annex II",
+      "published": {
+        "value": "2013-09-27",
+        "precision": "day"
+      },
+      "original_document_on": "2012-06-30",
+      "publisher_id": "actor-unsc",
+      "issuer_id": "actor-action-group",
+      "genre": "political_communique_reproduced_in_resolution",
+      "verification": "direct_pdf",
+      "original_sha256": "ca8c81067b8c06ca9ef46f583838fd3fb5a993d716e85da370111cba32a9c4c4",
+      "verification_note": "Official English resolution PDF inspected, including annex II heading and paragraph 9(a). Publication field is this consulted carrier's date; original_document_on is the communiqué date.",
+      "recorded_at": "2026-11-07T20:21:14Z",
+      "selection": "curated_short_excerpts_only",
+      "full_text_retained": false,
+      "human_reviewed": false
+    },
+    {
+      "id": "source-guidance",
+      "title": "United Nations Guidance for Effective Mediation, annex I to A/66/811",
+      "url": "https://documents.un.org/api/symbol/access?l=en&s=A/66/811&t=pdf",
+      "document_symbol": "A/66/811*, annex I",
+      "published": {
+        "value": "2012-06-25",
+        "precision": "day"
+      },
+      "publisher_id": "actor-un",
+      "issuer_id": "actor-un-secretary-general",
+      "genre": "mediation_guidance",
+      "verification": "direct_pdf",
+      "original_sha256": "6a1b815fe45f9daf5432f2d317e465df9702ee83a8296b48a54152ae2a21c428",
+      "verification_note": "Official English PDF downloaded; annex I Consent paragraph 21 checked on printed/PDF page 23. Date is the report's publication, not a claim of legal force.",
+      "recorded_at": "2026-11-07T20:21:14Z",
+      "selection": "curated_short_excerpts_only",
+      "full_text_retained": false,
+      "human_reviewed": false
+    },
+    {
+      "id": "source-reuters",
+      "title": "UN envoy meets Syria's Sharaa, urges inclusive transition",
+      "url": "https://www.reuters.com/world/middle-east/un-envoy-meets-syrias-sharaa-urges-inclusive-transition-2024-12-16/",
+      "document_symbol": null,
+      "published": {
+        "value": "2024-12-16",
+        "precision": "day"
+      },
+      "publisher_id": "actor-reuters",
+      "issuer_id": "actor-reuters",
+      "author_id": "actor-timour-azhari",
+      "genre": "news_report",
+      "verification": "direct_web",
+      "verification_note": "Article opened directly; headline, byline, date and paragraph 2 inspected. Only two short excerpts retained. Article is primary evidence of its wording, not independent proof of each reported event.",
+      "ownership": {
+        "status": "not_assessed",
+        "owner_id": null,
+        "evidence_ids": []
+      },
+      "perspective": {
+        "status": "not_assessed",
+        "note": "One selected article cannot establish outlet ideology, selection bias or ownership influence."
+      },
+      "recorded_at": "2026-11-07T20:21:14Z",
+      "selection": "curated_short_excerpts_only",
+      "full_text_retained": false,
+      "human_reviewed": false
+    },
+    {
+      "id": "source-c190",
+      "title": "Violence and Harassment Convention, 2019 (No. 190)",
+      "url": "https://www.ilo.org/dyn/normlex/en/f?p=NORMLEXPUB%3A12100%3A0%3A%3ANO%3A%3AP12100_INSTRUMENT_ID%3A3999810",
+      "document_symbol": "ILO C190",
+      "published": {
+        "value": "2019-06-21",
+        "precision": "day"
+      },
+      "publisher_id": "actor-ilo",
+      "issuer_id": "actor-ilc",
+      "genre": "international_labour_convention",
+      "verification": "indexed_candidate",
+      "verification_note": "Official NORMLEX indexed text only; direct retrieval returned a redirect loop. Candidate excerpt requires direct source check before default evidence answers; no jurisdiction or ratification research performed.",
+      "recorded_at": "2026-11-07T20:21:14Z",
+      "selection": "curated_short_excerpts_only",
+      "full_text_retained": false,
+      "human_reviewed": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "evidence-2254-endorsement",
+      "primitive": "Evidence",
+      "source_id": "source-2254",
+      "locator": "Operative paragraph 1, printed/PDF page 2/4",
+      "text": "Reconfirms its endorsement of the Geneva Communiqué of 30 June 2012",
+      "review_state": "source_verified",
+      "representation": "selected_excerpt_utf8",
+      "retained_sha256": "5354047e4ca08df1ed6d5d44a4662658a0f23d4034072c842de7beede2675e99",
+      "human_reviewed": false,
+      "normalization": "PDF excerpt: contiguous phrase with layout whitespace collapsed to single spaces; Unicode and punctuation retained. Web excerpt: displayed text."
+    },
+    {
+      "id": "evidence-2254-people",
+      "primitive": "Evidence",
+      "source_id": "source-2254",
+      "locator": "Operative paragraph 1, printed/PDF page 2/4",
+      "text": "the Syrian people will decide the future of Syria",
+      "review_state": "source_verified",
+      "representation": "selected_excerpt_utf8",
+      "retained_sha256": "91cdedda390e0371f431fd5cea08b478f8d7ab6a85b501dc2705dbe8e4911c07",
+      "human_reviewed": false,
+      "normalization": "PDF excerpt: contiguous phrase with layout whitespace collapsed to single spaces; Unicode and punctuation retained. Web excerpt: displayed text."
+    },
+    {
+      "id": "evidence-geneva-consent",
+      "primitive": "Evidence",
+      "source_id": "source-geneva",
+      "locator": "Annex II, paragraph 9(a), printed/PDF page 11/13",
+      "text": "shall be formed on the basis of mutual consent",
+      "review_state": "source_verified",
+      "representation": "selected_excerpt_utf8",
+      "retained_sha256": "b7892247563ed2a6c74b5698d9af6f0cef06abe97231d143a0a5e16c3b0c7b91",
+      "human_reviewed": false,
+      "normalization": "PDF excerpt: contiguous phrase with layout whitespace collapsed to single spaces; Unicode and punctuation retained. Web excerpt: displayed text."
+    },
+    {
+      "id": "evidence-geneva-date",
+      "primitive": "Evidence",
+      "source_id": "source-geneva",
+      "locator": "Annex II heading, printed/PDF page 9/13",
+      "text": "30 June 2012",
+      "review_state": "source_verified",
+      "representation": "selected_excerpt_utf8",
+      "retained_sha256": "a1a1de58613a24afc70381ef4c37a65eac82ee6465d99737d6bdc7f354c098c2",
+      "human_reviewed": false,
+      "normalization": "PDF excerpt: contiguous phrase with layout whitespace collapsed to single spaces; Unicode and punctuation retained. Web excerpt: displayed text."
+    },
+    {
+      "id": "evidence-guidance-consent",
+      "primitive": "Evidence",
+      "source_id": "source-guidance",
+      "locator": "Annex I, Consent, paragraph 21, printed/PDF page 23",
+      "text": "Mediation is a voluntary process that requires the consent of the conflict parties to be effective.",
+      "review_state": "source_verified",
+      "representation": "selected_excerpt_utf8",
+      "retained_sha256": "0da73a4195b2d489a34e58f8ec6ac79f9d9f4fa881dd370d6d28daf0d6289923",
+      "human_reviewed": false,
+      "normalization": "PDF excerpt: contiguous phrase with layout whitespace collapsed to single spaces; Unicode and punctuation retained. Web excerpt: displayed text."
+    },
+    {
+      "id": "evidence-reuters-headline",
+      "primitive": "Evidence",
+      "source_id": "source-reuters",
+      "locator": "Article headline; byline Timour Azhari; 16 December 2024",
+      "text": "UN envoy meets Syria's Sharaa, urges inclusive transition",
+      "review_state": "source_verified",
+      "representation": "selected_excerpt_utf8",
+      "retained_sha256": "0755e00e1c5218f5a226eaa92fb10f480b23809568d8c1679d0e5ccf6cb0c61d",
+      "human_reviewed": false,
+      "normalization": "PDF excerpt: contiguous phrase with layout whitespace collapsed to single spaces; Unicode and punctuation retained. Web excerpt: displayed text."
+    },
+    {
+      "id": "evidence-reuters-attribution",
+      "primitive": "Evidence",
+      "source_id": "source-reuters",
+      "locator": "Second paragraph, attributed by Reuters to the Syrian General Command statement",
+      "text": "suit the new reality",
+      "review_state": "source_verified",
+      "representation": "selected_excerpt_utf8",
+      "retained_sha256": "a3d4a3da83293662f7e8377fd2911177d5d00a9efb20b5cbb7f046710db9d231",
+      "human_reviewed": false,
+      "normalization": "PDF excerpt: contiguous phrase with layout whitespace collapsed to single spaces; Unicode and punctuation retained. Web excerpt: displayed text."
+    },
+    {
+      "id": "evidence-c190-equality",
+      "primitive": "Evidence",
+      "source_id": "source-c190",
+      "locator": "Article 6; candidate from indexed official text, direct check pending",
+      "text": "Each Member shall adopt laws, regulations and policies ensuring the right to equality and non-discrimination in employment and occupation",
+      "review_state": "candidate",
+      "representation": "selected_excerpt_utf8",
+      "retained_sha256": "1139f7e4c72dbf607a8caa0b47a06d6f12e43c2e5cf7b0511cf81a959f67697b",
+      "human_reviewed": false,
+      "normalization": "PDF excerpt: contiguous phrase with layout whitespace collapsed to single spaces; Unicode and punctuation retained. Web excerpt: displayed text."
+    }
+  ],
+  "concepts": [
+    {
+      "id": "concept-political-process",
+      "label": "Political process"
+    },
+    {
+      "id": "concept-consent",
+      "label": "Consent"
+    },
+    {
+      "id": "concept-national-ownership",
+      "label": "National ownership"
+    },
+    {
+      "id": "concept-framing",
+      "label": "Media framing"
+    },
+    {
+      "id": "concept-equality",
+      "label": "Equality and non-discrimination"
+    }
+  ],
+  "records": [
+    {
+      "id": "record-endorsement",
+      "primitive": "Commitment",
+      "statement": "The Council reaffirms endorsement of the 2012 Geneva communiqué; this records its expressed institutional position, not implementation or a party undertaking.",
+      "attributed_to": "actor-unsc",
+      "reported_by": null,
+      "basis": "source_assertion",
+      "review_state": "source_verified",
+      "authority": "UN Security Council resolution; endorsement wording in operative paragraph 1",
+      "modality": "endorses",
+      "document_stage": "adopted_text",
+      "implementation": "not_assessed",
+      "scope": "Historical source wording only; no current actor mandate, compliance or applicability inferred",
+      "evidence": [
+        {
+          "evidence_id": "evidence-2254-endorsement",
+          "quote": "Reconfirms its endorsement of the Geneva Communiqué of 30 June 2012"
+        }
+      ],
+      "lenses": [
+        "policy_analysis",
+        "mediation"
+      ],
+      "concept_ids": [
+        "concept-political-process"
+      ],
+      "time": {
+        "occurred_on": null,
+        "valid_from": null,
+        "valid_to": null,
+        "validity_status": "not_assessed",
+        "recorded_at": "2026-11-07T20:21:14Z"
+      },
+      "human_reviewed": false
+    },
+    {
+      "id": "record-national-ownership",
+      "primitive": "Interest",
+      "statement": "The Council's text places deciding Syria's future with the Syrian people. This is an expressed normative objective, not evidence of every person's preferences.",
+      "attributed_to": "actor-unsc",
+      "reported_by": null,
+      "basis": "source_assertion",
+      "review_state": "source_verified",
+      "authority": "Text-level attribution; legal effect not determined by this example",
+      "modality": "observation",
+      "document_stage": "adopted_text",
+      "implementation": "not_assessed",
+      "scope": "Historical source wording only; no current actor mandate, compliance or applicability inferred",
+      "evidence": [
+        {
+          "evidence_id": "evidence-2254-people",
+          "quote": "the Syrian people will decide the future of Syria"
+        }
+      ],
+      "lenses": [
+        "policy_analysis",
+        "mediation"
+      ],
+      "concept_ids": [
+        "concept-national-ownership"
+      ],
+      "time": {
+        "occurred_on": null,
+        "valid_from": null,
+        "valid_to": null,
+        "validity_status": "not_assessed",
+        "recorded_at": "2026-11-07T20:21:14Z"
+      },
+      "human_reviewed": false
+    },
+    {
+      "id": "record-geneva-consent",
+      "primitive": "Constraint",
+      "statement": "The communiqué specifies mutual consent in forming the transitional governing body described in paragraph 9(a); it does not establish that such consent occurred.",
+      "attributed_to": "actor-action-group",
+      "reported_by": null,
+      "basis": "source_assertion",
+      "review_state": "source_verified",
+      "authority": "Political communiqué dated 30 June 2012, reproduced in 2013 resolution annex; no automatic treaty equivalence",
+      "modality": "shall",
+      "document_stage": "issued_text",
+      "implementation": "not_assessed",
+      "scope": "Historical source wording only; no current actor mandate, compliance or applicability inferred",
+      "evidence": [
+        {
+          "evidence_id": "evidence-geneva-consent",
+          "quote": "shall be formed on the basis of mutual consent"
+        }
+      ],
+      "lenses": [
+        "policy_analysis",
+        "mediation"
+      ],
+      "concept_ids": [
+        "concept-consent"
+      ],
+      "time": {
+        "occurred_on": null,
+        "valid_from": null,
+        "valid_to": null,
+        "validity_status": "not_assessed",
+        "recorded_at": "2026-11-07T20:21:14Z"
+      },
+      "human_reviewed": false
+    },
+    {
+      "id": "record-communique-date",
+      "primitive": "Event",
+      "statement": "The retained heading dates the Action Group final communiqué to 30 June 2012; its consulted resolution carrier was published later.",
+      "attributed_to": "actor-action-group",
+      "reported_by": null,
+      "basis": "source_assertion",
+      "review_state": "source_verified",
+      "authority": "Text-level attribution; legal effect not determined by this example",
+      "modality": "observation",
+      "document_stage": "issued_text",
+      "implementation": "not_assessed",
+      "scope": "Historical source wording only; no current actor mandate, compliance or applicability inferred",
+      "evidence": [
+        {
+          "evidence_id": "evidence-geneva-date",
+          "quote": "30 June 2012"
+        }
+      ],
+      "lenses": [
+        "policy_analysis",
+        "mediation"
+      ],
+      "concept_ids": [
+        "concept-political-process"
+      ],
+      "time": {
+        "occurred_on": "2012-06-30",
+        "valid_from": null,
+        "valid_to": null,
+        "validity_status": "not_assessed",
+        "recorded_at": "2026-11-07T20:21:14Z"
+      },
+      "human_reviewed": false
+    },
+    {
+      "id": "record-mediation-consent",
+      "primitive": "Claim",
+      "statement": "UN mediation guidance describes party consent as a requirement for an effective voluntary mediation process. Actual consent needs separate, current party-specific evidence.",
+      "attributed_to": "actor-un-secretary-general",
+      "reported_by": null,
+      "basis": "source_assertion",
+      "review_state": "source_verified",
+      "authority": "UN Secretary-General mediation guidance; not an instrument establishing party-specific consent",
+      "modality": "guidance",
+      "document_stage": "issued_text",
+      "implementation": "not_assessed",
+      "scope": "Historical source wording only; no current actor mandate, compliance or applicability inferred",
+      "evidence": [
+        {
+          "evidence_id": "evidence-guidance-consent",
+          "quote": "Mediation is a voluntary process that requires the consent of the conflict parties to be effective."
+        }
+      ],
+      "lenses": [
+        "mediation"
+      ],
+      "concept_ids": [
+        "concept-consent"
+      ],
+      "time": {
+        "occurred_on": null,
+        "valid_from": null,
+        "valid_to": null,
+        "validity_status": "not_assessed",
+        "recorded_at": "2026-11-07T20:21:14Z"
+      },
+      "human_reviewed": false
+    },
+    {
+      "id": "record-headline",
+      "primitive": "Claim",
+      "statement": "Reuters used this headline about the envoy, Sharaa and an inclusive transition; the record establishes the published wording.",
+      "attributed_to": "actor-reuters",
+      "reported_by": "actor-reuters",
+      "basis": "source_assertion",
+      "review_state": "source_verified",
+      "authority": "News publisher's headline; source of the wording only",
+      "modality": "reports",
+      "document_stage": "issued_text",
+      "implementation": "not_assessed",
+      "scope": "Historical source wording only; no current actor mandate, compliance or applicability inferred",
+      "evidence": [
+        {
+          "evidence_id": "evidence-reuters-headline",
+          "quote": "UN envoy meets Syria's Sharaa, urges inclusive transition"
+        }
+      ],
+      "lenses": [
+        "media_narrative"
+      ],
+      "concept_ids": [
+        "concept-framing"
+      ],
+      "time": {
+        "occurred_on": null,
+        "valid_from": null,
+        "valid_to": null,
+        "validity_status": "not_assessed",
+        "recorded_at": "2026-11-07T20:21:14Z"
+      },
+      "human_reviewed": false
+    },
+    {
+      "id": "record-reported-position",
+      "primitive": "Claim",
+      "statement": "Reuters attributes to the Syrian General Command a statement that resolution 2254 needed updating. The original General Command statement is not retained here.",
+      "attributed_to": "actor-general-command",
+      "reported_by": "actor-reuters",
+      "basis": "source_assertion",
+      "review_state": "source_verified",
+      "authority": "Indirect attribution through a news report; not a direct verified party statement",
+      "modality": "reports",
+      "document_stage": "issued_text",
+      "implementation": "not_assessed",
+      "scope": "Historical source wording only; no current actor mandate, compliance or applicability inferred",
+      "evidence": [
+        {
+          "evidence_id": "evidence-reuters-attribution",
+          "quote": "suit the new reality"
+        }
+      ],
+      "lenses": [
+        "media_narrative",
+        "policy_analysis"
+      ],
+      "concept_ids": [
+        "concept-political-process"
+      ],
+      "time": {
+        "occurred_on": null,
+        "valid_from": null,
+        "valid_to": null,
+        "validity_status": "not_assessed",
+        "recorded_at": "2026-11-07T20:21:14Z"
+      },
+      "attribution_chain": [
+        "actor-reuters",
+        "actor-general-command"
+      ],
+      "original_statement_collected": false,
+      "human_reviewed": false
+    },
+    {
+      "id": "record-headline-frame",
+      "primitive": "Narrative",
+      "statement": "Analyst reading: this headline foregrounds an envoy meeting and inclusive transition. This describes this headline's emphasis and supplies no outlet-wide bias or causal judgment.",
+      "attributed_to": "actor-curator",
+      "reported_by": null,
+      "basis": "analyst_interpretation",
+      "review_state": "analyst_draft",
+      "authority": "Proposed analyst annotation requiring review",
+      "modality": "observation",
+      "document_stage": "issued_text",
+      "implementation": "not_assessed",
+      "scope": "Historical source wording only; no current actor mandate, compliance or applicability inferred",
+      "evidence": [
+        {
+          "evidence_id": "evidence-reuters-headline",
+          "quote": "UN envoy meets Syria's Sharaa, urges inclusive transition"
+        }
+      ],
+      "lenses": [
+        "media_narrative"
+      ],
+      "concept_ids": [
+        "concept-framing"
+      ],
+      "time": {
+        "occurred_on": null,
+        "valid_from": null,
+        "valid_to": null,
+        "validity_status": "not_assessed",
+        "recorded_at": "2026-11-07T20:21:14Z"
+      },
+      "comparison_sample": "One deliberately selected headline; no matched comparison corpus",
+      "human_reviewed": false
+    },
+    {
+      "id": "record-frame-hypothesis",
+      "primitive": "Interest",
+      "statement": "Research question: could headline emphasis reflect the immediate diplomatic event rather than an outlet ideological preference? No motive is established.",
+      "attributed_to": "actor-curator",
+      "reported_by": null,
+      "basis": "motive_hypothesis",
+      "review_state": "analyst_draft",
+      "authority": "Analyst question; not an attributed intention or causal finding",
+      "modality": "hypothesis",
+      "document_stage": "issued_text",
+      "implementation": "not_assessed",
+      "scope": "Historical source wording only; no current actor mandate, compliance or applicability inferred",
+      "evidence": [
+        {
+          "evidence_id": "evidence-reuters-headline",
+          "quote": "UN envoy meets Syria's Sharaa, urges inclusive transition"
+        }
+      ],
+      "lenses": [
+        "media_narrative"
+      ],
+      "concept_ids": [
+        "concept-framing"
+      ],
+      "time": {
+        "occurred_on": null,
+        "valid_from": null,
+        "valid_to": null,
+        "validity_status": "not_assessed",
+        "recorded_at": "2026-11-07T20:21:14Z"
+      },
+      "alternatives": [
+        "Event relevance or article length may explain emphasis.",
+        "Other audience or editorial choices may explain emphasis; evidence is absent."
+      ],
+      "human_reviewed": false
+    },
+    {
+      "id": "record-hr-equality",
+      "primitive": "Constraint",
+      "statement": "Candidate extraction of C190 article 6's equality and non-discrimination obligation for Members. An employer's duties cannot be determined from this excerpt alone.",
+      "attributed_to": "actor-ilc",
+      "reported_by": null,
+      "basis": "source_assertion",
+      "review_state": "candidate",
+      "authority": "International labour convention; direct text verification pending",
+      "modality": "shall",
+      "document_stage": "adopted_text",
+      "implementation": "not_assessed",
+      "scope": "No employer, jurisdiction or employee facts supplied; teaching-only policy application checklist",
+      "evidence": [
+        {
+          "evidence_id": "evidence-c190-equality",
+          "quote": "Each Member shall adopt laws, regulations and policies ensuring the right to equality and non-discrimination in employment and occupation"
+        }
+      ],
+      "lenses": [
+        "hr_policy"
+      ],
+      "concept_ids": [
+        "concept-equality"
+      ],
+      "time": {
+        "occurred_on": null,
+        "valid_from": null,
+        "valid_to": null,
+        "validity_status": "not_assessed",
+        "recorded_at": "2026-11-07T20:21:14Z"
+      },
+      "applicability": {
+        "status": "not_assessed",
+        "jurisdiction": null,
+        "ratification_checked": false,
+        "national_law_checked": false,
+        "worker_scope_checked": false,
+        "organization_policy_checked": false
+      },
+      "human_reviewed": false
+    }
+  ],
+  "lenses": {
+    "policy_analysis": {
+      "purpose": "Separate political instrument wording, actor attribution, legal modality, document status and implementation evidence.",
+      "required_fields": [
+        "authority",
+        "modality",
+        "document_stage",
+        "implementation",
+        "evidence",
+        "time"
+      ],
+      "review_questions": [
+        "Which actor is speaking, and through which instrument?",
+        "Is this an adopted wording, a proposal or a separately observed implementation?",
+        "What current evidence or competing interpretation is missing?"
+      ]
+    },
+    "mediation": {
+      "purpose": "Prepare consent, interests, constraints and ownership questions without presuming agreement.",
+      "required_fields": [
+        "attributed_to",
+        "primitive",
+        "scope",
+        "evidence",
+        "time"
+      ],
+      "review_questions": [
+        "Whose consent and representation have actually been evidenced, on what date?",
+        "Which affected groups and competing interests need direct consultation?",
+        "Does guidance support a question rather than a conclusion about this process?"
+      ]
+    },
+    "media_narrative": {
+      "purpose": "Keep publisher, byline, attributed speaker, selected wording and analyst framing separate.",
+      "required_fields": [
+        "reported_by",
+        "attributed_to",
+        "basis",
+        "evidence",
+        "review_state"
+      ],
+      "review_questions": [
+        "Is this the outlet's wording or a statement attributed to somebody else?",
+        "What matched outlets, time windows and omitted perspectives should be sampled?",
+        "What evidence supports any ownership or influence claim? No blanket bias score."
+      ]
+    },
+    "hr_policy": {
+      "purpose": "Identify evidence required for jurisdiction-specific policy review; no automated legal applicability.",
+      "required_fields": [
+        "authority",
+        "modality",
+        "scope",
+        "applicability",
+        "evidence"
+      ],
+      "review_questions": [
+        "Has the instrument text been directly verified?",
+        "What ratification, domestic law, worker scope and organizational rules apply?",
+        "Who will review the policy and test accessible reporting/remedy provisions?"
+      ]
+    }
+  },
+  "recipes": {
+    "resolution_brief": {
+      "lens": "policy_analysis",
+      "required_evidence_fields": [
+        "document_symbol",
+        "operative_paragraph",
+        "speaker",
+        "modality",
+        "published",
+        "implementation_evidence"
+      ],
+      "output": "Attributed instrument brief, explicit implementation gaps",
+      "review_questions": [
+        "Do legal verbs survive paraphrase?",
+        "Are adoption and execution kept separate?"
+      ]
+    },
+    "communique_comparison": {
+      "lens": "policy_analysis",
+      "required_evidence_fields": [
+        "issuer",
+        "original_document_on",
+        "carrier_publication",
+        "paragraph",
+        "review_state"
+      ],
+      "output": "Side-by-side statements with wording differences and evidence links",
+      "review_questions": [
+        "Is the same clause compared?",
+        "Does a later endorsement alter wording or merely reference it?"
+      ]
+    },
+    "mediation_preparation": {
+      "lens": "mediation",
+      "required_evidence_fields": [
+        "party_roles",
+        "dated_consent_evidence",
+        "interests",
+        "constraints",
+        "inclusion_gaps"
+      ],
+      "output": "Consent and representation questions for human preparation",
+      "review_questions": [
+        "Which parties have not been consulted?",
+        "Can any claimed mandate or consent have changed?"
+      ]
+    },
+    "media_framing_review": {
+      "lens": "media_narrative",
+      "required_evidence_fields": [
+        "publisher",
+        "byline",
+        "publication_date",
+        "attributed_speaker",
+        "headline",
+        "selection_method",
+        "ownership_evidence"
+      ],
+      "output": "Annotated matched sample with rival frame interpretations",
+      "review_questions": [
+        "Is the sample sufficient for a claim beyond this headline?",
+        "Are motives and ownership effects supported, rather than assumed?"
+      ]
+    },
+    "hr_policy_application": {
+      "lens": "hr_policy",
+      "required_evidence_fields": [
+        "official_text",
+        "jurisdiction",
+        "ratification_status",
+        "national_law",
+        "worker_scope",
+        "organization_rules"
+      ],
+      "output": "Draft applicability checklist and policy questions",
+      "review_questions": [
+        "Has a qualified reviewer checked local applicability?",
+        "Which accessibility, privacy and retaliation issues need organization-specific design?"
+      ]
+    }
+  },
+  "relations": [
+    {
+      "subject": "source-2254",
+      "predicate": "references",
+      "object": "source-geneva"
+    },
+    {
+      "subject": "source-reuters",
+      "predicate": "reports_on",
+      "object": "source-2254"
+    }
+  ],
+  "limits": [
+    "Four directly checked sources and one indexed candidate; selected excerpts, not a full political or media corpus.",
+    "Source verification by an automated research agent is distinct from human review; no human approval is asserted.",
+    "Default lens queries exclude candidates and analyst drafts. Source assertions may be normative or indirectly attributed; source_verified does not certify real-world truth.",
+    "Published-by filters source publication dates only, not a historical knowledge snapshot, legal validity or present applicability.",
+    "No live D1 connection, automatic legal conclusion, motive diagnosis, outlet-wide bias score, full conflict ontology or measured model-quality gain is implemented."
+  ]
+}

@@ -41,5 +41,7 @@ Thumbs.db
 # Credentials
 *.json
 !package.json
+!examples/policy_capsule.json
+!examples/political_semantics/*.json
 credentials/
 service-account*.json
