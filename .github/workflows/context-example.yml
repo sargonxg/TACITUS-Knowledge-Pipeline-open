@@ -15,6 +15,7 @@ jobs:
       - run: python examples/political_semantics/semantic_layer.py validate
       - run: python examples/political_semantics/semantic_layer.py export --out /tmp/political-demo.jsonld
       - run: python examples/political_semantics/semantic_layer.py export-sql --out /tmp/political-demo.sql
+      - run: python examples/political_semantics/context_packet.py --lens mediation --question "consent inclusion" --budget-bytes 8000 --packet-only --out /tmp/political-packet.json
       - run: python examples/political_semantics/build_explorer.py --out /tmp/political-explorer
       - uses: actions/upload-artifact@v4
         with:
