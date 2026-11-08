@@ -1,0 +1,2 @@
+# These retained outputs are hashed as exact UTF-8 bytes, including line endings.
+examples/political_semantics/worked_tasks/** -text

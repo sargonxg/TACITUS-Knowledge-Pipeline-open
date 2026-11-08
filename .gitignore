@@ -43,5 +43,7 @@ Thumbs.db
 !package.json
 !examples/policy_capsule.json
 !examples/political_semantics/*.json
+!examples/political_semantics/worked_tasks/*.json
+/task-output/
 credentials/
 service-account*.json

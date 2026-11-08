@@ -1,0 +1,679 @@
+[
+  {
+    "budget_bytes": 4000,
+    "eligible_records": 5,
+    "omitted": [
+      {
+        "id": "record-communique-date",
+        "reason": "budget"
+      },
+      {
+        "id": "record-endorsement",
+        "reason": "budget"
+      },
+      {
+        "id": "record-frame-hypothesis",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-geneva-consent",
+        "reason": "budget"
+      },
+      {
+        "id": "record-headline",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-headline-frame",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-hr-equality",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-mediation-consent",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-national-ownership",
+        "reason": "budget"
+      },
+      {
+        "id": "record-reported-position",
+        "reason": "budget"
+      }
+    ],
+    "packet_bytes": 1699,
+    "retained_primitives": [],
+    "retained_records": 0,
+    "task": "resolution_brief"
+  },
+  {
+    "budget_bytes": 8000,
+    "eligible_records": 5,
+    "omitted": [
+      {
+        "id": "record-endorsement",
+        "reason": "budget"
+      },
+      {
+        "id": "record-frame-hypothesis",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-headline",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-headline-frame",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-hr-equality",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-mediation-consent",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-national-ownership",
+        "reason": "budget"
+      },
+      {
+        "id": "record-reported-position",
+        "reason": "budget"
+      }
+    ],
+    "packet_bytes": 5907,
+    "retained_primitives": [
+      "Constraint",
+      "Event"
+    ],
+    "retained_records": 2,
+    "task": "resolution_brief"
+  },
+  {
+    "budget_bytes": 16000,
+    "eligible_records": 5,
+    "omitted": [
+      {
+        "id": "record-frame-hypothesis",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-headline",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-headline-frame",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-hr-equality",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-mediation-consent",
+        "reason": "outside_lens"
+      }
+    ],
+    "packet_bytes": 13001,
+    "retained_primitives": [
+      "Claim",
+      "Commitment",
+      "Constraint",
+      "Event",
+      "Interest"
+    ],
+    "retained_records": 5,
+    "task": "resolution_brief"
+  },
+  {
+    "budget_bytes": 4000,
+    "eligible_records": 5,
+    "omitted": [
+      {
+        "id": "record-communique-date",
+        "reason": "budget"
+      },
+      {
+        "id": "record-endorsement",
+        "reason": "budget"
+      },
+      {
+        "id": "record-frame-hypothesis",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-geneva-consent",
+        "reason": "budget"
+      },
+      {
+        "id": "record-headline",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-headline-frame",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-hr-equality",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-mediation-consent",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-national-ownership",
+        "reason": "budget"
+      },
+      {
+        "id": "record-reported-position",
+        "reason": "budget"
+      }
+    ],
+    "packet_bytes": 1703,
+    "retained_primitives": [],
+    "retained_records": 0,
+    "task": "communique_comparison"
+  },
+  {
+    "budget_bytes": 8000,
+    "eligible_records": 5,
+    "omitted": [
+      {
+        "id": "record-communique-date",
+        "reason": "budget"
+      },
+      {
+        "id": "record-frame-hypothesis",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-headline",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-headline-frame",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-hr-equality",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-mediation-consent",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-national-ownership",
+        "reason": "budget"
+      },
+      {
+        "id": "record-reported-position",
+        "reason": "budget"
+      }
+    ],
+    "packet_bytes": 7032,
+    "retained_primitives": [
+      "Commitment",
+      "Constraint"
+    ],
+    "retained_records": 2,
+    "task": "communique_comparison"
+  },
+  {
+    "budget_bytes": 16000,
+    "eligible_records": 5,
+    "omitted": [
+      {
+        "id": "record-frame-hypothesis",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-headline",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-headline-frame",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-hr-equality",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-mediation-consent",
+        "reason": "outside_lens"
+      }
+    ],
+    "packet_bytes": 13005,
+    "retained_primitives": [
+      "Claim",
+      "Commitment",
+      "Constraint",
+      "Event",
+      "Interest"
+    ],
+    "retained_records": 5,
+    "task": "communique_comparison"
+  },
+  {
+    "budget_bytes": 4000,
+    "eligible_records": 5,
+    "omitted": [
+      {
+        "id": "record-communique-date",
+        "reason": "budget"
+      },
+      {
+        "id": "record-endorsement",
+        "reason": "budget"
+      },
+      {
+        "id": "record-frame-hypothesis",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-geneva-consent",
+        "reason": "budget"
+      },
+      {
+        "id": "record-headline",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-headline-frame",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-hr-equality",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-mediation-consent",
+        "reason": "budget"
+      },
+      {
+        "id": "record-national-ownership",
+        "reason": "budget"
+      },
+      {
+        "id": "record-reported-position",
+        "reason": "outside_lens"
+      }
+    ],
+    "packet_bytes": 1661,
+    "retained_primitives": [],
+    "retained_records": 0,
+    "task": "mediation_preparation"
+  },
+  {
+    "budget_bytes": 8000,
+    "eligible_records": 5,
+    "omitted": [
+      {
+        "id": "record-communique-date",
+        "reason": "budget"
+      },
+      {
+        "id": "record-endorsement",
+        "reason": "budget"
+      },
+      {
+        "id": "record-frame-hypothesis",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-headline",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-headline-frame",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-hr-equality",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-national-ownership",
+        "reason": "budget"
+      },
+      {
+        "id": "record-reported-position",
+        "reason": "outside_lens"
+      }
+    ],
+    "packet_bytes": 7037,
+    "retained_primitives": [
+      "Claim",
+      "Constraint"
+    ],
+    "retained_records": 2,
+    "task": "mediation_preparation"
+  },
+  {
+    "budget_bytes": 16000,
+    "eligible_records": 5,
+    "omitted": [
+      {
+        "id": "record-frame-hypothesis",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-headline",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-headline-frame",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-hr-equality",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-reported-position",
+        "reason": "outside_lens"
+      }
+    ],
+    "packet_bytes": 12620,
+    "retained_primitives": [
+      "Claim",
+      "Commitment",
+      "Constraint",
+      "Event",
+      "Interest"
+    ],
+    "retained_records": 5,
+    "task": "mediation_preparation"
+  },
+  {
+    "budget_bytes": 4000,
+    "eligible_records": 2,
+    "omitted": [
+      {
+        "id": "record-communique-date",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-endorsement",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-frame-hypothesis",
+        "reason": "review_required"
+      },
+      {
+        "id": "record-geneva-consent",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-headline",
+        "reason": "budget"
+      },
+      {
+        "id": "record-headline-frame",
+        "reason": "review_required"
+      },
+      {
+        "id": "record-hr-equality",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-mediation-consent",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-national-ownership",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-reported-position",
+        "reason": "budget"
+      }
+    ],
+    "packet_bytes": 1683,
+    "retained_primitives": [],
+    "retained_records": 0,
+    "task": "media_framing_review"
+  },
+  {
+    "budget_bytes": 8000,
+    "eligible_records": 2,
+    "omitted": [
+      {
+        "id": "record-communique-date",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-endorsement",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-frame-hypothesis",
+        "reason": "review_required"
+      },
+      {
+        "id": "record-geneva-consent",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-headline-frame",
+        "reason": "review_required"
+      },
+      {
+        "id": "record-hr-equality",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-mediation-consent",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-national-ownership",
+        "reason": "outside_lens"
+      }
+    ],
+    "packet_bytes": 6252,
+    "retained_primitives": [
+      "Claim"
+    ],
+    "retained_records": 2,
+    "task": "media_framing_review"
+  },
+  {
+    "budget_bytes": 16000,
+    "eligible_records": 2,
+    "omitted": [
+      {
+        "id": "record-communique-date",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-endorsement",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-frame-hypothesis",
+        "reason": "review_required"
+      },
+      {
+        "id": "record-geneva-consent",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-headline-frame",
+        "reason": "review_required"
+      },
+      {
+        "id": "record-hr-equality",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-mediation-consent",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-national-ownership",
+        "reason": "outside_lens"
+      }
+    ],
+    "packet_bytes": 6252,
+    "retained_primitives": [
+      "Claim"
+    ],
+    "retained_records": 2,
+    "task": "media_framing_review"
+  },
+  {
+    "budget_bytes": 4000,
+    "eligible_records": 1,
+    "omitted": [
+      {
+        "id": "record-communique-date",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-endorsement",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-frame-hypothesis",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-geneva-consent",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-headline",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-headline-frame",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-hr-equality",
+        "reason": "budget"
+      },
+      {
+        "id": "record-mediation-consent",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-national-ownership",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-reported-position",
+        "reason": "outside_lens"
+      }
+    ],
+    "packet_bytes": 1656,
+    "retained_primitives": [],
+    "retained_records": 0,
+    "task": "hr_policy_application"
+  },
+  {
+    "budget_bytes": 8000,
+    "eligible_records": 1,
+    "omitted": [
+      {
+        "id": "record-communique-date",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-endorsement",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-frame-hypothesis",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-geneva-consent",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-headline",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-headline-frame",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-mediation-consent",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-national-ownership",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-reported-position",
+        "reason": "outside_lens"
+      }
+    ],
+    "packet_bytes": 5530,
+    "retained_primitives": [
+      "Constraint"
+    ],
+    "retained_records": 1,
+    "task": "hr_policy_application"
+  },
+  {
+    "budget_bytes": 16000,
+    "eligible_records": 1,
+    "omitted": [
+      {
+        "id": "record-communique-date",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-endorsement",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-frame-hypothesis",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-geneva-consent",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-headline",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-headline-frame",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-mediation-consent",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-national-ownership",
+        "reason": "outside_lens"
+      },
+      {
+        "id": "record-reported-position",
+        "reason": "outside_lens"
+      }
+    ],
+    "packet_bytes": 5530,
+    "retained_primitives": [
+      "Constraint"
+    ],
+    "retained_records": 1,
+    "task": "hr_policy_application"
+  }
+]

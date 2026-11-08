@@ -1,0 +1,97 @@
+{
+  "files": {
+    "budget-comparison.json": {
+      "bytes": 14366,
+      "sha256": "1eef7c5c056ca9505cc36598a3aa1ab1a5c1125a606229ac08db12a96e721bd2"
+    },
+    "communique_comparison.inspection.json": {
+      "bytes": 10567,
+      "sha256": "afa9931c4a5434609ddff69f7f14c494ab12ad789cc62ce4cf82d30fc3e9b636"
+    },
+    "communique_comparison.json": {
+      "bytes": 12048,
+      "sha256": "535f1c4737aa85ffcd8615612fb693b2044a987796f6f8478abf67821d914db4"
+    },
+    "communique_comparison.md": {
+      "bytes": 3841,
+      "sha256": "47d9de519a654e12903aa6853e5e0fa6c5c57b039e7a9cf4d2ea6b27b9d516c7"
+    },
+    "communique_comparison.packet.json": {
+      "bytes": 7032,
+      "sha256": "af94fee134c380701e13497a2b69b9d9620b1d6bb20fa9aeaec65570621cfe2a"
+    },
+    "hr_policy_application.inspection.json": {
+      "bytes": 8367,
+      "sha256": "42bd4b4b1b038b71a939cc7684fc516360e63f70b808fb902ca4566221d1188b"
+    },
+    "hr_policy_application.json": {
+      "bytes": 9836,
+      "sha256": "11ee5f21fad7963b710958061fb1b17f35eac73a0339fdfb575f7443d3af8123"
+    },
+    "hr_policy_application.md": {
+      "bytes": 3106,
+      "sha256": "084c402d756ead8b3f1e27cb836ac6a442fd58234f2e8c7aa07dd390a4635e49"
+    },
+    "hr_policy_application.packet.json": {
+      "bytes": 5530,
+      "sha256": "3bc22c22a7cc47bc7ffb84961f86cb023ce39434f53555e4b3417da845493c4e"
+    },
+    "media_framing_review.inspection.json": {
+      "bytes": 9641,
+      "sha256": "58ad9613d3c60e073cf4a8672b3a5b88e6a66780e2bed1bea8e496d6619ccb0e"
+    },
+    "media_framing_review.json": {
+      "bytes": 11301,
+      "sha256": "98b5b91119975a4989aaf11db150ddf81f26d7203662ea5eb02557f387815be8"
+    },
+    "media_framing_review.md": {
+      "bytes": 4018,
+      "sha256": "7c93e547c6ce451ec39dd28d30b742917dae33988e2331f751cd4829d848122b"
+    },
+    "media_framing_review.packet.json": {
+      "bytes": 6252,
+      "sha256": "8801ac83dd4ed22afff19dd4a59acdd8fb9f7c728b5e2f054de68a977e2c52dc"
+    },
+    "mediation_preparation.inspection.json": {
+      "bytes": 10594,
+      "sha256": "3a15303f2069744d558860c9b8f202c3c1c49c917230f7d68b7c3b5d2f9c2de0"
+    },
+    "mediation_preparation.json": {
+      "bytes": 12071,
+      "sha256": "1dc9bbc9f287162ee4bc9d20d126e448e2f7f8b9ebe948d4f7e8467bce5b2a02"
+    },
+    "mediation_preparation.md": {
+      "bytes": 3922,
+      "sha256": "b857be0c5ded6c8c050d72c58ce723d1425d6e9765c6d4297c215ce7495c5314"
+    },
+    "mediation_preparation.packet.json": {
+      "bytes": 7037,
+      "sha256": "525f82e88f782edca3867a4cb0add9fe5ef99a4d4dbe13b611720789a2996e6e"
+    },
+    "resolution_brief.inspection.json": {
+      "bytes": 9173,
+      "sha256": "846d059d0bf9800af53d7c1256e5e9815908535efc94e100fe02d0a86da3ebe7"
+    },
+    "resolution_brief.json": {
+      "bytes": 10665,
+      "sha256": "0c1c980efbb57e96b70384a40fbbcfb4a7b45335a46d05849b848afde79f94ac"
+    },
+    "resolution_brief.md": {
+      "bytes": 3728,
+      "sha256": "df0bd176d98870a87e98618821bb1db4a1ac23b3ee0217c1d1d472d25ffe7904"
+    },
+    "resolution_brief.packet.json": {
+      "bytes": 5907,
+      "sha256": "f7a75bf0fed11533b8b1640791cd3eb4ec534b2322bff4d089f3a66d71b63d5e"
+    }
+  },
+  "format": "political-task-package/1",
+  "scope": "File integrity and reproducible selection; no independent truth or human approval implied.",
+  "tasks": [
+    "resolution_brief",
+    "communique_comparison",
+    "mediation_preparation",
+    "media_framing_review",
+    "hr_policy_application"
+  ]
+}
