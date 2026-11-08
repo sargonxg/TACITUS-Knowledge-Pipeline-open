@@ -26,6 +26,22 @@
 
 ## 30-second read
 
+### Prepare a concrete policy task without an API account
+
+Run all five [offline task workflows](docs/POLITICAL_TASK_WORKFLOWS.md): resolution
+briefs, communiqué comparisons, mediation preparation, media framing review and
+HR applicability review. Inspect exact source passages and unresolved questions,
+then verify the saved outputs against the retained corpus.
+
+```sh
+python examples/political_semantics/task_workflows.py --out task-output
+python examples/political_semantics/task_workflows.py --verify task-output
+```
+
+Use a fresh output directory. The examples preserve analyst interpretation as
+unwritten and approval as `not_reviewed`. Byte comparisons report omissions;
+they do not establish better reasoning or cheaper inference.
+
 ### Open the evidence in your browser
 
 ```bash
