@@ -17,8 +17,15 @@ jobs:
       - run: python examples/political_semantics/semantic_layer.py export-sql --out /tmp/political-demo.sql
       - run: python examples/political_semantics/context_packet.py --lens mediation --question "consent inclusion" --budget-bytes 8000 --packet-only --out /tmp/political-packet.json
       - run: python examples/political_semantics/build_explorer.py --out /tmp/political-explorer
+      - run: python examples/political_semantics/task_workflows.py --out /tmp/political-task-workflows
+      - run: python examples/political_semantics/task_workflows.py --verify /tmp/political-task-workflows
       - uses: actions/upload-artifact@v4
         with:
           name: offline-political-evidence-explorer
           path: /tmp/political-explorer/index.html
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: offline-policy-task-workflows
+          path: /tmp/political-task-workflows
           retention-days: 7

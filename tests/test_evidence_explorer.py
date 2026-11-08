@@ -60,7 +60,7 @@ class EvidenceExplorerTests(unittest.TestCase):
 
     def test_payload_preserves_real_sources_review_states_and_exported_rows(self):
         with tempfile.TemporaryDirectory() as folder:
-            page = Page(build(Path(folder)).read_text())
+            page = Page(build(Path(folder)).read_text(encoding='utf-8'))
             data = json.loads(page.scripts[0]['text'])
             self.assertEqual(data['corpus'], load())
             self.assertEqual(5, len(data['corpus']['sources']))
@@ -71,7 +71,7 @@ class EvidenceExplorerTests(unittest.TestCase):
 
     def test_csp_hashes_match_exact_executable_and_style_bytes(self):
         with tempfile.TemporaryDirectory() as folder:
-            page = Page(build(Path(folder)).read_text())
+            page = Page(build(Path(folder)).read_text(encoding='utf-8'))
             for text in [page.scripts[1]['text'], page.styles[0]['text']]:
                 token = 'sha256-' + base64.b64encode(hashlib.sha256(text.encode()).digest()).decode()
                 self.assertIn("'" + token + "'", page.csp)
@@ -85,8 +85,8 @@ class EvidenceExplorerTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
             source = root / 'selection.json'
-            source.write_text(json.dumps(corpus))
-            html = build(root / 'out', source).read_text()
+            source.write_text(json.dumps(corpus), encoding='utf-8')
+            html = build(root / 'out', source).read_text(encoding='utf-8')
             page = Page(html)
             self.assertEqual(2, len(page.scripts))
             self.assertEqual([], page.external_resources)
