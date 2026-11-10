@@ -1,0 +1,149 @@
+{
+  "format": "tacitus-research-catalog/1",
+  "items": [
+    {
+      "id": "rag",
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "authors": "Lewis et al.",
+      "year": "2020",
+      "url": "https://arxiv.org/abs/2005.11401",
+      "why_read": "Separate model parameters from a retrievable evidence collection.",
+      "implementation_boundary": "The source register and bounded capsule are explicit non-parametric context. This reference does not implement the paper’s trained retriever.",
+      "reviewed_on": "2026-11-10",
+      "review_scope": "Primary landing page and abstract; not a replication or exhaustive paper review.",
+      "rights": "Citation metadata and authored notes only; paper rights remain with authors/publisher."
+    },
+    {
+      "id": "lost-middle",
+      "title": "Lost in the Middle: How Language Models Use Long Contexts",
+      "authors": "Liu et al.",
+      "year": "2023",
+      "url": "https://arxiv.org/abs/2307.03172",
+      "why_read": "Evidence placement can affect retrieval from a long prompt.",
+      "implementation_boundary": "Bounded context and source selection need positional stress tests; shorter context alone is not an answer-quality metric.",
+      "reviewed_on": "2026-11-10",
+      "review_scope": "Primary landing page and abstract; not a replication or exhaustive paper review.",
+      "rights": "Citation metadata and authored notes only; paper rights remain with authors/publisher."
+    },
+    {
+      "id": "alce",
+      "title": "Enabling Large Language Models to Generate Text with Citations",
+      "authors": "Gao et al.",
+      "year": "2023",
+      "url": "https://aclanthology.org/2023.emnlp-main.398/",
+      "why_read": "Evaluate fluency, correctness and citation quality separately.",
+      "implementation_boundary": "generation.py checks reference integrity. It does not implement the paper’s entailment or full citation-quality evaluator.",
+      "reviewed_on": "2026-11-10",
+      "review_scope": "Primary landing page and abstract; not a replication or exhaustive paper review.",
+      "rights": "Citation metadata and authored notes only; paper rights remain with authors/publisher."
+    },
+    {
+      "id": "ais",
+      "title": "Measuring Attribution in Natural Language Generation Models",
+      "authors": "Rashkin et al.",
+      "year": "2023",
+      "url": "https://aclanthology.org/2023.cl-4.2/",
+      "why_read": "Attribution must be checked against an identified source.",
+      "implementation_boundary": "The workbench exposes each source passage for review; a valid evidence ID does not prove the associated paraphrase.",
+      "reviewed_on": "2026-11-10",
+      "review_scope": "Primary landing page and abstract; not a replication or exhaustive paper review.",
+      "rights": "Citation metadata and authored notes only; paper rights remain with authors/publisher."
+    },
+    {
+      "id": "factscore",
+      "title": "FActScore: Fine-grained Atomic Evaluation of Factual Precision in Long Form Text Generation",
+      "authors": "Min et al.",
+      "year": "2023",
+      "url": "https://arxiv.org/abs/2305.14251",
+      "why_read": "A long answer can mix supported and unsupported claims.",
+      "implementation_boundary": "The draft uses individual cited items. No FActScore model judge or calibrated factuality score is claimed.",
+      "reviewed_on": "2026-11-10",
+      "review_scope": "Primary landing page and abstract; not a replication or exhaustive paper review.",
+      "rights": "Citation metadata and authored notes only; paper rights remain with authors/publisher."
+    },
+    {
+      "id": "ragas",
+      "title": "Ragas: Automated Evaluation of Retrieval Augmented Generation",
+      "authors": "Es et al.",
+      "year": "2023",
+      "url": "https://arxiv.org/abs/2309.15217",
+      "why_read": "Retrieval and generation require distinct evaluation dimensions.",
+      "implementation_boundary": "Usage, reference checks and proposed domain rubrics are separate. This code does not run Ragas.",
+      "reviewed_on": "2026-11-10",
+      "review_scope": "Primary landing page and abstract; not a replication or exhaustive paper review.",
+      "rights": "Citation metadata and authored notes only; paper rights remain with authors/publisher."
+    },
+    {
+      "id": "react",
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "authors": "Yao et al.",
+      "year": "2022",
+      "url": "https://arxiv.org/abs/2210.03629",
+      "why_read": "Interleave model decisions with task-specific evidence access.",
+      "implementation_boundary": "agent.py allows inspect_evidence and draft under a finite step budget. It records actions, not hidden chain of thought, and does not reproduce the ReAct benchmark.",
+      "reviewed_on": "2026-11-10",
+      "review_scope": "Primary landing page and abstract; not a replication or exhaustive paper review.",
+      "rights": "Citation metadata and authored notes only; paper rights remain with authors/publisher."
+    },
+    {
+      "id": "self-rag",
+      "title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+      "authors": "Asai et al.",
+      "year": "2023",
+      "url": "https://arxiv.org/abs/2310.11511",
+      "why_read": "Retrieval and reflection can be made conditional on the task.",
+      "implementation_boundary": "A learned reflection policy is a research option, not implemented by the current fixed tool contract.",
+      "reviewed_on": "2026-11-10",
+      "review_scope": "Primary landing page and abstract; not a replication or exhaustive paper review.",
+      "rights": "Citation metadata and authored notes only; paper rights remain with authors/publisher."
+    },
+    {
+      "id": "graphrag",
+      "title": "From Local to Global: A Graph RAG Approach to Query-Focused Summarization",
+      "authors": "Edge et al.",
+      "year": "2024",
+      "url": "https://arxiv.org/abs/2404.16130",
+      "why_read": "Global corpus questions differ from retrieving one supporting passage.",
+      "implementation_boundary": "The present graph preserves provenance; it does not implement GraphRAG community summaries or establish corpus-wide completeness.",
+      "reviewed_on": "2026-11-10",
+      "review_scope": "Primary landing page and abstract; not a replication or exhaustive paper review.",
+      "rights": "Citation metadata and authored notes only; paper rights remain with authors/publisher."
+    },
+    {
+      "id": "hipporag",
+      "title": "HippoRAG: Neurobiologically Inspired Long-Term Memory for Large Language Models",
+      "authors": "Gutiérrez et al.",
+      "year": "2024",
+      "url": "https://arxiv.org/abs/2405.14831",
+      "why_read": "Knowledge graphs and graph-based retrieval can support multi-hop questions.",
+      "implementation_boundary": "Graph retrieval is an experimental extension. The local reference uses an authored semantic layer, not Personalized PageRank.",
+      "reviewed_on": "2026-11-10",
+      "review_scope": "Primary landing page and abstract; not a replication or exhaustive paper review.",
+      "rights": "Citation metadata and authored notes only; paper rights remain with authors/publisher."
+    },
+    {
+      "id": "raptor",
+      "title": "RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval",
+      "authors": "Sarthi et al.",
+      "year": "2024",
+      "url": "https://arxiv.org/abs/2401.18059",
+      "why_read": "Multiple levels of summarization can support document retrieval.",
+      "implementation_boundary": "Candidate research for large corpora. Summaries would need their own source lineage; no recursive summarizer is implemented here.",
+      "reviewed_on": "2026-11-10",
+      "review_scope": "Primary landing page and abstract; not a replication or exhaustive paper review.",
+      "rights": "Citation metadata and authored notes only; paper rights remain with authors/publisher."
+    },
+    {
+      "id": "evidence-survey",
+      "title": "Attribution, Citation, and Quotation: A Survey of Evidence-based Text Generation with Large Language Models",
+      "authors": "Schreieder, Schopf and Färber",
+      "year": "2026",
+      "url": "https://aclanthology.org/2026.acl-long.1430/",
+      "why_read": "Treat attribution, citation and quotation as distinct evidence operations.",
+      "implementation_boundary": "The workflow separates exact quoted evidence, citation identity checks and an unverified model paraphrase.",
+      "reviewed_on": "2026-11-10",
+      "review_scope": "Primary landing page and abstract; not a replication or exhaustive paper review.",
+      "rights": "Citation metadata and authored notes only; paper rights remain with authors/publisher."
+    }
+  ]
+}

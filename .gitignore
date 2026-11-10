@@ -54,3 +54,5 @@ service-account*.json
 !reference-pipeline/benchmarks/*.json
 !reference-pipeline/examples/assessment/collection.json
 !reference-pipeline/examples/assessment/expected/*.json
+
+!research/catalog.json

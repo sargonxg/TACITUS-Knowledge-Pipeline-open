@@ -159,7 +159,7 @@ def build(data, ontology, layer, *, question, budget=24000):
                 old = row.get(e["relation"])
                 row[e["relation"]] = value if old is None else old+[value] if isinstance(old, list) else [old, value]
         jsonld["@graph"].append(row)
-    workflow = {"format": "tacitus-readonly-workflow/1", "status": "reference_plan_not_agent_execution", "stages": ["verify_sources", "validate_ontology", "apply_semantic_layer", "prepare_context", "render_review_sheet", "human_review"], "external_actions": [], "model_calls": 0, "stop_on": ["source_mismatch", "lost_qualification", "missing_reference", "required_evidence_over_budget"], "future_work": "Provider adapters, expert review and comparative model-output evaluation."}
+    workflow = {"format": "tacitus-readonly-workflow/1", "status": "reference_plan_not_agent_execution", "stages": ["verify_sources", "validate_ontology", "apply_semantic_layer", "prepare_context", "render_review_sheet", "human_review"], "external_actions": [], "model_calls": 0, "required_statement_ids": sorted(required), "stop_on": ["source_mismatch", "lost_qualification", "missing_reference", "required_evidence_over_budget"], "future_work": "Provider adapters, expert review and comparative model-output evaluation."}
     brief = "# Evidence review sheet\n\n"+question.strip()+"\n\nAuthored mappings; source and applicability review required.\n\n"
     for s in capsule["statements"]:
         brief += "## "+s["id"]+"\n\n"+s["interpretation"]+"\n\n> "+s["quote"]+"\n\nModality: "+s["modality"]+". Review: proposed.\n\n"+"\n".join("- Qualification: "+q["text"] for q in s["qualifiers"])+"\n\nSource: "+sources[s["source_id"]]["url"]+"\nVersion: "+s["source_version"]+"\n\n"

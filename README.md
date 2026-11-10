@@ -27,6 +27,16 @@ The example uses original adopted EU AI Act and GDPR passages. It preserves the 
 
 Open `build/assessment/brief.md`, then inspect `capsule.json`, `graph.json`, `graph.jsonld`, `workflow.json` and `receipt.json`. Required evidence stays whole; an insufficient byte budget is refused. Source text is reference data, not action authority.
 
+## Generate and inspect a real draft
+
+The [Syria policy workflow](reference-pipeline/docs/model-workflows.md) adds explicit cloud/local model adapters and a bounded evidence-inspection agent. The model can inspect selected evidence IDs, then propose a cited draft. Code retains exact passages and qualifications; human approval is never granted automatically.
+
+[Actual two-step Cloudflare run](reference-pipeline/examples/syria-negotiation/agent-step-2) · [Flat versus structured recordings](reference-pipeline/examples/syria-negotiation) · [Research index: 12 papers](research/README.md)
+
+![Actual Syria briefing inspected in TACITUS Workbench; recorded cloud run, human review pending](assets/showcase/policy-workflow-desktop.png)
+
+The screenshot shows a recorded run in the separate [Workbench](https://github.com/sargonxg/tacitus-workbench). It does not imply a live hosted PRAXIS bridge. Both flat and structured drafts resolve their citations; structured input used more total tokens in this one-task comparison.
+
 ## Inspect or change a layer
 
 | Part | Source and guide |
@@ -47,7 +57,7 @@ PYTHONPATH=src python -m unittest discover -s tests -v
 python benchmarks/run.py
 ```
 
-The 15 tests check quotation tampering, source editions, lost conditions, ontology constraints, dangling references, proposed review state, duplicate editions, Unicode, context limits and explicit overwrite. GitHub Actions runs this path without credentials.
+The reference tests check quotation tampering, source editions, lost conditions, ontology constraints, dangling references, proposed review state, duplicate editions, Unicode, context limits and explicit overwrite. A GitHub Actions workflow is supplied for the credential-free checks; no hosted CI result is claimed for this update.
 
 [Assembly measurements](reference-pipeline/benchmarks/assembly-results.json) test evidence preservation and byte limits. They are not model-quality or token-savings measurements. The [model-output evaluation plan](reference-pipeline/benchmarks/model-evaluation-plan.json) remains work in progress: held-out tasks, matched evidence, blinded domain review and complete costs.
 

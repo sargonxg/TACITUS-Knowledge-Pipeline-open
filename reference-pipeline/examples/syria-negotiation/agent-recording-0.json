@@ -1,0 +1,65 @@
+{
+  "receipt": {
+    "request_sha256": "f6eb4fb5f0f758847ce9d01e748878a523e8e2b45206270b8b0d61755e901290",
+    "provider": "cloudflare",
+    "model_requested": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+    "transport": "cloudflare_connector_observed",
+    "executed_on": "2026-11-10",
+    "elapsed_ms": 1558
+  },
+  "response": {
+    "result": {
+      "id": "chatcmpl-90c0a841-b94d-46c4-a3b4-52c03902666b",
+      "object": "chat.completion",
+      "created": 1794351909,
+      "model": "@cf/meta/llama-3.3-70b-json",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"inspect_evidence\", \"statement_ids\": [\"ceasefire-link\", \"convene-talks\", \"governance-process\"]}",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "usage": {
+        "prompt_tokens": 473,
+        "completion_tokens": 32,
+        "total_tokens": 505,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 19.167577743530273
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null,
+      "response": {
+        "action": "inspect_evidence",
+        "statement_ids": [
+          "ceasefire-link",
+          "convene-talks",
+          "governance-process"
+        ]
+      },
+      "tool_calls": []
+    },
+    "success": true,
+    "errors": [],
+    "messages": []
+  }
+}

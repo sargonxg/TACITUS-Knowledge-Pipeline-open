@@ -54,3 +54,6 @@ __pycache__/
 !benchmarks/*.json
 !examples/assessment/collection.json
 !examples/assessment/expected/*.json
+
+!examples/syria-negotiation/**/*.json
+!examples/syria-negotiation/*.json

@@ -1,0 +1,111 @@
+{
+  "receipt": {
+    "request_sha256": "d6c75e073ec86cd18513cafc474a3ba9fcaaa270cb0cf921180ca81d9949af7d",
+    "provider": "cloudflare",
+    "model_requested": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+    "transport": "cloudflare_connector_observed",
+    "elapsed_ms": 13635,
+    "executed_on": "2026-11-10"
+  },
+  "response": {
+    "result": {
+      "id": "chatcmpl-5327185c-d0f8-425b-b585-9569520e2802",
+      "object": "chat.completion",
+      "created": 1794351440,
+      "model": "@cf/meta/llama-3.3-70b-json",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"title\": \"Negotiation-Policy Desk Note: Resolution 2254\", \"items\": [{\"text\": \"The Secretary-General was requested to convene representatives of the Syrian government and the opposition to engage in formal negotiations on a political transition process.\", \"evidence_ids\": [\"convene-talks\"]}, {\"text\": \"A nationwide ceasefire in Syria was supported, to come into effect as soon as the representatives of the Syrian government and the opposition have begun initial steps towards a political transition under UN auspices.\", \"evidence_ids\": [\"ceasefire-link\"]}, {\"text\": \"A Syrian-led political process was supported, facilitated by the United Nations, with a target of six months to establish credible, inclusive and non-sectarian governance and set a schedule and process for drafting a new constitution.\", \"evidence_ids\": [\"governance-process\"]}, {\"text\": \"Free and fair elections were supported, pursuant to the new constitution, to be held within 18 months and administered under supervision of the United Nations.\", \"evidence_ids\": [\"governance-process\"]}, {\"text\": \"The resolution sets historical timetables, including a target of early January 2016 for the initiation of talks and 18 months for the holding of elections, but these cannot be inferred as current implementation deadlines.\", \"evidence_ids\": [\"convene-talks\", \"governance-process\"]}, {\"text\": \"The resolution's conditions and support for a political process and ceasefire cannot be inferred as guarantees of successful implementation or as current assessments of the situation in Syria.\", \"evidence_ids\": [\"ceasefire-link\", \"convene-talks\", \"governance-process\"]}], \"questions\": [\"What are the key elements of the negotiation process supported by Resolution 2254?\", \"How do the historical timetables and conditions in the resolution relate to current implementation?\", \"What are the limitations and uncertainties of the resolution's support for a political process and ceasefire?\"], \"limitations\": [\"The resolution's language and support for a political process and ceasefire do not provide guarantees of successful implementation.\", \"The historical timetables and conditions in the resolution cannot be inferred as current implementation deadlines or assessments of the situation in Syria.\", \"The resolution's support for a Syrian-led political process and free and fair elections is subject to various factors and uncertainties, including the cooperation of the Syrian government and opposition.\"]}",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "usage": {
+        "prompt_tokens": 791,
+        "completion_tokens": 489,
+        "total_tokens": 1280,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 121.24392700195312
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null,
+      "response": {
+        "title": "Negotiation-Policy Desk Note: Resolution 2254",
+        "items": [
+          {
+            "text": "The Secretary-General was requested to convene representatives of the Syrian government and the opposition to engage in formal negotiations on a political transition process.",
+            "evidence_ids": [
+              "convene-talks"
+            ]
+          },
+          {
+            "text": "A nationwide ceasefire in Syria was supported, to come into effect as soon as the representatives of the Syrian government and the opposition have begun initial steps towards a political transition under UN auspices.",
+            "evidence_ids": [
+              "ceasefire-link"
+            ]
+          },
+          {
+            "text": "A Syrian-led political process was supported, facilitated by the United Nations, with a target of six months to establish credible, inclusive and non-sectarian governance and set a schedule and process for drafting a new constitution.",
+            "evidence_ids": [
+              "governance-process"
+            ]
+          },
+          {
+            "text": "Free and fair elections were supported, pursuant to the new constitution, to be held within 18 months and administered under supervision of the United Nations.",
+            "evidence_ids": [
+              "governance-process"
+            ]
+          },
+          {
+            "text": "The resolution sets historical timetables, including a target of early January 2016 for the initiation of talks and 18 months for the holding of elections, but these cannot be inferred as current implementation deadlines.",
+            "evidence_ids": [
+              "convene-talks",
+              "governance-process"
+            ]
+          },
+          {
+            "text": "The resolution's conditions and support for a political process and ceasefire cannot be inferred as guarantees of successful implementation or as current assessments of the situation in Syria.",
+            "evidence_ids": [
+              "ceasefire-link",
+              "convene-talks",
+              "governance-process"
+            ]
+          }
+        ],
+        "questions": [
+          "What are the key elements of the negotiation process supported by Resolution 2254?",
+          "How do the historical timetables and conditions in the resolution relate to current implementation?",
+          "What are the limitations and uncertainties of the resolution's support for a political process and ceasefire?"
+        ],
+        "limitations": [
+          "The resolution's language and support for a political process and ceasefire do not provide guarantees of successful implementation.",
+          "The historical timetables and conditions in the resolution cannot be inferred as current implementation deadlines or assessments of the situation in Syria.",
+          "The resolution's support for a Syrian-led political process and free and fair elections is subject to various factors and uncertainties, including the cooperation of the Syrian government and opposition."
+        ]
+      },
+      "tool_calls": []
+    },
+    "success": true,
+    "errors": [],
+    "messages": []
+  }
+}

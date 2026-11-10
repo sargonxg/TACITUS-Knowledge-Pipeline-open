@@ -1,0 +1,116 @@
+{
+  "sources": [
+    {
+      "id": "unsc-2254",
+      "title": "Security Council resolution 2254 (2015)",
+      "url": "https://documents.un.org/doc/undoc/gen/n15/443/34/pdf/n1544334.pdf",
+      "file": "sources/unsc-2254.txt",
+      "version": "69c6305fe434a4b180a95de44fad4b6262f21395dd41f45ea235e36331774689",
+      "published_on": "2015-12-18",
+      "scope": "Historical operative paragraphs 2, 4, 5 and 8; normalized English transcription. Not a current implementation assessment.",
+      "rights_note": "United Nations official resolution. Attribution retained; no institutional affiliation or endorsement."
+    }
+  ],
+  "entities": [
+    {
+      "id": "unsc",
+      "label": "UN Security Council",
+      "type": "Institution"
+    },
+    {
+      "id": "talks",
+      "label": "Proposed formal negotiations",
+      "type": "Process"
+    },
+    {
+      "id": "governance",
+      "label": "Proposed governance and election process",
+      "type": "Process"
+    },
+    {
+      "id": "ceasefire",
+      "label": "Proposed nationwide ceasefire",
+      "type": "Process"
+    }
+  ],
+  "statements": [
+    {
+      "id": "convene-talks",
+      "source_id": "unsc-2254",
+      "source_version": "69c6305fe434a4b180a95de44fad4b6262f21395dd41f45ea235e36331774689",
+      "start": 0,
+      "end": 479,
+      "quote": "2. Requests the Secretary-General, through his good offices and the efforts of his Special Envoy for Syria, to convene representatives of the Syrian government and the opposition to engage in formal negotiations on a political transition process on an urgent basis, with a target of early January 2016 for the initiation of talks, pursuant to the Geneva Communiqu\u00e9, consistent with the 14 November 2015 ISSG Statement, with a view to a lasting political settlement of the crisis;",
+      "subject": "unsc",
+      "object": "talks",
+      "relation": "normative_position",
+      "interpretation": "The Council requested convening negotiations with a historical target; the text does not establish that talks occurred.",
+      "modality": "requested",
+      "review_state": "proposed",
+      "qualifiers": [
+        {
+          "start": 266,
+          "end": 301,
+          "text": "with a target of early January 2016"
+        }
+      ],
+      "required_qualifier_literals": [
+        "with a target of early January 2016"
+      ]
+    },
+    {
+      "id": "governance-process",
+      "source_id": "unsc-2254",
+      "source_version": "69c6305fe434a4b180a95de44fad4b6262f21395dd41f45ea235e36331774689",
+      "start": 481,
+      "end": 1192,
+      "quote": "4. Expresses its support, in this regard, for a Syrian-led political process that is facilitated by the United Nations and, within a target of six months, establishes credible, inclusive and non-sectarian governance and sets a schedule and process for drafting a new constitution, and further expresses its support for free and fair elections, pursuant to the new constitution, to be held within 18 months and administered under supervision of the United Nations, to the satisfaction of the governance and to the highest international standards of transparency and accountability, with all Syrians, including members of the diaspora, eligible to participate, as set forth in the 14 November 2015 ISSG Statement;",
+      "subject": "unsc",
+      "object": "governance",
+      "relation": "normative_position",
+      "interpretation": "The Council expressed support for an inclusive political process and historical election timetable; this is not an implementation finding.",
+      "modality": "expressed_support",
+      "review_state": "proposed",
+      "qualifiers": [
+        {
+          "start": 124,
+          "end": 153,
+          "text": "within a target of six months"
+        },
+        {
+          "start": 344,
+          "end": 376,
+          "text": "pursuant to the new constitution"
+        }
+      ],
+      "required_qualifier_literals": [
+        "within a target of six months",
+        "pursuant to the new constitution"
+      ]
+    },
+    {
+      "id": "ceasefire-link",
+      "source_id": "unsc-2254",
+      "source_version": "69c6305fe434a4b180a95de44fad4b6262f21395dd41f45ea235e36331774689",
+      "start": 1194,
+      "end": 1821,
+      "quote": "5. Acknowledges the close linkage between a ceasefire and a parallel political process, pursuant to the 2012 Geneva Communiqu\u00e9, and that both initiatives should move ahead expeditiously, and in this regard expresses its support for a nationwide ceasefire in Syria, which the ISSG has committed to support and assist in implementing, to come into effect as soon as the representatives of the Syrian government and the opposition have begun initial steps towards a political transition under UN auspices, on the basis of the Geneva Communiqu\u00e9, as set forth in the 14 November 2015 ISSG Statement, and to do so on an urgent basis;",
+      "subject": "unsc",
+      "object": "ceasefire",
+      "relation": "normative_position",
+      "interpretation": "The Council linked its support for a ceasefire to initial political-transition steps; this is not a finding of a nationwide ceasefire.",
+      "modality": "expressed_support",
+      "review_state": "proposed",
+      "qualifiers": [
+        {
+          "start": 353,
+          "end": 501,
+          "text": "as soon as the representatives of the Syrian government and the opposition have begun initial steps towards a political transition under UN auspices"
+        }
+      ],
+      "required_qualifier_literals": [
+        "as soon as the representatives of the Syrian government and the opposition have begun initial steps towards a political transition under UN auspices"
+      ]
+    }
+  ]
+}

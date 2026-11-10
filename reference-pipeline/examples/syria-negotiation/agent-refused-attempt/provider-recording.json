@@ -1,0 +1,89 @@
+{
+  "receipt": {
+    "request_sha256": "37e0a2c301ccb04a4e6fd64bb1420e97b898335dd8a6efcb8bd63a61533fcedb",
+    "provider": "cloudflare",
+    "model_requested": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+    "transport": "cloudflare_connector_observed",
+    "executed_on": "2026-11-10",
+    "elapsed_ms": 5495
+  },
+  "response": {
+    "result": {
+      "id": "chatcmpl-057c923f-24f0-4b01-89b1-6e4d38c41beb",
+      "object": "chat.completion",
+      "created": 1794351860,
+      "model": "@cf/meta/llama-3.3-70b-json",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"title\": \"Negotiation-Policy Desk Note: Resolution 2254\", \"items\": [{\"text\": \"The Council expressed support for a ceasefire linked to initial political-transition steps.\", \"evidence_ids\": [\"ceasefire-link\"]}, {\"text\": \"The Council requested convening negotiations with a historical target.\", \"evidence_ids\": [\"convene-talks\"]}, {\"text\": \"The Council expressed support for an inclusive political process and a historical election timetable.\", \"evidence_ids\": [\"governance-process\"]}], \"questions\": [\"What are the key elements of the political process supported by the Council?\", \"How do the historical timetables and conditions impact the negotiation process?\"], \"limitations\": [\"The sources do not establish the occurrence of a nationwide ceasefire.\", \"The text does not confirm that talks occurred.\", \"The expressions of support are not findings of implementation.\"]}",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "usage": {
+        "prompt_tokens": 496,
+        "completion_tokens": 182,
+        "total_tokens": 678,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 50.50173568725586
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null,
+      "response": {
+        "title": "Negotiation-Policy Desk Note: Resolution 2254",
+        "items": [
+          {
+            "text": "The Council expressed support for a ceasefire linked to initial political-transition steps.",
+            "evidence_ids": [
+              "ceasefire-link"
+            ]
+          },
+          {
+            "text": "The Council requested convening negotiations with a historical target.",
+            "evidence_ids": [
+              "convene-talks"
+            ]
+          },
+          {
+            "text": "The Council expressed support for an inclusive political process and a historical election timetable.",
+            "evidence_ids": [
+              "governance-process"
+            ]
+          }
+        ],
+        "questions": [
+          "What are the key elements of the political process supported by the Council?",
+          "How do the historical timetables and conditions impact the negotiation process?"
+        ],
+        "limitations": [
+          "The sources do not establish the occurrence of a nationwide ceasefire.",
+          "The text does not confirm that talks occurred.",
+          "The expressions of support are not findings of implementation."
+        ]
+      },
+      "tool_calls": []
+    },
+    "success": true,
+    "errors": [],
+    "messages": []
+  }
+}

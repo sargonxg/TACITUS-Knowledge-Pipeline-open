@@ -1,0 +1,91 @@
+{
+  "receipt": {
+    "request_sha256": "80c255edad7e0534c9a6916f61b64a8d6c7f55931141f22e1abeaac8e782fdbd",
+    "provider": "cloudflare",
+    "model_requested": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+    "transport": "cloudflare_connector_observed",
+    "executed_on": "2026-11-10",
+    "elapsed_ms": 10454
+  },
+  "response": {
+    "result": {
+      "id": "chatcmpl-f37ba661-303a-4852-a596-0c924cb940bc",
+      "object": "chat.completion",
+      "created": 1794351916,
+      "model": "@cf/meta/llama-3.3-70b-json",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"draft\", \"artifact\": {\"title\": \"Negotiation-Policy Desk Note: UN Security Council Resolution 2254\", \"items\": [{\"text\": \"The UN Security Council expressed support for a nationwide ceasefire in Syria, linked to initial political-transition steps, as stated in operative paragraph 5 of Resolution 2254.\", \"evidence_ids\": [\"ceasefire-link\"]}, {\"text\": \"The Council requested the Secretary-General to convene representatives of the Syrian government and the opposition to engage in formal negotiations on a political transition process, with a target of early January 2016, as stated in operative paragraph 2 of Resolution 2254.\", \"evidence_ids\": [\"convene-talks\"]}, {\"text\": \"The Council expressed support for a Syrian-led political process, facilitated by the United Nations, which establishes credible, inclusive, and non-sectarian governance within a target of six months, and sets a schedule and process for drafting a new constitution, as stated in operative paragraph 4 of Resolution 2254.\", \"evidence_ids\": [\"governance-process\"]}], \"questions\": [\"What are the key elements of the political transition process outlined in Resolution 2254?\", \"How do the requested negotiations and expressed support for a ceasefire relate to the overall goal of a lasting political settlement in Syria?\"], \"limitations\": [\"This desk note is based on the text of Resolution 2254 and does not reflect current implementation or events on the ground.\", \"The historical timetables mentioned in the resolution, such as the target of early January 2016 for the initiation of talks, are not to be inferred as current deadlines.\"]}}",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "usage": {
+        "prompt_tokens": 1582,
+        "completion_tokens": 340,
+        "total_tokens": 1922,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 111.82206726074219
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null,
+      "response": {
+        "action": "draft",
+        "artifact": {
+          "title": "Negotiation-Policy Desk Note: UN Security Council Resolution 2254",
+          "items": [
+            {
+              "text": "The UN Security Council expressed support for a nationwide ceasefire in Syria, linked to initial political-transition steps, as stated in operative paragraph 5 of Resolution 2254.",
+              "evidence_ids": [
+                "ceasefire-link"
+              ]
+            },
+            {
+              "text": "The Council requested the Secretary-General to convene representatives of the Syrian government and the opposition to engage in formal negotiations on a political transition process, with a target of early January 2016, as stated in operative paragraph 2 of Resolution 2254.",
+              "evidence_ids": [
+                "convene-talks"
+              ]
+            },
+            {
+              "text": "The Council expressed support for a Syrian-led political process, facilitated by the United Nations, which establishes credible, inclusive, and non-sectarian governance within a target of six months, and sets a schedule and process for drafting a new constitution, as stated in operative paragraph 4 of Resolution 2254.",
+              "evidence_ids": [
+                "governance-process"
+              ]
+            }
+          ],
+          "questions": [
+            "What are the key elements of the political transition process outlined in Resolution 2254?",
+            "How do the requested negotiations and expressed support for a ceasefire relate to the overall goal of a lasting political settlement in Syria?"
+          ],
+          "limitations": [
+            "This desk note is based on the text of Resolution 2254 and does not reflect current implementation or events on the ground.",
+            "The historical timetables mentioned in the resolution, such as the target of early January 2016 for the initiation of talks, are not to be inferred as current deadlines."
+          ]
+        }
+      },
+      "tool_calls": []
+    },
+    "success": true,
+    "errors": [],
+    "messages": []
+  }
+}

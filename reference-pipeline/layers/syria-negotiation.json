@@ -1,0 +1,21 @@
+{
+  "id": "syria-negotiation-brief",
+  "version": "0.1.0",
+  "statement_ids": [
+    "convene-talks",
+    "governance-process",
+    "ceasefire-link"
+  ],
+  "required_statement_ids": [
+    "convene-talks",
+    "governance-process",
+    "ceasefire-link"
+  ],
+  "checks": [
+    "Distinguish requested and supported processes from events that occurred.",
+    "Treat 2016 timetables as historical targets, never new deadlines.",
+    "Do not infer participation, acceptance, present authority or current territorial control.",
+    "The selected layer omits the paragraph 8 exclusions: inspect the full source before making any claim about ceasefire coverage.",
+    "Review original wording and current evidence before using the draft."
+  ]
+}

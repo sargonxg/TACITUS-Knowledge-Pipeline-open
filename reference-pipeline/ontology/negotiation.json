@@ -1,0 +1,19 @@
+{
+  "id": "tacitus-negotiation-scope",
+  "version": "0.1.0",
+  "entity_types": [
+    "Institution",
+    "Process"
+  ],
+  "relations": {
+    "normative_position": {
+      "domain": [
+        "Institution"
+      ],
+      "range": [
+        "Process"
+      ],
+      "meaning": "Attributed requested or supported process; does not imply implementation."
+    }
+  }
+}

@@ -48,6 +48,12 @@ The full layer graph and bounded capsule are different outputs. The graph may co
 
 Source: [`core.py`](src/tacitus_pipeline/core.py). Example data: [`collection.json`](examples/assessment/collection.json). Ontology: [`policy.json`](ontology/policy.json). Semantic layer: [`assessment-evidence.json`](layers/assessment-evidence.json).
 
+## Optional model drafting and bounded agent
+
+The offline build above makes no model calls. For explicit generation with Cloudflare, an installed local Ollama model or an OpenAI-compatible endpoint, use the [model-workflow guide](docs/model-workflows.md). The committed Syria case includes real provider responses, a two-step evidence-inspection agent, cited artifacts and replayable tests. The importer does not authenticate a supplied recording.
+
+[Actual run](examples/syria-negotiation/agent-step-2) · [Syria sources and request recordings](examples/syria-negotiation) · [Research index](../research/README.md)
+
 ## Verify
 
 ```sh

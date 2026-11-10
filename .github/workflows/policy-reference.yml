@@ -19,3 +19,4 @@ jobs:
           PYTHONPATH=src python -m unittest discover -s tests -v
           python benchmarks/run.py
           PYTHONPATH=src python -m tacitus_pipeline build --input examples/assessment/collection.json --ontology ontology/policy.json --layer layers/assessment-evidence.json --question "Map assessment evidence and review roles." --output build/assessment
+          PYTHONPATH=src python -m tacitus_pipeline build --input examples/syria-negotiation/collection.json --ontology ontology/negotiation.json --layer layers/syria-negotiation.json --question "Prepare a historical negotiation-policy desk note." --output build/syria

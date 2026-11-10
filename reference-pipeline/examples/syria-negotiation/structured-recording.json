@@ -1,0 +1,90 @@
+{
+  "receipt": {
+    "request_sha256": "2bafc87f856ef4c5f1a8fe3ec810008c7137b65931ccf49dce1cac4e9bbbfe0a",
+    "provider": "cloudflare",
+    "model_requested": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+    "transport": "cloudflare_connector_observed",
+    "elapsed_ms": 10251,
+    "executed_on": "2026-11-10"
+  },
+  "response": {
+    "result": {
+      "id": "chatcmpl-f45e72cb-f5d6-4757-a111-ff2c1968e161",
+      "object": "chat.completion",
+      "created": 1794351459,
+      "model": "@cf/meta/llama-3.3-70b-json",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"title\": \"Negotiation-Policy Desk Note: UN Security Council Resolution 2254\", \"items\": [{\"text\": \"The UN Security Council expressed support for a nationwide ceasefire in Syria, linked to initial political-transition steps under UN auspices.\", \"evidence_ids\": [\"ceasefire-link\"]}, {\"text\": \"The Council requested the Secretary-General to convene representatives of the Syrian government and the opposition to engage in formal negotiations on a political transition process, with a target of early January 2016.\", \"evidence_ids\": [\"convene-talks\"]}, {\"text\": \"The Council expressed support for a Syrian-led political process, facilitated by the United Nations, to establish inclusive governance and set a schedule for drafting a new constitution within six months, and to hold free and fair elections within 18 months.\", \"evidence_ids\": [\"governance-process\"]}], \"questions\": [\"What are the conditions for a nationwide ceasefire in Syria, as supported by the UN Security Council?\", \"What is the historical target for convening formal negotiations on a political transition process in Syria?\", \"What are the key elements of the proposed governance and election process in Syria, as supported by the UN Security Council?\"], \"limitations\": [\"The sources do not establish that a nationwide ceasefire was implemented or that formal negotiations occurred.\", \"The historical timetables mentioned in the resolution, such as the target of early January 2016 for the initiation of talks, do not imply current deadlines or implementation status.\", \"The sources do not provide information on the current applicability or implementation of the proposed governance and election process in Syria.\"]}",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "usage": {
+        "prompt_tokens": 1559,
+        "completion_tokens": 330,
+        "total_tokens": 1889,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 109.16065979003906
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null,
+      "response": {
+        "title": "Negotiation-Policy Desk Note: UN Security Council Resolution 2254",
+        "items": [
+          {
+            "text": "The UN Security Council expressed support for a nationwide ceasefire in Syria, linked to initial political-transition steps under UN auspices.",
+            "evidence_ids": [
+              "ceasefire-link"
+            ]
+          },
+          {
+            "text": "The Council requested the Secretary-General to convene representatives of the Syrian government and the opposition to engage in formal negotiations on a political transition process, with a target of early January 2016.",
+            "evidence_ids": [
+              "convene-talks"
+            ]
+          },
+          {
+            "text": "The Council expressed support for a Syrian-led political process, facilitated by the United Nations, to establish inclusive governance and set a schedule for drafting a new constitution within six months, and to hold free and fair elections within 18 months.",
+            "evidence_ids": [
+              "governance-process"
+            ]
+          }
+        ],
+        "questions": [
+          "What are the conditions for a nationwide ceasefire in Syria, as supported by the UN Security Council?",
+          "What is the historical target for convening formal negotiations on a political transition process in Syria?",
+          "What are the key elements of the proposed governance and election process in Syria, as supported by the UN Security Council?"
+        ],
+        "limitations": [
+          "The sources do not establish that a nationwide ceasefire was implemented or that formal negotiations occurred.",
+          "The historical timetables mentioned in the resolution, such as the target of early January 2016 for the initiation of talks, do not imply current deadlines or implementation status.",
+          "The sources do not provide information on the current applicability or implementation of the proposed governance and election process in Syria."
+        ]
+      },
+      "tool_calls": []
+    },
+    "success": true,
+    "errors": [],
+    "messages": []
+  }
+}
