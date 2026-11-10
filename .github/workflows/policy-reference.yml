@@ -2,6 +2,7 @@ name: Policy reference checks
 on:
   push:
     paths: ['reference-pipeline/**', '.github/workflows/policy-reference.yml']
+  workflow_dispatch:
   pull_request:
     paths: ['reference-pipeline/**', '.github/workflows/policy-reference.yml']
 permissions:
