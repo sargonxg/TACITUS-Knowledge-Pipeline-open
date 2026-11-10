@@ -1,0 +1,19 @@
+{
+  "id": "assessment-evidence-reuse",
+  "version": "0.1.0",
+  "statement_ids": [
+    "fria-complements-dpia",
+    "dpo-advice",
+    "office-template"
+  ],
+  "required_statement_ids": [
+    "fria-complements-dpia",
+    "dpo-advice"
+  ],
+  "checks": [
+    "Keep the assessments distinct.",
+    "Retain the original adopted-source edition and check current law separately.",
+    "Verify the actual system, impact evidence and responsible reviewers.",
+    "Do not turn a template-development role into case-review authority."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "id":"tacitus-assessment-reference",
+  "version":"0.1.0",
+  "scope":"Application ontology for evidence reuse; not an authoritative legal classification.",
+  "entity_types":["Assessment","Reviewer","Process","Institution"],
+  "relations":{
+    "conditionally_complements":{"domain":["Assessment"],"range":["Assessment"]},
+    "seeks_advice_from":{"domain":["Process"],"range":["Reviewer"]},
+    "develops_template_for":{"domain":["Institution"],"range":["Assessment"]}
+  }
+}

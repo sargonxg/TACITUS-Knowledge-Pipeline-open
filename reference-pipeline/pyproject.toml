@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tacitus-policy-pipeline"
+version = "0.1.0"
+description = "Source-linked policy graphs and bounded context from explicit annotations"
+requires-python = ">=3.11"
+license = {text = "Apache-2.0"}
+dependencies = []
+
+[project.scripts]
+tacitus-pipeline = "tacitus_pipeline.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

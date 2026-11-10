@@ -1,0 +1,21 @@
+name: Policy reference checks
+on:
+  push:
+    paths: ['reference-pipeline/**', '.github/workflows/policy-reference.yml']
+  pull_request:
+    paths: ['reference-pipeline/**', '.github/workflows/policy-reference.yml']
+permissions:
+  contents: read
+jobs:
+  reference:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - working-directory: reference-pipeline
+        run: |
+          PYTHONPATH=src python -m unittest discover -s tests -v
+          python benchmarks/run.py
+          PYTHONPATH=src python -m tacitus_pipeline build --input examples/assessment/collection.json --ontology ontology/policy.json --layer layers/assessment-evidence.json --question "Map assessment evidence and review roles." --output build/assessment

@@ -1,0 +1,12 @@
+{
+ "status":"work_in_progress_not_run",
+ "question":"Does selected structured context preserve policy meaning at an acceptable total cost?",
+ "arms":["task_only","plain_retrieval","structured_context"],
+ "source_control":"Same permitted source pool and held-out tasks; freeze source, model and retrieval versions.",
+ "review":"Blind paired outputs for domain review; store disagreements.",
+ "quality_dimensions":["source_support","actor_identity","attribution","conditions_and_exceptions","date_scope","useful_uncertainty","drafting_usefulness"],
+ "cost_dimensions":["preparation","indexing","retrieval","provider_input_and_output_tokens","latency","reviewer_time","failures"],
+ "completion_requirements":["Reviewed held-out task set","Rights-reviewed source corpus","Configured model adapters","Recorded outputs and usage","Independent domain review"],
+ "results":[],
+ "claim":"No model-output quality or efficiency improvement is established by assembly tests."
+}

@@ -1,0 +1,116 @@
+{
+  "format": "tacitus-source-collection/1",
+  "sources": [
+    {
+      "id": "ai-act:article-27",
+      "title": "Article 27 · Fundamental rights impact assessment for high-risk AI systems",
+      "file": "sources/article-27.txt",
+      "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng#art_27",
+      "version": "5086b303f88958eadcdb51769b4b3e48da35f3a44aaf9318ae41aed285fc6684",
+      "scope": "Original adopted-law text snapshot collected 2026-11-08. Current consolidated status and case applicability are not established.",
+      "rights_note": "European Union legislation; preserve EUR-Lex attribution and original source terms. Not a Tacitus-authored legal instrument."
+    },
+    {
+      "id": "gdpr:article-35",
+      "title": "Article 35 · Data protection impact assessment",
+      "file": "sources/article-35.txt",
+      "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng#art_35",
+      "version": "611d22d9c72bbca3a140edb49e9338cd37b1bf3244f22eaff82e87ffc777df55",
+      "scope": "Original adopted-law text snapshot collected 2026-11-08. Current consolidated status and case applicability are not established.",
+      "rights_note": "European Union legislation; preserve EUR-Lex attribution and original source terms. Not a Tacitus-authored legal instrument."
+    }
+  ],
+  "entities": [
+    {
+      "id": "fria",
+      "type": "Assessment",
+      "label": "Fundamental-rights impact assessment"
+    },
+    {
+      "id": "dpia",
+      "type": "Assessment",
+      "label": "Data-protection impact assessment"
+    },
+    {
+      "id": "controller-assessment",
+      "type": "Process",
+      "label": "Controller assessment process"
+    },
+    {
+      "id": "dpo",
+      "type": "Reviewer",
+      "label": "Data protection officer where designated"
+    },
+    {
+      "id": "ai-office",
+      "type": "Institution",
+      "label": "AI Office"
+    }
+  ],
+  "statements": [
+    {
+      "id": "fria-complements-dpia",
+      "source_id": "ai-act:article-27",
+      "source_version": "5086b303f88958eadcdb51769b4b3e48da35f3a44aaf9318ae41aed285fc6684",
+      "start": 2351,
+      "end": 2707,
+      "quote": "If any of the obligations laid down in this Article is already met through the data protection impact assessment conducted pursuant to Article 35 of Regulation (EU) 2016/679 or Article 27 of Directive (EU) 2016/680, the fundamental rights impact assessment referred to in paragraph 1 of this Article shall complement that data protection impact assessment.",
+      "subject": "fria",
+      "relation": "conditionally_complements",
+      "object": "dpia",
+      "interpretation": "Map the conditional complement relationship; do not substitute one assessment for the other.",
+      "modality": "conditional obligation",
+      "review_state": "proposed",
+      "qualifiers": [
+        {
+          "start": 0,
+          "end": 214,
+          "text": "If any of the obligations laid down in this Article is already met through the data protection impact assessment conducted pursuant to Article 35 of Regulation (EU) 2016/679 or Article 27 of Directive (EU) 2016/680"
+        }
+      ],
+      "required_qualifier_literals": [
+        "If any of the obligations laid down in this Article is already met through the data protection impact assessment conducted pursuant to Article 35 of Regulation (EU) 2016/679 or Article 27 of Directive (EU) 2016/680"
+      ]
+    },
+    {
+      "id": "dpo-advice",
+      "source_id": "gdpr:article-35",
+      "source_version": "611d22d9c72bbca3a140edb49e9338cd37b1bf3244f22eaff82e87ffc777df55",
+      "start": 545,
+      "end": 686,
+      "quote": "The controller shall seek the advice of the data protection officer, where designated, when carrying out a data protection impact assessment.",
+      "subject": "controller-assessment",
+      "relation": "seeks_advice_from",
+      "object": "dpo",
+      "interpretation": "Preserve the DPO role and the designation condition.",
+      "modality": "obligation subject to designation",
+      "review_state": "proposed",
+      "qualifiers": [
+        {
+          "start": 69,
+          "end": 85,
+          "text": "where designated"
+        }
+      ],
+      "required_qualifier_literals": [
+        "where designated"
+      ]
+    },
+    {
+      "id": "office-template",
+      "source_id": "ai-act:article-27",
+      "source_version": "5086b303f88958eadcdb51769b4b3e48da35f3a44aaf9318ae41aed285fc6684",
+      "start": 2708,
+      "end": 2910,
+      "quote": "5. The AI Office shall develop a template for a questionnaire, including through an automated tool, to facilitate deployers in complying with their obligations under this Article in a simplified manner.",
+      "subject": "ai-office",
+      "relation": "develops_template_for",
+      "object": "fria",
+      "interpretation": "The quoted template-development role does not identify the case reviewer.",
+      "modality": "stated institutional task",
+      "review_state": "proposed",
+      "qualifiers": [],
+      "required_qualifier_literals": []
+    }
+  ]
+}

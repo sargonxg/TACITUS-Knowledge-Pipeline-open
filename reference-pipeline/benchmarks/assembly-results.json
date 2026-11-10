@@ -1,0 +1,50 @@
+{
+  "format": "tacitus-assembly-benchmark/1",
+  "fixture": "Two original adopted-law passages, three authored mappings; no current legal assessment.",
+  "scope": "Complete evidence, byte limits, source editions and refusal behavior. Not model quality, token savings, latency or analyst-time measurement.",
+  "model_calls": 0,
+  "model_answer_evaluation": "work_in_progress_not_run",
+  "results": [
+    {
+      "budget_bytes": 2000,
+      "status": "refused",
+      "reason": "Required complete evidence exceeds the budget; nothing was truncated."
+    },
+    {
+      "budget_bytes": 4500,
+      "status": "prepared",
+      "format": "tacitus-reference-receipt/1",
+      "context_sha256": "3cd8ca7fc6a4b86fe044e5b52df8375332d558f16828e0bf003880a9d82dbf68",
+      "context_bytes": 4450,
+      "source_records": 2,
+      "selected_statements": 2,
+      "omitted_statements": 1,
+      "model_calls": 0,
+      "model_quality_gain_established": false
+    },
+    {
+      "budget_bytes": 5500,
+      "status": "prepared",
+      "format": "tacitus-reference-receipt/1",
+      "context_sha256": "886dcd894c6885058e06b7899f5b980066e89ffef29b90902e03c903504eec38",
+      "context_bytes": 5225,
+      "source_records": 2,
+      "selected_statements": 3,
+      "omitted_statements": 0,
+      "model_calls": 0,
+      "model_quality_gain_established": false
+    },
+    {
+      "budget_bytes": 24500,
+      "status": "prepared",
+      "format": "tacitus-reference-receipt/1",
+      "context_sha256": "886dcd894c6885058e06b7899f5b980066e89ffef29b90902e03c903504eec38",
+      "context_bytes": 5225,
+      "source_records": 2,
+      "selected_statements": 3,
+      "omitted_statements": 0,
+      "model_calls": 0,
+      "model_quality_gain_established": false
+    }
+  ]
+}

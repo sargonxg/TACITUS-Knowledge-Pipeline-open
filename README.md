@@ -4,6 +4,15 @@
 
 <h1 align="center">TACITUS Knowledge Pipeline</h1>
 
+## Run the policy-data reference
+
+[**Start with the credential-free Python pipeline →**](reference-pipeline)
+
+Build a source-linked graph, define an ontology and semantic layer, prepare a bounded context capsule, and inspect a populated evidence review sheet. Python 3.11+, no runtime dependencies or model calls. [15 tests](reference-pipeline/tests/test_pipeline.py), [source fixtures](reference-pipeline/examples/assessment), [assembly measurements and model-evaluation plan](reference-pipeline/benchmarks). Model-output benefits and hosted agent integration remain in development.
+
+The earlier notebooks and their service requirements remain below.
+
+
 <p align="center"><strong>A public reference notebook for evidence-linked knowledge graphs in policy and conflict analysis.</strong></p>
 
 <p align="center">

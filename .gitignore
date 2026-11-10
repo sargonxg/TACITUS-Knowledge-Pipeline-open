@@ -47,3 +47,10 @@ Thumbs.db
 /task-output/
 credentials/
 service-account*.json
+
+# Reviewed credential-free reference schemas and fixtures
+!reference-pipeline/ontology/*.json
+!reference-pipeline/layers/*.json
+!reference-pipeline/benchmarks/*.json
+!reference-pipeline/examples/assessment/collection.json
+!reference-pipeline/examples/assessment/expected/*.json
