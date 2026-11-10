@@ -1,243 +1,66 @@
-<p align="center">
-  <img src="assets/images/tacitus-logo.png" alt="TACITUS" width="180"/>
-</p>
+<img src="assets/images/tacitus-logo.png" alt="TACITUS" width="130"/>
 
-<h1 align="center">TACITUS Knowledge Pipeline</h1>
+# TACITUS Knowledge Pipeline
 
-## Run the policy-data reference
+**Data infrastructure for Policy / Political AI.**
 
-[**Start with the credential-free Python pipeline →**](reference-pipeline)
+Turn exact policy sources into an explicit knowledge structure, a task-specific capsule and an inspectable artifact. The goal is better saliency and efficiency in AI generation. Assembly behavior is tested here; generation-quality and whole-process efficiency gains still need evaluation.
 
-Build a source-linked graph, define an ontology and semantic layer, prepare a bounded context capsule, and inspect a populated evidence review sheet. Python 3.11+, no runtime dependencies or model calls. [15 tests](reference-pipeline/tests/test_pipeline.py), [source fixtures](reference-pipeline/examples/assessment), [assembly measurements and model-evaluation plan](reference-pipeline/benchmarks). Model-output benefits and hosted agent integration remain in development.
+[Website](https://tacitus.me/) · [Build guide](https://tacitus.me/developers/) · [TACITUS organization](https://github.com/TACITUS-me) · [LinkedIn](https://www.linkedin.com/company/tacitus-me)
 
-The earlier notebooks and their service requirements remain below.
+## Run the reference
 
-
-<p align="center"><strong>A public reference notebook for evidence-linked knowledge graphs in policy and conflict analysis.</strong></p>
-
-<p align="center">
-  <a href="https://tacitus.me">Website</a> ·
-  <a href="#quick-start">Quick start</a> ·
-  <a href="#pipeline">Pipeline</a> ·
-  <a href="#limitations">Limitations</a>
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white" alt="Python 3.10+"/>
-  <img src="https://img.shields.io/badge/Jupyter-reference%20notebook-F37626?logo=jupyter&logoColor=white" alt="Jupyter reference notebook"/>
-  <img src="https://img.shields.io/badge/graph-Neo4j%20%7C%20FalkorDB-008CC1?logo=neo4j&logoColor=white" alt="Neo4j or FalkorDB"/>
-  <img src="https://img.shields.io/badge/status-reference%20pipeline-0F766E" alt="Reference pipeline"/>
-  <img src="https://img.shields.io/badge/license-Apache--2.0-green" alt="Apache 2.0"/>
-  <a href="https://colab.research.google.com/github/sargonxg/TACITUS-Knowledge-Pipeline-open/blob/main/TACITUS_PIPELINE_Workbench_v8.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"/></a>
-</p>
-
----
-
-## 30-second read
-
-### Prepare a concrete policy task without an API account
-
-Run all five [offline task workflows](docs/POLITICAL_TASK_WORKFLOWS.md): resolution
-briefs, communiqué comparisons, mediation preparation, media framing review and
-HR applicability review. Inspect exact source passages and unresolved questions,
-then verify the saved outputs against the retained corpus.
+Python 3.11+. No runtime dependencies, credentials or model calls.
 
 ```sh
-python examples/political_semantics/task_workflows.py --out task-output
-python examples/political_semantics/task_workflows.py --verify task-output
-```
-
-Use a fresh output directory. The examples preserve analyst interpretation as
-unwritten and approval as `not_reviewed`. Byte comparisons report omissions;
-they do not establish better reasoning or cheaper inference.
-
-### Open the evidence in your browser
-
-```bash
-python examples/political_semantics/build_explorer.py --out dist
-```
-
-Open `dist/index.html` directly. The single file works offline: choose a policy,
-mediation, media or HR lens, inspect attributed passages and review states, filter
-by source publication date, and download the selected JSON or complete JSON-LD
-and SQLite examples. It uses no API keys, external assets, analytics or model calls.
-The small curated selection demonstrates structure and provenance, not complete
-coverage or verified political conclusions.
-
-For real source-linked data, run the [political semantic-layer example](docs/POLITICAL_SEMANTIC_LAYERS.md):
-UN resolutions, the Geneva communiqué, mediation guidance and attributed media
-wording become queryable records under policy, mediation, media and HR lenses.
-It includes recurring task recipes, source excerpts and hashes, JSON-LD, a local
-SQLite export and explicit review/applicability boundaries. Python's standard
-library is sufficient; no model account or network connection is needed.
-
-```bash
-python examples/political_semantics/semantic_layer.py validate
-python examples/political_semantics/semantic_layer.py query --lens mediation
-python examples/political_semantics/semantic_layer.py recipes
-python examples/political_semantics/context_packet.py --lens mediation --question "consent inclusion" --budget-bytes 8000 --out political-packet-review.json
-```
-
-The real-source packet retains whole records and their source/actor/concept
-references. Its receipt reports exact payload bytes, hashes, coverage and every
-omission. Use `--packet-only` for the exact bounded JSON; the inspection wrapper
-is larger. Selection uses question-word overlap, with no model calls or measured
-reasoning-quality claim. [Packet format and limits](docs/POLITICAL_SEMANTIC_LAYERS.md#compile-a-bounded-context-packet-from-these-real-sources).
-
-### Run a source-linked context example without API keys
-
-```bash
 git clone https://github.com/sargonxg/TACITUS-Knowledge-Pipeline-open.git
-cd TACITUS-Knowledge-Pipeline-open
-python examples/context_capsule.py --budget-bytes 4000 --out context-packet.json
-python -m unittest discover -s tests -v
+cd TACITUS-Knowledge-Pipeline-open/reference-pipeline
+PYTHONPATH=src python -m tacitus_pipeline build \
+  --input examples/assessment/collection.json \
+  --ontology ontology/policy.json \
+  --layer layers/assessment-evidence.json \
+  --question "Map assessment evidence and review roles." \
+  --output build/assessment
 ```
 
-Python 3.10+ and its standard library are sufficient. The fictional policy case
-keeps a proposed pilot separate from adoption, an association's assertion and
-funding status. Open `context-packet.json` to inspect selected claims, exact source
-quotations, source hashes and every omission. Try `--budget-bytes 1000` to see
-selection change. Comparison groups are retained together or omitted together;
-expired and unreviewed claims do not silently become current accepted context.
+The example uses original adopted EU AI Act and GDPR passages. It preserves the conditional relationship between assessments, the DPO designation condition and the distinct AI Office template role. Authored mappings remain proposals for review; this is not a current legal-applicability assessment.
 
-The compact packet has an exact UTF-8 byte budget, including provenance metadata.
-Use `--packet-only --out context-only.json` to write those exact bounded bytes.
-The default pretty-printed inspection file also contains a receipt outside that
-budget; it is intentionally larger than the model-facing packet.
-Query-word overlap is an inspectable ranking heuristic. This example calls no
-model, establishes no political truth and makes no claim of improved generation
-quality. It is a small reproducible part of a larger source → review → context →
-answer workflow. The notebooks below cover the earlier extraction/graph pipeline.
+Open `build/assessment/brief.md`, then inspect `capsule.json`, `graph.json`, `graph.jsonld`, `workflow.json` and `receipt.json`. Required evidence stays whole; an insufficient byte budget is refused. Source text is reference data, not action authority.
 
-- **What it is:** a compact, inspectable pipeline that converts source text into typed graph objects linked to evidence spans.
-- **What it demonstrates:** structured extraction, entity resolution, graph construction, reusable Cypher queries, and deterministic post-extraction analysis such as graph scoring and clustering.
-- **What it is not:** a validated decision system, a complete TACITUS deployment, or proof that graph-based analysis is automatically correct.
-- **Best starting point:** open the Colab notebook, run the included example, and inspect how each graph object is connected to its source.
+## Inspect or change a layer
 
-<p align="center">
-  <img src="assets/images/tacitus-network.png" alt="Example TACITUS knowledge graph" width="800"/>
-</p>
-
-## Why this repository exists
-
-Policy and conflict analysis often requires more than a fluent summary. Analysts need to know who made a claim, which source supports it, how actors and issues are connected, where accounts diverge, and which conclusions are direct observations rather than inferences.
-
-This repository presents a simplified version of that workflow in a form that can be inspected and modified. A model proposes structured objects from text; validation and graph code then organize those objects into a queryable representation. The graph supports repeatable operations over the accepted extraction output.
-
-The distinction matters: **deterministic graph operations do not make upstream extraction infallible.** They make later transformations easier to inspect, reproduce, test, and challenge.
-
-## Pipeline
-
-```text
-source documents
-      │
-      ▼
-segmentation and source-span indexing
-      │
-      ▼
-model-assisted structured extraction
-      │
-      ▼
-schema validation and entity resolution
-      │
-      ▼
-evidence-linked knowledge graph
-      │
-      ├── reusable Cypher queries
-      ├── contradiction candidates
-      ├── actor and issue network measures
-      ├── claim clustering
-      └── analyst review and export
-```
-
-The reference implementation focuses on a small conflict-analysis ontology and can be adapted to other policy domains. Typical objects include actors, claims, interests, constraints, leverage, commitments, events, narratives, source documents, and evidence spans.
-
-## What “deterministic” means here
-
-Once extraction output has been accepted and normalized, operations such as graph traversal, configured similarity thresholds, PageRank, clustering with fixed parameters, and Cypher queries can be rerun under recorded settings. That improves reproducibility and auditability at the transformation layer.
-
-It does **not** establish that:
-
-- the extraction captured every relevant fact;
-- a source itself is accurate;
-- a similarity score represents a material contradiction;
-- a central actor is necessarily the most politically important actor;
-- a cluster is the only defensible grouping; or
-- the resulting graph should determine a policy judgment.
-
-Evidence links make an output reviewable; they do not convert an inference into truth.
-
-## Repository contents
-
-| Path | Purpose |
+| Part | Source and guide |
 | --- | --- |
-| [`TACITUS_PIPELINE_Workbench_v8.ipynb`](TACITUS_PIPELINE_Workbench_v8.ipynb) | Colab-oriented walkthrough and demonstration |
-| [`TACITUS_PIPELINE_NoOutput.ipynb`](TACITUS_PIPELINE_NoOutput.ipynb) | Clean notebook for local execution and review |
-| [`queries/`](queries/) | Reusable graph queries |
-| [`requirements.txt`](requirements.txt) | Python dependencies |
-| [`.env.example`](.env.example) | Configuration template; never commit real credentials |
-| [`assets/`](assets/) | Diagrams and example visual material |
+| Sources | [Exact text, source editions and evidence spans](reference-pipeline/docs/sources.md) |
+| Ontology | [Entity types and valid relationships](reference-pipeline/docs/ontology.md) |
+| Semantic layer | [Task selection, qualifications and review checks](reference-pipeline/docs/semantic-layers.md) |
+| Context and artifact | [Bounded assembly and the review-sheet workflow](reference-pipeline/docs/workflows.md) |
+| Implementation | [Standard-library Python core](reference-pipeline/src/tacitus_pipeline/core.py) |
+| Outputs | [Populated, inspectable example files](reference-pipeline/examples/assessment/expected) |
 
-## Quick start
+## Verify and benchmark
 
-### Colab
+From `reference-pipeline`:
 
-Use the badge at the top of this page. Review each cell before running it and provide credentials only through the notebook environment or an approved secret mechanism.
-
-### Local
-
-```bash
-git clone https://github.com/sargonxg/TACITUS-Knowledge-Pipeline-open.git
-cd TACITUS-Knowledge-Pipeline-open
-
-python -m venv .venv
-source .venv/bin/activate       # Windows: .venv\Scripts\activate
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-cp .env.example .env
-jupyter lab
+```sh
+PYTHONPATH=src python -m unittest discover -s tests -v
+python benchmarks/run.py
 ```
 
-A graph database and model-provider configuration are required for the complete workflow. Consult the notebook and `.env.example` for the current variables. Use synthetic or public material until the processing path, provider terms, retention, access controls, and local logging behavior have been reviewed.
+The 15 tests check quotation tampering, source editions, lost conditions, ontology constraints, dangling references, proposed review state, duplicate editions, Unicode, context limits and explicit overwrite. GitHub Actions runs this path without credentials.
 
-## Expected workflow
+[Assembly measurements](reference-pipeline/benchmarks/assembly-results.json) test evidence preservation and byte limits. They are not model-quality or token-savings measurements. The [model-output evaluation plan](reference-pipeline/benchmarks/model-evaluation-plan.json) remains work in progress: held-out tasks, matched evidence, blinded domain review and complete costs.
 
-1. Load and segment source material.
-2. Assign stable identifiers and retain source-span offsets.
-3. Ask the configured model to return typed extraction objects.
-4. Validate the returned shape and normalize identifiers.
-5. resolve duplicate or aliased actors conservatively.
-6. Write accepted objects and evidence links to the graph.
-7. Run explicit queries and graph algorithms.
-8. Inspect the source behind material claims and revise the graph where needed.
-9. Record configuration, thresholds, provider, model, and code version with any reported result.
+## Development boundaries
 
-## Evaluation
+The working reference uses authored annotations. Automatic extraction, expert validation and provider adapters remain in development. `workflow.json` is a read-only plan, not live agent execution or an import contract for another application.
 
-The notebook is a reference implementation, not a benchmark result. A serious evaluation should separate at least four questions:
+[PRAXIS](https://praxis.tacitus.me/) is the invitation-only workspace for capsules and artifacts; AI generation is currently paused and paid upgrades are unavailable. [The local workbench](https://github.com/sargonxg/tacitus-workbench), [DIALECTICA](https://github.com/sargonxg/A3_DIALECTICAbyTACITUS_v3) and [KAIROS](https://github.com/sargonxg/KAIROS-temporal-vision-TACITUS) have separate contracts and development status.
 
-- extraction accuracy against annotated source material;
-- source-span precision and attribution quality;
-- stability of entity resolution and graph construction;
-- usefulness and error rates of downstream queries or scores.
+## Earlier notebook experiments
 
-Comparisons should preserve prompts, model identifiers, prediction files, code commit, thresholds, and human-review protocol. The [TCGC benchmark](https://github.com/sargonxg/TCGC_TACITUS-Conflict-Grammar-Corpus_BENCHMARK) is the related TACITUS project for developing a more formal evaluation surface.
+The existing notebooks, queries, examples and tests remain available. Their [earlier documentation](docs/legacy-notebook-readme.md) describes separate service dependencies and historical experiments. They have not been revalidated by the new reference tests. Verify provider availability, costs and data permissions before running them. Temperature zero does not make semantic interpretation deterministic.
 
-## Relationship to current TACITUS work
+## Rights
 
-This repository is intentionally smaller and easier to inspect than the current product architecture.
-
-- [DIALECTICA](https://github.com/sargonxg/A3_DIALECTICAbyTACITUS_v3) builds reviewable, portable context capsules.
-- [AGON](https://github.com/sargonxg/AGON) explores evidence-linked conflict perception.
-- [KAIROS](https://github.com/sargonxg/KAIROS-temporal-vision-TACITUS) explores temporal knowledge graphs.
-- [Tacitus Policy Workbench](https://github.com/sargonxg/tacitus-political-policy-second-brain) is an active integration lab for document ingestion, policy context, and local-first workflows.
-
-## Limitations
-
-Model extraction can omit, merge, misattribute, or invent objects. Entity resolution can collapse distinct actors. Embeddings and similarity thresholds can produce misleading candidates. Graph algorithms measure formal structure, not political significance or moral weight. Sources may be partial, strategic, deceptive, or mutually inconsistent. Human review and domain expertise remain necessary.
-
-Do not use this repository to make unattended legal, employment, clinical, security, eligibility, or other high-impact decisions about individuals.
-
-## Contributing and license
-
-See [CONTRIBUTING.md](CONTRIBUTING.md). Licensed under the Apache License 2.0; see [LICENSE](LICENSE).
+Apache-2.0 code; see [LICENSE](LICENSE). Source documents retain their own attribution and terms. The example includes rights and scope notes; inclusion does not relicense external material. See [SECURITY.md](SECURITY.md) before reporting a vulnerability.
