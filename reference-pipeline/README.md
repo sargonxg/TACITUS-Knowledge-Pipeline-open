@@ -74,3 +74,7 @@ These repositories have separate contracts and licenses. Their historical test r
 ## License and source rights
 
 Code retains this repository's Apache-2.0 license. Source documents and referenced projects retain their original attribution and terms; inclusion does not relicense them. See the fixture's rights notes. No new blanket license is granted over third-party data.
+
+## Diplomatic wording, drafts and discussion
+
+[Build the public language-review example](docs/diplomatic-language.md) without dependencies or credentials. It preserves exact historical source wording, two synthetic proposed drafts, explicit wording choices and source-linked discussion history. The generated graph has 23 objects and 34 relationships; literal checks flag omitted phrases without approving a draft. [Inspect and revise it in the workbench](https://tacitus.me/workbench/#language). This public reference is separate from the private product.

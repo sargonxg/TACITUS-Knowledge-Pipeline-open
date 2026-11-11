@@ -1,0 +1,79 @@
+{
+  "format": "tacitus-language-history/1",
+  "scope": "synthetic_editorial_exercise",
+  "choices": [
+    {
+      "id": "support-language",
+      "statement_id": "governance-process",
+      "literal": "Expresses its support",
+      "rationale": "Authored review question: does the draft preserve support language, or imply implementation? This is not an interpretation of legal effect."
+    }
+  ],
+  "drafts": [
+    {
+      "id": "initial",
+      "parent": null,
+      "text": "The Security Council established credible governance in Syria within six months and guaranteed elections.",
+      "evidence_ids": [
+        "governance-process"
+      ]
+    },
+    {
+      "id": "qualified",
+      "parent": "initial",
+      "text": "In resolution 2254 (2015), the Security Council “Expresses its support” for a Syrian-led political process “within a target of six months” and for elections “pursuant to the new constitution”. This is historical support language, not a finding of implementation.",
+      "evidence_ids": [
+        "governance-process"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "proposal-initial",
+      "kind": "proposal",
+      "draft_id": "initial",
+      "note": "Deliberately problematic, human-authored synthetic starting draft. Not an actual diplomatic proposal or model recording.",
+      "evidence_ids": [
+        "governance-process"
+      ]
+    },
+    {
+      "id": "question-support",
+      "kind": "discussion",
+      "draft_id": "initial",
+      "note": "The source expresses support; it does not establish implementation. Preserve that distinction and the two source conditions.",
+      "evidence_ids": [
+        "governance-process"
+      ],
+      "choice_id": "support-language"
+    },
+    {
+      "id": "proposal-qualified",
+      "kind": "proposal",
+      "draft_id": "qualified",
+      "note": "Authored revision quotes support wording and recorded conditions. It still needs human review.",
+      "evidence_ids": [
+        "governance-process"
+      ]
+    },
+    {
+      "id": "question-scope",
+      "kind": "discussion",
+      "draft_id": "qualified",
+      "note": "Keep the 2015 historical scope and inspect the whole paragraph. Selected phrases do not establish completeness or legal accuracy.",
+      "evidence_ids": [
+        "governance-process"
+      ],
+      "choice_id": "support-language"
+    },
+    {
+      "id": "pending-review",
+      "kind": "review",
+      "draft_id": "qualified",
+      "note": "Review remains pending. No real diplomat, institution or domain expert approved this exercise.",
+      "evidence_ids": [
+        "governance-process"
+      ]
+    }
+  ]
+}

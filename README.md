@@ -74,3 +74,7 @@ The existing notebooks, queries, examples and tests remain available. Their [ear
 ## Rights
 
 Apache-2.0 code; see [LICENSE](LICENSE). Source documents retain their own attribution and terms. The example includes rights and scope notes; inclusion does not relicense external material. See [SECURITY.md](SECURITY.md) before reporting a vulnerability.
+
+### Inspect diplomatic language and review history
+
+The [credential-free language-review tool](reference-pipeline/docs/diplomatic-language.md) extends the existing compiler with source-linked wording choices, draft versions, discussion records and a review graph. It uses attributed historical public evidence and clearly synthetic editorial drafts. It performs no inference or semantic approval. [Open the browser desk](https://tacitus.me/workbench/#language).
