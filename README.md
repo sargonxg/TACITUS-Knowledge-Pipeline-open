@@ -95,3 +95,7 @@ Apache-2.0 code; see [LICENSE](LICENSE). Source documents retain their own attri
 ### Inspect diplomatic language and review history
 
 The [credential-free language-review tool](reference-pipeline/docs/diplomatic-language.md) extends the existing compiler with source-linked wording choices, draft versions, discussion records and a review graph. It uses attributed historical public evidence and clearly synthetic editorial drafts. It performs no inference or semantic approval. [Open the browser desk](https://tacitus.me/workbench/#language).
+
+## Format boundaries and current local checks
+
+[Evidence-format compatibility and reader boundaries](https://github.com/sargonxg/tacitus-workbench/blob/main/docs/FORMAT_COMPATIBILITY.md) distinguish the public reference, native readers, source-kit selections and the separately owned App contracts. No automatic cross-format converter or App authorization is implied. On 12 November 2026, the documented credential-free reference suite passed all 42 tests and the historical Syria graph/context/review-sheet build passed. The organization starter retains its existing reviewed submodule pin; no model/provider request or deployment was performed.
