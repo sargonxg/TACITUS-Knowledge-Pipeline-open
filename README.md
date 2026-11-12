@@ -2,6 +2,21 @@
 
 # TACITUS Knowledge Pipeline
 
+<!-- tacitus-practical-entry -->
+## Purpose, code and a playable introduction
+
+Compile exact source passages and authored annotations into a bounded policy context, a review worksheet and an inspectable artifact.
+
+**Local reference implementation.** The credential-free compiler and optional model adapters are separate workflows. Cross-repository capsule formats are not interchangeable.
+
+[Setup, code walkthrough, research & verification](TACITUS_GUIDE.md) · [Play the original 8-bit teaching adventure](tacitus-demo/index.html) · [Demo credits](tacitus-demo/CREDITS.md)
+
+![The original House of Evidence teaching adventure; synthetic case, separate from this project’s runtime](tacitus-demo/mansion.png)
+
+Research: [RAG](https://arxiv.org/abs/2005.11401), [long-context evidence use](https://arxiv.org/abs/2307.03172), [GraphRAG](https://arxiv.org/abs/2404.16130). [What TACITUS borrows, adds and still needs to measure](https://github.com/sargonxg/sargonxg/blob/main/docs/RESEARCH_AND_DESIGN.md).
+<!-- /tacitus-practical-entry -->
+
+
 **Data infrastructure for Policy / Political AI.**
 
 Turn exact policy sources into an explicit knowledge structure, a task-specific capsule and an inspectable artifact. The goal is better saliency and efficiency in AI generation. Assembly behavior is tested here; generation-quality and whole-process efficiency gains still need evaluation.
