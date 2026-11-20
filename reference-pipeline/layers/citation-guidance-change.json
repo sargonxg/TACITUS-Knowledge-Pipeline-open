@@ -1,0 +1,12 @@
+{
+  "id": "citation-guidance-change",
+  "version": "1.0.0",
+  "statement_ids": ["draft-citation-review", "final-citation-review", "draft-id-collision"],
+  "required_statement_ids": ["draft-citation-review", "final-citation-review", "draft-id-collision"],
+  "checks": [
+    "Resolve the exact wording and action code in each source edition.",
+    "Distinguish the same code in different editions from the same action.",
+    "Preserve both pre-deployment measurement and ongoing monitoring.",
+    "Treat the action as suggested guidance and review the proposed decision before adoption."
+  ]
+}

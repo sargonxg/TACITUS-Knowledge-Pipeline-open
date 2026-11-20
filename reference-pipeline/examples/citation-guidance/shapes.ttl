@@ -1,0 +1,42 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix tac: <https://tacitus.me/ns/reference#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+tac:ReviewPracticeShape a sh:NodeShape ;
+    sh:targetClass skos:Concept ;
+    sh:property [ sh:path skos:prefLabel ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype rdf:langString ; sh:languageIn ("en") ] .
+
+tac:SourceEditionShape a sh:NodeShape ;
+    sh:targetClass tac:SourceEdition ;
+    sh:class prov:Entity ;
+    sh:property [ sh:path dcterms:title ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ] ;
+    sh:property [ sh:path dcterms:source ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] ;
+    sh:property [ sh:path dcterms:issued ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:date ] ;
+    sh:property [ sh:path tac:textSha256 ; sh:minCount 1 ; sh:maxCount 1 ; sh:pattern "^[a-f0-9]{64}$" ] ;
+    sh:property [ sh:path tac:pdfSha256 ; sh:minCount 1 ; sh:maxCount 1 ; sh:pattern "^[a-f0-9]{64}$" ] ;
+    sh:property [ sh:path tac:pdfPage ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 1 ] ;
+    sh:property [ sh:path tac:printedPage ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 1 ] .
+
+tac:EvidenceSpanShape a sh:NodeShape ;
+    sh:targetClass tac:EvidenceSpan ;
+    sh:class prov:Entity ;
+    sh:property [ sh:path prov:wasDerivedFrom ; sh:minCount 1 ; sh:maxCount 1 ; sh:class tac:SourceEdition ] ;
+    sh:property [ sh:path tac:actionId ; sh:minCount 1 ; sh:maxCount 1 ; sh:pattern "^MS-2[.]5-[0-9]{3}$" ] ;
+    sh:property [ sh:path tac:exactQuote ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ] ;
+    sh:property [ sh:path tac:start ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 0 ; sh:lessThan tac:end ] ;
+    sh:property [ sh:path tac:end ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ] ;
+    sh:property [ sh:path tac:offsetUnit ; sh:minCount 1 ; sh:maxCount 1 ; sh:in ("unicode_codepoints") ] .
+
+tac:ProposedStatementShape a sh:NodeShape ;
+    sh:targetClass tac:ProposedStatement ;
+    sh:class prov:Entity ;
+    sh:property [ sh:path prov:wasDerivedFrom ; sh:minCount 1 ; sh:maxCount 1 ; sh:class tac:EvidenceSpan ] ;
+    sh:property [ sh:path tac:practice ; sh:minCount 1 ; sh:maxCount 1 ; sh:class skos:Concept ] ;
+    sh:property [ sh:path tac:interpretation ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ] ;
+    sh:property [ sh:path tac:modality ; sh:minCount 1 ; sh:maxCount 1 ; sh:in ("suggested guidance") ] ;
+    sh:property [ sh:path tac:reviewStatus ; sh:minCount 1 ; sh:maxCount 1 ; sh:in ("proposed") ] ;
+    sh:property [ sh:path tac:qualification ; sh:datatype xsd:string ; sh:minLength 1 ] .

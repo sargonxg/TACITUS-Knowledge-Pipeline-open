@@ -13,3 +13,5 @@ To add a layer:
 5. Test a small budget and source/qualification tampering.
 
 Selection here is explicit and deterministic. It is not semantic embedding search, expert endorsement or automatic extraction. A production retrieval adapter needs access controls, evaluation and a rule for preserving disagreement.
+
+For the [edition-change layer](../layers/citation-guidance-change.json), all three passages are required. The draft and final text answer whether the wording changed. The draft action that shares the final code is the counterexample that makes the interpretation auditable. The layer carries timing qualifiers into the capsule and refuses a budget too small for the complete evidence. A different question about release readiness would use a different layer and include local test and approval records.

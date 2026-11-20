@@ -1,0 +1,38 @@
+{
+  "format": "tacitus-citation-guidance-capture/1",
+  "publisher": "National Institute of Standards and Technology",
+  "retrieved_on": "2026-11-20",
+  "extractor": "Poppler pdftotext 25.03.0 -layout. Select the action ID and suggested action columns from the indicated page, join layout lines, and normalize typographic ligatures and line-wrapped hyphens.",
+  "rights_note": "Excerpted NIST technical publication. NIST-authored publications are generally in the United States public domain. Foreign rights are reserved. Source attribution is retained. No endorsement is implied.",
+  "rights_url": "https://www.nist.gov/nist-research-library/nist-publications",
+  "sources": [
+    {
+      "id": "draft",
+      "title": "NIST AI 600-1 · April 2024 draft",
+      "edition": "April 2024 draft",
+      "date": "2024-04-29",
+      "url": "https://airc.nist.gov/docs/NIST.AI.600-1.GenAI-Profile.ipd.pdf#page=44",
+      "pdf_sha256": "ddb7a400c1c03fe4430e34e5a827d0c3699ebea5cb39d6664df9ff83fd6726ee",
+      "text_sha256": "c04ca66a2b3e59d0e18741185de67f805437b4950a479642b288cbe70c2675be",
+      "printed_page": 39,
+      "pdf_page": 44,
+      "action_column_end": 99,
+      "action_count": 12,
+      "snapshot": "sources/draft-measure-2.5.txt"
+    },
+    {
+      "id": "final",
+      "title": "NIST AI 600-1 · July 2024 final",
+      "edition": "July 2024 final",
+      "date": "2024-07-26",
+      "url": "https://nvlpubs.nist.gov/nistpubs/AI/NIST.AI.600-1.pdf#page=35",
+      "pdf_sha256": "6e73620ab6b64e90ef2c04bf0e0d6246185a2f4b1b13cab0df494496cff89b6a",
+      "text_sha256": "e1b5e52f2bcf5cf29b745d842cdfc45499e35d2ba953ca52e2ef1c4cecdd43e4",
+      "printed_page": 31,
+      "pdf_page": 35,
+      "action_column_end": 94,
+      "action_count": 6,
+      "snapshot": "sources/final-measure-2.5.txt"
+    }
+  ]
+}

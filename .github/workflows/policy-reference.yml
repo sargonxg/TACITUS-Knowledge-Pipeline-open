@@ -21,3 +21,8 @@ jobs:
           python benchmarks/run.py
           PYTHONPATH=src python -m tacitus_pipeline build --input examples/assessment/collection.json --ontology ontology/policy.json --layer layers/assessment-evidence.json --question "Map assessment evidence and review roles." --output build/assessment
           PYTHONPATH=src python -m tacitus_pipeline build --input examples/syria-negotiation/collection.json --ontology ontology/negotiation.json --layer layers/syria-negotiation.json --question "Prepare a historical negotiation-policy desk note." --output build/syria
+          PYTHONPATH=src python examples/citation-guidance/compile.py --output build/citation-guidance
+          cmp examples/citation-guidance/proof.json build/citation-guidance/proof.json
+          diff -r examples/citation-guidance/compiled build/citation-guidance/compiled
+          python -m pip install pyshacl==0.40.2 rdflib==7.6.0
+          python examples/citation-guidance/verify-standards.py build/citation-guidance/compiled/standards.jsonld

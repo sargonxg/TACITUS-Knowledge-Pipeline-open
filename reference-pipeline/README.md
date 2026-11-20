@@ -6,7 +6,21 @@ Build a source-linked policy graph, apply an explicit semantic layer and prepare
 
 [Website](https://tacitus.me/) · [TACITUS organization](https://github.com/TACITUS-me) · [LinkedIn](https://www.linkedin.com/company/tacitus-me) · [Benchmark plan](benchmarks/model-evaluation-plan.json)
 
-## Run a useful example
+## Reproduce the source-edition proof
+
+NIST kept the wording of its citation-checking guidance and changed the action ID between draft and final. Compare the exact passages and see why using the identifier alone points to a different practice in the draft. [Source-edition proof](examples/citation-guidance/README.md)
+
+```sh
+git clone https://github.com/sargonxg/TACITUS-Knowledge-Pipeline-open.git
+cd TACITUS-Knowledge-Pipeline-open/reference-pipeline
+PYTHONPATH=src python examples/citation-guidance/compile.py --output build/citation-guidance
+cmp examples/citation-guidance/proof.json build/citation-guidance/proof.json
+diff -r examples/citation-guidance/compiled build/citation-guidance/compiled
+```
+
+Python 3.11+ and the committed source excerpts are sufficient. Open the [proof](examples/citation-guidance/proof.json), [graph](examples/citation-guidance/compiled/graph.json), [capsule](examples/citation-guidance/compiled/capsule.json), or [proposed review sheet](examples/citation-guidance/compiled/brief.md). The receipts show exactly which evidence was retained and how many model calls were made.
+
+## Build an assessment layer
 
 Python 3.11+. No dependencies, credentials, database service or model provider required.
 
@@ -74,7 +88,3 @@ These repositories have separate contracts and licenses. Their historical test r
 ## License and source rights
 
 Code retains this repository's Apache-2.0 license. Source documents and referenced projects retain their original attribution and terms; inclusion does not relicense them. See the fixture's rights notes. No new blanket license is granted over third-party data.
-
-## Diplomatic wording, drafts and discussion
-
-[Build the public language-review example](docs/diplomatic-language.md) without dependencies or credentials. It preserves exact historical source wording, two synthetic proposed drafts, explicit wording choices and source-linked discussion history. The generated graph has 23 objects and 34 relationships; literal checks flag omitted phrases without approving a draft. [Inspect and revise it in the workbench](https://tacitus.me/workbench/#language). This public reference is separate from the private product.
