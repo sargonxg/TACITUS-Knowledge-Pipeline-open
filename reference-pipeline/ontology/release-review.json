@@ -1,0 +1,13 @@
+{
+  "id": "release-review",
+  "version": "1.0.0",
+  "entity_types": ["ReleaseDecision", "ReviewPractice"],
+  "relations": {
+    "considers_guidance_for": {
+      "domain": ["ReleaseDecision"],
+      "range": ["ReviewPractice"],
+      "definition": "A release decision considers source-backed guidance about the named review practice.",
+      "counterexample": "An action identifier in a draft alone neither mandates a practice nor proves it was performed."
+    }
+  }
+}
