@@ -2,100 +2,70 @@
 
 # TACITUS Knowledge Pipeline
 
-<!-- tacitus-practical-entry -->
-## Purpose, code and a playable introduction
+[TACITUS](https://app.tacitus.me/) is a conversation workspace for teams. Save the instructions, sources and examples that made one conversation useful. Attach them when you start the next one or hand the work to a teammate.
 
-Compile exact source passages and authored annotations into a bounded policy context, a review worksheet and an inspectable artifact.
+[Open the App](https://app.tacitus.me/) · [Try a conversation](https://app.tacitus.me/try.html) · [TACITUS website](https://tacitus.me/) · [App availability](https://app.tacitus.me/api/health)
 
-**Local reference implementation.** The credential-free compiler and optional model adapters are separate workflows. Cross-repository capsule formats are not interchangeable.
+This repository contains the public reference compiler. It shows how exact source passages, authored mappings and review rules become a bounded context package and an inspectable review sheet.
 
-[Setup, code walkthrough, research & verification](TACITUS_GUIDE.md) · [Play the original 8-bit teaching adventure](tacitus-demo/index.html) · [Demo credits](tacitus-demo/CREDITS.md)
+| Piece | What it carries |
+| --- | --- |
+| **Capsule** | Background, working instructions, selected evidence and checks to apply again. |
+| **Artefact** | A template, example or deliverable that shows what useful work should look like. |
+| **Knowledge graph** | Typed links between source editions, exact passages, statements and qualifications. |
+| **Semantic layer** | The parts of the graph and the review rules relevant to one task. |
 
-![Original TACITUS Source Workshop: saved sources, typed structure, bounded context and human review](https://raw.githubusercontent.com/sargonxg/sargonxg/a91027079c8ff8ebbd3623898a5e03a13cd80df5/assets/tacitus-source-workshop-8bit.png)
+## Run the exact-source compiler
 
-*Original concept illustration; the scene and documents are fictional. [Artwork and reuse](https://github.com/sargonxg/sargonxg/blob/a91027079c8ff8ebbd3623898a5e03a13cd80df5/docs/VISUAL_IDENTITY.md).*
+Use Python 3.11 or newer. The pinned example can be rebuilt locally with the standard library. It uses recorded public excerpts and makes zero model calls.
 
-Research: [RAG](https://arxiv.org/abs/2005.11401), [long-context evidence use](https://arxiv.org/abs/2307.03172), [GraphRAG](https://arxiv.org/abs/2404.16130). [What TACITUS borrows, adds and still needs to measure](https://github.com/sargonxg/sargonxg/blob/main/docs/RESEARCH_AND_DESIGN.md).
-<!-- /tacitus-practical-entry -->
-
-
-**Data infrastructure for Policy / Political AI.**
-
-Turn exact policy sources into an explicit knowledge structure, a task-specific capsule and an inspectable artifact. The goal is better saliency and efficiency in AI generation. Assembly behavior is tested here; generation-quality and whole-process efficiency gains still need evaluation.
-
-[Website](https://tacitus.me/) · [Build guide](https://tacitus.me/developers/) · [TACITUS organization](https://github.com/TACITUS-me) · [LinkedIn](https://www.linkedin.com/company/tacitus-me)
-
-## Run the reference
-
-Python 3.11+. No runtime dependencies, credentials or model calls.
+The April 2024 draft of the NIST Generative AI Profile called its citation-checking guidance `MS-2.5-008`. The July final uses `MS-2.5-003` for the same wording. That identifier meant something different in the draft. The proof preserves the wording and proposes a citation update.
 
 ```sh
 git clone https://github.com/sargonxg/TACITUS-Knowledge-Pipeline-open.git
-cd TACITUS-Knowledge-Pipeline-open/reference-pipeline
-PYTHONPATH=src python -m tacitus_pipeline build \
-  --input examples/assessment/collection.json \
-  --ontology ontology/policy.json \
-  --layer layers/assessment-evidence.json \
-  --question "Map assessment evidence and review roles." \
-  --output build/assessment
+cd TACITUS-Knowledge-Pipeline-open
+git checkout --detach be8640a6a2b5ff2755c884e9e7eae981bb98e62e
+cd reference-pipeline
+PYTHONPATH=src python3 examples/citation-guidance/compile.py --output build/citation-guidance
+cmp examples/citation-guidance/proof.json build/citation-guidance/proof.json
+diff -r examples/citation-guidance/compiled build/citation-guidance/compiled
 ```
 
-The example uses original adopted EU AI Act and GDPR passages. It preserves the conditional relationship between assessments, the DPO designation condition and the distinct AI Office template role. Authored mappings remain proposals for review; this is not a current legal-applicability assessment.
+Open `build/citation-guidance/proof.json` for the proposed judgment, then `build/citation-guidance/compiled/brief.md` for its supporting passages and reviewer checks. The other outputs show how the compiler assembled the context.
 
-Open `build/assessment/brief.md`, then inspect `capsule.json`, `graph.json`, `graph.jsonld`, `workflow.json` and `receipt.json`. Required evidence stays whole; an insufficient byte budget is refused. Source text is reference data, not action authority.
+- `graph.json` and `graph.jsonld` record exact source links, statement types and qualifications.
+- `capsule.json` packages the selected evidence and task checks within an explicit byte budget.
+- `standards.jsonld` maps provenance and named concepts to PROV-O and SKOS. The optional SHACL verifier checks the export structure.
+- `receipt.json` records what was selected, the size and content hash of the result, and the number of model calls.
+- `workflow.json` describes a read-only workflow plan.
 
-## Generate and inspect a real draft
+[Inspect the pinned source capture, outputs and validation steps](https://github.com/sargonxg/TACITUS-Knowledge-Pipeline-open/tree/be8640a6a2b5ff2755c884e9e7eae981bb98e62e/reference-pipeline/examples/citation-guidance) · [April NIST draft](https://airc.nist.gov/docs/NIST.AI.600-1.GenAI-Profile.ipd.pdf#page=44) · [July NIST final](https://nvlpubs.nist.gov/nistpubs/AI/NIST.AI.600-1.pdf#page=35)
 
-The [Syria policy workflow](reference-pipeline/docs/model-workflows.md) adds explicit cloud/local model adapters and a bounded evidence-inspection agent. The model can inspect selected evidence IDs, then propose a cited draft. Code retains exact passages and qualifications; human approval is never granted automatically.
-
-[Actual two-step Cloudflare run](reference-pipeline/examples/syria-negotiation/agent-step-2) · [Flat versus structured recordings](reference-pipeline/examples/syria-negotiation) · [Research index: 12 papers](research/README.md)
-
-![Actual Syria briefing inspected in TACITUS Workbench; recorded cloud run, human review pending](assets/showcase/policy-workflow-desktop.png)
-
-The screenshot shows a recorded run in the separate [Workbench](https://github.com/sargonxg/tacitus-workbench). It does not imply a live hosted PRAXIS bridge. Both flat and structured drafts resolve their citations; structured input used more total tokens in this one-task comparison.
-
-## Inspect or change a layer
-
-| Part | Source and guide |
-| --- | --- |
-| Sources | [Exact text, source editions and evidence spans](reference-pipeline/docs/sources.md) |
-| Ontology | [Entity types and valid relationships](reference-pipeline/docs/ontology.md) |
-| Semantic layer | [Task selection, qualifications and review checks](reference-pipeline/docs/semantic-layers.md) |
-| Context and artifact | [Bounded assembly and the review-sheet workflow](reference-pipeline/docs/workflows.md) |
-| Implementation | [Standard-library Python core](reference-pipeline/src/tacitus_pipeline/core.py) |
-| Outputs | [Populated, inspectable example files](reference-pipeline/examples/assessment/expected) |
-
-## Verify and benchmark
+## Inspect and verify the code
 
 From `reference-pipeline`:
 
 ```sh
-PYTHONPATH=src python -m unittest discover -s tests -v
-python benchmarks/run.py
+PYTHONPATH=src python3 -m unittest discover -s tests -v
+python3 benchmarks/run.py
 ```
 
-The reference tests check quotation tampering, source editions, lost conditions, ontology constraints, dangling references, proposed review state, duplicate editions, Unicode, context limits and explicit overwrite. A GitHub Actions workflow is supplied for the credential-free checks; no hosted CI result is claimed for this update.
+The tests check source versions, exact offsets, preserved qualifications, type and relation rules, and context limits. The example’s citations are inspectable and its mappings remain proposed. A reviewer still decides whether the passages support the judgment. The assembly benchmarks measure evidence retention and packet size. Evaluation of answer quality and analyst time is pending.
 
-[Assembly measurements](reference-pipeline/benchmarks/assembly-results.json) test evidence preservation and byte limits. They are not model-quality or token-savings measurements. The [model-output evaluation plan](reference-pipeline/benchmarks/model-evaluation-plan.json) remains work in progress: held-out tasks, matched evidence, blinded domain review and complete costs.
+[Source capture](reference-pipeline/docs/sources.md) · [Ontology](reference-pipeline/docs/ontology.md) · [Semantic layers](reference-pipeline/docs/semantic-layers.md) · [Benchmark method](reference-pipeline/docs/benchmarking.md) · [Model evaluation plan at the example pin](https://github.com/sargonxg/TACITUS-Knowledge-Pipeline-open/blob/be8640a6a2b5ff2755c884e9e7eae981bb98e62e/reference-pipeline/benchmarks/model-evaluation-plan.json)
 
-## Development boundaries
+## Working boundaries
 
-The working reference uses authored annotations. Automatic extraction, expert validation and provider adapters remain in development. `workflow.json` is a read-only plan, not live agent execution or an import contract for another application.
+The hosted App is experimental. The public practice prepares local request previews and template-based outlines. Check App availability for hosted generation. The public compiler uses its own reference format. The App and Workbench have separate versioned formats and access rules. Optional model adapters and their saved outputs are documented as separate experiments.
 
-[PRAXIS](https://praxis.tacitus.me/) is the invitation-only workspace for capsules and artifacts; AI generation is currently paused and paid upgrades are unavailable. [The local workbench](https://github.com/sargonxg/tacitus-workbench), [DIALECTICA](https://github.com/sargonxg/A3_DIALECTICAbyTACITUS_v3) and [KAIROS](https://github.com/sargonxg/KAIROS-temporal-vision-TACITUS) have separate contracts and development status.
+[App availability](https://app.tacitus.me/api/health) · [Format compatibility](https://github.com/sargonxg/tacitus-workbench/blob/main/docs/FORMAT_COMPATIBILITY.md) · [Earlier model experiments](reference-pipeline/docs/model-workflows.md) · [Research index](research/README.md) · [Guide and teaching demo](TACITUS_GUIDE.md)
 
-## Earlier notebook experiments
+<details>
+<summary>Earlier examples, tools and research</summary>
 
-The existing notebooks, queries, examples and tests remain available. Their [earlier documentation](docs/legacy-notebook-readme.md) describes separate service dependencies and historical experiments. They have not been revalidated by the new reference tests. Verify provider availability, costs and data permissions before running them. Temperature zero does not make semantic interpretation deterministic.
+- [Assessment example](reference-pipeline/examples/assessment), [historical agent recording](reference-pipeline/examples/syria-negotiation/agent-step-2) and [source-linked language review](reference-pipeline/docs/diplomatic-language.md).
+- [Earlier notebooks and service dependencies](docs/legacy-notebook-readme.md), [research and design notes](https://github.com/sargonxg/sargonxg/blob/main/docs/RESEARCH_AND_DESIGN.md) and [TACITUS public project map](https://github.com/sargonxg/sargonxg/blob/main/docs/PUBLIC_PROJECT_MAP.md).
 
-## Rights
+</details>
 
-Apache-2.0 code; see [LICENSE](LICENSE). Source documents retain their own attribution and terms. The example includes rights and scope notes; inclusion does not relicense external material. See [SECURITY.md](SECURITY.md) before reporting a vulnerability.
-
-### Inspect diplomatic language and review history
-
-The [credential-free language-review tool](reference-pipeline/docs/diplomatic-language.md) extends the existing compiler with source-linked wording choices, draft versions, discussion records and a review graph. It uses attributed historical public evidence and clearly synthetic editorial drafts. It performs no inference or semantic approval. [Open the browser desk](https://tacitus.me/workbench/#language).
-
-## Format boundaries and current local checks
-
-[Evidence-format compatibility and reader boundaries](https://github.com/sargonxg/tacitus-workbench/blob/main/docs/FORMAT_COMPATIBILITY.md) distinguish the public reference, native readers, source-kit selections and the separately owned App contracts. No automatic cross-format converter or App authorization is implied. On 12 November 2026, the documented credential-free reference suite passed all 42 tests and the historical Syria graph/context/review-sheet build passed. The organization starter retains its existing reviewed submodule pin; no model/provider request or deployment was performed.
+The code uses the [Apache-2.0 license](LICENSE). Public source materials retain their attribution and terms. Report security issues using [SECURITY.md](SECURITY.md).
