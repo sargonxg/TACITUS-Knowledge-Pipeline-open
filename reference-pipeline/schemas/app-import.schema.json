@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tacitus.me/schemas/pipeline-import-v1.json",
+  "title": "TACITUS source package for explicit App import",
+  "type": "object",
+  "required": ["schema", "collection", "ontology", "layer", "question", "budget_bytes", "capsule", "receipt", "sha256"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {"const": "tacitus-pipeline-import/1"},
+    "collection": {"type": "object", "required": ["sources", "entities", "statements"]},
+    "ontology": {"type": "object", "required": ["id", "version", "entity_types", "relations"]},
+    "layer": {"type": "object", "required": ["id", "version", "statement_ids", "required_statement_ids", "checks"]},
+    "question": {"type": "string", "minLength": 1, "maxLength": 1800},
+    "budget_bytes": {"type": "integer", "minimum": 2000, "maximum": 250000},
+    "capsule": {"type": "object", "required": ["format", "statements", "omissions"]},
+    "receipt": {"type": "object", "required": ["format", "context_sha256", "context_bytes", "model_calls"]},
+    "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  },
+  "description": "The digest binds canonical UTF-8 JSON excluding sha256. App validation additionally checks exact source hashes, code-point spans, required qualifications, layer membership and the bounded context receipt."
+}

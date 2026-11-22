@@ -1,0 +1,91 @@
+{
+  "sources": [
+    {
+      "id": "team-discussion",
+      "title": "Team working discussion · demonstration fixture",
+      "url": "https://example.org/tacitus/team-handoff",
+      "version": "12196a8a7adaf3965c8f93d850b1933e02d66f86bd27d94027df509d1820e1da",
+      "file": "sources/team-discussion.txt",
+      "scope": "TACITUS-authored demonstration discussion. Names and organizational practices are illustrative.",
+      "rights_note": "TACITUS-authored fixture, Apache-2.0."
+    }
+  ],
+  "entities": [
+    {
+      "id": "discussion",
+      "type": "Discussion",
+      "label": "Captured team discussion"
+    },
+    {
+      "id": "reuse-decision",
+      "type": "Decision",
+      "label": "Reuse a recommendation with its context"
+    }
+  ],
+  "statements": [
+    {
+      "id": "working-rule-1",
+      "source_id": "team-discussion",
+      "source_version": "12196a8a7adaf3965c8f93d850b1933e02d66f86bd27d94027df509d1820e1da",
+      "start": 50,
+      "end": 143,
+      "quote": "A recommendation may be reused only if the source edition and its conditions remain attached.",
+      "subject": "discussion",
+      "object": "reuse-decision",
+      "relation": "supports",
+      "interpretation": "Keep source editions and conditions with a reused recommendation.",
+      "modality": "authored_working_guidance",
+      "review_state": "proposed",
+      "qualifiers": [
+        {
+          "text": "only if the source edition and its conditions remain attached",
+          "start": 31,
+          "end": 92
+        }
+      ],
+      "required_qualifier_literals": [
+        "only if the source edition and its conditions remain attached"
+      ]
+    },
+    {
+      "id": "working-rule-2",
+      "source_id": "team-discussion",
+      "source_version": "12196a8a7adaf3965c8f93d850b1933e02d66f86bd27d94027df509d1820e1da",
+      "start": 144,
+      "end": 251,
+      "quote": "The team chose a short decision note so a new teammate can inspect the evidence before continuing the work.",
+      "subject": "discussion",
+      "object": "reuse-decision",
+      "relation": "supports",
+      "interpretation": "Use a short decision note for teammate handoff.",
+      "modality": "authored_working_guidance",
+      "review_state": "proposed",
+      "qualifiers": [],
+      "required_qualifier_literals": []
+    },
+    {
+      "id": "working-rule-3",
+      "source_id": "team-discussion",
+      "source_version": "12196a8a7adaf3965c8f93d850b1933e02d66f86bd27d94027df509d1820e1da",
+      "start": 252,
+      "end": 339,
+      "quote": "This discussion describes a working method and does not establish that a claim is true.",
+      "subject": "discussion",
+      "object": "reuse-decision",
+      "relation": "supports",
+      "interpretation": "Treat the discussion as guidance with limits.",
+      "modality": "authored_working_guidance",
+      "review_state": "proposed",
+      "qualifiers": [
+        {
+          "text": "does not establish that a claim is true",
+          "start": 47,
+          "end": 86
+        }
+      ],
+      "required_qualifier_literals": [
+        "does not establish that a claim is true"
+      ]
+    }
+  ]
+}
