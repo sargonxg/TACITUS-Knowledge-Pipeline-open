@@ -1,0 +1,46 @@
+{
+  "id": "team-knowledge",
+  "version": "1.0.0",
+  "entity_types": [
+    "Claim",
+    "Decision",
+    "Discussion",
+    "Artefact",
+    "Passage",
+    "Qualification"
+  ],
+  "relations": {
+    "supports": {
+      "domain": [
+        "Passage",
+        "Discussion"
+      ],
+      "range": [
+        "Claim",
+        "Decision"
+      ],
+      "definition": "An authored interpretation linking material to a claim or decision."
+    },
+    "qualifies": {
+      "domain": [
+        "Qualification"
+      ],
+      "range": [
+        "Claim",
+        "Decision"
+      ],
+      "definition": "A condition limiting the scope of an authored claim or decision."
+    },
+    "guides": {
+      "domain": [
+        "Artefact",
+        "Decision"
+      ],
+      "range": [
+        "Claim",
+        "Decision"
+      ],
+      "definition": "A saved format or working decision frames later work."
+    }
+  }
+}

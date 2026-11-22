@@ -1,0 +1,18 @@
+{
+  "id": "decision-context",
+  "version": "1.0.0",
+  "title": "Keep the context behind a working decision",
+  "statement_ids": [
+    "working-rule-1",
+    "working-rule-2",
+    "working-rule-3"
+  ],
+  "required_statement_ids": [
+    "working-rule-1"
+  ],
+  "checks": [
+    "Inspect the exact discussion excerpt.",
+    "Keep source editions and material qualifications.",
+    "Record whether a reviewer has accepted the interpretation."
+  ]
+}

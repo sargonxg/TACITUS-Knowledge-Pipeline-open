@@ -1,6 +1,6 @@
 # TACITUS knowledge pipeline
 
-Build a source-linked policy graph, apply an explicit semantic layer and prepare bounded context for a reviewable artifact.
+Build a source-linked knowledge graph, apply a task layer and prepare bounded context for a reviewable artefact.
 
 **Start here:** the credential-free Python reference below. It works from exact source text and authored annotations. It does not extract meaning automatically, call a model, approve an interpretation or execute external actions.
 
@@ -69,7 +69,7 @@ Assembly measurements are not proof of better AI generation. The [model-output b
 
 [Context workbench](https://github.com/sargonxg/tacitus-workbench) · [DIALECTICA capsule core](https://github.com/sargonxg/A3_DIALECTICAbyTACITUS_v3) · [KAIROS temporal engine](https://github.com/sargonxg/KAIROS-temporal-vision-TACITUS) · [TCGC alpha benchmark](https://github.com/sargonxg/TCGC_TACITUS-Conflict-Grammar-Corpus_BENCHMARK).
 
-These repositories have separate contracts and licenses. Their historical test reports are not new verification of every component by this reference tool. PRAXIS is invitation-only and AI generation is currently paused: [open the workspace](https://praxis.tacitus.me/).
+These repositories have separate contracts and licenses. Their historical test reports are not new verification of every component by this reference tool. The App uses Google sign-in and hosted generation is currently paused. [Open the workspace](https://app.tacitus.me/).
 
 ## License and source rights
 
@@ -78,3 +78,9 @@ Code retains this repository's Apache-2.0 license. Source documents and referenc
 ## Diplomatic wording, drafts and discussion
 
 [Build the public language-review example](docs/diplomatic-language.md) without dependencies or credentials. It preserves exact historical source wording, two synthetic proposed drafts, explicit wording choices and source-linked discussion history. The generated graph has 23 objects and 34 relationships; literal checks flag omitted phrases without approving a draft. [Inspect and revise it in the workbench](https://tacitus.me/workbench/#language). This public reference is separate from the private product.
+
+## Generic team context and App import
+
+The new `ontology/team-knowledge.json` vocabulary and `layers/team-handoff.json` layer demonstrate capturing a discussion, preserving its qualifications and handing the context to another teammate. Add `--app-export` to emit the explicit App import package. [Build and import guide](docs/app-import.md)
+
+Use `--selection bm25` or `--selection graph` for deterministic passage selection. `validate` checks a collection and ontology. `diff` compares source collections and lists interpretations that need review after an edition change. Hosted App generation remains paused.

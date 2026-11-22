@@ -1,0 +1,4 @@
+🧭 Team working discussion, demonstration fixture.
+A recommendation may be reused only if the source edition and its conditions remain attached.
+The team chose a short decision note so a new teammate can inspect the evidence before continuing the work.
+This discussion describes a working method and does not establish that a claim is true.

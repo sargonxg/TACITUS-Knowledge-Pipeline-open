@@ -6,6 +6,9 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+import os
+import shutil
+import tempfile
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -168,11 +171,36 @@ def build(data, ontology, layer, *, question, budget=24000):
     return {"graph.json": graph, "graph.jsonld": jsonld, "capsule.json": capsule, "workflow.json": workflow, "receipt.json": receipt, "brief.md": brief}
 
 def write_bundle(bundle, output, *, force=False):
-    output = Path(output)
-    if output.exists() and any((output / name).exists() for name in bundle) and not force:
-        raise PipelineError("Output exists. Choose another directory or explicitly use --force.")
-    # Build/validate every result before touching the output directory.
+    output = Path(output).absolute()
     encoded = {name: value if isinstance(value, str) else canonical(value)+"\n" for name, value in bundle.items()}
-    output.mkdir(parents=True, exist_ok=True)
-    for name, value in encoded.items():
-        (output / name).write_text(value, encoding="utf-8")
+    if any(Path(name).name != name for name in encoded):
+        raise PipelineError("Bundle files must have plain filenames.")
+    output.parent.mkdir(parents=True, exist_ok=True)
+    lock = output.with_name(output.name + ".lock")
+    try:
+        descriptor = os.open(lock, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+    except FileExistsError as error:
+        raise PipelineError("Another build owns the output directory.") from error
+    os.close(descriptor)
+    try:
+        if output.exists() and any((output / name).exists() for name in bundle) and not force:
+            raise PipelineError("Output exists. Choose another directory or explicitly use --force.")
+        with tempfile.TemporaryDirectory(prefix=".tacitus-build-", dir=output.parent) as temporary:
+            stage, backup = Path(temporary) / "stage", Path(temporary) / "backup"
+            if output.exists():
+                shutil.copytree(output, stage)
+            else:
+                stage.mkdir()
+            for name, value in encoded.items():
+                (stage / name).write_text(value, encoding="utf-8")
+            had_output = output.exists()
+            if had_output:
+                output.rename(backup)
+            try:
+                stage.rename(output)
+            except OSError:
+                if had_output:
+                    backup.rename(output)
+                raise
+    finally:
+        lock.unlink(missing_ok=True)
