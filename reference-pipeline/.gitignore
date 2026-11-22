@@ -57,3 +57,11 @@ __pycache__/
 
 !examples/syria-negotiation/**/*.json
 !examples/syria-negotiation/*.json
+
+# Public, reviewed source-package fixtures and their schemas.
+!schemas/*.json
+!examples/team-handoff/*.json
+!examples/citation-guidance/**/*.json
+!examples/citation-guidance/*.json
+!layers/citation-guidance-change.json
+!ontology/release-review.json

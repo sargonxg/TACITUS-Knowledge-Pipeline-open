@@ -23,3 +23,10 @@ jobs:
           cmp examples/team-handoff/app-bundle.json build/team-handoff/app-bundle.json
           PYTHONPATH=src python -m tacitus_pipeline build --input examples/assessment/collection.json --ontology ontology/policy.json --layer layers/assessment-evidence.json --question "Map assessment evidence and review roles." --output build/assessment
           PYTHONPATH=src python -m tacitus_pipeline build --input examples/syria-negotiation/collection.json --ontology ontology/negotiation.json --layer layers/syria-negotiation.json --question "Prepare a historical negotiation-policy desk note." --output build/syria
+
+      - name: Reproduce the source-edition proof
+        working-directory: reference-pipeline
+        run: |
+          PYTHONPATH=src python examples/citation-guidance/compile.py --output build/citation-guidance
+          cmp examples/citation-guidance/proof.json build/citation-guidance/proof.json
+          diff -r examples/citation-guidance/compiled build/citation-guidance/compiled

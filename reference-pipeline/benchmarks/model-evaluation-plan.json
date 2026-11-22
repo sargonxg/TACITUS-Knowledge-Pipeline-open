@@ -1,12 +1,42 @@
 {
- "status":"work_in_progress_not_run",
- "question":"Does selected structured context preserve policy meaning at an acceptable total cost?",
- "arms":["task_only","plain_retrieval","structured_context"],
- "source_control":"Same permitted source pool and held-out tasks; freeze source, model and retrieval versions.",
- "review":"Blind paired outputs for domain review; store disagreements.",
- "quality_dimensions":["source_support","actor_identity","attribution","conditions_and_exceptions","date_scope","useful_uncertainty","drafting_usefulness"],
- "cost_dimensions":["preparation","indexing","retrieval","provider_input_and_output_tokens","latency","reviewer_time","failures"],
- "completion_requirements":["Reviewed held-out task set","Rights-reviewed source corpus","Configured model adapters","Recorded outputs and usage","Independent domain review"],
- "results":[],
- "claim":"No model-output quality or efficiency improvement is established by assembly tests."
+  "format": "tacitus-reference-model-evaluation-plan/1",
+  "status": "work_in_progress_not_run",
+  "question": "Does structured context preserve consequential source details and reduce error or review work compared with the same model using documents or ordinary retrieval?",
+  "arms": [
+    "full_documents",
+    "plain_retrieval",
+    "structured_context"
+  ],
+  "diagnostic_comparison": "Also compare the plain retrieval arm with the same ordered passages plus qualified graph context and capsule instructions. This isolates framing from retrieval.",
+  "source_control": "Freeze the allowed source text, hashes, historical cutoff and task question before dispatch. All three arms use the same corpus, model snapshot, generation settings, answer format and output cap. Predefine eligible full-document cases that fit the model context before any run.",
+  "retrieval_control": "Use BM25 against exact versioned source passages for plain retrieval. Give structured context the same passage budget and a separate declared framing budget. Log retrieval and framing bytes separately and retain failed retrievals.",
+  "test_set": "At least 24 held-out tasks across disjoint source collections, with eight each for edition and identifier changes, qualifiers or conflicting accounts, and insufficient material. The public NIST example is development-only. Exclude its versions and answer patterns from the held-out set.",
+  "review": "Use a registered seeded order for each task. Two independent domain reviewers see shuffled de-identified answers, the pinned corpus and a frozen claim-level rubric. Record disagreements and confidence intervals. A failed or missing run remains visible and contributes to the completion rate.",
+  "primary_metric": "Fraction of assigned tasks whose answer has no consequential unsupported claim and correctly covers or abstains on each prelisted critical point. Missing or invalid answers do not pass.",
+  "quality_dimensions": [
+    "citation_entailment",
+    "citation_coverage",
+    "correct_edition_and_actor",
+    "conditions_and_exceptions",
+    "appropriate_abstention",
+    "revision_usefulness"
+  ],
+  "cost_dimensions": [
+    "preparation",
+    "indexing",
+    "retrieval",
+    "provider_input_and_output_tokens",
+    "latency",
+    "analyst_time_to_accepted_output",
+    "failures"
+  ],
+  "analysis": "Report per-arm completion counts and paired task deltas against plain retrieval, with cluster bootstrap intervals by source collection. Publish quality and end-to-end cost separately. Include rubric, per-task results or permitted redactions, model identifiers, measured usage and dates.",
+  "completion_requirements": [
+    "Rights-reviewed source snapshots and held-out tasks",
+    "Pinned model, provider settings and registered study",
+    "Recorded outputs, attempted jobs and provider usage",
+    "Independent blind domain review"
+  ],
+  "results": [],
+  "claim": "Deterministic assembly checks do not establish generation accuracy or efficiency."
 }

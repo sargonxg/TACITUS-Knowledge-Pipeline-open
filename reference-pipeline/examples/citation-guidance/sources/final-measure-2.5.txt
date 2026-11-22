@@ -1,0 +1,6 @@
+MS-2.5-001  Avoid extrapolating GAI system performance or capabilities from narrow, non-systematic, and anecdotal assessments.
+MS-2.5-002  Document the extent to which human domain knowledge is employed to improve GAI system performance, via, e.g., RLHF, fine-tuning, retrieval-augmented generation, content moderation, business rules.
+MS-2.5-003  Review and verify sources and citations in GAI system outputs during pre-deployment risk measurement and ongoing monitoring activities.
+MS-2.5-004  Track and document instances of anthropomorphization (e.g., human images, mentions of human feelings, cyborg imagery or motifs) in GAI system interfaces.
+MS-2.5-005  Verify GAI system training data and TEVV data provenance, and that fine-tuning or retrieval-augmented generation data is grounded.
+MS-2.5-006  Regularly review security and safety guardrails, especially if the GAI system is being operated in novel circumstances. This includes reviewing reasons why the GAI system was initially assessed as being safe to deploy.

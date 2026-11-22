@@ -1,0 +1,12 @@
+MS-2.5-001  Apply standard measurement and structured human feedback approaches to internally-developed and third-party GAI systems.
+MS-2.5-002  Avoid extrapolating GAI system performance or capabilities from narrow, non-systematic, and anecdotal assessments.
+MS-2.5-003  Conduct security assessments and audits to measure the integrity of training data, system software, and system outputs.
+MS-2.5-004  Document the construct validity of methodologies employed in GAI systems relative to their context of use.
+MS-2.5-005  Document the extent to which human domain knowledge is employed to improve GAI system performance, via, e.g., RLHF, fine-tuning, content moderation, business rules.
+MS-2.5-006  Establish metrics or KPIs to determine whether GAI systems meet minimum performance standards for reliability and validity.
+MS-2.5-007  Measure, monitor, and document prevalence of erroneous GAI output content, system availability, and reproducibility of outcomes via field testing or other randomized controlled experiments.
+MS-2.5-008  Review and verify sources and citations in GAI system outputs during pre-deployment risk measurement and ongoing monitoring activities.
+MS-2.5-009  Track and document instances of anthropomorphization (e.g., human images, mentions of human feelings, cyborg imagery or motifs) in GAI system interfaces.
+MS-2.5-010  Track and document relevant version numbers, planned updates, hotfixes, and other GAI system change management information.
+MS-2.5-011  Update standard train/test model evaluation processes for GAI systems. Consider: Unwanted or undocumented overlaps in train and TEVV data sources, including their negative spaces (i.e., what is not represented in both); Employing substring matching or embedding distance approaches to assess similarity across data partitions.
+MS-2.5-012  Verify GAI system training data and TEVV data provenance, and that fine-tuning data is grounded.
