@@ -1,0 +1,62 @@
+{
+  "ordinal": 4,
+  "model_id": "gptoss120b",
+  "model": "@cf/openai/gpt-oss-120b",
+  "arm": "structured",
+  "request_sha256": "00a37df396ed3a596e438f587fb6378ffa299d18f121f2e0421c0431ee9b36a9",
+  "state": "response_received",
+  "request_sent_once": true,
+  "started_at": "2026-11-23T05:15:35.883Z",
+  "completed_at": "2026-11-23T05:15:42.858Z",
+  "elapsed_ms": 2369,
+  "response": {
+    "result": {
+      "id": "chatcmpl-d9bd181d-8fea-4851-a328-1b3a1cc28f90",
+      "object": "chat.completion",
+      "created": 1795410940,
+      "model": "@cf/openai/gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"claims\": [\n    {\n      \"text\": \"Renewal for six months is conditional on the independent reviewer accepting the risk note, but an objection was recorded that the risk note is incomplete and no final renewal approval was recorded.\",\n      \"citation_ids\": [\"e1\", \"e2\"]\n    }\n  ]\n}",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "usage": {
+        "prompt_tokens": 288,
+        "completion_tokens": 104,
+        "total_tokens": 392,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 16.25448989868164
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null
+    },
+    "success": true,
+    "errors": [],
+    "messages": []
+  },
+  "normalized_provider_response_sha256_before_field_omission": "b798bead2bee8daf65c8ee51a570c39c998b63fb9f4a29da0d2286019a3161ef",
+  "provider_fields_omitted": [
+    "choices[].message.reasoning",
+    "choices[].message.reasoning_content"
+  ]
+}

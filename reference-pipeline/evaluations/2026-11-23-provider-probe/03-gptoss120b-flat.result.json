@@ -1,0 +1,62 @@
+{
+  "ordinal": 3,
+  "model_id": "gptoss120b",
+  "model": "@cf/openai/gpt-oss-120b",
+  "arm": "flat",
+  "request_sha256": "b0749f332647232f5dff4e681c2d470a69f98e3637efe888844983d8b1b91c0e",
+  "state": "response_received",
+  "request_sent_once": true,
+  "started_at": "2026-11-23T05:15:30.311Z",
+  "completed_at": "2026-11-23T05:15:35.750Z",
+  "elapsed_ms": 1778,
+  "response": {
+    "result": {
+      "id": "chatcmpl-9a20583e-60be-42a6-be8e-360b45fed124",
+      "object": "chat.completion",
+      "created": 1795410934,
+      "model": "@cf/openai/gpt-oss-120b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"claims\":[{\"text\":\"The board could renew the licence for six months only if the independent reviewer accepts the risk note, but the meeting record notes an objection that the risk note is incomplete and records no final renewal approval.\",\"citation_ids\":[\"e1\",\"e2\"]}]}",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null
+          },
+          "logprobs": null,
+          "finish_reason": "stop",
+          "stop_reason": null,
+          "token_ids": null,
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "usage": {
+        "prompt_tokens": 200,
+        "completion_tokens": 96,
+        "total_tokens": 296,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 12.909051895141602
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null
+    },
+    "success": true,
+    "errors": [],
+    "messages": []
+  },
+  "normalized_provider_response_sha256_before_field_omission": "a4a36eeccc3a6a7e91c9ad95e1ad0be2e276cf3090562456c1eac5b7ddf640d5",
+  "provider_fields_omitted": [
+    "choices[].message.reasoning",
+    "choices[].message.reasoning_content"
+  ]
+}

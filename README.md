@@ -55,3 +55,7 @@ The assembly measurements concern retained evidence, selection and byte budgets.
 [Research index](research/README.md) maps primary papers to engineering questions. The original notebooks and provider experiments remain available with their separate dependencies. The maintained starting point is `reference-pipeline/`.
 
 Original code is Apache-2.0. Source documents retain their original attribution and terms.
+
+## Recorded provider compatibility check
+
+[Six live synthetic Cloudflare requests and their failures](reference-pipeline/evaluations/2026-11-23-provider-probe) retain exact inputs, final answers, model identities and token usage. All six responses satisfy the requested JSON schema and resolve their citation IDs. Gemma’s flat answer omits a required condition; GLM’s graph-assisted answer strengthens the procedural status. One task is not a quality benchmark or App/Gateway acceptance. No new inference is needed to inspect these records.

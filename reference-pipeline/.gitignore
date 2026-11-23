@@ -65,3 +65,6 @@ __pycache__/
 !examples/citation-guidance/*.json
 !layers/citation-guidance-change.json
 !ontology/release-review.json
+
+# Reviewed synthetic, credential-free provider probe and final-answer receipts
+!evaluations/2026-11-23-provider-probe/*.json

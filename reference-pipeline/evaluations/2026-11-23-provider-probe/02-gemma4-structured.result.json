@@ -1,0 +1,45 @@
+{
+  "ordinal": 2,
+  "model_id": "gemma4",
+  "model": "@cf/google/gemma-4-26b-a4b-it",
+  "arm": "structured",
+  "request_sha256": "72e43baa77fe8232754206377be24af847d8d6194609778d3efec298fcf016a0",
+  "state": "response_received",
+  "request_sent_once": true,
+  "started_at": "2026-11-23T05:15:23.754Z",
+  "completed_at": "2026-11-23T05:15:30.194Z",
+  "elapsed_ms": 2146,
+  "response": {
+    "result": {
+      "id": "ab8bc8ebe53c4e55a66fbf78a1c6e309",
+      "object": "chat.completion",
+      "created": 1795410928,
+      "model": "@cf/google/gemma-4-26b-a4b-it-external",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"claims\": [{\"text\": \"The board may renew the licence for six months only if the independent reviewer accepts the risk note, but the meeting discussion records an objection that the risk note is incomplete and records no final renewal approval.\", \"citation_ids\": [\"e1\", \"e2\"]}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 238,
+        "completion_tokens": 62,
+        "total_tokens": 300,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 3.8545453548431396
+      }
+    },
+    "success": true,
+    "errors": [],
+    "messages": []
+  },
+  "normalized_provider_response_sha256_before_field_omission": "a3d817f86b59cca063808da4c4e71cf8d241578fd0a39358093729cd0e4e33de",
+  "provider_fields_omitted": []
+}

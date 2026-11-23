@@ -1,0 +1,210 @@
+{
+  "schema": "tacitus-six-provider-probe/1",
+  "completed_at_utc": "2026-11-23T05:15:57.704Z",
+  "synthetic": true,
+  "customer_data": false,
+  "approved_calls": 6,
+  "attempted_calls": 6,
+  "responses_received": 6,
+  "schema_valid_responses": 6,
+  "citation_ids_resolve_responses": 6,
+  "finish_reason_stop_responses": 6,
+  "calls_repeated": 0,
+  "approved_spend_ceiling_usd": 0.25,
+  "reported_prompt_tokens": 1257,
+  "reported_completion_tokens": 450,
+  "estimated_cost_usd_ignoring_cache_discount": 0.0015707,
+  "cost_scope": "Reported tokens times observed public catalogue rates, without cache discounts; not an invoice or account-wide billing audit.",
+  "route": "direct_workers_ai_rest",
+  "gateway_tested": false,
+  "application_dispatch_tested": false,
+  "real_local_weights_tested": false,
+  "generation_enabled": false,
+  "accepted_for_general_generation": false,
+  "quality_gain_established": false,
+  "review_method": "Post-hoc, unblinded assistant review of final answer text against the two supplied synthetic sources. Not independent human approval or a preregistered benchmark.",
+  "comparison_limits": [
+    "One task, one run per arm and model; no sampling, repeated trials, blinding or general performance estimate.",
+    "The structured arm adds explicit relationship annotations. It is not a token-matched or information-equivalent causal comparison.",
+    "The graph labels renewal as proposed_action, while source e1 states conditional permission. An annotation can bias status language; it is not independent evidence.",
+    "Gemma reports an upstream model name ending -external. It is retained verbatim; execution hardware/vendor placement is not independently attested.",
+    "Provider-private reasoning fields are excluded from published receipts. Final answers, request hashes, usage, timestamps and normalized-response digests remain."
+  ],
+  "rates_usd_per_million_tokens": {
+    "gemma4": {
+      "input": 0.1,
+      "output": 0.3
+    },
+    "gptoss120b": {
+      "input": 0.35,
+      "output": 0.75
+    },
+    "glm53": {
+      "input": 1.4,
+      "output": 4.4
+    }
+  },
+  "records": [
+    {
+      "ordinal": 1,
+      "model_id": "gemma4",
+      "arm": "flat",
+      "request_sha256": "63a108325a786b0fb9c0e9294dcc93fa323646eb94137b2e8554925b2de8d8f9",
+      "receipt": "01-gemma4-flat.result.json",
+      "model_reported": "@cf/google/gemma-4-26b-a4b-it-external",
+      "finish_reason": "stop",
+      "prompt_tokens": 150,
+      "completion_tokens": 41,
+      "elapsed_ms": 1233,
+      "estimated_cost_usd_ignoring_cache_discount": 2.7299999999999996e-05,
+      "claims": [
+        {
+          "text": "The material records no final renewal approval, noting an objection that the risk note is incomplete (e2).",
+          "citation_ids": [
+            "e2"
+          ]
+        }
+      ],
+      "assistant_review": {
+        "review": "The answer preserves the objection and lack of approval, but omits the explicitly requested renewal condition. It cites only e2.",
+        "flags": [
+          "required_condition_omitted",
+          "required_source_e1_not_cited"
+        ]
+      }
+    },
+    {
+      "ordinal": 2,
+      "model_id": "gemma4",
+      "arm": "structured",
+      "request_sha256": "72e43baa77fe8232754206377be24af847d8d6194609778d3efec298fcf016a0",
+      "receipt": "02-gemma4-structured.result.json",
+      "model_reported": "@cf/google/gemma-4-26b-a4b-it-external",
+      "finish_reason": "stop",
+      "prompt_tokens": 238,
+      "completion_tokens": 62,
+      "elapsed_ms": 2146,
+      "estimated_cost_usd_ignoring_cache_discount": 4.24e-05,
+      "claims": [
+        {
+          "text": "The board may renew the licence for six months only if the independent reviewer accepts the risk note, but the meeting discussion records an objection that the risk note is incomplete and records no final renewal approval.",
+          "citation_ids": [
+            "e1",
+            "e2"
+          ]
+        }
+      ],
+      "assistant_review": {
+        "review": "The answer retains the six-month scope, reviewer acceptance condition, objection and lack of final approval, citing both source IDs.",
+        "flags": []
+      }
+    },
+    {
+      "ordinal": 3,
+      "model_id": "gptoss120b",
+      "arm": "flat",
+      "request_sha256": "b0749f332647232f5dff4e681c2d470a69f98e3637efe888844983d8b1b91c0e",
+      "receipt": "03-gptoss120b-flat.result.json",
+      "model_reported": "@cf/openai/gpt-oss-120b",
+      "finish_reason": "stop",
+      "prompt_tokens": 200,
+      "completion_tokens": 96,
+      "elapsed_ms": 1778,
+      "estimated_cost_usd_ignoring_cache_discount": 0.000142,
+      "claims": [
+        {
+          "text": "The board could renew the licence for six months only if the independent reviewer accepts the risk note, but the meeting record notes an objection that the risk note is incomplete and records no final renewal approval.",
+          "citation_ids": [
+            "e1",
+            "e2"
+          ]
+        }
+      ],
+      "assistant_review": {
+        "review": "The answer retains the six-month scope, reviewer acceptance condition, objection and lack of final approval, citing both source IDs.",
+        "flags": []
+      }
+    },
+    {
+      "ordinal": 4,
+      "model_id": "gptoss120b",
+      "arm": "structured",
+      "request_sha256": "00a37df396ed3a596e438f587fb6378ffa299d18f121f2e0421c0431ee9b36a9",
+      "receipt": "04-gptoss120b-structured.result.json",
+      "model_reported": "@cf/openai/gpt-oss-120b",
+      "finish_reason": "stop",
+      "prompt_tokens": 288,
+      "completion_tokens": 104,
+      "elapsed_ms": 2369,
+      "estimated_cost_usd_ignoring_cache_discount": 0.0001788,
+      "claims": [
+        {
+          "text": "Renewal for six months is conditional on the independent reviewer accepting the risk note, but an objection was recorded that the risk note is incomplete and no final renewal approval was recorded.",
+          "citation_ids": [
+            "e1",
+            "e2"
+          ]
+        }
+      ],
+      "assistant_review": {
+        "review": "The answer retains the six-month scope, reviewer acceptance condition, objection and lack of final approval, citing both source IDs.",
+        "flags": []
+      }
+    },
+    {
+      "ordinal": 5,
+      "model_id": "glm53",
+      "arm": "flat",
+      "request_sha256": "b0749f332647232f5dff4e681c2d470a69f98e3637efe888844983d8b1b91c0e",
+      "receipt": "05-glm53-flat.result.json",
+      "model_reported": "@cf/zai-org/glm-5.3",
+      "finish_reason": "stop",
+      "prompt_tokens": 146,
+      "completion_tokens": 75,
+      "elapsed_ms": 1688,
+      "estimated_cost_usd_ignoring_cache_discount": 0.0005344,
+      "claims": [
+        {
+          "text": "Renewal was not established as approved: the board may renew the licence for six months only if the independent reviewer accepts the risk note (e1), and the meeting discussion records an objection that the risk note is incomplete, with no final renewal approval recorded (e2).",
+          "citation_ids": [
+            "e1",
+            "e2"
+          ]
+        }
+      ],
+      "assistant_review": {
+        "review": "The answer retains the six-month scope, reviewer acceptance condition, objection and lack of final approval, citing both source IDs.",
+        "flags": []
+      }
+    },
+    {
+      "ordinal": 6,
+      "model_id": "glm53",
+      "arm": "structured",
+      "request_sha256": "00a37df396ed3a596e438f587fb6378ffa299d18f121f2e0421c0431ee9b36a9",
+      "receipt": "06-glm53-structured.result.json",
+      "model_reported": "@cf/zai-org/glm-5.3",
+      "finish_reason": "stop",
+      "prompt_tokens": 235,
+      "completion_tokens": 72,
+      "elapsed_ms": 1806,
+      "estimated_cost_usd_ignoring_cache_discount": 0.0006458,
+      "claims": [
+        {
+          "text": "The material does not establish that renewal was approved: renewal was only proposed, conditioned on the independent reviewer accepting the risk note (e1), and the meeting discussion records an objection that the risk note is incomplete, with no final renewal approval recorded (e2).",
+          "citation_ids": [
+            "e1",
+            "e2"
+          ]
+        }
+      ],
+      "assistant_review": {
+        "review": "The answer retains the reviewer condition, objection and lack of approval, but adds “only proposed”. Source e1 states a conditional permission; it does not explicitly establish that a proposal exists. The graph supplies a proposed_action label. The answer also omits the six-month duration; this is recorded as an additional observation, not a preregistered failure criterion.",
+        "flags": [
+          "procedural_status_strengthened_beyond_source",
+          "six_month_duration_not_retained"
+        ]
+      }
+    }
+  ]
+}
