@@ -1,5 +1,7 @@
 # Wind Tunnel US institutional-confidence benchmark
 
+<img src="assets/kite.webp" width="85" height="88" align="right" alt="Kite, Wind Tunnel’s teal pixel bird">
+
 This release compares three methods against weighted 2024 General Social Survey distributions on the same 12 recurring confidence questions.
 
 | Method | Mean total variation | Mean Brier score |
