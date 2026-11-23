@@ -1,0 +1,424 @@
+{
+  "schema": "tacitus-model-acceptance-plan/1",
+  "synthetic": true,
+  "customer_data": false,
+  "inference_calls_made": 0,
+  "requires_explicit_spend_approval": true,
+  "proposed_spend_ceiling_usd": 0.25,
+  "estimated_requested_token_cost_ceiling_usd": 0.01685145,
+  "quality_gain_established": false,
+  "records": [
+    {
+      "model_id": "gemma4",
+      "model": "@cf/google/gemma-4-26b-a4b-it",
+      "arm": "flat",
+      "request": {
+        "messages": [
+          {
+            "role": "system",
+            "content": "Use only the supplied synthetic source material. Preserve uncertainty, modality, conditions and attributed discussion. Do not infer that a proposed action occurred. Output only the required JSON; no tool use or external action."
+          },
+          {
+            "role": "user",
+            "content": "{\"question\":\"Does this material establish that renewal was approved? Give one concise source-limited claim, preserve the condition and the recorded objection, and cite the supplied IDs.\",\"sources\":[{\"id\":\"e1\",\"text\":\"The board may renew the licence for six months only if the independent reviewer accepts the risk note.\"},{\"id\":\"e2\",\"text\":\"The meeting discussion records an objection that the risk note is incomplete. It records no final renewal approval.\"}]}"
+          }
+        ],
+        "max_completion_tokens": 1024,
+        "temperature": 0.1,
+        "stream": false,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "response_format": {
+          "type": "json_schema",
+          "json_schema": {
+            "name": "tacitus_acceptance",
+            "strict": true,
+            "schema": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "claims"
+              ],
+              "properties": {
+                "claims": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 2,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "text",
+                      "citation_ids"
+                    ],
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      },
+                      "citation_ids": {
+                        "type": "array",
+                        "minItems": 1,
+                        "items": {
+                          "type": "string",
+                          "enum": [
+                            "e1",
+                            "e2"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "request_sha256": "63a108325a786b0fb9c0e9294dcc93fa323646eb94137b2e8554925b2de8d8f9",
+      "estimated_requested_token_cost_ceiling_usd": 0.00044300000000000003
+    },
+    {
+      "model_id": "gemma4",
+      "model": "@cf/google/gemma-4-26b-a4b-it",
+      "arm": "structured",
+      "request": {
+        "messages": [
+          {
+            "role": "system",
+            "content": "Use only the supplied synthetic source material. Preserve uncertainty, modality, conditions and attributed discussion. Do not infer that a proposed action occurred. Output only the required JSON; no tool use or external action."
+          },
+          {
+            "role": "user",
+            "content": "{\"question\":\"Does this material establish that renewal was approved? Give one concise source-limited claim, preserve the condition and the recorded objection, and cite the supplied IDs.\",\"sources\":[{\"id\":\"e1\",\"text\":\"The board may renew the licence for six months only if the independent reviewer accepts the risk note.\"},{\"id\":\"e2\",\"text\":\"The meeting discussion records an objection that the risk note is incomplete. It records no final renewal approval.\"}],\"graph\":{\"nodes\":[{\"id\":\"renewal\",\"type\":\"proposed_action\",\"source_id\":\"e1\"},{\"id\":\"condition\",\"type\":\"condition\",\"source_id\":\"e1\"},{\"id\":\"objection\",\"type\":\"discussion\",\"source_id\":\"e2\"}],\"edges\":[{\"subject\":\"condition\",\"predicate\":\"qualifies\",\"object\":\"renewal\"},{\"subject\":\"objection\",\"predicate\":\"disagrees_with\",\"object\":\"renewal\"}]}}"
+          }
+        ],
+        "max_completion_tokens": 1024,
+        "temperature": 0.1,
+        "stream": false,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "response_format": {
+          "type": "json_schema",
+          "json_schema": {
+            "name": "tacitus_acceptance",
+            "strict": true,
+            "schema": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "claims"
+              ],
+              "properties": {
+                "claims": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 2,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "text",
+                      "citation_ids"
+                    ],
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      },
+                      "citation_ids": {
+                        "type": "array",
+                        "minItems": 1,
+                        "items": {
+                          "type": "string",
+                          "enum": [
+                            "e1",
+                            "e2"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "request_sha256": "72e43baa77fe8232754206377be24af847d8d6194609778d3efec298fcf016a0",
+      "estimated_requested_token_cost_ceiling_usd": 0.0004835
+    },
+    {
+      "model_id": "gptoss120b",
+      "model": "@cf/openai/gpt-oss-120b",
+      "arm": "flat",
+      "request": {
+        "messages": [
+          {
+            "role": "system",
+            "content": "Use only the supplied synthetic source material. Preserve uncertainty, modality, conditions and attributed discussion. Do not infer that a proposed action occurred. Output only the required JSON; no tool use or external action."
+          },
+          {
+            "role": "user",
+            "content": "{\"question\":\"Does this material establish that renewal was approved? Give one concise source-limited claim, preserve the condition and the recorded objection, and cite the supplied IDs.\",\"sources\":[{\"id\":\"e1\",\"text\":\"The board may renew the licence for six months only if the independent reviewer accepts the risk note.\"},{\"id\":\"e2\",\"text\":\"The meeting discussion records an objection that the risk note is incomplete. It records no final renewal approval.\"}]}"
+          }
+        ],
+        "max_completion_tokens": 1024,
+        "temperature": 0.1,
+        "stream": false,
+        "reasoning_effort": "low",
+        "response_format": {
+          "type": "json_schema",
+          "json_schema": {
+            "name": "tacitus_acceptance",
+            "strict": true,
+            "schema": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "claims"
+              ],
+              "properties": {
+                "claims": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 2,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "text",
+                      "citation_ids"
+                    ],
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      },
+                      "citation_ids": {
+                        "type": "array",
+                        "minItems": 1,
+                        "items": {
+                          "type": "string",
+                          "enum": [
+                            "e1",
+                            "e2"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "request_sha256": "b0749f332647232f5dff4e681c2d470a69f98e3637efe888844983d8b1b91c0e",
+      "estimated_requested_token_cost_ceiling_usd": 0.0012349
+    },
+    {
+      "model_id": "gptoss120b",
+      "model": "@cf/openai/gpt-oss-120b",
+      "arm": "structured",
+      "request": {
+        "messages": [
+          {
+            "role": "system",
+            "content": "Use only the supplied synthetic source material. Preserve uncertainty, modality, conditions and attributed discussion. Do not infer that a proposed action occurred. Output only the required JSON; no tool use or external action."
+          },
+          {
+            "role": "user",
+            "content": "{\"question\":\"Does this material establish that renewal was approved? Give one concise source-limited claim, preserve the condition and the recorded objection, and cite the supplied IDs.\",\"sources\":[{\"id\":\"e1\",\"text\":\"The board may renew the licence for six months only if the independent reviewer accepts the risk note.\"},{\"id\":\"e2\",\"text\":\"The meeting discussion records an objection that the risk note is incomplete. It records no final renewal approval.\"}],\"graph\":{\"nodes\":[{\"id\":\"renewal\",\"type\":\"proposed_action\",\"source_id\":\"e1\"},{\"id\":\"condition\",\"type\":\"condition\",\"source_id\":\"e1\"},{\"id\":\"objection\",\"type\":\"discussion\",\"source_id\":\"e2\"}],\"edges\":[{\"subject\":\"condition\",\"predicate\":\"qualifies\",\"object\":\"renewal\"},{\"subject\":\"objection\",\"predicate\":\"disagrees_with\",\"object\":\"renewal\"}]}}"
+          }
+        ],
+        "max_completion_tokens": 1024,
+        "temperature": 0.1,
+        "stream": false,
+        "reasoning_effort": "low",
+        "response_format": {
+          "type": "json_schema",
+          "json_schema": {
+            "name": "tacitus_acceptance",
+            "strict": true,
+            "schema": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "claims"
+              ],
+              "properties": {
+                "claims": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 2,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "text",
+                      "citation_ids"
+                    ],
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      },
+                      "citation_ids": {
+                        "type": "array",
+                        "minItems": 1,
+                        "items": {
+                          "type": "string",
+                          "enum": [
+                            "e1",
+                            "e2"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "request_sha256": "00a37df396ed3a596e438f587fb6378ffa299d18f121f2e0421c0431ee9b36a9",
+      "estimated_requested_token_cost_ceiling_usd": 0.00137665
+    },
+    {
+      "model_id": "glm53",
+      "model": "@cf/zai-org/glm-5.3",
+      "arm": "flat",
+      "request": {
+        "messages": [
+          {
+            "role": "system",
+            "content": "Use only the supplied synthetic source material. Preserve uncertainty, modality, conditions and attributed discussion. Do not infer that a proposed action occurred. Output only the required JSON; no tool use or external action."
+          },
+          {
+            "role": "user",
+            "content": "{\"question\":\"Does this material establish that renewal was approved? Give one concise source-limited claim, preserve the condition and the recorded objection, and cite the supplied IDs.\",\"sources\":[{\"id\":\"e1\",\"text\":\"The board may renew the licence for six months only if the independent reviewer accepts the risk note.\"},{\"id\":\"e2\",\"text\":\"The meeting discussion records an objection that the risk note is incomplete. It records no final renewal approval.\"}]}"
+          }
+        ],
+        "max_completion_tokens": 1024,
+        "temperature": 0.1,
+        "stream": false,
+        "reasoning_effort": "low",
+        "response_format": {
+          "type": "json_schema",
+          "json_schema": {
+            "name": "tacitus_acceptance",
+            "strict": true,
+            "schema": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "claims"
+              ],
+              "properties": {
+                "claims": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 2,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "text",
+                      "citation_ids"
+                    ],
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      },
+                      "citation_ids": {
+                        "type": "array",
+                        "minItems": 1,
+                        "items": {
+                          "type": "string",
+                          "enum": [
+                            "e1",
+                            "e2"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "request_sha256": "b0749f332647232f5dff4e681c2d470a69f98e3637efe888844983d8b1b91c0e",
+      "estimated_requested_token_cost_ceiling_usd": 0.0063732
+    },
+    {
+      "model_id": "glm53",
+      "model": "@cf/zai-org/glm-5.3",
+      "arm": "structured",
+      "request": {
+        "messages": [
+          {
+            "role": "system",
+            "content": "Use only the supplied synthetic source material. Preserve uncertainty, modality, conditions and attributed discussion. Do not infer that a proposed action occurred. Output only the required JSON; no tool use or external action."
+          },
+          {
+            "role": "user",
+            "content": "{\"question\":\"Does this material establish that renewal was approved? Give one concise source-limited claim, preserve the condition and the recorded objection, and cite the supplied IDs.\",\"sources\":[{\"id\":\"e1\",\"text\":\"The board may renew the licence for six months only if the independent reviewer accepts the risk note.\"},{\"id\":\"e2\",\"text\":\"The meeting discussion records an objection that the risk note is incomplete. It records no final renewal approval.\"}],\"graph\":{\"nodes\":[{\"id\":\"renewal\",\"type\":\"proposed_action\",\"source_id\":\"e1\"},{\"id\":\"condition\",\"type\":\"condition\",\"source_id\":\"e1\"},{\"id\":\"objection\",\"type\":\"discussion\",\"source_id\":\"e2\"}],\"edges\":[{\"subject\":\"condition\",\"predicate\":\"qualifies\",\"object\":\"renewal\"},{\"subject\":\"objection\",\"predicate\":\"disagrees_with\",\"object\":\"renewal\"}]}}"
+          }
+        ],
+        "max_completion_tokens": 1024,
+        "temperature": 0.1,
+        "stream": false,
+        "reasoning_effort": "low",
+        "response_format": {
+          "type": "json_schema",
+          "json_schema": {
+            "name": "tacitus_acceptance",
+            "strict": true,
+            "schema": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "claims"
+              ],
+              "properties": {
+                "claims": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 2,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "text",
+                      "citation_ids"
+                    ],
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      },
+                      "citation_ids": {
+                        "type": "array",
+                        "minItems": 1,
+                        "items": {
+                          "type": "string",
+                          "enum": [
+                            "e1",
+                            "e2"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "request_sha256": "00a37df396ed3a596e438f587fb6378ffa299d18f121f2e0421c0431ee9b36a9",
+      "estimated_requested_token_cost_ceiling_usd": 0.0069402000000000005
+    }
+  ]
+}

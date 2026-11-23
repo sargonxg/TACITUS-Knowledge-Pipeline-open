@@ -1,0 +1,14 @@
+{
+  "schema": "tacitus-provider-probe-files/1",
+  "files": {
+    "01-gemma4-flat.result.json": "bc116ef8082bd021c01c9da1b797aaeca749bcc5cb1b20ab858edb0b6807458e",
+    "02-gemma4-structured.result.json": "02edeb708cf84e030f33b12418461152f7a98d1b9c30b0c23e1223d58d34f95c",
+    "03-gptoss120b-flat.result.json": "1c05f9348a5dc3a0ad2e4967584fd66427763c1532ab80eee91c40f2de489a75",
+    "04-gptoss120b-structured.result.json": "c9292b1beb457db3bff7d24b0800349179ca3f022e35ec34e8f3ee3ea18944c5",
+    "05-glm53-flat.result.json": "2085cf6126c76dc8ea7f177d88eebe792db01c307dc1a9395f0cdfdf06e58fe2",
+    "06-glm53-structured.result.json": "6d2b23e5aea74fd5a7985d13c11f58de4c981c0c933e86194f2758f0182f4a2b",
+    "README.md": "68afbc52237d31b29d92e4a251755673c8d0f056784b42c4e3546f9c31a2fa68",
+    "plan.json": "66551a89c0b81459eb6e5ea14d6942cbc86f3c821e87d945d92b429b27f0d782",
+    "report.json": "1314076ff2ed70ecf4e6daeba094a77d823e7aad9eb7ba57db0927f06dca24c6"
+  }
+}

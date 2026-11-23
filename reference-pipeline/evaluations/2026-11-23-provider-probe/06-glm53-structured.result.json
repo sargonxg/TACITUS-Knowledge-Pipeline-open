@@ -1,0 +1,45 @@
+{
+  "ordinal": 6,
+  "model_id": "glm53",
+  "model": "@cf/zai-org/glm-5.3",
+  "arm": "structured",
+  "request_sha256": "00a37df396ed3a596e438f587fb6378ffa299d18f121f2e0421c0431ee9b36a9",
+  "state": "response_received",
+  "request_sent_once": true,
+  "started_at": "2026-11-23T05:15:50.378Z",
+  "completed_at": "2026-11-23T05:15:57.704Z",
+  "elapsed_ms": 1806,
+  "response": {
+    "result": {
+      "id": "chatcmpl-a993ba25-f401-40f3-ba06-ddc018cb4452",
+      "object": "chat.completion",
+      "created": 1795410956,
+      "model": "@cf/zai-org/glm-5.3",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"claims\":[{\"text\":\"The material does not establish that renewal was approved: renewal was only proposed, conditioned on the independent reviewer accepting the risk note (e1), and the meeting discussion records an objection that the risk note is incomplete, with no final renewal approval recorded (e2).\",\"citation_ids\":[\"e1\",\"e2\"]}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 235,
+        "completion_tokens": 72,
+        "total_tokens": 307,
+        "prompt_tokens_details": {
+          "cached_tokens": 64
+        },
+        "neurons": 52.07636260986328
+      }
+    },
+    "success": true,
+    "errors": [],
+    "messages": []
+  },
+  "normalized_provider_response_sha256_before_field_omission": "89bc3fc921e006baccbc0676e490b21f214f717ac8f9ab3d19da193c6ad831e7",
+  "provider_fields_omitted": []
+}

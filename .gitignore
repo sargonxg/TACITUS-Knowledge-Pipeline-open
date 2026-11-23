@@ -56,3 +56,6 @@ service-account*.json
 !reference-pipeline/examples/assessment/expected/*.json
 
 !research/catalog.json
+
+# Reviewed synthetic, credential-free provider probe and final-answer receipts
+!reference-pipeline/evaluations/2026-11-23-provider-probe/*.json

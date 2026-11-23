@@ -1,0 +1,45 @@
+{
+  "ordinal": 1,
+  "model_id": "gemma4",
+  "model": "@cf/google/gemma-4-26b-a4b-it",
+  "arm": "flat",
+  "request_sha256": "63a108325a786b0fb9c0e9294dcc93fa323646eb94137b2e8554925b2de8d8f9",
+  "state": "response_received",
+  "request_sent_once": true,
+  "started_at": "2026-11-23T05:14:29.939Z",
+  "completed_at": "2026-11-23T05:15:23.599Z",
+  "elapsed_ms": 1233,
+  "response": {
+    "result": {
+      "id": "8d6855af1bc945319155033fefa469ba",
+      "object": "chat.completion",
+      "created": 1795410878,
+      "model": "@cf/google/gemma-4-26b-a4b-it-external",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"claims\": [{\"text\": \"The material records no final renewal approval, noting an objection that the risk note is incomplete (e2).\", \"citation_ids\": [\"e2\"]}]}"
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 150,
+        "completion_tokens": 41,
+        "total_tokens": 191,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "neurons": 2.481818199157715
+      }
+    },
+    "success": true,
+    "errors": [],
+    "messages": []
+  },
+  "normalized_provider_response_sha256_before_field_omission": "804df5b28ef3bfa1f0e05417333ffd5e9cab27969f18241c4531ab6fb26980f0",
+  "provider_fields_omitted": []
+}
