@@ -1,5 +1,7 @@
 # TACITUS Knowledge Pipeline
 
+<img src="docs/brand/tacitus-guide.v1.webp" width="59" height="88" align="right" alt="The TACITUS guide for reusable source-linked context">
+
 Build reusable, source-linked context for a team. The pipeline connects exact passages, authored interpretations and qualifications, then selects a bounded capsule for a task.
 
 [Company](https://tacitus.me/) · [App](https://app.tacitus.me/) · [Organization](https://github.com/TACITUS-me) · [Reference implementation](reference-pipeline/)
