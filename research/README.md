@@ -89,3 +89,7 @@ For TACITUS, the practical unit is a policy task, a dated source collection, a s
 - How should an expert record a correction without erasing the source claim or earlier interpretation?
 
 Store new ideas as authored notes with source links, a concrete test and a stated implementation status. Keep private work and restricted documents out of this public index.
+
+## Wind Tunnel US benchmark
+
+Reproduce the institutional-confidence comparison between two GSS waves and two Vertex pretest methods. [Benchmark and scoring code](wind-tunnel-us/v1/)

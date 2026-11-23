@@ -1,0 +1,748 @@
+{
+  "version": "1.0.0",
+  "label": "US institutional confidence benchmark",
+  "retrospective": true,
+  "fieldwork": {
+    "previous": 2022,
+    "target": 2024,
+    "universe": "US adults in households",
+    "weight": "WTSSNRPS"
+  },
+  "protocol": {
+    "planned": 12,
+    "scored": 12,
+    "excluded": {
+      "CONLABOR": "Split wording in the 2024 cross-section."
+    },
+    "matching": "Compare the recurring confidence item and substantive response codes 1–3; questionnaire mode, presentation and fieldwork period vary."
+  },
+  "model": "gemini-3.5-flash-lite",
+  "inferenceRun": {
+    "job": "projects/153064748179/locations/global/batchPredictionJobs/7924102648372920320",
+    "completedAt": "2026-11-23T15:45:30.744216Z",
+    "modelCeilingUsd": 0.76,
+    "protocolSha256": "f4752712c623d1fec445d913ebd50645df9620b2e6feb9f693b2d01eb14b941a",
+    "inputsSha256": "4beacae21cafa9bc39b9a87d4b29fafee3657f81ea1c15d63f270d1757b6a9f9",
+    "outputSha256": "7f1fbffe45f03aa2254710c816b0eb60f93780aca98b35ea2e544d2db6de6a04",
+    "sourceSha256": {
+      "2022": "ba0bc3255ce59d5351b8e5382c81d9d29ad6275d61cf24f6f027b69ef2e97fd0",
+      "2024": "107c11ce811c004207844bd2d23265ec32370e27b72d965c630fe849fc971b6f"
+    }
+  },
+  "sources": [
+    {
+      "label": "NORC General Social Survey codebooks",
+      "url": "https://gss.norc.org/get-documentation.html"
+    },
+    {
+      "label": "GSS public cross-section releases",
+      "url": "https://gss.norc.org/get-the-data/stata.html"
+    },
+    {
+      "label": "GSS terms and attribution",
+      "url": "https://gss.norc.org/terms-and-conditions.html"
+    },
+    {
+      "label": "Census ACS and PUMS documentation",
+      "url": "https://www.census.gov/programs-surveys/acs/microdata/documentation.html"
+    }
+  ],
+  "notes": [
+    "The comparison covers recurring institutional-confidence questions and substantive response codes. Interviews spanned different years and a mix of survey modes. Displays and introductions can differ by survey form.",
+    "The model used 2020–2024 fitted Census household-adult cells. The GSS applies its own eligibility, language, and weighting design.",
+    "The target wave was already public. Training exposure is possible. Errors summarize this battery and do not validate new products, policy reactions, or local population estimates.",
+    "Each method was scored on the same items and each item received equal weight. Public data contains derived distributions and source references."
+  ],
+  "rows": [
+    {
+      "id": "confinan",
+      "institution": "Banks and financial institutions",
+      "options": [
+        "A great deal of confidence",
+        "Only some confidence",
+        "Hardly any confidence at all"
+      ],
+      "single": [
+        0.2,
+        0.55,
+        0.25
+      ],
+      "stratified": [
+        0.1897734417834774,
+        0.5869272952936316,
+        0.223299262922891
+      ],
+      "previous": {
+        "answered": 2353,
+        "eligible": 3544,
+        "weightedDenominator": 2303.621946210167,
+        "shares": [
+          0.1775698098283971,
+          0.5900436031415113,
+          0.2323865870300917
+        ]
+      },
+      "target": {
+        "answered": 2164,
+        "eligible": 3309,
+        "weightedDenominator": 2151.9326206308324,
+        "shares": [
+          0.17158618162645975,
+          0.5819776051180465,
+          0.2464362132554938
+        ]
+      }
+    },
+    {
+      "id": "conbus",
+      "institution": "Major companies",
+      "options": [
+        "A great deal of confidence",
+        "Only some confidence",
+        "Hardly any confidence at all"
+      ],
+      "single": [
+        0.15,
+        0.55,
+        0.3
+      ],
+      "stratified": [
+        0.15318396901269996,
+        0.551149945822415,
+        0.2956660851648851
+      ],
+      "previous": {
+        "answered": 2318,
+        "eligible": 3544,
+        "weightedDenominator": 2278.530924925906,
+        "shares": [
+          0.14928245026875187,
+          0.6371831579263704,
+          0.21353439180487785
+        ]
+      },
+      "target": {
+        "answered": 2139,
+        "eligible": 3309,
+        "weightedDenominator": 2129.9667112287366,
+        "shares": [
+          0.14866414871606487,
+          0.6082613795005052,
+          0.24307447178342992
+        ]
+      }
+    },
+    {
+      "id": "conclerg",
+      "institution": "Organized religion",
+      "options": [
+        "A great deal of confidence",
+        "Only some confidence",
+        "Hardly any confidence at all"
+      ],
+      "single": [
+        0.23,
+        0.45,
+        0.32
+      ],
+      "stratified": [
+        0.2295964303124776,
+        0.4852395258186515,
+        0.28516404386887106
+      ],
+      "previous": {
+        "answered": 2306,
+        "eligible": 3544,
+        "weightedDenominator": 2253.1228241495783,
+        "shares": [
+          0.15536165960161277,
+          0.5031646484527943,
+          0.341473691945593
+        ]
+      },
+      "target": {
+        "answered": 2122,
+        "eligible": 3309,
+        "weightedDenominator": 2103.752410083022,
+        "shares": [
+          0.1526369774528102,
+          0.49655706025242113,
+          0.3508059622947685
+        ]
+      }
+    },
+    {
+      "id": "coneduc",
+      "institution": "Education",
+      "options": [
+        "A great deal of confidence",
+        "Only some confidence",
+        "Hardly any confidence at all"
+      ],
+      "single": [
+        0.2,
+        0.55,
+        0.25
+      ],
+      "stratified": [
+        0.2007689502378452,
+        0.5599549682182938,
+        0.23927608154386099
+      ],
+      "previous": {
+        "answered": 2350,
+        "eligible": 3544,
+        "weightedDenominator": 2299.349482930401,
+        "shares": [
+          0.18697852418483382,
+          0.5741659740169337,
+          0.23885550179823256
+        ]
+      },
+      "target": {
+        "answered": 2164,
+        "eligible": 3309,
+        "weightedDenominator": 2141.5045474692856,
+        "shares": [
+          0.19565556049100416,
+          0.5448856576888458,
+          0.2594587818201501
+        ]
+      }
+    },
+    {
+      "id": "confed",
+      "institution": "Executive branch of the federal government",
+      "options": [
+        "A great deal of confidence",
+        "Only some confidence",
+        "Hardly any confidence at all"
+      ],
+      "single": [
+        0.2,
+        0.4,
+        0.4
+      ],
+      "stratified": [
+        0.20000000000000004,
+        0.4022002594377411,
+        0.3977997405622589
+      ],
+      "previous": {
+        "answered": 2330,
+        "eligible": 3544,
+        "weightedDenominator": 2292.6771763282536,
+        "shares": [
+          0.10051206945842465,
+          0.42461797946546503,
+          0.4748699510761104
+        ]
+      },
+      "target": {
+        "answered": 2145,
+        "eligible": 3309,
+        "weightedDenominator": 2127.0825899452284,
+        "shares": [
+          0.12109481859798042,
+          0.4147196446666437,
+          0.46418553673537594
+        ]
+      }
+    },
+    {
+      "id": "conpress",
+      "institution": "Press",
+      "options": [
+        "A great deal of confidence",
+        "Only some confidence",
+        "Hardly any confidence at all"
+      ],
+      "single": [
+        0.12,
+        0.48,
+        0.4
+      ],
+      "stratified": [
+        0.13146021997796187,
+        0.5027916821883065,
+        0.36574809783373163
+      ],
+      "previous": {
+        "answered": 2342,
+        "eligible": 3544,
+        "weightedDenominator": 2282.0037209312463,
+        "shares": [
+          0.07047751966465204,
+          0.38559191109764823,
+          0.5439305692376998
+        ]
+      },
+      "target": {
+        "answered": 2142,
+        "eligible": 3309,
+        "weightedDenominator": 2122.6911992945643,
+        "shares": [
+          0.07713020065479471,
+          0.37032831712752823,
+          0.5525414822176771
+        ]
+      }
+    },
+    {
+      "id": "conmedic",
+      "institution": "Medicine",
+      "options": [
+        "A great deal of confidence",
+        "Only some confidence",
+        "Hardly any confidence at all"
+      ],
+      "single": [
+        0.35,
+        0.5,
+        0.15
+      ],
+      "stratified": [
+        0.39344009451330114,
+        0.44865779326384075,
+        0.15790211222285824
+      ],
+      "previous": {
+        "answered": 2355,
+        "eligible": 3544,
+        "weightedDenominator": 2317.827952374763,
+        "shares": [
+          0.33416845469657674,
+          0.502735236937946,
+          0.16309630836547725
+        ]
+      },
+      "target": {
+        "answered": 2159,
+        "eligible": 3309,
+        "weightedDenominator": 2146.009055537325,
+        "shares": [
+          0.26444253829381376,
+          0.5376647563898092,
+          0.19789270531637715
+        ]
+      }
+    },
+    {
+      "id": "contv",
+      "institution": "TV",
+      "options": [
+        "A great deal of confidence",
+        "Only some confidence",
+        "Hardly any confidence at all"
+      ],
+      "single": [
+        0.12,
+        0.5,
+        0.38
+      ],
+      "stratified": [
+        0.11235522389621452,
+        0.5059415708189284,
+        0.3817032052848572
+      ],
+      "previous": {
+        "answered": 2336,
+        "eligible": 3544,
+        "weightedDenominator": 2287.5433553224266,
+        "shares": [
+          0.07854512820087953,
+          0.44768882105549995,
+          0.47376605074362044
+        ]
+      },
+      "target": {
+        "answered": 2154,
+        "eligible": 3309,
+        "weightedDenominator": 2144.048298137864,
+        "shares": [
+          0.08402644698344494,
+          0.4332786150368551,
+          0.48269493797970003
+        ]
+      }
+    },
+    {
+      "id": "conjudge",
+      "institution": "U.S. Supreme Court",
+      "options": [
+        "A great deal of confidence",
+        "Only some confidence",
+        "Hardly any confidence at all"
+      ],
+      "single": [
+        0.25,
+        0.4,
+        0.35
+      ],
+      "stratified": [
+        0.2760778476515989,
+        0.4073542034973546,
+        0.3165679488510466
+      ],
+      "previous": {
+        "answered": 2327,
+        "eligible": 3544,
+        "weightedDenominator": 2283.292607045322,
+        "shares": [
+          0.1750142513188646,
+          0.46447279992145374,
+          0.3605129487596817
+        ]
+      },
+      "target": {
+        "answered": 2145,
+        "eligible": 3309,
+        "weightedDenominator": 2129.7125316192983,
+        "shares": [
+          0.18381626932474754,
+          0.44794125670724483,
+          0.3682424739680076
+        ]
+      }
+    },
+    {
+      "id": "consci",
+      "institution": "Scientific community",
+      "options": [
+        "A great deal of confidence",
+        "Only some confidence",
+        "Hardly any confidence at all"
+      ],
+      "single": [
+        0.42,
+        0.43,
+        0.15
+      ],
+      "stratified": [
+        0.4352944867237239,
+        0.4201811288232456,
+        0.14452438445303065
+      ],
+      "previous": {
+        "answered": 2314,
+        "eligible": 3544,
+        "weightedDenominator": 2264.040712546546,
+        "shares": [
+          0.39189141065214705,
+          0.48056768803509464,
+          0.1275409013127583
+        ]
+      },
+      "target": {
+        "answered": 2121,
+        "eligible": 3309,
+        "weightedDenominator": 2112.0265110342257,
+        "shares": [
+          0.36486783330372496,
+          0.5131908653390154,
+          0.1219413013572596
+        ]
+      }
+    },
+    {
+      "id": "conlegis",
+      "institution": "Congress",
+      "options": [
+        "A great deal of confidence",
+        "Only some confidence",
+        "Hardly any confidence at all"
+      ],
+      "single": [
+        0.07,
+        0.45,
+        0.48
+      ],
+      "stratified": [
+        0.07550306554082128,
+        0.4681988243760007,
+        0.4562981100831781
+      ],
+      "previous": {
+        "answered": 2331,
+        "eligible": 3544,
+        "weightedDenominator": 2293.780412432441,
+        "shares": [
+          0.05716575618491796,
+          0.41078059968985947,
+          0.5320536441252226
+        ]
+      },
+      "target": {
+        "answered": 2148,
+        "eligible": 3309,
+        "weightedDenominator": 2128.622587262779,
+        "shares": [
+          0.0562368619263242,
+          0.4246185998019407,
+          0.5191445382717351
+        ]
+      }
+    },
+    {
+      "id": "conarmy",
+      "institution": "Military",
+      "options": [
+        "A great deal of confidence",
+        "Only some confidence",
+        "Hardly any confidence at all"
+      ],
+      "single": [
+        0.55,
+        0.35,
+        0.1
+      ],
+      "stratified": [
+        0.45557333042702125,
+        0.3910337187916073,
+        0.15339295078137147
+      ],
+      "previous": {
+        "answered": 2350,
+        "eligible": 3544,
+        "weightedDenominator": 2306.100636328729,
+        "shares": [
+          0.4663703492934993,
+          0.41625672591385904,
+          0.11737292479264166
+        ]
+      },
+      "target": {
+        "answered": 2155,
+        "eligible": 3309,
+        "weightedDenominator": 2143.8618354239197,
+        "shares": [
+          0.4357604537171134,
+          0.44864030645105807,
+          0.11559923983182847
+        ]
+      }
+    }
+  ],
+  "scores": {
+    "items": [
+      {
+        "id": "confinan",
+        "errors": {
+          "stratified": {
+            "totalVariation": 0.023136950332602782,
+            "brier": 0.28601001827387706
+          },
+          "single": {
+            "totalVariation": 0.03197760511804647,
+            "brier": 0.286486027545909
+          },
+          "previous": {
+            "totalVariation": 0.014049626225402095,
+            "brier": 0.28571384916992726
+          }
+        }
+      },
+      {
+        "id": "conbus",
+        "errors": {
+          "stratified": {
+            "totalVariation": 0.057111433678090184,
+            "brier": 0.27743994434611097
+          },
+          "single": {
+            "totalVariation": 0.05826137950050517,
+            "brier": 0.27773427743228346
+          },
+          "previous": {
+            "totalVariation": 0.029540079978552125,
+            "brier": 0.2752706670755704
+          }
+        }
+      },
+      {
+        "id": "conclerg",
+        "errors": {
+          "stratified": {
+            "totalVariation": 0.07695945285966724,
+            "brier": 0.30871396063536816
+          },
+          "single": {
+            "totalVariation": 0.07736302254718971,
+            "brier": 0.3080849101379382
+          },
+          "previous": {
+            "totalVariation": 0.009332270349175609,
+            "brier": 0.3036031956152465
+          }
+        }
+      },
+      {
+        "id": "coneduc",
+        "errors": {
+          "stratified": {
+            "totalVariation": 0.020182700276289087,
+            "brier": 0.2990801172476636
+          },
+          "single": {
+            "totalVariation": 0.0094587818201501,
+            "brier": 0.2988170807178965
+          },
+          "previous": {
+            "totalVariation": 0.02928031632808789,
+            "brier": 0.2994283926306709
+          }
+        }
+      },
+      {
+        "id": "confed",
+        "errors": {
+          "stratified": {
+            "totalVariation": 0.0789051814020196,
+            "brier": 0.30433264265705995
+          },
+          "single": {
+            "totalVariation": 0.07890518140201958,
+            "brier": 0.30421896371959606
+          },
+          "previous": {
+            "totalVariation": 0.020582749139555795,
+            "brier": 0.29925561601286094
+          }
+        }
+      },
+      {
+        "id": "conpress",
+        "errors": {
+          "stratified": {
+            "totalVariation": 0.18679338438394544,
+            "brier": 0.30349792132081277
+          },
+          "single": {
+            "totalVariation": 0.15254148221767705,
+            "brier": 0.29437019081314025
+          },
+          "previous": {
+            "totalVariation": 0.015263593970119983,
+            "brier": 0.2759785816983632
+          }
+        }
+      },
+      {
+        "id": "conmedic",
+        "errors": {
+          "stratified": {
+            "totalVariation": 0.12899755621948733,
+            "brier": 0.3139935436955281
+          },
+          "single": {
+            "totalVariation": 0.08555746170618626,
+            "brier": 0.30642882760480405
+          },
+          "previous": {
+            "totalVariation": 0.06972591640276303,
+            "brier": 0.3045588974238426
+          }
+        }
+      },
+      {
+        "id": "contv",
+        "errors": {
+          "stratified": {
+            "totalVariation": 0.10099173269484288,
+            "brier": 0.2942482748124621
+          },
+          "single": {
+            "totalVariation": 0.10269493797969999,
+            "brier": 0.29425344241127305
+          },
+          "previous": {
+            "totalVariation": 0.014410206018644928,
+            "brier": 0.2862661093641135
+          }
+        }
+      },
+      {
+        "id": "conjudge",
+        "errors": {
+          "stratified": {
+            "totalVariation": 0.09226157832685125,
+            "brier": 0.32139372715333747
+          },
+          "single": {
+            "totalVariation": 0.06618373067525243,
+            "brier": 0.3184845640971125
+          },
+          "previous": {
+            "totalVariation": 0.016531543214208855,
+            "brier": 0.3151841015194763
+          }
+        }
+      },
+      {
+        "id": "consci",
+        "errors": {
+          "stratified": {
+            "totalVariation": 0.09300973651576988,
+            "brier": 0.3013788196084599
+          },
+          "single": {
+            "totalVariation": 0.0831908653390154,
+            "brier": 0.29969224271306993
+          },
+          "previous": {
+            "totalVariation": 0.03262317730392076,
+            "brier": 0.2952314099629533
+          }
+        }
+      },
+      {
+        "id": "conlegis",
+        "errors": {
+          "stratified": {
+            "totalVariation": 0.06284642818855704,
+            "brier": 0.276622752278623
+          },
+          "single": {
+            "totalVariation": 0.03914453827173512,
+            "brier": 0.27469567138385115
+          },
+          "previous": {
+            "totalVariation": 0.013838000112081247,
+            "brier": 0.273692203275564
+          }
+        }
+      },
+      {
+        "id": "conarmy",
+        "errors": {
+          "stratified": {
+            "totalVariation": 0.05760658765945079,
+            "brier": 0.3003054758833426
+          },
+          "single": {
+            "totalVariation": 0.1142395462828866,
+            "brier": 0.3092477192145345
+          },
+          "previous": {
+            "totalVariation": 0.03238358053719905,
+            "brier": 0.29873016305400313
+          }
+        }
+      }
+    ],
+    "summary": {
+      "stratified": {
+        "meanTotalVariation": 0.08156689354479778,
+        "meanBrier": 0.29891809982605383
+      },
+      "single": {
+        "meanTotalVariation": 0.07495987773836366,
+        "meanBrier": 0.297709493149284
+      },
+      "previous": {
+        "meanTotalVariation": 0.024796754964975947,
+        "meanBrier": 0.29274276556688267
+      }
+    }
+  }
+}
