@@ -32,6 +32,12 @@ Open the App Library, select **Saved capsules → Import context graph**, and up
 
 The App preview checks exact text and maps Python code-point offsets to UTF-16 offsets. Importing context makes no model call. Hosted App generation is paused.
 
+## Connect a local model to the App
+
+The [local companion](local-companion/) pairs an Ollama or LM Studio server with one authenticated App workspace. Choose an installed model in Conversation or Writing; the companion receives a bounded request, calls your configured loopback server and returns a validated result. Pairing and discovery make no inference calls. The companion downloads no model weights, exposes no public inference endpoint and never automatically repeats an uncertain generation attempt. Generation follows the App's workspace control and remains paused in the hosted release.
+
+Node 24+, with no package dependencies. [Setup, data boundaries and testing limits](local-companion/README.md).
+
 ## Verify
 
 ```sh
