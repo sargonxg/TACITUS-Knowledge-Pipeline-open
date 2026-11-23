@@ -277,18 +277,23 @@ export async function executeClaim({
     );
   const path = join(stateDir, claim.id + ".json");
   try {
-    await readFile(path);
-    throw Error(
-      "This request was already claimed locally. Inspect its retained recording; inference is not repeated.",
+    // Exclusive creation is the claim: two companion processes cannot both infer.
+    await writeFile(
+      path,
+      JSON.stringify({
+        state: "claimed",
+        claim,
+        started_at: new Date().toISOString(),
+      }) + "\n",
+      { mode: 0o600, flag: "wx" },
     );
   } catch (e) {
-    if (e.code !== "ENOENT") throw e;
+    if (e.code === "EEXIST")
+      throw Error(
+        "This request was already claimed locally. Inspect its retained recording; inference is not repeated.",
+      );
+    throw e;
   }
-  await savePrivate(path, {
-    state: "claimed",
-    claim,
-    started_at: new Date().toISOString(),
-  });
   const controller = new AbortController(),
     started = Date.now();
   let timer, heartbeat;

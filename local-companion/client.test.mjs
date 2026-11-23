@@ -245,3 +245,41 @@ test("unknown models and tool-bearing requests cannot reach the local model serv
   );
   assert.equal(f.inference, 0);
 });
+
+test("concurrent companion processes cannot both infer the same retained claim", async (t) => {
+  const f = await fixture(t);
+  await pair({
+    app: f.origin + "/",
+    code: f.code,
+    provider: "ollama",
+    endpoint: f.origin + "/v1",
+    stateDir: f.stateDir,
+    test: true,
+  });
+  const connection = JSON.parse(
+    await readFile(join(f.stateDir, "connection.json"), "utf8"),
+  );
+  const modelDirectory = await discoverModels({
+      provider: "ollama",
+      endpoint: f.origin + "/v1",
+    }),
+    claim = f.queue();
+  const results = await Promise.allSettled(
+    [1, 2].map(() =>
+      executeClaim({
+        connection,
+        claim,
+        modelDirectory,
+        stateDir: f.stateDir,
+        test: true,
+      }),
+    ),
+  );
+  assert.equal(results.filter((r) => r.status === "fulfilled").length, 1);
+  assert.equal(f.inference, 1);
+  assert.equal(f.delivered, 1);
+  assert.match(
+    results.find((r) => r.status === "rejected").reason.message,
+    /already claimed/,
+  );
+});
