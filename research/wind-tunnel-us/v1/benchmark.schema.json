@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Wind Tunnel US institutional-confidence benchmark 1.0.0",
+  "type": "object",
+  "required": ["version", "label", "retrospective", "fieldwork", "protocol", "model", "inferenceRun", "sources", "notes", "rows", "scores"],
+  "properties": {
+    "version": { "const": "1.0.0" },
+    "label": { "type": "string" },
+    "retrospective": { "const": true },
+    "fieldwork": { "type": "object", "required": ["previous", "target", "universe", "weight"] },
+    "protocol": { "type": "object", "required": ["planned", "scored", "excluded", "matching"] },
+    "model": { "type": "string" },
+    "inferenceRun": { "type": "object", "required": ["completedAt", "inputsSha256", "outputSha256", "protocolSha256", "sourceSha256"] },
+    "sources": { "type": "array" },
+    "notes": { "type": "array", "items": { "type": "string" } },
+    "rows": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "required": ["id", "institution", "options", "single", "stratified", "previous", "target"],
+        "properties": {
+          "id": { "type": "string" },
+          "institution": { "type": "string" },
+          "options": { "type": "array", "minItems": 3, "maxItems": 3, "items": { "type": "string" } },
+          "single": { "$ref": "#/$defs/shares" },
+          "stratified": { "$ref": "#/$defs/shares" },
+          "previous": { "$ref": "#/$defs/human" },
+          "target": { "$ref": "#/$defs/human" }
+        }
+      }
+    },
+    "scores": { "type": "object", "required": ["items", "summary"] }
+  },
+  "$defs": {
+    "shares": { "type": "array", "minItems": 3, "maxItems": 3, "items": { "type": "number", "minimum": 0, "maximum": 1 } },
+    "human": {
+      "type": "object",
+      "required": ["answered", "eligible", "weightedDenominator", "shares"],
+      "properties": {
+        "answered": { "type": "integer", "minimum": 1 },
+        "eligible": { "type": "integer", "minimum": 1 },
+        "weightedDenominator": { "type": "number", "exclusiveMinimum": 0 },
+        "shares": { "$ref": "#/$defs/shares" }
+      }
+    }
+  }
+}
