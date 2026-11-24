@@ -64,3 +64,9 @@ service-account*.json
 !/research/ai-governance-source-map/v1/graph.json
 !/research/ai-governance-source-map/v1/ontology.json
 !/research/ai-governance-source-map/v1/source-lock.json
+
+# Reviewed credential-free v2 atlas: four public acts and three CJEU judgments.
+!/research/ai-governance-source-map/v2/graph.json
+!/research/ai-governance-source-map/v2/ontology.json
+!/research/ai-governance-source-map/v2/source-lock.json
+!/research/ai-governance-source-map/v2/previous-release-lock.json
