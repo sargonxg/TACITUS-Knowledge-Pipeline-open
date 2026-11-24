@@ -5,3 +5,5 @@
 @media print{.methodology-paper-page{background:white;font-size:10.5pt;color:black}.paper-nav,.paper-toc,.paper-downloads,.paper-cite,.paper-end{display:none}.paper-shell{max-width:none;margin:0;border:0;box-shadow:none;padding:0}.paper-title{font-size:24pt}.abstract{font-size:10pt}.paper-content h2{font-size:16pt;break-after:avoid}.paper-content h3{font-size:12pt;break-after:avoid}.paper-content figure{break-inside:avoid}.paper-content table{font-size:9pt}.methodology-paper-page a{color:inherit}.paper-content .references{font-size:9pt}.paper-status{font-size:9pt}@page{size:A4;margin:20mm}}
 
 .paper-content caption{caption-side:bottom;text-align:left;color:var(--muted);font-size:12px;line-height:1.6;padding-top:10px}.paper-content table:has(th:nth-child(4)) th:first-child{width:46%}
+
+.paper-equation{max-width:100%;overflow-x:auto;margin:24px 0;padding:9px 0;scrollbar-width:thin}.paper-equation math{width:max-content;min-width:100%}.paper-equation:focus-visible{outline:2px solid #9b7022;outline-offset:3px}

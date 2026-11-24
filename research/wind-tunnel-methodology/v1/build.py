@@ -154,6 +154,8 @@ def main():
     article=re.sub(r'(<table[^>]*>)([\s\S]*?</table>)\s*<p>(Table [\s\S]*?)</p>',
                    lambda m:m[1]+'<caption>'+m[3]+'</caption>'+m[2],article)
     article=re.sub(r'\sstyle="[^"]*"','',article)
+    article=re.sub(r'<p>(<math display="block"[\s\S]*?</math>)</p>',
+                   lambda m:'<div class="paper-equation" tabindex="0" role="group" aria-label="Equation">'+m[1]+'</div>',article)
     (ROOT/"article.html").write_text(article)
     page=(ROOT/"index.html").read_text()
     page=re.sub(r'(<article class="paper-content"[^>]*>)[\s\S]*?(</article>)',lambda m:m[1]+article+m[2],page,count=1)

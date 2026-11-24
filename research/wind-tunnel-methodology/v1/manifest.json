@@ -7,28 +7,28 @@
   "benchmarkSha256": "ade2489859e469c35218fd80cfd741d7343a92878ba7b8aae87e94c0bd0a57eb",
   "files": {
     "index.html": {
-      "bytes": 53152,
-      "sha256": "cadbd6a52dda038b15ca2f7f290e42ac864f926d29a8dfe547d6da3ebf175307"
+      "bytes": 53443,
+      "sha256": "a64b25647c2b5ea779d635f6faef51b9c4e21e3fce623660f513523e6e3fd3bc"
     },
     "article.html": {
-      "bytes": 44363,
-      "sha256": "aa8aa26285a97f7042eb427c0587520294fcdc978aa632d3359da810ad30956a"
+      "bytes": 44588,
+      "sha256": "ef26d5b9f90f14be2033bcd7460030b93a3a297c0201fa6c37095ca267c0a688"
     },
     "paper.json": {
-      "bytes": 47523,
-      "sha256": "77c73a0a346ea8d5c09463a145dd8e089b7fc2b449ff349c3e58d2227a169346"
+      "bytes": 47772,
+      "sha256": "4dcb4c6b92712a3f536df634b0b898721edcecea3e77102f81a1b5ad1fb70a6f"
     },
     "paper.css": {
-      "bytes": 6044,
-      "sha256": "f06022eef1b9803a094c20e721116ca36d5006403befa57899b2bb94230ee6d6"
+      "bytes": 6271,
+      "sha256": "0e18e085552c7427f7c733ef5eb79a24dfa04514f5130a2a82ae05717810cd76"
     },
     "citation.bib": {
       "bytes": 411,
       "sha256": "482571774c56eb92e7eb8e5027c9045b27d9412f0afceb45a10a286a9798234f"
     },
     "wind-tunnel-methodology-v1.0.pdf": {
-      "bytes": 139085,
-      "sha256": "8604efb036a3f2bfd244e28f77569f89791967a978b371ac7817bf1e0f7837f3"
+      "bytes": 139087,
+      "sha256": "5a10bc29be2ed490d5f5c6f14e33c86a9126c7cae57f6a5196fe7f4c4801c90d"
     },
     "wind-tunnel-methodology-v1.0.tex": {
       "bytes": 44703,
@@ -55,12 +55,12 @@
       "sha256": "3716cf6dbd2fead5892c3a14e5bcd082f8956c647ab91ee2f0c5b15cd183db20"
     },
     "build.py": {
-      "bytes": 11871,
-      "sha256": "2bd37521406c48074c27e9697f0823e6785896385da58e3ac73db18798a44d8f"
+      "bytes": 12070,
+      "sha256": "45e41647b0fd8a290317df507af591e2605f234bbf0069d6a3a5120f28569240"
     },
     "web-template.html": {
-      "bytes": 3614,
-      "sha256": "35716985c661657f0e0646694eb1bc5186797a842d7016df8b247d9221ccf9a5"
+      "bytes": 3680,
+      "sha256": "76b091e8e2ee73a509cae36a11e04e44ed2a0493257d8a60e5e4316e72312c02"
     },
     "results.json": {
       "bytes": 5936,
