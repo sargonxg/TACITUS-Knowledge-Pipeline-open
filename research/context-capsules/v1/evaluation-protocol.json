@@ -1,0 +1,34 @@
+{
+  "publication": "TAC-2026-01",
+  "version": "1.0",
+  "status": "proposed_not_registered_not_executed",
+  "results": [],
+  "quality_improvement_established": false,
+  "primary_question": "Does the complete reviewed-context pipeline improve clean task completion relative to passage retrieval?",
+  "primary_contrast": "D_minus_B",
+  "feasibility_minimum_tasks": 24,
+  "provisional_confirmatory_design": {"tasks": 120, "source_collections": 30, "fixed_sample_size": null, "power_analysis": "Required before held-out test unlock; use feasibility estimates and source-collection clustering."},
+  "arms": {
+    "A": "Full documents on a prespecified common eligible subset",
+    "B": "Passage retrieval with frozen lexical settings and ordinary source metadata",
+    "C": "The same reviewed evidence, instructions and propositions as D, with relation meaning retained in linear prose",
+    "D": "Reviewed capsule and bounded typed micrograph"
+  },
+  "controls": [
+    "Same source pool, question, model snapshot, instructions, output format, settings and output cap within each paired contrast",
+    "Freeze case-level graph and capsule annotations before disclosure of held-out questions; exclude builders from reference answers",
+    "Record task-time selection, information content and actual prompt length; do not call the complete D/B pipeline contrast a graph-only causal effect",
+    "Treat model choice as a blocked factor with actual hosted/local identities and route/resource records",
+    "Retain all failed, missing, timed-out and refused attempts in assigned-task completion"
+  ],
+  "primary_endpoint": "Valid completed output, appropriate handling or justified abstention on all prelisted critical points, and no consequential unsupported claim",
+  "secondary_endpoints": ["claim support", "citation coverage", "critical qualification retention", "actor and edition accuracy", "appropriate abstention", "critical span retrieval recall", "revision usefulness"],
+  "review": {"independent_domain_reviewers": 2, "assignment": "Shuffled de-identified outputs and a frozen rubric; acknowledge incomplete blinding from content", "adjudication": "Record disagreements, agreement and sensitivity to adjudication", "automated_judges": "Secondary only after calibration; not the sole primary endpoint"},
+  "analysis": {"unit": "paired task outcome", "clustering": "source collection", "intervals": "cluster bootstrap with complete collections retained", "primary": "D versus B", "secondary": "D/C representation diagnostic, A common-subset comparison and subgroups; prespecify multiplicity procedure or label exploratory"},
+  "mechanism_tests": ["context budget", "16/64/128 selected nodes within runtime limits", "evidence position", "irrelevant context", "missing dependency closure", "previous-discussion ablation", "incorrect annotations", "edition changes", "same-name actors", "negation and multilingual modality"],
+  "separate_integrity_tests": ["source and span tampering", "embedded prompt injection", "forged review metadata", "revoked access", "oversized context", "uncertain duplicate dispatch"],
+  "handover_study": {"design": "Balanced recipient/task assignment with separate cases to limit carryover", "comparison": "Ordinary documents/history versus capsule, artefact and inspectable graph", "outcomes": ["rationale recovery time", "consequential errors", "clarifying questions", "time to accepted output", "unresolved-objection recognition"], "extension": "A bounded agent recipient under the same allowed actions and evidence"},
+  "costs": ["source preparation", "annotation", "human review", "indexing", "retrieval", "provider input/output usage", "latency", "failures", "maintenance", "local hardware", "final revision"],
+  "development_exclusions": ["synthetic renewal provider probe", "publication demonstration", "existing reference fixtures and previously inspected answers"],
+  "required_before_execution": ["rights-reviewed dated source snapshots", "fixed sample size and clustered power analysis", "independent task/rubric creation", "actual model and resource snapshots", "token budgets", "collection split and randomization seed", "stopping/exclusion/multiplicity rules", "consent for participant work", "registration location and date", "approved resources and spending for actual inference"]
+}

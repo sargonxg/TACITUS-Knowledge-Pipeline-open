@@ -65,4 +65,6 @@ Original code is Apache-2.0. Source documents retain their original attribution 
 
 ## Research publications
 
+[TACITUS context capsules · TAC-2026-01, version 1.0](research/context-capsules/v1/README.md) — a scientific architecture and evaluation proposal for capsules, artefacts, small graphs, and team/agent handover. Includes a 16-page PDF, eighteen references, an executable synthetic context package, and a controlled study design. Not independently peer-reviewed; confirmatory efficacy experiments have not been run.
+
 [Wind Tunnel methodology · WT-2026-01, version 1.0](research/wind-tunnel-methodology/v1/README.md) — the working paper, typeset PDF, source manuscript, fourteen references, vector figures and reproducible GSS scoring results. Published by TACITUS; not independently peer-reviewed.
