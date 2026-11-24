@@ -1,0 +1,234 @@
+{
+  "items": [
+    {
+      "id": "confinan",
+      "institution": "Banks and financial institutions",
+      "errors": {
+        "previous": {
+          "totalVariation": 0.014049626225402095,
+          "brier": 0.28571384916992726
+        },
+        "single": {
+          "totalVariation": 0.03197760511804647,
+          "brier": 0.286486027545909
+        },
+        "stratified": {
+          "totalVariation": 0.023136950332602782,
+          "brier": 0.28601001827387706
+        }
+      }
+    },
+    {
+      "id": "conbus",
+      "institution": "Major companies",
+      "errors": {
+        "previous": {
+          "totalVariation": 0.029540079978552125,
+          "brier": 0.2752706670755704
+        },
+        "single": {
+          "totalVariation": 0.05826137950050517,
+          "brier": 0.27773427743228346
+        },
+        "stratified": {
+          "totalVariation": 0.057111433678090184,
+          "brier": 0.27743994434611097
+        }
+      }
+    },
+    {
+      "id": "conclerg",
+      "institution": "Organized religion",
+      "errors": {
+        "previous": {
+          "totalVariation": 0.009332270349175609,
+          "brier": 0.3036031956152465
+        },
+        "single": {
+          "totalVariation": 0.07736302254718971,
+          "brier": 0.3080849101379382
+        },
+        "stratified": {
+          "totalVariation": 0.07695945285966724,
+          "brier": 0.30871396063536816
+        }
+      }
+    },
+    {
+      "id": "coneduc",
+      "institution": "Education",
+      "errors": {
+        "previous": {
+          "totalVariation": 0.02928031632808789,
+          "brier": 0.2994283926306709
+        },
+        "single": {
+          "totalVariation": 0.0094587818201501,
+          "brier": 0.2988170807178965
+        },
+        "stratified": {
+          "totalVariation": 0.020182700276289087,
+          "brier": 0.29908011724766365
+        }
+      }
+    },
+    {
+      "id": "confed",
+      "institution": "Executive branch of the federal government",
+      "errors": {
+        "previous": {
+          "totalVariation": 0.020582749139555795,
+          "brier": 0.299255616012861
+        },
+        "single": {
+          "totalVariation": 0.07890518140201958,
+          "brier": 0.30421896371959606
+        },
+        "stratified": {
+          "totalVariation": 0.0789051814020196,
+          "brier": 0.30433264265705995
+        }
+      }
+    },
+    {
+      "id": "conpress",
+      "institution": "Press",
+      "errors": {
+        "previous": {
+          "totalVariation": 0.015263593970119983,
+          "brier": 0.2759785816983632
+        },
+        "single": {
+          "totalVariation": 0.15254148221767705,
+          "brier": 0.29437019081314025
+        },
+        "stratified": {
+          "totalVariation": 0.18679338438394544,
+          "brier": 0.30349792132081277
+        }
+      }
+    },
+    {
+      "id": "conmedic",
+      "institution": "Medicine",
+      "errors": {
+        "previous": {
+          "totalVariation": 0.06972591640276303,
+          "brier": 0.3045588974238426
+        },
+        "single": {
+          "totalVariation": 0.08555746170618626,
+          "brier": 0.30642882760480405
+        },
+        "stratified": {
+          "totalVariation": 0.12899755621948733,
+          "brier": 0.3139935436955281
+        }
+      }
+    },
+    {
+      "id": "contv",
+      "institution": "TV",
+      "errors": {
+        "previous": {
+          "totalVariation": 0.014410206018644928,
+          "brier": 0.28626610936411356
+        },
+        "single": {
+          "totalVariation": 0.10269493797969999,
+          "brier": 0.29425344241127305
+        },
+        "stratified": {
+          "totalVariation": 0.10099173269484288,
+          "brier": 0.2942482748124621
+        }
+      }
+    },
+    {
+      "id": "conjudge",
+      "institution": "U.S. Supreme Court",
+      "errors": {
+        "previous": {
+          "totalVariation": 0.016531543214208855,
+          "brier": 0.3151841015194763
+        },
+        "single": {
+          "totalVariation": 0.06618373067525243,
+          "brier": 0.3184845640971125
+        },
+        "stratified": {
+          "totalVariation": 0.09226157832685125,
+          "brier": 0.32139372715333747
+        }
+      }
+    },
+    {
+      "id": "consci",
+      "institution": "Scientific community",
+      "errors": {
+        "previous": {
+          "totalVariation": 0.03262317730392076,
+          "brier": 0.2952314099629533
+        },
+        "single": {
+          "totalVariation": 0.0831908653390154,
+          "brier": 0.29969224271306993
+        },
+        "stratified": {
+          "totalVariation": 0.09300973651576988,
+          "brier": 0.3013788196084599
+        }
+      }
+    },
+    {
+      "id": "conlegis",
+      "institution": "Congress",
+      "errors": {
+        "previous": {
+          "totalVariation": 0.013838000112081247,
+          "brier": 0.273692203275564
+        },
+        "single": {
+          "totalVariation": 0.03914453827173512,
+          "brier": 0.27469567138385115
+        },
+        "stratified": {
+          "totalVariation": 0.06284642818855704,
+          "brier": 0.276622752278623
+        }
+      }
+    },
+    {
+      "id": "conarmy",
+      "institution": "Military",
+      "errors": {
+        "previous": {
+          "totalVariation": 0.03238358053719905,
+          "brier": 0.29873016305400313
+        },
+        "single": {
+          "totalVariation": 0.1142395462828866,
+          "brier": 0.3092477192145345
+        },
+        "stratified": {
+          "totalVariation": 0.05760658765945079,
+          "brier": 0.30030547588334255
+        }
+      }
+    }
+  ],
+  "summary": {
+    "previous": {
+      "meanTotalVariation": 0.024796754964975947,
+      "meanBrier": 0.29274276556688267
+    },
+    "single": {
+      "meanTotalVariation": 0.07495987773836366,
+      "meanBrier": 0.297709493149284
+    },
+    "stratified": {
+      "meanTotalVariation": 0.08156689354479779,
+      "meanBrier": 0.29891809982605383
+    }
+  }
+}
