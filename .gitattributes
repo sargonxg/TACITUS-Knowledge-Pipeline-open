@@ -5,3 +5,6 @@ examples/political_semantics/worked_tasks/** -text
 research/ai-governance-source-map/v*/sources/** -text
 research/ai-governance-source-map/v*/sources/*.html -diff
 research/ai-governance-source-map/v*/sources/*.xhtml -diff
+
+# Canonical public packet bytes and their independent checksums are immutable.
+research/ai-governance-source-map/context-packets-v1/packets.json -text

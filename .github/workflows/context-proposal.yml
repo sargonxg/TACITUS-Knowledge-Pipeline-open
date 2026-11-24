@@ -1,9 +1,9 @@
 name: Research publication and source-graph verification
 on:
   push:
-    paths: ['research/**', '.gitignore', '.github/workflows/context-proposal.yml']
+    paths: ['research/**', '.gitignore', '.gitattributes', '.github/workflows/context-proposal.yml']
   pull_request:
-    paths: ['research/**', '.gitignore', '.github/workflows/context-proposal.yml']
+    paths: ['research/**', '.gitignore', '.gitattributes', '.github/workflows/context-proposal.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -46,3 +46,6 @@ jobs:
           python-version: '3.11'
       - name: Verify deterministic extraction, exact source spans and typed links
         run: python research/ai-governance-source-map/${{ matrix.edition }}/verify.py
+      - name: Verify model-facing route packets, source conditions and bounded assembly
+        if: matrix.edition == 'v2'
+        run: python research/ai-governance-source-map/context-packets-v1/verify.py

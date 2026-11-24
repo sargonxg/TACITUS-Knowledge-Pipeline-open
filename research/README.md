@@ -25,6 +25,12 @@ The source atlas supports inspecting a small task subgraph; it is not itself a t
 
 [Version 1](ai-governance-source-map/v1/README.md), with 2,793 records and 4,517 links, remains immutable. Version 2 verifies every original file hash and exact equality of every original graph record.
 
+### Give a model the selected source context
+
+[Route-context compiler and verification](ai-governance-source-map/context-packets-v1/README.md) · [Grouped packet publication](ai-governance-source-map/context-packets-v1/packets.json)
+
+Each of the seven atlas routes now has a standalone model-facing packet: the editorial question, complete selected article bodies, exact judgment passages, source editions/hashes, qualifications, open questions and an honest review state. Headings remain navigation. All 21 required source-wording checks survive assembly; packets are 31,682–73,982 UTF-8 bytes within a 96 KiB budget. A smaller budget fails before writing rather than clipping a qualification. A teammate or agent can reuse the same source set and checksum. No model calls or answer-quality improvement are reported; this is a concrete, reproducible input handover.
+
 ## Reproduce without inference
 
 From the repository root, Python 3.11+ and Node.js 20+ are enough for the released-data checks. The verifiers make no model calls or downloads and need no credentials or third-party Python packages:
@@ -36,6 +42,7 @@ python research/wind-tunnel-methodology/v1/verify.py
 python research/wind-tunnel-methodology/v1.1/verify.py
 python research/ai-governance-source-map/v1/verify.py
 python research/ai-governance-source-map/v2/verify.py
+python research/ai-governance-source-map/context-packets-v1/verify.py
 ```
 
 [The research CI workflow](../.github/workflows/context-proposal.yml) runs the archived and current paper verifiers and the source-graph verifier. Paper checks cover manifest hashes, reference inputs, context/score replay, citation coverage, semantic HTML and mathematical displays. The source-map check performs a byte-for-byte reconstruction, verifies exact quotation spans, checks every relation domain/range, and retains regressions for cross-instrument scope and important qualifiers. Passing establishes the tested artifact and source-fidelity properties, not answer quality or expert approval.
