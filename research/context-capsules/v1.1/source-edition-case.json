@@ -1,0 +1,652 @@
+{
+  "publication": "TAC-2026-01",
+  "version": "1.1",
+  "evidence_scope": "Offline source-edition assembly check; development material, not held-out efficacy evidence.",
+  "pdf_verification": "Capture includes official PDF hashes. This publication replay verifies the pinned extracted text; it does not download PDFs.",
+  "proof": {
+    "format": "tacitus-source-edition-proof/1",
+    "title": "A reference changed. The guidance didn’t.",
+    "question": "Did NIST change its guidance on when to verify citations in AI outputs?",
+    "summary": "NIST gave its citation-checking guidance a new action ID without changing the wording.",
+    "judgment": "Keep the citation checks. Update the reference from MS-2.5-008 to MS-2.5-003.",
+    "reason": "The action wording is identical in the two source editions. The draft’s MS-2.5-003 concerns a different review practice.",
+    "status": "proposed",
+    "scope": "Selected action IDs and suggested-action text from the MEASURE 2.5 table.",
+    "publisher": "National Institute of Standards and Technology",
+    "retrieved_on": "2026-11-20",
+    "rights_note": "Excerpted NIST technical publication. NIST-authored publications are generally in the United States public domain. Foreign rights are reserved. Source attribution is retained. No endorsement is implied.",
+    "rights_url": "https://www.nist.gov/nist-research-library/nist-publications",
+    "sources": [
+      {
+        "id": "draft",
+        "title": "NIST AI 600-1 · April 2024 draft",
+        "edition": "April 2024 draft",
+        "date": "2024-04-29",
+        "url": "https://airc.nist.gov/docs/NIST.AI.600-1.GenAI-Profile.ipd.pdf#page=44",
+        "pdf_sha256": "ddb7a400c1c03fe4430e34e5a827d0c3699ebea5cb39d6664df9ff83fd6726ee",
+        "text_sha256": "c04ca66a2b3e59d0e18741185de67f805437b4950a479642b288cbe70c2675be",
+        "printed_page": 39,
+        "pdf_page": 44,
+        "snapshot": "sources/draft-measure-2.5.txt"
+      },
+      {
+        "id": "final",
+        "title": "NIST AI 600-1 · July 2024 final",
+        "edition": "July 2024 final",
+        "date": "2024-07-26",
+        "url": "https://nvlpubs.nist.gov/nistpubs/AI/NIST.AI.600-1.pdf#page=35",
+        "pdf_sha256": "6e73620ab6b64e90ef2c04bf0e0d6246185a2f4b1b13cab0df494496cff89b6a",
+        "text_sha256": "e1b5e52f2bcf5cf29b745d842cdfc45499e35d2ba953ca52e2ef1c4cecdd43e4",
+        "printed_page": 31,
+        "pdf_page": 35,
+        "snapshot": "sources/final-measure-2.5.txt"
+      }
+    ],
+    "passages": [
+      {
+        "id": "draft-citation-review",
+        "source_id": "draft",
+        "action_id": "MS-2.5-008",
+        "quote": "Review and verify sources and citations in GAI system outputs during pre-deployment risk measurement and ongoing monitoring activities.",
+        "start": 1038,
+        "end": 1173,
+        "offset_unit": "unicode_codepoints"
+      },
+      {
+        "id": "final-citation-review",
+        "source_id": "final",
+        "action_id": "MS-2.5-003",
+        "quote": "Review and verify sources and citations in GAI system outputs during pre-deployment risk measurement and ongoing monitoring activities.",
+        "start": 348,
+        "end": 483,
+        "offset_unit": "unicode_codepoints"
+      },
+      {
+        "id": "draft-id-collision",
+        "source_id": "draft",
+        "action_id": "MS-2.5-003",
+        "quote": "Conduct security assessments and audits to measure the integrity of training data, system software, and system outputs.",
+        "start": 272,
+        "end": 391,
+        "offset_unit": "unicode_codepoints"
+      }
+    ],
+    "comparison": {
+      "before": "draft-citation-review",
+      "after": "final-citation-review",
+      "collision": "draft-id-collision",
+      "wording_unchanged": true,
+      "modality": "suggested guidance"
+    },
+    "receipt": {
+      "format": "tacitus-reference-receipt/1",
+      "context_sha256": "f99ce0f108ba7ecd74d4c08e8ec62829844555899ba5bf53dc6526d11116b938",
+      "context_bytes": 4726,
+      "budget_bytes": 24000,
+      "source_records": 2,
+      "selected_statements": 3,
+      "omitted_statements": 0,
+      "model_calls": 0,
+      "model_quality_gain_established": false,
+      "capture_sha256": "38f9d95d636b5dda1c722005b3741dba87a4054d0b7faec9da7a113c28714636",
+      "graph_sha256": "366cb1abea6fe9bea000ffbf08795b5cb980e142caffa2c5d79a56fad4a2468e"
+    }
+  },
+  "capsule": {
+    "format": "tacitus-reference-context/1",
+    "question": "Did NIST change its guidance on when to verify citations in AI outputs?",
+    "layer": {
+      "id": "citation-guidance-change",
+      "version": "1.0.0",
+      "checks": [
+        "Resolve the exact wording and action code in each source edition.",
+        "Distinguish the same code in different editions from the same action.",
+        "Preserve both pre-deployment measurement and ongoing monitoring.",
+        "Treat the action as suggested guidance and review the proposed decision before adoption."
+      ]
+    },
+    "ontology": {
+      "id": "release-review",
+      "version": "1.0.0",
+      "sha256": "6e006a801a1bd882aafe248e4c863214b8ad36e47a469774bfdbde211f0230b8"
+    },
+    "entities": [
+      {
+        "id": "citation-verification",
+        "type": "ReviewPractice",
+        "label": "Citation verification"
+      },
+      {
+        "id": "integrity-audit",
+        "type": "ReviewPractice",
+        "label": "Integrity audit"
+      },
+      {
+        "id": "release-review",
+        "type": "ReleaseDecision",
+        "label": "Release review"
+      }
+    ],
+    "relations": {
+      "considers_guidance_for": {
+        "domain": [
+          "ReleaseDecision"
+        ],
+        "range": [
+          "ReviewPractice"
+        ],
+        "definition": "A release decision considers source-backed guidance about the named review practice.",
+        "counterexample": "An action identifier in a draft alone neither mandates a practice nor proves it was performed."
+      }
+    },
+    "statements": [
+      {
+        "id": "draft-citation-review",
+        "source_id": "draft",
+        "quote": "Review and verify sources and citations in GAI system outputs during pre-deployment risk measurement and ongoing monitoring activities.",
+        "start": 1038,
+        "end": 1173,
+        "source_version": "c04ca66a2b3e59d0e18741185de67f805437b4950a479642b288cbe70c2675be",
+        "subject": "release-review",
+        "relation": "considers_guidance_for",
+        "object": "citation-verification",
+        "interpretation": "The draft lists citation verification as action MS-2.5-008.",
+        "modality": "suggested guidance",
+        "review_state": "proposed",
+        "qualifiers": [
+          {
+            "text": "pre-deployment risk measurement",
+            "start": 69,
+            "end": 100
+          },
+          {
+            "text": "ongoing monitoring activities",
+            "start": 105,
+            "end": 134
+          }
+        ],
+        "required_qualifier_literals": [
+          "pre-deployment risk measurement",
+          "ongoing monitoring activities"
+        ]
+      },
+      {
+        "id": "draft-id-collision",
+        "source_id": "draft",
+        "quote": "Conduct security assessments and audits to measure the integrity of training data, system software, and system outputs.",
+        "start": 272,
+        "end": 391,
+        "source_version": "c04ca66a2b3e59d0e18741185de67f805437b4950a479642b288cbe70c2675be",
+        "subject": "release-review",
+        "relation": "considers_guidance_for",
+        "object": "integrity-audit",
+        "interpretation": "The same identifier in the draft refers to a security audit.",
+        "modality": "suggested guidance",
+        "review_state": "proposed",
+        "qualifiers": [],
+        "required_qualifier_literals": []
+      },
+      {
+        "id": "final-citation-review",
+        "source_id": "final",
+        "quote": "Review and verify sources and citations in GAI system outputs during pre-deployment risk measurement and ongoing monitoring activities.",
+        "start": 348,
+        "end": 483,
+        "source_version": "e1b5e52f2bcf5cf29b745d842cdfc45499e35d2ba953ca52e2ef1c4cecdd43e4",
+        "subject": "release-review",
+        "relation": "considers_guidance_for",
+        "object": "citation-verification",
+        "interpretation": "The final lists the same citation-verification wording as MS-2.5-003.",
+        "modality": "suggested guidance",
+        "review_state": "proposed",
+        "qualifiers": [
+          {
+            "text": "pre-deployment risk measurement",
+            "start": 69,
+            "end": 100
+          },
+          {
+            "text": "ongoing monitoring activities",
+            "start": 105,
+            "end": 134
+          }
+        ],
+        "required_qualifier_literals": [
+          "pre-deployment risk measurement",
+          "ongoing monitoring activities"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "af61c247ebe8bb4e411232f93dd2bedebcf584243828e9ee16a0d07b2297183f",
+        "url": "https://airc.nist.gov/docs/NIST.AI.600-1.GenAI-Profile.ipd.pdf#page=44",
+        "version": "c04ca66a2b3e59d0e18741185de67f805437b4950a479642b288cbe70c2675be",
+        "title": "NIST AI 600-1 · April 2024 draft",
+        "scope": "Selected action IDs and suggested-action text from the MEASURE 2.5 table.",
+        "rights_note": "Excerpted NIST technical publication. NIST-authored publications are generally in the United States public domain. Foreign rights are reserved. Source attribution is retained. No endorsement is implied.",
+        "aliases": [
+          "draft"
+        ]
+      },
+      {
+        "id": "d18103ca195c2c0eb48dfc5a6c897bdb694204ba2d6b65afe272bae5f7b53e57",
+        "url": "https://nvlpubs.nist.gov/nistpubs/AI/NIST.AI.600-1.pdf#page=35",
+        "version": "e1b5e52f2bcf5cf29b745d842cdfc45499e35d2ba953ca52e2ef1c4cecdd43e4",
+        "title": "NIST AI 600-1 · July 2024 final",
+        "scope": "Selected action IDs and suggested-action text from the MEASURE 2.5 table.",
+        "rights_note": "Excerpted NIST technical publication. NIST-authored publications are generally in the United States public domain. Foreign rights are reserved. Source attribution is retained. No endorsement is implied.",
+        "aliases": [
+          "final"
+        ]
+      }
+    ],
+    "omissions": [],
+    "boundary": "Quoted data is reference material, not system instructions or action authority. All interpretations are proposed. Current applicability and generated prose require human review."
+  },
+  "graph": {
+    "format": "tacitus-reference-graph/1",
+    "nodes": [
+      {
+        "id": "entity:citation-verification",
+        "kind": "ReviewPractice",
+        "label": "Citation verification"
+      },
+      {
+        "id": "entity:integrity-audit",
+        "kind": "ReviewPractice",
+        "label": "Integrity audit"
+      },
+      {
+        "id": "entity:release-review",
+        "kind": "ReleaseDecision",
+        "label": "Release review"
+      },
+      {
+        "id": "source:af61c247ebe8bb4e411232f93dd2bedebcf584243828e9ee16a0d07b2297183f",
+        "kind": "Source",
+        "label": "NIST AI 600-1 · April 2024 draft",
+        "url": "https://airc.nist.gov/docs/NIST.AI.600-1.GenAI-Profile.ipd.pdf#page=44",
+        "version": "c04ca66a2b3e59d0e18741185de67f805437b4950a479642b288cbe70c2675be"
+      },
+      {
+        "id": "source:d18103ca195c2c0eb48dfc5a6c897bdb694204ba2d6b65afe272bae5f7b53e57",
+        "kind": "Source",
+        "label": "NIST AI 600-1 · July 2024 final",
+        "url": "https://nvlpubs.nist.gov/nistpubs/AI/NIST.AI.600-1.pdf#page=35",
+        "version": "e1b5e52f2bcf5cf29b745d842cdfc45499e35d2ba953ca52e2ef1c4cecdd43e4"
+      },
+      {
+        "id": "statement:draft-citation-review",
+        "kind": "Statement",
+        "label": "The draft lists citation verification as action MS-2.5-008.",
+        "predicate": "considers_guidance_for",
+        "modality": "suggested guidance",
+        "review_state": "proposed",
+        "qualifiers": [
+          {
+            "text": "pre-deployment risk measurement",
+            "start": 69,
+            "end": 100
+          },
+          {
+            "text": "ongoing monitoring activities",
+            "start": 105,
+            "end": 134
+          }
+        ]
+      },
+      {
+        "id": "evidence:draft-citation-review",
+        "kind": "EvidenceSpan",
+        "quote": "Review and verify sources and citations in GAI system outputs during pre-deployment risk measurement and ongoing monitoring activities.",
+        "start": 1038,
+        "end": 1173,
+        "offset_unit": "unicode_codepoints"
+      },
+      {
+        "id": "qualification:draft-citation-review:0",
+        "kind": "Qualification",
+        "label": "pre-deployment risk measurement",
+        "source_start": 1107,
+        "source_end": 1138,
+        "review_state": "proposed"
+      },
+      {
+        "id": "qualification:draft-citation-review:1",
+        "kind": "Qualification",
+        "label": "ongoing monitoring activities",
+        "source_start": 1143,
+        "source_end": 1172,
+        "review_state": "proposed"
+      },
+      {
+        "id": "statement:draft-id-collision",
+        "kind": "Statement",
+        "label": "The same identifier in the draft refers to a security audit.",
+        "predicate": "considers_guidance_for",
+        "modality": "suggested guidance",
+        "review_state": "proposed",
+        "qualifiers": []
+      },
+      {
+        "id": "evidence:draft-id-collision",
+        "kind": "EvidenceSpan",
+        "quote": "Conduct security assessments and audits to measure the integrity of training data, system software, and system outputs.",
+        "start": 272,
+        "end": 391,
+        "offset_unit": "unicode_codepoints"
+      },
+      {
+        "id": "statement:final-citation-review",
+        "kind": "Statement",
+        "label": "The final lists the same citation-verification wording as MS-2.5-003.",
+        "predicate": "considers_guidance_for",
+        "modality": "suggested guidance",
+        "review_state": "proposed",
+        "qualifiers": [
+          {
+            "text": "pre-deployment risk measurement",
+            "start": 69,
+            "end": 100
+          },
+          {
+            "text": "ongoing monitoring activities",
+            "start": 105,
+            "end": 134
+          }
+        ]
+      },
+      {
+        "id": "evidence:final-citation-review",
+        "kind": "EvidenceSpan",
+        "quote": "Review and verify sources and citations in GAI system outputs during pre-deployment risk measurement and ongoing monitoring activities.",
+        "start": 348,
+        "end": 483,
+        "offset_unit": "unicode_codepoints"
+      },
+      {
+        "id": "qualification:final-citation-review:0",
+        "kind": "Qualification",
+        "label": "pre-deployment risk measurement",
+        "source_start": 417,
+        "source_end": 448,
+        "review_state": "proposed"
+      },
+      {
+        "id": "qualification:final-citation-review:1",
+        "kind": "Qualification",
+        "label": "ongoing monitoring activities",
+        "source_start": 453,
+        "source_end": 482,
+        "review_state": "proposed"
+      }
+    ],
+    "edges": [
+      {
+        "id": "draft-citation-review:cites",
+        "source": "statement:draft-citation-review",
+        "target": "evidence:draft-citation-review",
+        "relation": "cites"
+      },
+      {
+        "id": "draft-citation-review:fromSource",
+        "source": "evidence:draft-citation-review",
+        "target": "source:af61c247ebe8bb4e411232f93dd2bedebcf584243828e9ee16a0d07b2297183f",
+        "relation": "fromSource"
+      },
+      {
+        "id": "draft-citation-review:subject",
+        "source": "statement:draft-citation-review",
+        "target": "entity:release-review",
+        "relation": "subject"
+      },
+      {
+        "id": "draft-citation-review:object",
+        "source": "statement:draft-citation-review",
+        "target": "entity:citation-verification",
+        "relation": "object"
+      },
+      {
+        "id": "draft-citation-review:qualification:0",
+        "source": "statement:draft-citation-review",
+        "target": "qualification:draft-citation-review:0",
+        "relation": "qualifiedBy"
+      },
+      {
+        "id": "draft-citation-review:qualification:1",
+        "source": "statement:draft-citation-review",
+        "target": "qualification:draft-citation-review:1",
+        "relation": "qualifiedBy"
+      },
+      {
+        "id": "draft-id-collision:cites",
+        "source": "statement:draft-id-collision",
+        "target": "evidence:draft-id-collision",
+        "relation": "cites"
+      },
+      {
+        "id": "draft-id-collision:fromSource",
+        "source": "evidence:draft-id-collision",
+        "target": "source:af61c247ebe8bb4e411232f93dd2bedebcf584243828e9ee16a0d07b2297183f",
+        "relation": "fromSource"
+      },
+      {
+        "id": "draft-id-collision:subject",
+        "source": "statement:draft-id-collision",
+        "target": "entity:release-review",
+        "relation": "subject"
+      },
+      {
+        "id": "draft-id-collision:object",
+        "source": "statement:draft-id-collision",
+        "target": "entity:integrity-audit",
+        "relation": "object"
+      },
+      {
+        "id": "final-citation-review:cites",
+        "source": "statement:final-citation-review",
+        "target": "evidence:final-citation-review",
+        "relation": "cites"
+      },
+      {
+        "id": "final-citation-review:fromSource",
+        "source": "evidence:final-citation-review",
+        "target": "source:d18103ca195c2c0eb48dfc5a6c897bdb694204ba2d6b65afe272bae5f7b53e57",
+        "relation": "fromSource"
+      },
+      {
+        "id": "final-citation-review:subject",
+        "source": "statement:final-citation-review",
+        "target": "entity:release-review",
+        "relation": "subject"
+      },
+      {
+        "id": "final-citation-review:object",
+        "source": "statement:final-citation-review",
+        "target": "entity:citation-verification",
+        "relation": "object"
+      },
+      {
+        "id": "final-citation-review:qualification:0",
+        "source": "statement:final-citation-review",
+        "target": "qualification:final-citation-review:0",
+        "relation": "qualifiedBy"
+      },
+      {
+        "id": "final-citation-review:qualification:1",
+        "source": "statement:final-citation-review",
+        "target": "qualification:final-citation-review:1",
+        "relation": "qualifiedBy"
+      }
+    ],
+    "scope": "Source-backed authored mappings, not independently established case facts."
+  },
+  "standards": {
+    "@context": {
+      "dcterms": "http://purl.org/dc/terms/",
+      "prov": "http://www.w3.org/ns/prov#",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "tac": "https://tacitus.me/ns/reference#",
+      "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+      {
+        "@id": "urn:tacitus:nist-ai-600-1:practice:citation-verification",
+        "@type": "skos:Concept",
+        "skos:prefLabel": {
+          "@value": "Citation verification",
+          "@language": "en"
+        }
+      },
+      {
+        "@id": "urn:tacitus:nist-ai-600-1:practice:integrity-audit",
+        "@type": "skos:Concept",
+        "skos:prefLabel": {
+          "@value": "Integrity audit",
+          "@language": "en"
+        }
+      },
+      {
+        "@id": "urn:tacitus:nist-ai-600-1:edition:draft:c04ca66a2b3e59d0e18741185de67f805437b4950a479642b288cbe70c2675be",
+        "@type": [
+          "prov:Entity",
+          "tac:SourceEdition"
+        ],
+        "dcterms:title": "NIST AI 600-1 · April 2024 draft",
+        "dcterms:source": {
+          "@id": "https://airc.nist.gov/docs/NIST.AI.600-1.GenAI-Profile.ipd.pdf#page=44"
+        },
+        "dcterms:issued": {
+          "@value": "2024-04-29",
+          "@type": "xsd:date"
+        },
+        "tac:textSha256": "c04ca66a2b3e59d0e18741185de67f805437b4950a479642b288cbe70c2675be",
+        "tac:pdfSha256": "ddb7a400c1c03fe4430e34e5a827d0c3699ebea5cb39d6664df9ff83fd6726ee",
+        "tac:pdfPage": 44,
+        "tac:printedPage": 39
+      },
+      {
+        "@id": "urn:tacitus:nist-ai-600-1:edition:final:e1b5e52f2bcf5cf29b745d842cdfc45499e35d2ba953ca52e2ef1c4cecdd43e4",
+        "@type": [
+          "prov:Entity",
+          "tac:SourceEdition"
+        ],
+        "dcterms:title": "NIST AI 600-1 · July 2024 final",
+        "dcterms:source": {
+          "@id": "https://nvlpubs.nist.gov/nistpubs/AI/NIST.AI.600-1.pdf#page=35"
+        },
+        "dcterms:issued": {
+          "@value": "2024-07-26",
+          "@type": "xsd:date"
+        },
+        "tac:textSha256": "e1b5e52f2bcf5cf29b745d842cdfc45499e35d2ba953ca52e2ef1c4cecdd43e4",
+        "tac:pdfSha256": "6e73620ab6b64e90ef2c04bf0e0d6246185a2f4b1b13cab0df494496cff89b6a",
+        "tac:pdfPage": 35,
+        "tac:printedPage": 31
+      },
+      {
+        "@id": "urn:tacitus:nist-ai-600-1:span:draft-citation-review:c04ca66a2b3e59d0e18741185de67f805437b4950a479642b288cbe70c2675be",
+        "@type": [
+          "prov:Entity",
+          "tac:EvidenceSpan"
+        ],
+        "prov:wasDerivedFrom": {
+          "@id": "urn:tacitus:nist-ai-600-1:edition:draft:c04ca66a2b3e59d0e18741185de67f805437b4950a479642b288cbe70c2675be"
+        },
+        "tac:actionId": "MS-2.5-008",
+        "tac:exactQuote": "Review and verify sources and citations in GAI system outputs during pre-deployment risk measurement and ongoing monitoring activities.",
+        "tac:start": 1038,
+        "tac:end": 1173,
+        "tac:offsetUnit": "unicode_codepoints"
+      },
+      {
+        "@id": "urn:tacitus:nist-ai-600-1:statement:draft-citation-review:006acdb494cb87a3263daf40f6d5e550e28de039e6643ac707d51449d7f302ff",
+        "@type": [
+          "prov:Entity",
+          "tac:ProposedStatement"
+        ],
+        "prov:wasDerivedFrom": {
+          "@id": "urn:tacitus:nist-ai-600-1:span:draft-citation-review:c04ca66a2b3e59d0e18741185de67f805437b4950a479642b288cbe70c2675be"
+        },
+        "tac:practice": {
+          "@id": "urn:tacitus:nist-ai-600-1:practice:citation-verification"
+        },
+        "tac:interpretation": "The draft lists citation verification as action MS-2.5-008.",
+        "tac:modality": "suggested guidance",
+        "tac:reviewStatus": "proposed",
+        "tac:qualification": [
+          "pre-deployment risk measurement",
+          "ongoing monitoring activities"
+        ]
+      },
+      {
+        "@id": "urn:tacitus:nist-ai-600-1:span:final-citation-review:e1b5e52f2bcf5cf29b745d842cdfc45499e35d2ba953ca52e2ef1c4cecdd43e4",
+        "@type": [
+          "prov:Entity",
+          "tac:EvidenceSpan"
+        ],
+        "prov:wasDerivedFrom": {
+          "@id": "urn:tacitus:nist-ai-600-1:edition:final:e1b5e52f2bcf5cf29b745d842cdfc45499e35d2ba953ca52e2ef1c4cecdd43e4"
+        },
+        "tac:actionId": "MS-2.5-003",
+        "tac:exactQuote": "Review and verify sources and citations in GAI system outputs during pre-deployment risk measurement and ongoing monitoring activities.",
+        "tac:start": 348,
+        "tac:end": 483,
+        "tac:offsetUnit": "unicode_codepoints"
+      },
+      {
+        "@id": "urn:tacitus:nist-ai-600-1:statement:final-citation-review:6ba33abbd465f573556b6c029c30ee5346b5ff199580d63e41b47f0f3c4d1f73",
+        "@type": [
+          "prov:Entity",
+          "tac:ProposedStatement"
+        ],
+        "prov:wasDerivedFrom": {
+          "@id": "urn:tacitus:nist-ai-600-1:span:final-citation-review:e1b5e52f2bcf5cf29b745d842cdfc45499e35d2ba953ca52e2ef1c4cecdd43e4"
+        },
+        "tac:practice": {
+          "@id": "urn:tacitus:nist-ai-600-1:practice:citation-verification"
+        },
+        "tac:interpretation": "The final lists the same citation-verification wording as MS-2.5-003.",
+        "tac:modality": "suggested guidance",
+        "tac:reviewStatus": "proposed",
+        "tac:qualification": [
+          "pre-deployment risk measurement",
+          "ongoing monitoring activities"
+        ]
+      },
+      {
+        "@id": "urn:tacitus:nist-ai-600-1:span:draft-id-collision:c04ca66a2b3e59d0e18741185de67f805437b4950a479642b288cbe70c2675be",
+        "@type": [
+          "prov:Entity",
+          "tac:EvidenceSpan"
+        ],
+        "prov:wasDerivedFrom": {
+          "@id": "urn:tacitus:nist-ai-600-1:edition:draft:c04ca66a2b3e59d0e18741185de67f805437b4950a479642b288cbe70c2675be"
+        },
+        "tac:actionId": "MS-2.5-003",
+        "tac:exactQuote": "Conduct security assessments and audits to measure the integrity of training data, system software, and system outputs.",
+        "tac:start": 272,
+        "tac:end": 391,
+        "tac:offsetUnit": "unicode_codepoints"
+      },
+      {
+        "@id": "urn:tacitus:nist-ai-600-1:statement:draft-id-collision:ee20a0a97277602f36f11e6541022081ec1078e9f53138da1a2b89f3d01cca67",
+        "@type": [
+          "prov:Entity",
+          "tac:ProposedStatement"
+        ],
+        "prov:wasDerivedFrom": {
+          "@id": "urn:tacitus:nist-ai-600-1:span:draft-id-collision:c04ca66a2b3e59d0e18741185de67f805437b4950a479642b288cbe70c2675be"
+        },
+        "tac:practice": {
+          "@id": "urn:tacitus:nist-ai-600-1:practice:integrity-audit"
+        },
+        "tac:interpretation": "The same identifier in the draft refers to a security audit.",
+        "tac:modality": "suggested guidance",
+        "tac:reviewStatus": "proposed",
+        "tac:qualification": []
+      }
+    ]
+  }
+}

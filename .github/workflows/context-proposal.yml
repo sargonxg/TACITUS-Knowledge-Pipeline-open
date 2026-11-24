@@ -1,19 +1,44 @@
-name: Context proposal artifact verification
+name: Research publication and source-graph verification
 on:
   push:
-    paths: ['research/context-capsules/v1/**', '.github/workflows/context-proposal.yml']
+    paths: ['research/**', '.gitignore', '.github/workflows/context-proposal.yml']
   pull_request:
-    paths: ['research/context-capsules/v1/**', '.github/workflows/context-proposal.yml']
+    paths: ['research/**', '.gitignore', '.github/workflows/context-proposal.yml']
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
   publication:
+    name: Verify ${{ matrix.release }}
     runs-on: ubuntu-latest
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      matrix:
+        release:
+          - context-capsules/v1
+          - context-capsules/v1.1
+          - wind-tunnel-methodology/v1
+          - wind-tunnel-methodology/v1.1
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Verify frozen publication and replay source context
-        run: python research/context-capsules/v1/verify.py
+      - uses: actions/setup-node@v4
+        if: startsWith(matrix.release, 'wind-tunnel-methodology/')
+        with:
+          node-version: '24'
+      - name: Verify frozen publication and replay released context or scores
+        run: python research/${{ matrix.release }}/verify.py
+  source-graph:
+    name: Rebuild and verify pinned AI governance source graph
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify deterministic extraction, exact source spans and typed links
+        run: python research/ai-governance-source-map/v1/verify.py

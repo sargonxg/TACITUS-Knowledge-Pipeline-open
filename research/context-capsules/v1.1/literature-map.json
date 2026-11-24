@@ -1,0 +1,111 @@
+{
+  "scope": "Targeted primary-source reading, not a systematic review or replication. Bibliographic pages and abstracts checked. The source-edition case is replayed from captured official NIST text; no efficacy inference.",
+  "review_date": "2026-11-24",
+  "items": [
+    {
+      "id": "lewis2020",
+      "primary_url": "https://proceedings.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html",
+      "use": "Research motivation and evaluation/design boundary; no transfer of benchmark gains to TACITUS."
+    },
+    {
+      "id": "robertson2009",
+      "primary_url": "https://doi.org/10.1561/1500000019",
+      "use": "Research motivation and evaluation/design boundary; no transfer of benchmark gains to TACITUS."
+    },
+    {
+      "id": "liu2024",
+      "primary_url": "https://aclanthology.org/2024.tacl-1.9/",
+      "use": "Research motivation and evaluation/design boundary; no transfer of benchmark gains to TACITUS."
+    },
+    {
+      "id": "edge2024",
+      "primary_url": "https://arxiv.org/abs/2404.16130",
+      "use": "Research motivation and evaluation/design boundary; no transfer of benchmark gains to TACITUS."
+    },
+    {
+      "id": "gutierrez2024",
+      "primary_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/6ddc001d07ca4f319af96a3024f6dbd1-Abstract-Conference.html",
+      "use": "Research motivation and evaluation/design boundary; no transfer of benchmark gains to TACITUS."
+    },
+    {
+      "id": "guo2025",
+      "primary_url": "https://aclanthology.org/2025.findings-emnlp.568/",
+      "use": "Research motivation and evaluation/design boundary; no transfer of benchmark gains to TACITUS."
+    },
+    {
+      "id": "asai2024",
+      "primary_url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/25f7be9694d7b32d5cc670927b8091e1-Abstract-Conference.html",
+      "use": "Research motivation and evaluation/design boundary; no transfer of benchmark gains to TACITUS."
+    },
+    {
+      "id": "yao2023",
+      "primary_url": "https://arxiv.org/abs/2210.03629",
+      "use": "Research motivation and evaluation/design boundary; no transfer of benchmark gains to TACITUS."
+    },
+    {
+      "id": "gao2023",
+      "primary_url": "https://aclanthology.org/2023.emnlp-main.398/",
+      "use": "Research motivation and evaluation/design boundary; no transfer of benchmark gains to TACITUS."
+    },
+    {
+      "id": "rashkin2023",
+      "primary_url": "https://aclanthology.org/2023.cl-4.2/",
+      "use": "Research motivation and evaluation/design boundary; no transfer of benchmark gains to TACITUS."
+    },
+    {
+      "id": "min2023",
+      "primary_url": "https://aclanthology.org/2023.emnlp-main.741/",
+      "use": "Research motivation and evaluation/design boundary; no transfer of benchmark gains to TACITUS."
+    },
+    {
+      "id": "wu2025",
+      "primary_url": "https://arxiv.org/abs/2410.10813",
+      "use": "Research motivation and evaluation/design boundary; no transfer of benchmark gains to TACITUS."
+    },
+    {
+      "id": "mitchell2019",
+      "primary_url": "https://doi.org/10.1145/3287560.3287596",
+      "use": "Research motivation and evaluation/design boundary; no transfer of benchmark gains to TACITUS."
+    },
+    {
+      "id": "prov2013",
+      "primary_url": "https://www.w3.org/TR/prov-o/",
+      "use": "Research motivation and evaluation/design boundary; no transfer of benchmark gains to TACITUS."
+    },
+    {
+      "id": "shacl2017",
+      "primary_url": "https://www.w3.org/TR/2017/REC-shacl-20170720/",
+      "use": "Research motivation and evaluation/design boundary; no transfer of benchmark gains to TACITUS."
+    },
+    {
+      "id": "amershi2019",
+      "primary_url": "https://www.microsoft.com/en-us/research/publication/guidelines-for-human-ai-interaction/",
+      "use": "Research motivation and evaluation/design boundary; no transfer of benchmark gains to TACITUS."
+    },
+    {
+      "id": "turpin2023",
+      "primary_url": "https://papers.nips.cc/paper/2023/hash/ed3fea9033a80fea1376299fa7863f4a-Abstract-Conference.html",
+      "use": "Research motivation and evaluation/design boundary; no transfer of benchmark gains to TACITUS."
+    },
+    {
+      "id": "greshake2023",
+      "primary_url": "https://arxiv.org/abs/2302.12173",
+      "use": "Research motivation and evaluation/design boundary; no transfer of benchmark gains to TACITUS."
+    },
+    {
+      "id": "thakur2021",
+      "primary_url": "https://datasets-benchmarks-proceedings.neurips.cc/paper_files/paper/2021/hash/65b9eea6e1cc6bb9f0cd2a47751a186f-Abstract-round2.html",
+      "use": "Strong retrieval comparators; no benchmark gains transferred to TACITUS."
+    },
+    {
+      "id": "nistdraft2024",
+      "primary_url": "https://airc.nist.gov/docs/NIST.AI.600-1.GenAI-Profile.ipd.pdf",
+      "use": "Primary source for pinned historical edition comparison; exact captured text and official PDF hashes in the reference fixture."
+    },
+    {
+      "id": "nistfinal2024",
+      "primary_url": "https://nvlpubs.nist.gov/nistpubs/AI/NIST.AI.600-1.pdf",
+      "use": "Primary source for pinned historical edition comparison; exact captured text and official PDF hashes in the reference fixture."
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "publication": "TAC-2026-01",
+  "review_date": "2026-11-24",
+  "scope": "Source and documentation review, not fresh independent production acceptance or an efficacy audit.",
+  "public_reference_repository": "https://github.com/sargonxg/TACITUS-Knowledge-Pipeline-open",
+  "public_reference_commit": "9fa96f66593902c5631efc391ef449a9c724b958",
+  "private_app_review_commit": "2f11863ed506502a2bc508840a8e4d30ff69f15f",
+  "documented_hosted_generation": "paused",
+  "new_inference_calls": 0,
+  "components": [
+    {
+      "capability": "Exact source editions, quotation spans, ontology constraints and required qualifications",
+      "status": "implemented_public_reference_and_offline_replay",
+      "source": "reference-pipeline/src/tacitus_pipeline/core.py"
+    },
+    {
+      "capability": "BM25 and graph selection with at most two shared-entity hops",
+      "status": "implemented_public_reference",
+      "source": "reference-pipeline/src/tacitus_pipeline/selection.py"
+    },
+    {
+      "capability": "Pinned official NIST source-edition comparison and exact-span offline assembly",
+      "status": "implemented_development_fixture_not_ai_efficacy_result",
+      "source": "reference-pipeline/examples/citation-guidance/compile.py"
+    },
+    {
+      "capability": "Bounded App import bundle with exact source text and checksum",
+      "status": "implemented_public_format_and_reviewed_private_adapter",
+      "sources": [
+        "reference-pipeline/src/tacitus_pipeline/interchange.py",
+        "src/platform/pipeline-imports.mjs"
+      ]
+    },
+    {
+      "capability": "Graph-anchored evidence selection and neighboring qualification handling",
+      "status": "implemented_reviewed_app_source_not_efficacy_result",
+      "source": "src/platform/micrograph-selection.mjs",
+      "method": "lexical_idf_with_graph_anchors_and_adjacent_qualifications"
+    },
+    {
+      "capability": "Accepted assertion dependencies, graph selection and exact version pins",
+      "status": "reviewed_app_contract_not_public_full_app_reproduction",
+      "source": "docs/integration/semantic-graph-context.md",
+      "limits": {
+        "graphs": 4,
+        "selected_nodes": 128,
+        "selected_edges": 256,
+        "graph_bytes": 24576,
+        "complete_packet_bytes": 65536
+      }
+    },
+    {
+      "capability": "Conversation/Writing model selection and paired local companion",
+      "status": "implemented_source_contracts_generation_gated",
+      "source": "README.md"
+    },
+    {
+      "capability": "Direct provider response compatibility",
+      "status": "six_historical_synthetic_probes_not_app_acceptance",
+      "source": "reference-pipeline/evaluations/2026-11-23-provider-probe"
+    },
+    {
+      "capability": "Complete agent handover, general quality improvement and team productivity",
+      "status": "proposed_evaluation_not_established",
+      "source": "research/context-capsules/v1.1/evaluation-protocol.json"
+    }
+  ],
+  "version": "1.1"
+}

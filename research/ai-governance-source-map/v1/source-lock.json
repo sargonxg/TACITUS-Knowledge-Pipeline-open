@@ -1,0 +1,37 @@
+{
+  "schema": "tacitus.source-lock/1",
+  "sources": [
+    {
+      "id": "ai-act",
+      "title": "Regulation (EU) 2024/1689 — Artificial Intelligence Act",
+      "celex": "32024R1689",
+      "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+      "publication_url": "https://op.europa.eu/en/publication-detail/-/publication/dc8116a1-3fe6-11ef-865a-01aa75ed71a1/language-en",
+      "download_url": "https://op.europa.eu/o/opportal-service/download-handler?format=xhtml&identifier=dc8116a1-3fe6-11ef-865a-01aa75ed71a1&language=en&productionSystem=cellar",
+      "edition": "Adopted act, OJ L 2024/1689, 12 July 2024; English XHTML; not a consolidated edition",
+      "expected_articles": 113,
+      "expected_recitals": 180,
+      "definition_article": 3,
+      "sha256": "8f0b656302f9864cc87e040c371f209a9d65ae1a6cecc25ca5eb737e872d721a",
+      "bytes": 1262391,
+      "retrieved_on": "2026-11-24",
+      "rights_note": "European Union legal text. Reuse with source acknowledgement and without distorting meaning; see RIGHTS.md. Not covered by the code licence."
+    },
+    {
+      "id": "gdpr",
+      "title": "Regulation (EU) 2016/679 — General Data Protection Regulation",
+      "celex": "32016R0679",
+      "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng",
+      "publication_url": "https://op.europa.eu/en/publication-detail/-/publication/3e485e15-11bd-11e6-ba9a-01aa75ed71a1/language-en",
+      "download_url": "https://op.europa.eu/o/opportal-service/download-handler?format=xhtml&identifier=3e485e15-11bd-11e6-ba9a-01aa75ed71a1&language=en&productionSystem=cellar",
+      "edition": "Adopted act of 27 April 2016, OJ L 119, 4 May 2016, pp. 1–88; English XHTML; not a consolidated edition",
+      "expected_articles": 99,
+      "expected_recitals": 173,
+      "definition_article": 4,
+      "sha256": "962539af03738bf552319ff4ce42d69e5f95a576307c4dfed7bf87e81b646b9d",
+      "bytes": 806864,
+      "retrieved_on": "2026-11-24",
+      "rights_note": "European Union legal text. Reuse with source acknowledgement and without distorting meaning; see RIGHTS.md. Not covered by the code licence."
+    }
+  ]
+}

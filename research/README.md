@@ -1,8 +1,48 @@
-# Research behind the policy-data workflow
+# Research for better AI knowledge generation
 
-## TACITUS App architecture and evaluation proposal
+TACITUS develops and tests infrastructure for carrying evidence, context, qualifications and work products between conversations, people and agents. These releases make the methods and current evidence inspectable. Building a graph, retaining citations or saving tokens does not by itself establish better answers; quality, human effort and total cost need separate evaluation.
 
-[Context capsules, artefacts, and small knowledge graphs · TAC-2026-01](context-capsules/v1/README.md). The scientific proposal connects the existing reference contracts with a controlled generation study and a team-handover study. Its 16-page PDF has eighteen primary research and standards references, two vector diagrams, a synthetic context replay, and a proposed registration protocol. The earlier provider observations remain mixed. The proposal is not independently peer-reviewed, and its confirmatory experiments have not been run.
+## Current papers · version 1.1
+
+| Publication | Read and download | What the evidence supports |
+| --- | --- | --- |
+| **TAC-2026-01. TACITUS: Context Capsules, Artefacts, and Small Knowledge Graphs for AI Generation** | [Accessible reader](https://tacitus.me/research/context-capsules/paper/v1.1/) · [PDF](context-capsules/v1.1/tacitus-context-capsules-v1.1.pdf) · [Source and reproduction](context-capsules/v1.1/README.md) · [BibTeX](context-capsules/v1.1/citation.bib) | An architecture and controlled evaluation proposal with 21 references, executable context replay, and a real NIST source-edition case. Confirmatory efficacy studies are proposed, not preregistered or executed. |
+| **WT-2026-01. Wind Tunnel: Evidence-Separated Population Modeling for AI-Assisted Research Preparation** | [Accessible reader](https://tacitus.me/research/wind-tunnel/paper/v1.1/) · [PDF](wind-tunnel-methodology/v1.1/wind-tunnel-methodology-v1.1.pdf) · [Source and reproduction](wind-tunnel-methodology/v1.1/README.md) · [BibTeX](wind-tunnel-methodology/v1.1/citation.bib) | A documented experimental procedure and a retrospective twelve-item GSS comparison. Mean TV is 2.48 pp for the 2022 persistence baseline, 7.50 for the national model, and 8.16 for the conditioned, weighted recipe. No mean improvement is established for the conditioned recipe. |
+
+Both revisions are dated **24 November 2026** and published by TACITUS. They are not independently peer-reviewed and claim no journal acceptance or DOI registration. Capsule efficacy, questionnaire-preparation usefulness and representative opinion measurement are distinct research questions. Wind Tunnel's weighted human-survey reference is an estimate, not population truth; its national/cell comparison bundles prompting, call structure and weighting rather than isolating one component.
+
+The papers preserve earlier observations and disclose commercial interests and AI assistance. Revision critiques, citation data, equations, vector figures, source identities and checksums accompany each release. [The TACITUS evaluation protocol](context-capsules/v1.1/evaluation-protocol.json) and [Wind Tunnel evaluation agenda](wind-tunnel-methodology/v1.1/evaluation-agenda.json) are proposals, not reported results.
+
+## Source graph · AI governance
+
+[Inspect the source-map release](ai-governance-source-map/v1/README.md) · [Graph JSON](ai-governance-source-map/v1/graph.json) · [Ontology](ai-governance-source-map/v1/ontology.json) · [Source lock](ai-governance-source-map/v1/source-lock.json) · [Records CSV](ai-governance-source-map/v1/records.csv)
+
+The final graph contains **2,793 source-linked records and 4,517 typed links** from two pinned official adopted texts: the AI Act and GDPR. Those counts are computed from actual graph records and verified on rebuild. The map includes 212 articles, 353 recitals, 2,064 substantive passages and 94 document-specific definitions, plus document headings and annexes. Links distinguish published structure, lexical article/annex references, definitions and literal term mentions.
+
+This larger source map supports inspecting and selecting a small task subgraph; it is not itself a task capsule or a complete legal ontology. Exact quotes, Unicode offsets, source editions, link methods and extraction limits travel with the data. The pinned adopted editions do not represent today's consolidated legal position. Reading presets are authored inspection questions, not approved legal conclusions. No private team discussions, fake review approvals or generation gains are bundled.
+
+## Reproduce without inference
+
+From the repository root, Python 3.11+ and Node.js 20+ are enough for the released-data checks. The verifiers make no model calls or downloads and need no credentials or third-party Python packages:
+
+```sh
+python research/context-capsules/v1/verify.py
+python research/context-capsules/v1.1/verify.py
+python research/wind-tunnel-methodology/v1/verify.py
+python research/wind-tunnel-methodology/v1.1/verify.py
+python research/ai-governance-source-map/v1/verify.py
+```
+
+[The research CI workflow](../.github/workflows/context-proposal.yml) runs the archived and current paper verifiers and the source-graph verifier. Paper checks cover manifest hashes, reference inputs, context/score replay, citation coverage, semantic HTML and mathematical displays. The source-map check performs a byte-for-byte reconstruction, verifies exact quotation spans, checks every relation domain/range, and retains regressions for cross-instrument scope and important qualifiers. Passing establishes the tested artifact and source-fidelity properties, not answer quality or expert approval.
+
+To rebuild PDFs, install the additional Matplotlib/Pandoc/XeLaTeX toolchain documented in the paper directories. To rebuild the graph, run `python research/ai-governance-source-map/v1/build.py`; it uses only pinned local sources. New source editions belong in new version directories.
+
+## Preserved publication history
+
+- [TACITUS context capsules · v1.0](context-capsules/v1/README.md) · [original reader](https://tacitus.me/research/context-capsules/paper/)
+- [Wind Tunnel methodology · v1.0](wind-tunnel-methodology/v1/README.md) · [original reader](https://tacitus.me/research/wind-tunnel/paper/)
+
+The original releases, their PDFs and their manifests remain unchanged. Version 1.1 adds critique, sharper methods and interpretation, and improved research-use explanations; it does not convert unrun studies into results or replace the benchmark distributions.
 
 ## Reading index
 

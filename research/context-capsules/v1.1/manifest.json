@@ -1,0 +1,169 @@
+{
+  "publication": "TAC-2026-01",
+  "version": "1.1",
+  "date": "2026-11-24",
+  "status": "research proposal; not independently peer-reviewed; confirmatory experiments not run",
+  "referenceSourceCommit": "9fa96f66593902c5631efc391ef449a9c724b958",
+  "privateAppSourceReviewCommit": "2f11863ed506502a2bc508840a8e4d30ff69f15f",
+  "newInferenceCalls": 0,
+  "referenceInputs": {
+    "src/tacitus_pipeline/core.py": "43e92a18683d6d40a937d234e5bc4b56db541933b729e43f5a269790eb6aecf9",
+    "src/tacitus_pipeline/interchange.py": "ccde6471c07d90fba3dcb8f35ffba0037853a7feb613810946e3997c722fba59",
+    "src/tacitus_pipeline/selection.py": "9dcd25d953f6f71b54b0a848f6d06449cce5c5c19c5becd75bd054ec12566d48",
+    "ontology/team-knowledge.json": "47eea5610ca0bbd9517337f6d78652501a1d1e31ff769e407925fcf89bc18ad3",
+    "ontology/release-review.json": "f804ec08abbb8ddf8a314f72c4e32f0face5d3c5b53131fb0d0b4e33a6eadc52",
+    "layers/citation-guidance-change.json": "6615d8321495db389bc3e9df788332c8a118469e0b2b7f0435a1468eaf950310",
+    "evaluations/2026-11-23-provider-probe/manifest.json": "c45c9e8286bc54ce06116935f0ad0c810ea44b208ce669d75e8d98b7dd02f8f4",
+    "examples/citation-guidance/compile.py": "67c9987e6a82de157b23163a915374f37d951eb1ad6048eeffd69fb30d41e223",
+    "examples/citation-guidance/proof.json": "34993054ab332feda21bd5adcef86aea62d59589bc46b3e1144058c9e9a38a5e",
+    "examples/citation-guidance/capture.json": "457940f3783a22920d473b6f9bd2f974a86b49b505061da346875c165c69649d",
+    "examples/citation-guidance/sources/draft-measure-2.5.txt": "c04ca66a2b3e59d0e18741185de67f805437b4950a479642b288cbe70c2675be",
+    "examples/citation-guidance/sources/final-measure-2.5.txt": "e1b5e52f2bcf5cf29b745d842cdfc45499e35d2ba953ca52e2ef1c4cecdd43e4"
+  },
+  "files": {
+    "README.md": {
+      "bytes": 3471,
+      "sha256": "c8251fd178f1f68e5d6d1fabe23ddd003f4296a1b853a88e775ce7075ae035fd"
+    },
+    "REVIEW_NOTES.md": {
+      "bytes": 2939,
+      "sha256": "02f8ce99a66b678add775318c42c8e3909848f55f8bd18f6fcbd0aa93a7ae254"
+    },
+    "article.html": {
+      "bytes": 42112,
+      "sha256": "cc863ccc7e26da4f05508998b1231dbfb3d09f0899d15b516981ea6f35179308"
+    },
+    "build.py": {
+      "bytes": 10878,
+      "sha256": "599c41dcc9850a2936235596a90e6f958fe1820012916ab450602c2cbc16adbc"
+    },
+    "citation.bib": {
+      "bytes": 455,
+      "sha256": "95237eeaf3129669f99eb8f7209daab1044907ddd6ee6abb1fd89db92cdac6c1"
+    },
+    "demo/app-bundle.json": {
+      "bytes": 16668,
+      "sha256": "6dce6a1a3ef83f0a72854eaac349572fdd93db5d6022847f8f61b1564b6f9a94"
+    },
+    "demo/capsule.json": {
+      "bytes": 7250,
+      "sha256": "1d56f1a0272eb6cbbebb0b489251fc40af033f286d22fef19193e72238ceac2c"
+    },
+    "demo/collection.json": {
+      "bytes": 5649,
+      "sha256": "0d14d7859972f2ccd9e957e3a786ea26f62b27f63c9bce99c8e03ce21bc143f5"
+    },
+    "demo/graph.json": {
+      "bytes": 8671,
+      "sha256": "7749b358a5b4f8bc1b93b82ed70b7f88565419f0eb62b4f0cd3ad9aff08c0681"
+    },
+    "demo/handover.txt": {
+      "bytes": 373,
+      "sha256": "e1da0cb90cd0cbbda178d7308fdae652e9d86280f376d13769888f9801ad3358"
+    },
+    "demo/layer.json": {
+      "bytes": 617,
+      "sha256": "49f148ad477fb07edac556e2eef70edabdbc2a4d0af415b9bec042255c1dff09"
+    },
+    "demo/meeting.txt": {
+      "bytes": 200,
+      "sha256": "82135352c4cee69f39dba9e8e797620eb64f0c630b0f703e8f250a69906f7357"
+    },
+    "demo/permission.txt": {
+      "bytes": 183,
+      "sha256": "c56926972a3db0517ddb0eb4551c89fc837f9fe889706d84e5c8421469329a74"
+    },
+    "demo/receipt.json": {
+      "bytes": 325,
+      "sha256": "ee8d7c6af238bddabae5838c8d86010bc825484140301f65bfe0bf0696acf28d"
+    },
+    "evaluation-protocol.json": {
+      "bytes": 5635,
+      "sha256": "a4a795615b03906ca3ad697e63aaaec8c824c23fc7ce7f44b846918840becf2e"
+    },
+    "figures/context-flow.pdf": {
+      "bytes": 24869,
+      "sha256": "7f1732f7fd76590e3271887666a40bb88f7cb75eb3144de8c7d266dc8c8cc4e4"
+    },
+    "figures/context-flow.svg": {
+      "bytes": 13000,
+      "sha256": "658232223f25be99db311fa83306deec538d8bf62b81b966e4c8c6d636082961"
+    },
+    "figures/edition-handover.pdf": {
+      "bytes": 29063,
+      "sha256": "0603ae860433d04d71d42d7382bcb9d2f5442546f1c281aae15c1a5adb540b9d"
+    },
+    "figures/edition-handover.svg": {
+      "bytes": 11606,
+      "sha256": "0547a5d9c1ae35a00fcd6e48f7638a3e1f0e003e6a4085a69b4bc3988f3cb2f2"
+    },
+    "header.tex": {
+      "bytes": 1036,
+      "sha256": "17c0b6c0c6ed95fdbeb46bf725323b03f1af5df275afd77647420a5115ad58a6"
+    },
+    "implementation-status.json": {
+      "bytes": 2973,
+      "sha256": "d7b0b8e1efadf711df6dc1a791f71807cdf535737dc2eca74bf9db1726d7adf2"
+    },
+    "index.html": {
+      "bytes": 50820,
+      "sha256": "6b0bb4e8c5d722074323f39214870bfacd1b7820b806fa0d167e1d8630e9f61a"
+    },
+    "latex-layout.lua": {
+      "bytes": 801,
+      "sha256": "eaab8f94e2a6838fa191e3362cb8c5833ad94191ec125a0663493c2aa087d74a"
+    },
+    "literature-map.json": {
+      "bytes": 5207,
+      "sha256": "8b54ffba0542a49fbd4c0b80110380c37adbf457eabf4bdd7f14ac3066d9befd"
+    },
+    "manuscript.md": {
+      "bytes": 26702,
+      "sha256": "b1c0e5400f5b48f144034e6b182d2ab4aa0366930c90b8a6b2bd834c246aa8bd"
+    },
+    "observations.json": {
+      "bytes": 385,
+      "sha256": "7db2140dba4f9b6efe7b883867973ab1d248545bca137c84fa8a83724f927adf"
+    },
+    "paper.css": {
+      "bytes": 6328,
+      "sha256": "f287e99d3628bbdbcecad65870cdf1eb4b2ddd720cc35299990502ff63b0df32"
+    },
+    "paper.json": {
+      "bytes": 45427,
+      "sha256": "93ba5b3cb46dfcf1210f8effee94a914e8abcda1c4049a4b9e3cba94942a50e0"
+    },
+    "paper.md": {
+      "bytes": 26702,
+      "sha256": "b1c0e5400f5b48f144034e6b182d2ab4aa0366930c90b8a6b2bd834c246aa8bd"
+    },
+    "references.json": {
+      "bytes": 18758,
+      "sha256": "795d23395753d49e20dab9dc753a2c251ead99cce20ab3e8298736d254081259"
+    },
+    "replay.py": {
+      "bytes": 5702,
+      "sha256": "9e248141163e1ba51cdffb672bb876165027e7dba7050b0d89f9b03d068789a3"
+    },
+    "source-edition-case.json": {
+      "bytes": 25470,
+      "sha256": "fe5e16ae599e4055877fb0661f1ad018d88d211f42ebced88119943eaf633a28"
+    },
+    "tacitus-context-capsules-v1.1.pdf": {
+      "bytes": 142009,
+      "sha256": "a66e0ad6de84f2e19def570b0c50f9e6dc9b70fde3489d14e45bd6819a9ad0ec"
+    },
+    "tacitus-context-capsules-v1.1.tex": {
+      "bytes": 43970,
+      "sha256": "88861e871c7e98dacb3df3a4583fdc080aef1b47f27100022eb23a5d56f0e223"
+    },
+    "verify.py": {
+      "bytes": 3808,
+      "sha256": "490224a9d362c64ad846ff1e42f771984f24c9427189d317b14b8a45582533e3"
+    },
+    "web-template.html": {
+      "bytes": 3803,
+      "sha256": "154ecd3f08ebcd8d0132fa8187beb39944eb5f7bcfffdab6194fd8e06dde1fa3"
+    }
+  }
+}

@@ -1,0 +1,840 @@
+<p><strong>Working paper WT-2026-01 · Version 1.1.</strong> Published by
+TACITUS. Independent peer review has not been completed. This revision
+clarifies interpretation and research use; the benchmark data and
+generation run are unchanged. Correspondence: <a
+href="mailto:hello@tacitus.me">hello@tacitus.me</a>.</p>
+<p><strong>Keywords:</strong> computational social science;
+questionnaire preparation; synthetic survey responses; population
+modeling; provenance; language models.</p>
+<h2 data-number="1" id="introduction"><span
+class="header-section-number">1</span> Introduction</h2>
+<p>Research preparation involves more than drafting plausible questions.
+An analyst needs to define the people and period of interest, make a
+proposal’s trade-offs explicit, distinguish observations from
+assumptions, and decide which interpretations require a check with
+people. A generative model can assist with that preparation. Its fluent
+answer, however, is not a measurement of the population named in its
+prompt.</p>
+<p>Wind Tunnel is an experimental workspace for organizing audience
+definitions, questionnaire versions, model-assisted exploration, and
+human evidence. Its central design choice is to retain the evidentiary
+role of each record. A demographic count is different from an attitude
+estimate; an authored dossier is different from a respondent; a
+generated answer distribution is different from completed fieldwork.
+Saved study revisions carry these distinctions into subsequent review
+and reports.</p>
+<p>This report makes three contributions. It specifies the released US
+cell-based generation and aggregation procedure; it describes the
+records needed to inspect and revisit an analysis; and it releases an
+aggregate benchmark whose scores can be independently recomputed. The
+empirical question is whether this particular conditioned recipe agrees
+more closely with a fixed human-survey reference than a national model
+call. On the selected battery, it does not. The result is useful for
+directing further work even though it does not validate a broad
+predictive product.</p>
+<p>The paper concerns the source revision and run recorded in Appendix
+B. It evaluates an answer-distribution recipe, not the causal effect of
+questionnaire wording or the usefulness of every interface feature. The
+intended next application is research preparation with explicit human
+validation, rather than substituting generated responses for a
+representative survey.</p>
+<h2 data-number="2" id="related-work-and-methodological-position"><span
+class="header-section-number">2</span> Related work and methodological
+position</h2>
+<p>Language-model simulation has reproduced some patterns in particular
+human datasets <span class="citation" data-cites="argyle2023">(<a
+href="#ref-argyle2023" role="doc-biblioref">Argyle et al.
+2023</a>)</span>, while other evaluations identify errors in subgroup
+relationships and sensitivity to prompts and models <span
+class="citation" data-cites="bisbee2024">(<a href="#ref-bisbee2024"
+role="doc-biblioref">Bisbee et al. 2024</a>)</span>. A model’s response
+to a wording perturbation can also differ from a human response to that
+perturbation <span class="citation" data-cites="tjuatja2024">(<a
+href="#ref-tjuatja2024" role="doc-biblioref">Tjuatja et al.
+2024</a>)</span>. These findings motivate separate evaluation of
+distributional agreement, questionnaire-review usefulness, and
+generalization to a new population or period.</p>
+<p>Demographic fitting and response estimation serve different
+functions. Adjusting a table to known margins is a statistical
+construction <span class="citation" data-cites="deming1940">(<a
+href="#ref-deming1940" role="doc-biblioref">Deming and Stephan
+1940</a>)</span>. Multilevel regression and poststratification
+additionally fits a response model and aggregates its predictions over
+population cells <span class="citation" data-cites="gelman1997">(<a
+href="#ref-gelman1997" role="doc-biblioref">Gelman and Little
+1997</a>)</span>. Wind Tunnel’s released numeric recipe aggregates
+model-supplied distributions with demographic masses. It does not fit a
+multilevel model to human answers, so its demographic weighting is not
+evidence of calibrated MRP or valid public-opinion measurement.</p>
+<p>The reporting approach draws on model cards <span class="citation"
+data-cites="mitchell2019">(<a href="#ref-mitchell2019"
+role="doc-biblioref">Mitchell et al. 2019</a>)</span>, structured
+simulation documentation <span class="citation"
+data-cites="grimm2020">(<a href="#ref-grimm2020"
+role="doc-biblioref">Grimm et al. 2020</a>)</span>, and survey
+disclosure standards <span class="citation" data-cites="aapor">(<a
+href="#ref-aapor" role="doc-biblioref">American Association for Public
+Opinion Research n.d.</a>)</span>. PROV-O offers a conceptual vocabulary
+for records, transformations, and responsibility <span class="citation"
+data-cites="prov2013">(<a href="#ref-prov2013"
+role="doc-biblioref">Lebo, Sahoo, and McGuinness 2013</a>)</span>. These
+references inform the design; they do not certify its estimates or
+establish full implementation of their standards. In this system,
+provenance makes a result easier to question and reproduce at a declared
+level.</p>
+<h2 data-number="3" id="evidence-universe-and-target-quantity"><span
+class="header-section-number">3</span> Evidence, universe, and target
+quantity</h2>
+<h3 data-number="3.1" id="evidentiary-roles"><span
+class="header-section-number">3.1</span> Evidentiary roles</h3>
+<p>Table 1 distinguishes what the principal records can support. Keeping
+these roles explicit prevents an appealing model character or a
+generated answer from silently becoming an observation about people.</p>
+<table>
+<caption>Table 1. Evidentiary roles are distinct from a ranking of
+document quality. A source can be accurately preserved while an
+interpretation of it remains mistaken.</caption>
+<colgroup>
+<col />
+<col />
+<col />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Record</th>
+<th>Example</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Source estimate</td>
+<td>Published ACS table</td>
+<td>A dated estimate under its source universe
+and definitions</td>
+</tr>
+<tr class="even">
+<td>Derived quantity</td>
+<td>Adult age-band count</td>
+<td>A documented transformation of source
+cells</td>
+</tr>
+<tr class="odd">
+<td>Fitted representation</td>
+<td>Age-by-education population masses</td>
+<td>A construction compatible with declared
+controls and donor assumptions</td>
+</tr>
+<tr class="even">
+<td>Human evidence</td>
+<td>Weighted GSS answer distribution</td>
+<td>A survey estimate under that instrument
+and design</td>
+</tr>
+<tr class="odd">
+<td>Statistical response estimate</td>
+<td>A separately fitted human-response
+model</td>
+<td>Inference conditional on the fitted model
+and its validation</td>
+</tr>
+<tr class="even">
+<td>Authored hypothesis</td>
+<td>Qualitative dossier or scenario
+override</td>
+<td>An analyst’s assumption for
+investigation</td>
+</tr>
+<tr class="odd">
+<td>Generated output</td>
+<td>Model-supplied cell answer shares</td>
+<td>The output of the specified computational
+procedure</td>
+</tr>
+</tbody>
+</table>
+<h3 data-number="3.2" id="population-foundation-and-estimand"><span
+class="header-section-number">3.2</span> Population foundation and
+estimand</h3>
+<p>The US demographic artifact uses 2020–2024 ACS five-year tables and
+Public Use Microdata Sample documentation <span class="citation"
+data-cites="acs2024">(<a href="#ref-acs2024" role="doc-biblioref">U.S.
+Census Bureau 2026</a>)</span>. It retains source periods, geography,
+variable definitions, and relevant universes. A five-year period
+estimate is not a contemporaneous census count, and overlapping
+geographic products cannot simply be added.</p>
+<p>The numeric recipe uses four adult age groups—18–34, 35–44, 45–64,
+and at least 65—and three education groups: high school or less; some
+college or an associate degree; and a bachelor’s degree or higher. Their
+cross-product contains twelve cells. The artifact retains resident-adult
+and household-adult masses. The benchmark selects the latter to better
+align its declared universe with the GSS household-adult study
+population. Broad universe alignment does not remove differences in
+coverage, language, survey mode, nonresponse, or field dates.</p>
+<p>For question
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>
+and substantive answer category
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>,
+the scientific target would be the proportion of the eligible population
+giving answer
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+under a specified instrument and field period. The released benchmark
+observes a weighted survey estimate of that quantity, denoted
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>y</mi><mrow><mi>q</mi><mi>k</mi></mrow></msub><annotation encoding="application/x-tex">y_{qk}</annotation></semantics></math>,
+rather than population truth. Comparison with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>y</mi><mrow><mi>q</mi><mi>k</mi></mrow></msub><annotation encoding="application/x-tex">y_{qk}</annotation></semantics></math>
+measures agreement with this survey reference. A general claim about
+population attitudes would additionally require the appropriate
+survey-design uncertainty and external-validity argument.</p>
+<p>The age-by-education masses come from the fitted artifact, rather
+than an assumption that age and education are independent. Compatibility
+with demographic controls is evidence about this construction; it does
+not measure institutional confidence or recover every unobserved local
+joint distribution. A demographic label or added personality description
+supplies no independent observation of a person’s political beliefs.</p>
+<h3 data-number="3.3" id="human-evidence-and-qualitative-dossiers"><span
+class="header-section-number">3.3</span> Human evidence and qualitative
+dossiers</h3>
+<p>Human evidence retains an exact item, substantive coding, eligible
+population, field period, weights, and available design information.
+Different instruments cannot be treated as interchangeable merely
+because they address related civic topics. Item-specific answered counts
+and weighted denominators remain relevant when questions have different
+forms or missing answers.</p>
+<p>The US catalog also includes six authored qualitative dossiers, of
+which up to two can enter a study’s wording-review stage. A dossier
+describes hypothesized constraints, priorities, protected values,
+trade-offs, information context, a counterexample, and a fieldwork
+probe. Protected-values research motivates one aspect of this
+description <span class="citation" data-cites="baron1997">(<a
+href="#ref-baron1997" role="doc-biblioref">Baron and Spranca
+1997</a>)</span>. A dossier’s population weight is zero. Its role is to
+prompt investigation of an assumption, not to establish a measured
+personality type or allocate public opinion to a demographic group.</p>
+<h2 data-number="4" id="released-computational-procedure"><span
+class="header-section-number">4</span> Released computational
+procedure</h2>
+<h3 data-number="4.1" id="frozen-study-revision"><span
+class="header-section-number">4.1</span> Frozen study revision</h3>
+<p>A study revision binds the proposal versions, questionnaire, audience
+selection, cell masses, selected dossiers, and execution recipe. It
+records source and fitted-artifact hashes, the runtime hash, requested
+model, temperature, thinking setting, and output cap. The result retains
+actual execution information and the count of human interviews. The
+generated US pretest reports zero human interviews.</p>
+<p>Figure 1 separates the numeric and qualitative paths. Demographic
+masses determine aggregation weights; the model supplies answer shares.
+Dossiers enter a separate review. A saved revision makes it possible to
+locate which assumptions accompanied a finding, including after an
+analyst changes an input or a colleague continues the work.</p>
+<figure>
+<img src="/research/wind-tunnel/paper/v1.1/figures/evidence-flow.svg"
+alt="Figure 1. Computational and evidentiary roles in the released US recipe. Solid arrows show dependencies. Human-survey evidence provides an external comparison; authored dossiers inform a separate wording review with zero population weight. The provenance record connects inputs and outputs without validating the model-supplied response probabilities." />
+<figcaption aria-hidden="true">Figure 1. Computational and evidentiary
+roles in the released US recipe. Solid arrows show dependencies.
+Human-survey evidence provides an external comparison; authored dossiers
+inform a separate wording review with zero population weight. The
+provenance record connects inputs and outputs without validating the
+model-supplied response probabilities.</figcaption>
+</figure>
+<h3 data-number="4.2" id="generation-validation-and-aggregation"><span
+class="header-section-number">4.2</span> Generation, validation, and
+aggregation</h3>
+<p>For each proposal version, the model receives the same required
+multiple-choice questionnaire for every included demographic cell. This
+recipe accepts one to four questions, each with two to eight distinct
+options. Its contract excludes randomized presentation, conditional
+branching, and an additional don’t-know option. Each output gives
+integer percentages in the instrument’s option order, summing to 100 per
+question. Invalid or incomplete responses fail the structural check.</p>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
+index included cells,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>
+a question,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+a category,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>N</mi><mi>s</mi></msub><annotation encoding="application/x-tex">N_s</annotation></semantics></math>
+the chosen fitted population mass, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>p</mi><mrow><mi>s</mi><mi>q</mi><mi>k</mi></mrow></msub><annotation encoding="application/x-tex">p_{sqk}</annotation></semantics></math>
+a validated model share on the unit interval. Aggregation produces</p>
+<div class="paper-equation" tabindex="0" role="group" aria-label="Equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mrow><mi>q</mi><mi>k</mi></mrow></msub><mo>=</mo><mfrac><mrow><munder><mo>∑</mo><mrow><mi>s</mi><mo>∈</mo><mi>S</mi></mrow></munder><msub><mi>N</mi><mi>s</mi></msub><msub><mi>p</mi><mrow><mi>s</mi><mi>q</mi><mi>k</mi></mrow></msub></mrow><mrow><munder><mo>∑</mo><mrow><mi>s</mi><mo>∈</mo><mi>S</mi></mrow></munder><msub><mi>N</mi><mi>s</mi></msub></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\widehat{p}_{qk}=\frac{\sum_{s\in S}N_s p_{sqk}}{\sum_{s\in S}N_s}.
+</annotation></semantics></math></div>
+<p>This operation is deterministic given the cell masses and model
+outputs. Its weights control contributions; they do not establish that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>p</mi><mrow><mi>s</mi><mi>q</mi><mi>k</mi></mrow></msub><annotation encoding="application/x-tex">p_{sqk}</annotation></semantics></math>
+estimates the corresponding human response probability. The twelve cell
+calls are not twelve independent respondents, and large population
+masses do not create a large generated survey sample.</p>
+<p>A separate structured model review receives the proposal,
+questionnaire, and selected dossiers and returns possible wording issues
+and field checks using supplied identifiers. Dossiers are excluded from
+numeric aggregation. Differences between proposal versions are
+differences under the chosen model recipe. They can suggest a question
+to investigate, but do not identify a causal wording effect in
+people.</p>
+<h3 data-number="4.3" id="provenance-and-reproducibility-boundary"><span
+class="header-section-number">4.3</span> Provenance and reproducibility
+boundary</h3>
+<p>The small graph relevant to this workflow connects source release,
+demographic artifact, audience, instrument, proposal version, execution,
+finding, and report. “Derived from,” “used in,” and “compared with” have
+different meanings. A new source or assumption creates another revision
+rather than rewriting the old receipt.</p>
+<p>This is conceptually related to a context capsule: evidence,
+instructions, assumptions, and versions travel with a work product. It
+is not a claim that the private Wind Tunnel implementation implements
+the generic TACITUS App capsule interchange or a complete ontology
+reasoner. A graph can preserve an incorrect assumption as faithfully as
+a sound one.</p>
+<p>Three reproducibility levels should be separated. <strong>Score
+replay</strong> recomputes metrics from released distributions.
+<strong>Input reconstruction</strong> also requires exact source
+extracts, transformations, cell masses, questionnaire, and prompts.
+<strong>Generation replay</strong> further depends on provider
+availability and stochastic execution. The public package establishes
+score replay. Hashes identify records; they cannot recover unavailable
+inputs or guarantee the same hosted-model response. Full independent
+reconstruction of the private generation pipeline remains outside this
+release.</p>
+<h2 data-number="5" id="retrospective-gss-comparison"><span
+class="header-section-number">5</span> Retrospective GSS comparison</h2>
+<h3 data-number="5.1" id="design-and-comparators"><span
+class="header-section-number">5.1</span> Design and comparators</h3>
+<p>The public benchmark uses twelve recurring institutional-confidence
+items in the 2022 and 2024 GSS cross-sections <span class="citation"
+data-cites="gss2026">(<a href="#ref-gss2026" role="doc-biblioref">NORC
+at the University of Chicago 2026</a>)</span>. It retains substantive
+response codes 1–3 and applies <code>WTSSNRPS</code> within each year’s
+eligible, answered item set. The releases have 3,544 and 3,309 eligible
+cases respectively; item-specific answered counts and weighted
+denominators remain in the aggregate data. The split-wording labor-union
+item, <code>CONLABOR</code>, is excluded.</p>
+<p>The 2024 weighted distribution is the reference. Three inputs are
+scored against it: the corresponding 2022 human distribution, one
+national model call per item, and the twelve-cell conditioned and
+weighted recipe. The earlier human survey is a
+<strong>temporal-persistence baseline</strong> on recurring questions,
+not a contemporaneous human experiment against the model. The receipt
+identifies <code>gemini-3.5-flash-lite</code> on Vertex AI, completed on
+23 November 2026. It identifies this run rather than whichever model the
+product later offers.</p>
+<p>The national and cell-based recipes use the substantive item text and
+2024 context. Their contrast changes demographic prompting, call
+structure, and aggregation together. It therefore tests the released
+recipe as a whole; it cannot isolate a causal effect of demographic
+weighting alone. The comparison also does not estimate the incremental
+value of the separate dossier review.</p>
+<p>The design is retrospective: the target answers were public before
+generation and training exposure is possible. The run’s hashes are not
+evidence of target concealment or prospective preregistration. Survey
+forms, presentation, mode, language, and field dates can differ across
+the human waves. Matching the recurring item and substantive codes does
+not establish equivalence in every other respect.</p>
+<h3 data-number="5.2" id="metrics"><span
+class="header-section-number">5.2</span> Metrics</h3>
+<p>For an input distribution
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
+and the weighted reference
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>
+over three categories, total variation is</p>
+<div class="paper-equation" tabindex="0" role="group" aria-label="Equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>TV</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mn>3</mn></munderover><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>p</mi><mi>k</mi></msub><mo>−</mo><msub><mi>y</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">|</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\operatorname{TV}(p,y)=\frac{1}{2}\sum_{k=1}^{3}|p_k-y_k|.
+</annotation></semantics></math></div>
+<p>The report expresses
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>100</mn><mo>TV</mo></mrow><annotation encoding="application/x-tex">100\operatorname{TV}</annotation></semantics></math>
+in percentage points: the answer mass that must move to match the
+reference. This is a distributional discrepancy, not a model’s
+probability of being wrong.</p>
+<p>The released scorer also computes half-scaled multiclass Brier loss
+averaged over reference category shares:</p>
+<div class="paper-equation" tabindex="0" role="group" aria-label="Equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>B</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mn>3</mn></munderover><msubsup><mi>p</mi><mi>k</mi><mn>2</mn></msubsup><mo>−</mo><mn>2</mn><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mn>3</mn></munderover><msub><mi>p</mi><mi>k</mi></msub><msub><mi>y</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\operatorname{B}(p,y)=\frac{1}{2}\left(1+\sum_{k=1}^{3}p_k^2-2\sum_{k=1}^{3}p_k y_k\right).
+</annotation></semantics></math></div>
+<p>This is the expected proper squared-error loss against a one-hot
+category drawn with shares
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>
+<span class="citation" data-cites="brier1950">(<a href="#ref-brier1950"
+role="doc-biblioref">Brier 1950</a>)</span>. Even
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">p=y</annotation></semantics></math>
+gives nonzero loss when the reference has multiple categories. The
+excess over this reference-matched loss is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><msub><mo>∑</mo><mi>k</mi></msub><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>p</mi><mi>k</mi></msub><mo>−</mo><msub><mi>y</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\frac{1}{2}\sum_k(p_k-y_k)^2</annotation></semantics></math>.
+Thus absolute Brier values reflect category uncertainty as well as
+disagreement; they should not be read as aggregate squared distances or
+as calibration evidence for future events. Both reported metrics are
+lower-is-better within this fixed comparison.</p>
+<h3 data-number="5.3" id="results-and-interpretation"><span
+class="header-section-number">5.3</span> Results and interpretation</h3>
+<table>
+<caption>Table 2. Equal-item means across twelve
+institutional-confidence questions. Values are replayed from the
+unchanged aggregate release. TV is in percentage points; Brier uses the
+half-scaled convention above.</caption>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Mean TV (pp)</th>
+<th>Mean Brier</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2022 human survey</td>
+<td>2.48</td>
+<td>0.29274</td>
+</tr>
+<tr class="even">
+<td>National model call</td>
+<td>7.50</td>
+<td>0.29771</td>
+</tr>
+<tr class="odd">
+<td>Census-weighted model</td>
+<td>8.16</td>
+<td>0.29892</td>
+</tr>
+</tbody>
+</table>
+<p>The temporal-persistence baseline has the lowest mean discrepancy on
+both metrics for this battery. The conditioned recipe’s mean TV is 0.66
+percentage points above the national model call; its difference from the
+earlier human baseline is 5.68 points. These results provide no mean
+improvement for the conditioned recipe in the released comparison. They
+do not show that weighting always harms generation, that earlier surveys
+generally outperform models, or that the separate wording-review feature
+is ineffective.</p>
+<figure>
+<img src="/research/wind-tunnel/paper/v1.1/figures/benchmark-items.svg"
+alt="Figure 2. Item-level total variation from weighted 2024 GSS estimates. The unchanged release compares the two model recipes with the 2022 temporal-persistence baseline. These related items and one generation run are descriptive evidence; the figure includes no inferential uncertainty intervals." />
+<figcaption aria-hidden="true">Figure 2. Item-level total variation from
+weighted 2024 GSS estimates. The unchanged release compares the two
+model recipes with the 2022 temporal-persistence baseline. These related
+items and one generation run are descriptive evidence; the figure
+includes no inferential uncertainty intervals.</figcaption>
+</figure>
+<p>The conditioned recipe’s largest discrepancy is confidence in the
+press, at 18.68 TV points. Individual items sometimes favor a model
+recipe even though the overall mean favors the human baseline. Appendix
+A reports all items. The twelve questions form a related, selected
+battery rather than independent random draws from all possible research
+tasks; no confidence interval or significance claim is attached to the
+mean differences.</p>
+<h2 data-number="6"
+id="intended-research-use-prepare-inspect-then-test-with-people"><span
+class="header-section-number">6</span> Intended research use: prepare,
+inspect, then test with people</h2>
+<p>A useful next workflow starts with a research question and ends with
+a check in the target setting. For example, a municipal researcher
+considering a six-month extension of evening bus service might need to
+describe an afternoon-frequency reduction that funds it. The
+illustration below is an authored research-design example, not an
+evaluated deployment or a measured claim about riders.</p>
+<table>
+<caption>Table 3. Illustrative research-preparation workflow. Generated
+hypotheses may direct attention, while expert assessment and
+human-participant evidence establish whether a revision works for the
+intended study.</caption>
+<colgroup>
+<col />
+<col />
+<col />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Stage</th>
+<th>Work product</th>
+<th>Human decision or check</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Define the study</td>
+<td>Population, place, period, proposal
+wording, intended decision</td>
+<td>Confirm the universe and which trade-off
+respondents must understand</td>
+</tr>
+<tr class="even">
+<td>Explore assumptions</td>
+<td>Saved audience, explicit cell recipe,
+qualitative probes</td>
+<td>Inspect stereotypes, missing perspectives,
+and unsupported assumptions</td>
+</tr>
+<tr class="odd">
+<td>Review the instrument</td>
+<td>Versioned question, possible ambiguity,
+comparison wording</td>
+<td>Assess whether costs, timing,
+alternatives, and answer options are understood</td>
+</tr>
+<tr class="even">
+<td>Pilot and revise</td>
+<td>Human interview or pilot evidence kept
+separately from generated output</td>
+<td>Test comprehension and measurement, then
+record accepted revisions</td>
+</tr>
+</tbody>
+</table>
+<p>In the bus example, a model might flag that “improve service”
+conceals the funding trade-off or that “evening” lacks an operating-time
+definition. A researcher would inspect those suggestions, preserve the
+exact wording and why it changed, and test relevant versions through
+expert review, cognitive interviews, or a human pilot. A finding that
+people understand a question better must come from that subsequent
+evaluation; it does not follow from a plausible model critique.</p>
+<p>The value proposition to test is a reduction in avoidable
+research-preparation work at an acceptable error rate. Useful outcomes
+include important instrument defects found, false alarms, missed
+defects, time to a usable revised questionnaire, and clarity of the
+handover to another researcher. A synthetic answer-distribution score
+alone does not establish any of these outcomes.</p>
+<h2 data-number="7" id="limitations-and-evaluation-agenda"><span
+class="header-section-number">7</span> Limitations and evaluation
+agenda</h2>
+<h3 data-number="7.1" id="limits-of-the-current-evidence"><span
+class="header-section-number">7.1</span> Limits of the current
+evidence</h3>
+<p>The results concern a narrow institutional-confidence battery, one
+recorded generation run, and a particular model–prompt–population
+recipe. Public target data leave contamination unresolved. Repeated runs
+and model-version changes are not characterized. Age and education may
+omit relevant sources of heterogeneity, and conditioning can reinforce
+stereotypes rather than recover within-cell disagreement.</p>
+<p>The human references are survey estimates. Coverage, nonresponse,
+wording, modes, weights, and periods affect comparability. Released
+aggregates do not support a complete design-based variance analysis
+without the appropriate source design information. Model variability and
+survey-estimation uncertainty should be reported separately in a future
+study, rather than combined into a synthetic “margin of error.”</p>
+<p>Score replay is public, but the exact private workbook mapping,
+generation templates, and complete input construction are not
+independently reconstructible from this package. Numeric agreement is
+also separate from practical usefulness in questionnaire preparation.
+These limitations define what the current study can support, rather than
+supplying an argument against testing other uses.</p>
+<h3 data-number="7.2" id="prospective-distributional-evaluation"><span
+class="header-section-number">7.2</span> Prospective distributional
+evaluation</h3>
+<p>Before a stronger evaluation, freeze the population universe,
+instrument, item-selection rule, data cutoff, model snapshot, prompts,
+aggregation, and primary metrics. Register the analysis before
+generating or exposing the target answers. Include a defensible
+contemporaneous human reference with its design uncertainty, a simple
+historical or marginal baseline, and an unconditioned model comparator.
+Use new items and settings, with relevant subgroup and
+insufficient-coverage cases.</p>
+<p>A factorial or otherwise explicitly controlled ablation should
+separate demographic prompting, aggregation weights, number of model
+calls, and dossier review. Multiple runs and model snapshots should
+assess stability. Report item and subgroup failures as well as overall
+errors. This would permit a more specific conclusion about which
+component helps under which conditions.</p>
+<h3 data-number="7.3" id="evaluation-of-questionnaire-preparation"><span
+class="header-section-number">7.3</span> Evaluation of questionnaire
+preparation</h3>
+<p>Run a separate blinded study of the practical workflow in Table 3.
+Independent researchers should identify consequential instrument defects
+before seeing the AI suggestions. Compare ordinary researcher
+preparation with AI-assisted preparation under matched time or cost
+accounting. Reviewers should score relevant defects, unsupported
+criticisms, omissions, and the usefulness of proposed revisions,
+retaining disagreements and failures.</p>
+<p>Cognitive interviews or a human pilot can then test whether accepted
+changes improve comprehension or the intended measurement. Record
+preparation, model usage, reviewer effort, and revision time. These are
+proposed experiments. The present benchmark establishes neither their
+results nor a general analyst-time saving.</p>
+<h2 data-number="8" id="conclusion"><span
+class="header-section-number">8</span> Conclusion</h2>
+<p>Wind Tunnel makes the inputs and assumptions of AI-assisted research
+preparation inspectable. Its released US procedure combines explicit
+demographic masses with model-supplied answer shares, keeps qualitative
+dossiers separate from population weighting, and preserves the study
+context in frozen records. On the selected GSS battery, the earlier
+human-survey persistence baseline has lower mean error than both model
+recipes, and the conditioned recipe has no mean advantage over the
+national call. This is a bounded negative result, not a universal
+ranking of human and machine research. The next scientific question is
+whether the documented workflow helps researchers prepare better
+instruments and investigate assumptions, as tested with independent
+review and human evidence.</p>
+<h2 data-number="9" id="availability-authorship-and-disclosures"><span
+class="header-section-number">9</span> Availability, authorship, and
+disclosures</h2>
+<p><strong>Publication.</strong> TACITUS. 2026. <em>Wind Tunnel:
+Evidence-Separated Population Modeling for AI-Assisted Research
+Preparation.</em> Working paper WT-2026-01, version 1.1. <a
+href="https://github.com/sargonxg/TACITUS-Knowledge-Pipeline-open/tree/main/research/wind-tunnel-methodology/v1.1">Versioned
+source, figures, and reproducibility materials</a>. <a
+href="https://tacitus.me/research/wind-tunnel/paper/">Version 1.0
+archive</a>. Independent peer review has not been completed; no journal
+acceptance, DOI registration, or external endorsement is claimed.</p>
+<p><strong>Authorship and interests.</strong> TACITUS develops and
+publishes the software and has a commercial interest in it. AI
+assistance was used in manuscript preparation and source/code checks.
+This assistance is not independent scientific review. The paper
+separates replayed scores, implementation descriptions, illustrations,
+and proposed evaluations.</p>
+<p><strong>Materials and rights.</strong> The public benchmark supplies
+aggregate distributions, item identifiers, source references, run
+hashes, and a scorer. It includes no individual GSS respondent records.
+GSS, ACS, and cited instruments retain their source terms; original
+manuscript and figures follow the repository’s license. The private
+application and generation templates are not represented as open source.
+Researchers remain responsible for appropriate consent, privacy, source
+terms, and communication of uncertainty.</p>
+<h2 class="unnumbered" id="appendix-a.-item-level-comparison">Appendix
+A. Item-level comparison</h2>
+<table>
+<caption>Table A1. Total variation in percentage points by retained
+item. The released aggregate file contains every three-category
+distribution. Each item contributes equally to Table 2.</caption>
+<colgroup>
+<col />
+<col />
+<col />
+<col />
+</colgroup>
+<thead>
+<tr class="header">
+<th>GSS item / institution</th>
+<th>2022 human</th>
+<th>National model</th>
+<th>Weighted model</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>confinan</code> · Banks and
+financial institutions</td>
+<td>1.40</td>
+<td>3.20</td>
+<td>2.31</td>
+</tr>
+<tr class="even">
+<td><code>conbus</code> · Major companies</td>
+<td>2.95</td>
+<td>5.83</td>
+<td>5.71</td>
+</tr>
+<tr class="odd">
+<td><code>conclerg</code> · Organized
+religion</td>
+<td>0.93</td>
+<td>7.74</td>
+<td>7.70</td>
+</tr>
+<tr class="even">
+<td><code>coneduc</code> · Education</td>
+<td>2.93</td>
+<td>0.95</td>
+<td>2.02</td>
+</tr>
+<tr class="odd">
+<td><code>confed</code> · Executive branch of
+the federal government</td>
+<td>2.06</td>
+<td>7.89</td>
+<td>7.89</td>
+</tr>
+<tr class="even">
+<td><code>conpress</code> · Press</td>
+<td>1.53</td>
+<td>15.25</td>
+<td>18.68</td>
+</tr>
+<tr class="odd">
+<td><code>conmedic</code> · Medicine</td>
+<td>6.97</td>
+<td>8.56</td>
+<td>12.90</td>
+</tr>
+<tr class="even">
+<td><code>contv</code> · TV</td>
+<td>1.44</td>
+<td>10.27</td>
+<td>10.10</td>
+</tr>
+<tr class="odd">
+<td><code>conjudge</code> · U.S. Supreme
+Court</td>
+<td>1.65</td>
+<td>6.62</td>
+<td>9.23</td>
+</tr>
+<tr class="even">
+<td><code>consci</code> · Scientific
+community</td>
+<td>3.26</td>
+<td>8.32</td>
+<td>9.30</td>
+</tr>
+<tr class="odd">
+<td><code>conlegis</code> · Congress</td>
+<td>1.38</td>
+<td>3.91</td>
+<td>6.28</td>
+</tr>
+<tr class="even">
+<td><code>conarmy</code> · Military</td>
+<td>3.24</td>
+<td>11.42</td>
+<td>5.76</td>
+</tr>
+</tbody>
+</table>
+<h2 class="unnumbered" id="appendix-b.-reproduction-record">Appendix B.
+Reproduction record</h2>
+<p>The benchmark and scorer are pinned to public commit
+<code>2b51dfee375b1ee0e5fd1ee7a99edd1623d8cac4</code>, directory
+<code>research/wind-tunnel-us/v1</code>. The application implementation
+described is version 3.12.1 at commit
+<code>546b24d1f47671ff917ac1a09eb3bc5d9ab54d15</code>. This publication
+revision changes exposition, not the underlying input distributions or
+generation run.</p>
+<p>From the public repository root, score replay requires Node.js 20 or
+later:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">node</span> research/wind-tunnel-us/v1/score.mjs verify <span class="dt">\</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  research/wind-tunnel-us/v1/benchmark.json</span></code></pre></div>
+<p>Rebuilding the paper additionally requires Python 3 with Matplotlib,
+Pandoc with citeproc, and XeLaTeX. Run <code>build.py</code> and
+<code>verify.py</code> in this publication directory. No inference call
+is made. The manifest records the benchmark checksum and all publication
+artifacts; a checksum identifies bytes rather than validating the
+underlying scientific claim.</p>
+<p>The existing receipt preserves protocol hash
+<code>f4752712c623d1fec445d913ebd50645df9620b2e6feb9f693b2d01eb14b941a</code>,
+input hash
+<code>4beacae21cafa9bc39b9a87d4b29fafee3657f81ea1c15d63f270d1757b6a9f9</code>,
+and output hash
+<code>7f1fbffe45f03aa2254710c816b0eb60f93780aca98b35ea2e544d2db6de6a04</code>.
+They identify the recorded run, not target concealment or end-to-end
+independent replication.</p>
+<h2 class="unnumbered"
+id="appendix-c.-optional-legacy-scenario-model">Appendix C. Optional
+legacy scenario model</h2>
+<p>The archived operational reference describes a deterministic Signal
+engine with 27 authored behavioral archetypes, ten input signal
+dimensions, and 34 operational indicators. The archetypes and
+coefficients are modeling choices, separate from the source-backed
+demographic artifact and the GSS comparison. Moral Foundations research
+motivates some constructs <span class="citation"
+data-cites="atari2023">(<a href="#ref-atari2023"
+role="doc-biblioref">Atari et al. 2023</a>)</span>, but does not
+validate the engine’s coefficients or establish its archetypes as
+measured population groups.</p>
+<p>Historical labels such as “Backlash Probability” describe model
+scales, not calibrated event probabilities. Related indicators share
+inputs and are not independent confirmations. The 13-event historical
+showcase is a curated retrospective diagnostic and can be affected by
+reuse during heuristic development. A seeded 50-run perturbation
+ensemble explores declared assumptions; its output percentiles are not
+human sampling errors or validated forecast intervals. Model
+interpretation of canonical Signal outputs adds generated prose, not
+another independent numeric estimate.</p>
+<p>These legacy diagnostics support inspection of an exploratory model.
+The GSS comparison does not validate them, and they should not be merged
+with human evidence or the cell-based recipe merely because they appear
+in the same research workspace.</p>
+<h2 class="unnumbered" id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent"
+data-entry-spacing="0" role="list">
+<div id="ref-aapor" class="csl-entry" role="listitem">
+American Association for Public Opinion Research. n.d.
+<span>“Transparency Initiative: Disclosure Standards.”</span> Accessed
+November 23, 2026. <a
+href="https://aapor.org/standards-and-ethics/transparency-initiative/">https://aapor.org/standards-and-ethics/transparency-initiative/</a>.
+</div>
+<div id="ref-argyle2023" class="csl-entry" role="listitem">
+Argyle, Lisa P., Ethan C. Busby, Nancy Fulda, Joshua R. Gubler,
+Christopher Rytting, and David Wingate. 2023. <span>“Out of One, Many:
+Using Language Models to Simulate Human Samples.”</span> <em>Political
+Analysis</em> 31 (3): 337–51. <a
+href="https://doi.org/10.1017/pan.2023.2">https://doi.org/10.1017/pan.2023.2</a>.
+</div>
+<div id="ref-atari2023" class="csl-entry" role="listitem">
+Atari, Mohammad, Jonathan Haidt, Jesse Graham, Sena Koleva, Sean T.
+Stevens, and Morteza Dehghani. 2023. <span>“Morality Beyond the WEIRD:
+How the Nomological Network of Morality Varies Across Cultures.”</span>
+<em>Journal of Personality and Social Psychology</em> 125 (5): 1157–88.
+<a
+href="https://doi.org/10.1037/pspp0000470">https://doi.org/10.1037/pspp0000470</a>.
+</div>
+<div id="ref-baron1997" class="csl-entry" role="listitem">
+Baron, Jonathan, and Mark Spranca. 1997. <span>“Protected
+Values.”</span> <em>Organizational Behavior and Human Decision
+Processes</em> 70 (1): 1–16. <a
+href="https://doi.org/10.1006/obhd.1997.2690">https://doi.org/10.1006/obhd.1997.2690</a>.
+</div>
+<div id="ref-bisbee2024" class="csl-entry" role="listitem">
+Bisbee, James, Joshua D. Clinton, Cassy Dorff, Brenton Kenkel, and
+Jennifer M. Larson. 2024. <span>“Synthetic Replacements for Human Survey
+Data? The Perils of Large Language Models.”</span> <em>Political
+Analysis</em> 32 (4): 401–16. <a
+href="https://doi.org/10.1017/pan.2024.5">https://doi.org/10.1017/pan.2024.5</a>.
+</div>
+<div id="ref-brier1950" class="csl-entry" role="listitem">
+Brier, Glenn W. 1950. <span>“Verification of Forecasts Expressed in
+Terms of Probability.”</span> <em>Monthly Weather Review</em> 78 (1):
+1–3. <a
+href="https://doi.org/10.1175/1520-0493(1950)078&lt;0001:vofeit&gt;2.0.co;2">https://doi.org/10.1175/1520-0493(1950)078&lt;0001:vofeit&gt;2.0.co;2</a>.
+</div>
+<div id="ref-deming1940" class="csl-entry" role="listitem">
+Deming, W. Edwards, and Frederick F. Stephan. 1940. <span>“On a Least
+Squares Adjustment of a Sampled Frequency Table When the Expected
+Marginal Totals Are Known.”</span> <em>The Annals of Mathematical
+Statistics</em> 11 (4): 427–44. <a
+href="https://doi.org/10.1214/aoms/1177731829">https://doi.org/10.1214/aoms/1177731829</a>.
+</div>
+<div id="ref-gelman1997" class="csl-entry" role="listitem">
+Gelman, Andrew, and Thomas C. Little. 1997. <span>“Poststratification
+into Many Categories Using Hierarchical Logistic Regression.”</span>
+<em>Survey Methodology</em> 23 (2): 127–35. <a
+href="https://www150.statcan.gc.ca/n1/pub/12-001-x/1997002/article/3616-eng.pdf">https://www150.statcan.gc.ca/n1/pub/12-001-x/1997002/article/3616-eng.pdf</a>.
+</div>
+<div id="ref-grimm2020" class="csl-entry" role="listitem">
+Grimm, Volker, Steven F. Railsback, Christian E. Vincenot, Uta Berger,
+Cara Gallagher, Donald L. DeAngelis, Bruce Edmonds, et al. 2020.
+<span>“The ODD Protocol for Describing Agent-Based and Other Simulation
+Models: A Second Update to Improve Clarity, Replication, and Structural
+Realism.”</span> <em>Journal of Artificial Societies and Social
+Simulation</em> 23 (2). <a
+href="https://doi.org/10.18564/jasss.4259">https://doi.org/10.18564/jasss.4259</a>.
+</div>
+<div id="ref-prov2013" class="csl-entry" role="listitem">
+Lebo, Timothy, Satya Sahoo, and Deborah McGuinness. 2013. <span>“PROV-O:
+The PROV Ontology.”</span> W3C Recommendation. World Wide Web
+Consortium. <a
+href="https://www.w3.org/TR/prov-o/">https://www.w3.org/TR/prov-o/</a>.
+</div>
+<div id="ref-mitchell2019" class="csl-entry" role="listitem">
+Mitchell, Margaret, Simone Wu, Andrew Zaldivar, Parker Barnes, Lucy
+Vasserman, Ben Hutchinson, Elena Spitzer, Inioluwa Deborah Raji, and
+Timnit Gebru. 2019. <span>“Model Cards for Model Reporting.”</span> In
+<em>Proceedings of the Conference on Fairness, Accountability, and
+Transparency</em>, 220–29. <a
+href="https://doi.org/10.1145/3287560.3287596">https://doi.org/10.1145/3287560.3287596</a>.
+</div>
+<div id="ref-gss2026" class="csl-entry" role="listitem">
+NORC at the University of Chicago. 2026. <span>“General Social Survey
+1972–2024: Cross-Section Documentation and Public Data.”</span> <a
+href="https://gss.norc.org/get-documentation.html">https://gss.norc.org/get-documentation.html</a>.
+</div>
+<div id="ref-tjuatja2024" class="csl-entry" role="listitem">
+Tjuatja, Lindia, Valerie Chen, Tongshuang Wu, Ameet Talwalkwar, and
+Graham Neubig. 2024. <span>“Do LLMs Exhibit Human-Like Response Biases?
+A Case Study in Survey Design.”</span> <em>Transactions of the
+Association for Computational Linguistics</em> 12: 1011–26. <a
+href="https://doi.org/10.1162/tacl_a_00685">https://doi.org/10.1162/tacl_a_00685</a>.
+</div>
+<div id="ref-acs2024" class="csl-entry" role="listitem">
+U.S. Census Bureau. 2026. <span>“2020–2024 American Community Survey:
+Five-Year Estimates and Public Use Microdata Sample
+Documentation.”</span> <a
+href="https://www.census.gov/programs-surveys/acs/microdata/documentation.html">https://www.census.gov/programs-surveys/acs/microdata/documentation.html</a>.
+</div>
+</div>

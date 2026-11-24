@@ -1,0 +1,22 @@
+\usepackage{fancyhdr}
+\usepackage{microtype}
+\usepackage{needspace}
+\usepackage{float}
+\floatplacement{figure}{H}
+\usepackage{caption}
+\usepackage{seqsplit}
+\captionsetup{font=small,labelfont=bf}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize\textsc{Wind Tunnel · TACITUS}}
+\fancyhead[R]{\footnotesize Working paper WT-2026-01 · v1.1}
+\fancyfoot[C]{\small\thepage}
+\setlength{\headheight}{14pt}
+\setlength{\emergencystretch}{3em}
+\setlength{\parskip}{5pt}
+\setlength{\parindent}{0pt}
+\AtBeginEnvironment{CSLReferences}{\interlinepenalty=10000}
+\renewcommand{\headrulewidth}{0.3pt}
+\AtBeginDocument{\hypersetup{pdftitle={Wind Tunnel: Evidence-Separated Population Modeling for AI-Assisted Research Preparation},pdfauthor={TACITUS},pdfsubject={Working paper WT-2026-01, version 1.1; not independently peer-reviewed},pdfkeywords={population modeling, questionnaire preparation, provenance, language models}}}
+\let\originalsection\section
+\renewcommand{\section}{\Needspace{5\baselineskip}\originalsection}
