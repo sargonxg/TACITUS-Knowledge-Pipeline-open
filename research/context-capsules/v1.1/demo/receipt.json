@@ -1,0 +1,11 @@
+{
+  "format": "tacitus-reference-receipt/1",
+  "context_sha256": "1025335b8e6086759ae03c34d1ded811298cd8b073f3d4d7c0a423ebb8aac30d",
+  "context_bytes": 5782,
+  "budget_bytes": 18000,
+  "source_records": 3,
+  "selected_statements": 4,
+  "omitted_statements": 0,
+  "model_calls": 0,
+  "model_quality_gain_established": false
+}

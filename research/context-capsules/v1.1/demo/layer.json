@@ -1,0 +1,23 @@
+{
+  "id": "renewal-handover",
+  "version": "1.0.0",
+  "title": "Carry the conditional permission and objection into a decision note",
+  "statement_ids": [
+    "permission",
+    "objection",
+    "handover-rule",
+    "note-format"
+  ],
+  "required_statement_ids": [
+    "permission",
+    "objection",
+    "handover-rule",
+    "note-format"
+  ],
+  "checks": [
+    "Preserve the six-month duration and reviewer condition.",
+    "Keep the objection and absence of a recorded approval.",
+    "Treat authored team guidance as guidance, not a source fact.",
+    "Review the interpretation before any production reuse."
+  ]
+}

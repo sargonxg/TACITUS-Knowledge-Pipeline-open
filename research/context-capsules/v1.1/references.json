@@ -1,0 +1,880 @@
+[
+  {
+    "id": "lewis2020",
+    "type": "paper-conference",
+    "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+    "author": [
+      {
+        "given": "Patrick",
+        "family": "Lewis"
+      },
+      {
+        "given": "Ethan",
+        "family": "Perez"
+      },
+      {
+        "given": "Aleksandra",
+        "family": "Piktus"
+      },
+      {
+        "given": "Fabio",
+        "family": "Petroni"
+      },
+      {
+        "given": "Vladimir",
+        "family": "Karpukhin"
+      },
+      {
+        "given": "Naman",
+        "family": "Goyal"
+      },
+      {
+        "given": "Heinrich",
+        "family": "Küttler"
+      },
+      {
+        "given": "Mike",
+        "family": "Lewis"
+      },
+      {
+        "given": "Wen-tau",
+        "family": "Yih"
+      },
+      {
+        "given": "Tim",
+        "family": "Rocktäschel"
+      },
+      {
+        "given": "Sebastian",
+        "family": "Riedel"
+      },
+      {
+        "given": "Douwe",
+        "family": "Kiela"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
+    "container-title": "Advances in Neural Information Processing Systems",
+    "URL": "https://proceedings.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html",
+    "volume": "33"
+  },
+  {
+    "id": "robertson2009",
+    "type": "article-journal",
+    "title": "The Probabilistic Relevance Framework: BM25 and Beyond",
+    "author": [
+      {
+        "given": "Stephen",
+        "family": "Robertson"
+      },
+      {
+        "given": "Hugo",
+        "family": "Zaragoza"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2009
+        ]
+      ]
+    },
+    "container-title": "Foundations and Trends in Information Retrieval",
+    "URL": "https://doi.org/10.1561/1500000019",
+    "DOI": "10.1561/1500000019"
+  },
+  {
+    "id": "liu2024",
+    "type": "article-journal",
+    "title": "Lost in the Middle: How Language Models Use Long Contexts",
+    "author": [
+      {
+        "given": "Nelson F.",
+        "family": "Liu"
+      },
+      {
+        "given": "Kevin",
+        "family": "Lin"
+      },
+      {
+        "given": "John",
+        "family": "Hewitt"
+      },
+      {
+        "given": "Ashwin",
+        "family": "Paranjape"
+      },
+      {
+        "given": "Michele",
+        "family": "Bevilacqua"
+      },
+      {
+        "given": "Fabio",
+        "family": "Petroni"
+      },
+      {
+        "given": "Percy",
+        "family": "Liang"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "container-title": "Transactions of the Association for Computational Linguistics",
+    "URL": "https://aclanthology.org/2024.tacl-1.9/",
+    "DOI": "10.1162/tacl_a_00638",
+    "page": "157-173",
+    "volume": "12"
+  },
+  {
+    "id": "edge2024",
+    "type": "report",
+    "title": "From Local to Global: A Graph RAG Approach to Query-Focused Summarization",
+    "author": [
+      {
+        "given": "Darren",
+        "family": "Edge"
+      },
+      {
+        "given": "Ha",
+        "family": "Trinh"
+      },
+      {
+        "given": "Newman",
+        "family": "Cheng"
+      },
+      {
+        "given": "Joshua",
+        "family": "Bradley"
+      },
+      {
+        "given": "Alex",
+        "family": "Chao"
+      },
+      {
+        "given": "Apurva",
+        "family": "Mody"
+      },
+      {
+        "given": "Steven",
+        "family": "Truitt"
+      },
+      {
+        "given": "Dasha",
+        "family": "Metropolitansky"
+      },
+      {
+        "given": "Robert Osazuwa",
+        "family": "Ness"
+      },
+      {
+        "given": "Jonathan",
+        "family": "Larson"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "URL": "https://arxiv.org/abs/2404.16130",
+    "genre": "arXiv preprint",
+    "number": "2404.16130",
+    "note": "Version 2, revised 19 February 2025."
+  },
+  {
+    "id": "gutierrez2024",
+    "type": "paper-conference",
+    "title": "HippoRAG: Neurobiologically Inspired Long-Term Memory for Large Language Models",
+    "author": [
+      {
+        "given": "Bernal",
+        "family": "Jiménez Gutiérrez"
+      },
+      {
+        "given": "Yiheng",
+        "family": "Shu"
+      },
+      {
+        "given": "Yu",
+        "family": "Gu"
+      },
+      {
+        "given": "Michihiro",
+        "family": "Yasunaga"
+      },
+      {
+        "given": "Yu",
+        "family": "Su"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "container-title": "Advances in Neural Information Processing Systems",
+    "URL": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/6ddc001d07ca4f319af96a3024f6dbd1-Abstract-Conference.html",
+    "volume": "37"
+  },
+  {
+    "id": "guo2025",
+    "type": "paper-conference",
+    "title": "LightRAG: Simple and Fast Retrieval-Augmented Generation",
+    "author": [
+      {
+        "given": "Zirui",
+        "family": "Guo"
+      },
+      {
+        "given": "Lianghao",
+        "family": "Xia"
+      },
+      {
+        "given": "Yanhua",
+        "family": "Yu"
+      },
+      {
+        "given": "Tu",
+        "family": "Ao"
+      },
+      {
+        "given": "Chao",
+        "family": "Huang"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "container-title": "Findings of the Association for Computational Linguistics: EMNLP 2025",
+    "URL": "https://aclanthology.org/2025.findings-emnlp.568/",
+    "DOI": "10.18653/v1/2025.findings-emnlp.568",
+    "page": "10746-10761"
+  },
+  {
+    "id": "asai2024",
+    "type": "paper-conference",
+    "title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+    "author": [
+      {
+        "given": "Akari",
+        "family": "Asai"
+      },
+      {
+        "given": "Zeqiu",
+        "family": "Wu"
+      },
+      {
+        "given": "Yizhong",
+        "family": "Wang"
+      },
+      {
+        "given": "Avirup",
+        "family": "Sil"
+      },
+      {
+        "given": "Hannaneh",
+        "family": "Hajishirzi"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "container-title": "International Conference on Learning Representations",
+    "URL": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/25f7be9694d7b32d5cc670927b8091e1-Abstract-Conference.html"
+  },
+  {
+    "id": "yao2023",
+    "type": "paper-conference",
+    "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+    "author": [
+      {
+        "given": "Shunyu",
+        "family": "Yao"
+      },
+      {
+        "given": "Jeffrey",
+        "family": "Zhao"
+      },
+      {
+        "given": "Dian",
+        "family": "Yu"
+      },
+      {
+        "given": "Nan",
+        "family": "Du"
+      },
+      {
+        "given": "Izhak",
+        "family": "Shafran"
+      },
+      {
+        "given": "Karthik",
+        "family": "Narasimhan"
+      },
+      {
+        "given": "Yuan",
+        "family": "Cao"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "container-title": "International Conference on Learning Representations",
+    "URL": "https://arxiv.org/abs/2210.03629"
+  },
+  {
+    "id": "gao2023",
+    "type": "paper-conference",
+    "title": "Enabling Large Language Models to Generate Text with Citations",
+    "author": [
+      {
+        "given": "Tianyu",
+        "family": "Gao"
+      },
+      {
+        "given": "Howard",
+        "family": "Yen"
+      },
+      {
+        "given": "Jiatong",
+        "family": "Yu"
+      },
+      {
+        "given": "Danqi",
+        "family": "Chen"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "container-title": "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+    "URL": "https://aclanthology.org/2023.emnlp-main.398/",
+    "DOI": "10.18653/v1/2023.emnlp-main.398",
+    "page": "6465-6488"
+  },
+  {
+    "id": "rashkin2023",
+    "type": "article-journal",
+    "title": "Measuring Attribution in Natural Language Generation Models",
+    "author": [
+      {
+        "given": "Hannah",
+        "family": "Rashkin"
+      },
+      {
+        "given": "Vitaly",
+        "family": "Nikolaev"
+      },
+      {
+        "given": "Matthew",
+        "family": "Lamm"
+      },
+      {
+        "given": "Lora",
+        "family": "Aroyo"
+      },
+      {
+        "given": "Michael",
+        "family": "Collins"
+      },
+      {
+        "given": "Dipanjan",
+        "family": "Das"
+      },
+      {
+        "given": "Slav",
+        "family": "Petrov"
+      },
+      {
+        "given": "Gaurav Singh",
+        "family": "Tomar"
+      },
+      {
+        "given": "Iulia",
+        "family": "Turc"
+      },
+      {
+        "given": "David",
+        "family": "Reitter"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "container-title": "Computational Linguistics",
+    "URL": "https://aclanthology.org/2023.cl-4.2/",
+    "DOI": "10.1162/coli_a_00486",
+    "page": "777-840",
+    "volume": "49",
+    "issue": "4"
+  },
+  {
+    "id": "min2023",
+    "type": "paper-conference",
+    "title": "FActScore: Fine-grained Atomic Evaluation of Factual Precision in Long Form Text Generation",
+    "author": [
+      {
+        "given": "Sewon",
+        "family": "Min"
+      },
+      {
+        "given": "Kalpesh",
+        "family": "Krishna"
+      },
+      {
+        "given": "Xinxi",
+        "family": "Lyu"
+      },
+      {
+        "given": "Mike",
+        "family": "Lewis"
+      },
+      {
+        "given": "Wen-tau",
+        "family": "Yih"
+      },
+      {
+        "given": "Pang",
+        "family": "Koh"
+      },
+      {
+        "given": "Mohit",
+        "family": "Iyyer"
+      },
+      {
+        "given": "Luke",
+        "family": "Zettlemoyer"
+      },
+      {
+        "given": "Hannaneh",
+        "family": "Hajishirzi"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "container-title": "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+    "URL": "https://aclanthology.org/2023.emnlp-main.741/",
+    "DOI": "10.18653/v1/2023.emnlp-main.741",
+    "page": "12076-12100"
+  },
+  {
+    "id": "wu2025",
+    "type": "paper-conference",
+    "title": "LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory",
+    "author": [
+      {
+        "given": "Di",
+        "family": "Wu"
+      },
+      {
+        "given": "Hongwei",
+        "family": "Wang"
+      },
+      {
+        "given": "Wenhao",
+        "family": "Yu"
+      },
+      {
+        "given": "Yuwei",
+        "family": "Zhang"
+      },
+      {
+        "given": "Kai-Wei",
+        "family": "Chang"
+      },
+      {
+        "given": "Dong",
+        "family": "Yu"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "container-title": "International Conference on Learning Representations",
+    "URL": "https://arxiv.org/abs/2410.10813"
+  },
+  {
+    "id": "mitchell2019",
+    "type": "paper-conference",
+    "title": "Model Cards for Model Reporting",
+    "author": [
+      {
+        "given": "Margaret",
+        "family": "Mitchell"
+      },
+      {
+        "given": "Simone",
+        "family": "Wu"
+      },
+      {
+        "given": "Andrew",
+        "family": "Zaldivar"
+      },
+      {
+        "given": "Parker",
+        "family": "Barnes"
+      },
+      {
+        "given": "Lucy",
+        "family": "Vasserman"
+      },
+      {
+        "given": "Ben",
+        "family": "Hutchinson"
+      },
+      {
+        "given": "Elena",
+        "family": "Spitzer"
+      },
+      {
+        "given": "Inioluwa Deborah",
+        "family": "Raji"
+      },
+      {
+        "given": "Timnit",
+        "family": "Gebru"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2019,
+          1,
+          29
+        ]
+      ]
+    },
+    "DOI": "10.1145/3287560.3287596",
+    "URL": "https://doi.org/10.1145/3287560.3287596",
+    "container-title": "Proceedings of the Conference on Fairness, Accountability, and Transparency",
+    "page": "220-229"
+  },
+  {
+    "id": "prov2013",
+    "type": "report",
+    "title": "PROV-O: The PROV Ontology",
+    "author": [
+      {
+        "given": "Timothy",
+        "family": "Lebo"
+      },
+      {
+        "given": "Satya",
+        "family": "Sahoo"
+      },
+      {
+        "given": "Deborah",
+        "family": "McGuinness"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2013,
+          4,
+          30
+        ]
+      ]
+    },
+    "publisher": "World Wide Web Consortium",
+    "genre": "W3C Recommendation",
+    "URL": "https://www.w3.org/TR/prov-o/"
+  },
+  {
+    "id": "shacl2017",
+    "type": "report",
+    "title": "Shapes Constraint Language (SHACL)",
+    "author": [
+      {
+        "given": "Holger",
+        "family": "Knublauch"
+      },
+      {
+        "given": "Dimitris",
+        "family": "Kontokostas"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    },
+    "URL": "https://www.w3.org/TR/2017/REC-shacl-20170720/",
+    "publisher": "World Wide Web Consortium",
+    "genre": "W3C Recommendation"
+  },
+  {
+    "id": "amershi2019",
+    "type": "paper-conference",
+    "title": "Guidelines for Human-AI Interaction",
+    "author": [
+      {
+        "given": "Saleema",
+        "family": "Amershi"
+      },
+      {
+        "given": "Dan",
+        "family": "Weld"
+      },
+      {
+        "given": "Mihaela",
+        "family": "Vorvoreanu"
+      },
+      {
+        "given": "Adam",
+        "family": "Fourney"
+      },
+      {
+        "given": "Besmira",
+        "family": "Nushi"
+      },
+      {
+        "given": "Penny",
+        "family": "Collisson"
+      },
+      {
+        "given": "Jina",
+        "family": "Suh"
+      },
+      {
+        "given": "Shamsi",
+        "family": "Iqbal"
+      },
+      {
+        "given": "Paul",
+        "family": "Bennett"
+      },
+      {
+        "given": "Kori",
+        "family": "Inkpen"
+      },
+      {
+        "given": "Jaime",
+        "family": "Teevan"
+      },
+      {
+        "given": "Ruth",
+        "family": "Kikin-Gil"
+      },
+      {
+        "given": "Eric",
+        "family": "Horvitz"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "container-title": "Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems",
+    "URL": "https://www.microsoft.com/en-us/research/publication/guidelines-for-human-ai-interaction/",
+    "DOI": "10.1145/3290605.3300233"
+  },
+  {
+    "id": "turpin2023",
+    "type": "paper-conference",
+    "title": "Language Models Don't Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting",
+    "author": [
+      {
+        "given": "Miles",
+        "family": "Turpin"
+      },
+      {
+        "given": "Julian",
+        "family": "Michael"
+      },
+      {
+        "given": "Ethan",
+        "family": "Perez"
+      },
+      {
+        "given": "Samuel",
+        "family": "Bowman"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "container-title": "Advances in Neural Information Processing Systems",
+    "URL": "https://papers.nips.cc/paper/2023/hash/ed3fea9033a80fea1376299fa7863f4a-Abstract-Conference.html",
+    "volume": "36"
+  },
+  {
+    "id": "greshake2023",
+    "type": "report",
+    "title": "Not What You've Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection",
+    "author": [
+      {
+        "given": "Kai",
+        "family": "Greshake"
+      },
+      {
+        "given": "Sahar",
+        "family": "Abdelnabi"
+      },
+      {
+        "given": "Shailesh",
+        "family": "Mishra"
+      },
+      {
+        "given": "Christoph",
+        "family": "Endres"
+      },
+      {
+        "given": "Thorsten",
+        "family": "Holz"
+      },
+      {
+        "given": "Mario",
+        "family": "Fritz"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "URL": "https://arxiv.org/abs/2302.12173",
+    "genre": "arXiv preprint",
+    "number": "2302.12173",
+    "note": "Version 2, 5 May 2023; bibliographic order follows this arXiv version."
+  },
+  {
+    "id": "thakur2021",
+    "type": "paper-conference",
+    "title": "BEIR: A Heterogeneous Benchmark for Zero-shot Evaluation of Information Retrieval Models",
+    "author": [
+      {
+        "given": "Nandan",
+        "family": "Thakur"
+      },
+      {
+        "given": "Nils",
+        "family": "Reimers"
+      },
+      {
+        "given": "Andreas",
+        "family": "Rücklé"
+      },
+      {
+        "given": "Abhishek",
+        "family": "Srivastava"
+      },
+      {
+        "given": "Iryna",
+        "family": "Gurevych"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "container-title": "Proceedings of the Neural Information Processing Systems Track on Datasets and Benchmarks",
+    "volume": "1",
+    "URL": "https://datasets-benchmarks-proceedings.neurips.cc/paper_files/paper/2021/hash/65b9eea6e1cc6bb9f0cd2a47751a186f-Abstract-round2.html"
+  },
+  {
+    "id": "nistdraft2024",
+    "type": "report",
+    "title": "Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile (Initial Public Draft)",
+    "author": [
+      {
+        "literal": "National Institute of Standards and Technology"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2024,
+          4,
+          29
+        ]
+      ]
+    },
+    "publisher": "National Institute of Standards and Technology",
+    "number": "NIST AI 600-1",
+    "URL": "https://airc.nist.gov/docs/NIST.AI.600-1.GenAI-Profile.ipd.pdf",
+    "note": "Historical draft, withdrawn 26 July 2024. MEASURE 2.5, printed page 39 (page 44 of archived PDF)."
+  },
+  {
+    "id": "nistfinal2024",
+    "type": "report",
+    "title": "Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile",
+    "author": [
+      {
+        "literal": "National Institute of Standards and Technology"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2024,
+          7,
+          26
+        ]
+      ]
+    },
+    "publisher": "National Institute of Standards and Technology",
+    "number": "NIST AI 600-1",
+    "DOI": "10.6028/NIST.AI.600-1",
+    "URL": "https://nvlpubs.nist.gov/nistpubs/AI/NIST.AI.600-1.pdf",
+    "note": "July 2024 final edition. MEASURE 2.5, printed page 31 (PDF page 35)."
+  }
+]

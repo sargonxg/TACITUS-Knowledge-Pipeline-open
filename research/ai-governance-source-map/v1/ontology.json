@@ -1,0 +1,47 @@
+{
+  "schema": "tacitus.graph-vocabulary/1",
+  "title": "AI governance source-map vocabulary",
+  "status": "Application vocabulary for a public source demonstrator; not an authoritative legal ontology",
+  "layers": {
+    "structure": "Published document structure and exact source passages.",
+    "references": "Lexical article/annex references with disclosed scope-resolution rules; not legal entailment.",
+    "terminology": "Document-specific literal definitions and aggregated exact-phrase occurrences. No automatic synonymy or cross-document equivalence.",
+    "interpretations": "Reserved for future separately attributed, reviewed annotations. There are no interpretation nodes or edges in this release. Authored reading presets remain metadata."
+  },
+  "node_kinds": {
+    "document": {"layer": "structure", "meaning": "One pinned adopted-text edition."},
+    "chapter": {"layer": "structure", "meaning": "A published chapter, identified by its XHTML anchor."},
+    "section": {"layer": "structure", "meaning": "A published section within a chapter."},
+    "article": {"layer": "structure", "meaning": "A numbered article. Its quote contains the published heading; its body passages are connected by contains edges."},
+    "recital": {"layer": "structure", "meaning": "A numbered recital, with its substantive source text."},
+    "annex": {"layer": "structure", "meaning": "A published annex, with its heading and body passages."},
+    "passage": {"layer": "structure", "meaning": "One substantive XHTML paragraph in an article or annex, excluding bare list labels. Point labels are retained in the display label. Generated extraction locators do not pretend to be official paragraph identifiers."},
+    "defined_term": {"layer": "terminology", "meaning": "A term extracted from a definition-opening pattern in AI Act Article 3 or GDPR Article 4. Its complete source paragraph and original qualifiers are retained."}
+  },
+  "edge_relations": {
+    "contains": {"layer": "structure", "domain": ["document", "chapter", "section", "article", "annex"], "range": ["chapter", "section", "article", "recital", "annex", "passage"], "meaning": "Nearest included published ancestor. Does not assert that a statement is true or applicable."},
+    "references_article": {"layer": "references", "domain": ["passage"], "range": ["article"], "meaning": "A written article reference resolves under the declared local-document or explicit-instrument rule. Lists are tokenized; ranges retain written endpoints. Not a complete legal dependency graph."},
+    "references_annex": {"layer": "references", "domain": ["passage"], "range": ["annex"], "meaning": "A literal local-annex reference. No inference that all annex provisions apply."},
+    "defines_term": {"layer": "terminology", "domain": ["passage"], "range": ["defined_term"], "meaning": "The exact source passage opens a definition for this term in this document."},
+    "mentions_term": {"layer": "terminology", "domain": ["article"], "range": ["defined_term"], "meaning": "At least one body passage in the article contains the literal case-insensitive singular term phrase. Aggregated occurrence and passage counts, plus the first exact evidence span, are retained. A lexical occurrence is not a legal applicability assertion."}
+  },
+  "methods": {
+    "xhtml_ancestry": "Deterministic extraction of the nearest included XHTML ancestor.",
+    "literal_definition_pattern": "A literal definition opening, allowing the source's express qualifiers for consent and real-world testing subject.",
+    "lexical_local_article_reference": "A written reference in an operative source passage, resolved to the same pinned instrument; foreign explicit scope, unresolved thereof antecedents and inserted amendment articles are excluded.",
+    "lexical_explicit_instrument_reference": "A written reference explicitly names Regulation (EU) 2016/679 or Regulation (EU) 2024/1689, including intervening point/subparagraph qualifiers.",
+    "lexical_local_annex_reference": "A written Annex I–XIII reference to an included local annex.",
+    "case_insensitive_literal_phrase": "Whole-word-boundary literal singular phrase, aggregated by article. No stemming, synonym expansion, embeddings, language model or entailment."
+  },
+  "provenance": {
+    "source_start_source_end": "Zero-based Unicode code-point [start,end) offsets into the corresponding normalized sources/{document_id}.txt; not byte offsets into XHTML.",
+    "quote": "Exactly the substring between source_start and source_end in the pinned extracted representation.",
+    "match_start_match_end": "Zero-based Unicode code-point offsets into the evidence node's quote; references use the edge's source passage, mentions_term uses evidence_node.",
+    "source_url": "Official ELI adopted-text link with an existing XHTML fragment. Raw official Publications Office retrieval URL, byte size and SHA-256 are pinned in source-lock.json.",
+    "review_state": "No expert approval or verified legal interpretation is asserted. Exact source fidelity and reproducibility are tested separately from legal correctness."
+  },
+  "design_references": [
+    {"title": "W3C PROV-O: The PROV Ontology", "url": "https://www.w3.org/TR/prov-o/", "use": "Provenance separation informed the design. The custom JSON format does not claim PROV-O serialization conformance."},
+    {"title": "W3C SKOS Simple Knowledge Organization System Reference", "url": "https://www.w3.org/TR/skos-reference/", "use": "Distinguishing vocabulary labels from claims informed the design. No skos:exactMatch or cross-instrument equivalence is generated."}
+  ]
+}

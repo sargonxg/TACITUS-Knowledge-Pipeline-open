@@ -1,0 +1,747 @@
+<p><strong>Research proposal TAC-2026-01 · Version 1.1.</strong>
+Published by TACITUS. Independent peer review has not been completed.
+The efficacy studies described here are proposed, not preregistered or
+run.</p>
+<p><strong>Keywords:</strong> context capsules; knowledge graphs;
+retrieval-augmented generation; provenance; collaborative writing;
+human–agent handover.</p>
+<h2 data-number="1" id="problem-and-candidate-contribution"><span
+class="header-section-number">1</span> Problem and candidate
+contribution</h2>
+<p>An analyst revising a policy note needs more than a relevant
+paragraph. They may need the exact source edition, the condition
+limiting its applicability, the reason a team retained cautious wording,
+and an objection that remained unresolved. When this work moves to
+another conversation, teammate or agent, these dependencies can
+disappear. The recipient may produce a plausible answer while changing
+the meaning of the earlier analysis.</p>
+<p>TACITUS App organizes work around conversation and writing with
+explicitly attached context. A <strong>capsule</strong> packages a
+purpose, selected sources and working guidance. An
+<strong>artefact</strong> is a reusable format, example or resulting
+work product. A <strong>small graph</strong> records selected
+relationships among passages, interpretations, conditions, discussions
+and review decisions. The graph supplies structure to context selection
+and inspection; generation receives a bounded packet, not an image of
+the graph or the entire knowledge store.</p>
+<p>The candidate contribution is a portable contract connecting three
+otherwise separable operations: selecting evidence for a request,
+preserving the scope and review history of its interpretation, and
+retaining that context when a work product is reused. This can be
+implemented using ordinary records and typed edges. Its research value
+depends on whether the contract improves continuity and accepted work,
+rather than on a new graph class or foundation model.</p>
+<p>The central question is: <strong>Does reusable, reviewed context
+preserve critical qualifications and team decisions across generation,
+source updates and handover, at an acceptable total cost?</strong> Three
+hypotheses follow. Dependency-aware selection may prevent known
+conditions from being separated from a claim. Explicit versions may help
+recipients distinguish a source update from a changed recommendation.
+Reusable context may reduce repeated explanation. Each has a competing
+explanation: a careful ordinary note may achieve the same outcome, and
+annotation and review may cost more than reuse saves.</p>
+<h2 data-number="2" id="relation-to-existing-research"><span
+class="header-section-number">2</span> Relation to existing
+research</h2>
+<p>Retrieval-augmented generation combines generation with retrievable
+external information <span class="citation" data-cites="lewis2020">(<a
+href="#ref-lewis2020" role="doc-biblioref">Lewis et al.
+2020</a>)</span>. Long-context research shows that the position of
+relevant evidence can affect its use <span class="citation"
+data-cites="liu2024">(<a href="#ref-liu2024" role="doc-biblioref">Liu et
+al. 2024</a>)</span>. These motivate testing selection and placement,
+but neither establishes that shorter context or a particular graph
+improves every model. BM25 is an important reproducible comparator <span
+class="citation" data-cites="robertson2009">(<a
+href="#ref-robertson2009" role="doc-biblioref">Robertson and Zaragoza
+2009</a>)</span>. BEIR further demonstrates why retrieval evaluation
+should include varied architectures and the computational costs of
+reranking <span class="citation" data-cites="thakur2021">(<a
+href="#ref-thakur2021" role="doc-biblioref">Thakur et al.
+2021</a>)</span>; a lexical-only baseline is insufficient to establish a
+practical advantage over a capable contemporary system.</p>
+<p>GraphRAG studies entity graphs and community summaries for
+corpus-level questions <span class="citation" data-cites="edge2024">(<a
+href="#ref-edge2024" role="doc-biblioref">Edge et al. 2024</a>)</span>.
+HippoRAG uses knowledge graphs and Personalized PageRank for knowledge
+integration and multi-hop retrieval <span class="citation"
+data-cites="gutierrez2024">(<a href="#ref-gutierrez2024"
+role="doc-biblioref">Jiménez Gutiérrez et al. 2024</a>)</span>. LightRAG
+combines graph and vector representations with retrieval at different
+levels <span class="citation" data-cites="guo2025">(<a
+href="#ref-guo2025" role="doc-biblioref">Guo et al. 2025</a>)</span>.
+TACITUS’s public reference instead operates on authored mappings with
+deterministic selection and explicit qualifications. The proposed
+distinction is a reusable, review-scoped context contract across tasks
+and actors. The evaluation must establish whether this integration adds
+useful capability beyond these existing approaches.</p>
+<p>Self-RAG studies learned conditional retrieval and reflection <span
+class="citation" data-cites="asai2024">(<a href="#ref-asai2024"
+role="doc-biblioref">Asai et al. 2024</a>)</span>, while ReAct studies
+interleaving reasoning and task actions <span class="citation"
+data-cites="yao2023">(<a href="#ref-yao2023" role="doc-biblioref">Yao et
+al. 2023</a>)</span>. They motivate conditional evidence access and
+bounded agent tools. The current TACITUS reference does not implement
+their learned policies. LongMemEval’s separation of cross-session
+reasoning, temporal updates and abstention is directly relevant to
+handover <span class="citation" data-cites="wu2025">(<a
+href="#ref-wu2025" role="doc-biblioref">Wu et al. 2025</a>)</span>.
+Unlike automatic memory over an entire interaction history, a capsule is
+deliberately selected and can be reviewed for a stated purpose.</p>
+<p>ALCE, Attributable to Identified Sources and FActScore motivate
+separate measurements of citation quality, attributable statements and
+individual factual claims <span class="citation"
+data-cites="gao2023 rashkin2023 min2023">(<a href="#ref-gao2023"
+role="doc-biblioref">Gao et al. 2023</a>; <a href="#ref-rashkin2023"
+role="doc-biblioref">Rashkin et al. 2023</a>; <a href="#ref-min2023"
+role="doc-biblioref">Min et al. 2023</a>)</span>. A resolving citation
+identifier does not establish a supported paraphrase. PROV-O and SHACL
+inform provenance and declared graph constraints <span class="citation"
+data-cites="prov2013 shacl2017">(<a href="#ref-prov2013"
+role="doc-biblioref">Lebo, Sahoo, and McGuinness 2013</a>; <a
+href="#ref-shacl2017" role="doc-biblioref">Knublauch and Kontokostas
+2017</a>)</span>. Structural validation and semantic correctness remain
+different questions.</p>
+<p>Human–AI interaction research motivates correction and control over
+adaptation <span class="citation" data-cites="amershi2019">(<a
+href="#ref-amershi2019" role="doc-biblioref">Amershi et al.
+2019</a>)</span>; model cards motivate explicit reporting of intended
+use and evaluation scope <span class="citation"
+data-cites="mitchell2019">(<a href="#ref-mitchell2019"
+role="doc-biblioref">Mitchell et al. 2019</a>)</span>. Model
+explanations can also misrepresent the process producing an answer <span
+class="citation" data-cites="turpin2023">(<a href="#ref-turpin2023"
+role="doc-biblioref">Turpin et al. 2023</a>)</span>. Accordingly,
+<strong>recorded reasoning</strong> here means attributed discussion,
+analytical warrants, objections and explanations of wording. It does not
+denote an authenticated record of a model’s private chain of
+thought.</p>
+<h2 data-number="3" id="the-portable-context-contract"><span
+class="header-section-number">3</span> The portable context
+contract</h2>
+<h3 data-number="3.1" id="records-roles-and-review"><span
+class="header-section-number">3.1</span> Records, roles and review</h3>
+<p>The contract distinguishes an external source statement, an
+interpretation of it, a working instruction, and a generated result. A
+source record identifies its edition and exact passages. An
+interpretation preserves its author, modality, scope and supporting
+spans. An instruction states how the team wants to perform the work. A
+draft records its dependency on selected context and subsequent edits.
+An example artefact can guide form without transferring its factual
+contents to a new situation.</p>
+<table>
+<caption>Table 1. Different record types carry different authority.
+Review is a scoped judgment, not a universal truth label.</caption>
+<colgroup>
+<col />
+<col />
+<col />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Record</th>
+<th>Required role in the contract</th>
+<th>Failure it helps expose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Source edition and passage</td>
+<td>Stable identity, exact text, locator and
+content pin</td>
+<td>A quotation drawn from the wrong
+edition</td>
+</tr>
+<tr class="even">
+<td>Interpretation and qualification</td>
+<td>Attributed claim, conditions, exceptions
+and declared support</td>
+<td>A permission presented as an accomplished
+decision</td>
+</tr>
+<tr class="odd">
+<td>Discussion and working decision</td>
+<td>Contributor, stated rationale,
+disagreement and intended use</td>
+<td>A later writer losing why cautious
+language was chosen</td>
+</tr>
+<tr class="even">
+<td>Capsule and artefact</td>
+<td>Purpose, selected versions, output
+requirements and reuse scope</td>
+<td>A template’s example content treated as
+new evidence</td>
+</tr>
+<tr class="odd">
+<td>Review and execution record</td>
+<td>Exact reviewed content, authority,
+dispatch selection and outcome</td>
+<td>An old approval or an undispatched preview
+mistaken for current acceptance</td>
+</tr>
+</tbody>
+</table>
+<p>Human acceptance should bind to the exact interpretation, its source
+dependencies and its intended use. The record should identify who
+reviewed it, what they checked and what would require another review.
+Source changes, revocation or a changed task can make an earlier
+acceptance unsuitable for new use. The public reference emits proposed
+interpretations; the App uses separate interpretation-review and
+graph-activation contracts. A model critic supplies another
+interpretation and cannot grant human acceptance.</p>
+<h3 data-number="3.2" id="what-the-graph-contributes"><span
+class="header-section-number">3.2</span> What the graph contributes</h3>
+<p>The graph records typed relationships such as a passage supporting an
+interpretation, a condition qualifying it, or a discussion explaining a
+wording decision. An ontology declares the vocabulary and permitted
+relationships; a task layer selects the records and checks relevant to a
+particular job. Neither supplies evidence absent from the source
+collection.</p>
+<p>“Small graph” denotes a bounded task projection rather than a fixed
+ideal number of nodes. The complete case graph and the model input are
+different objects. More nodes may expose useful dependencies, but can
+also add irrelevant material or amplify an annotation error. The
+intended benefits are inspectable dependencies, explicit reuse and
+targeted updates; improved output quality must be measured.</p>
+<figure>
+<img
+src="/research/context-capsules/paper/v1.1/figures/context-flow.svg"
+alt="Figure 1. Context crosses the workflow through explicit records. The compiler supplies a selected packet to generation. A recipient can inspect evidence, working guidance and earlier decisions separately. Dashed boxes indicate integrations or efficacy claims that require further acceptance or evaluation." />
+<figcaption aria-hidden="true">Figure 1. Context crosses the workflow
+through explicit records. The compiler supplies a selected packet to
+generation. A recipient can inspect evidence, working guidance and
+earlier decisions separately. Dashed boxes indicate integrations or
+efficacy claims that require further acceptance or
+evaluation.</figcaption>
+</figure>
+<p>The contract can be serialized as ordinary JSON, tables or prose. A
+graph visualizer is a review interface. A graph index is a retrieval
+mechanism. A graph serialization is a prompt representation. These are
+distinct interventions, so the evaluation should vary them separately
+rather than attributing every improvement in a complete pipeline to “the
+graph.”</p>
+<h2 data-number="4" id="executable-selection-and-assembly"><span
+class="header-section-number">4</span> Executable selection and
+assembly</h2>
+<h3 data-number="4.1" id="reference-algorithm"><span
+class="header-section-number">4.1</span> Reference algorithm</h3>
+<p>The public reference is a credential-free Python implementation
+operating on explicit source text and authored annotations. Its
+implemented procedure is:</p>
+<ol type="1">
+<li><strong>Validate the collection.</strong> Require unique identities,
+attributed source URLs and content hashes. Check exact Unicode
+code-point quotation spans, relation domain/range and declared
+qualification spans. Every reference interpretation remains
+proposed.</li>
+<li><strong>Select an authored task layer.</strong> The layer declares
+eligible statements, required statements and reviewer checks. Optional
+BM25 selection ranks quotation and interpretation text. Graph selection
+seeds from matches and expands through shared subject/object entities
+for at most two hops, recording inclusion reasons.</li>
+<li><strong>Assemble required statements first.</strong> A selected
+statement travels with its complete quotation, qualification records,
+source edition, relation and endpoint entities. The source register
+retains attribution and rights notes.</li>
+<li><strong>Apply a byte gate.</strong> Canonical UTF-8 JSON for the
+required packet must fit the budget. Otherwise assembly refuses. The
+core packer then considers optional statements in stable identifier
+order and includes a whole statement only when the resulting packet
+fits.</li>
+<li><strong>Emit distinct outputs.</strong> Return the full
+selected-layer graph, bounded capsule, evidence worksheet, omissions and
+a checksum receipt. The App import bundle additionally carries the exact
+source collection and ontology for independent validation.</li>
+</ol>
+<p>This describes actual code rather than an unspecified optimal utility
+function. The graph option changes eligible selection; the core packer
+is not a learned ranker and does not solve a globally optimal packing
+problem. Required layer statements remain mandatory, even if their count
+exceeds a requested optional-selection limit; the complete-packet byte
+gate still applies. The implementation must be evaluated at these actual
+boundaries.</p>
+<p>Three useful invariants are enforced: a retained quotation matches
+its pinned source span; a declared required qualification is retained
+with its statement; and a mandatory packet that exceeds budget is
+refused as a whole. These invariants cover declared dependencies. They
+cannot identify an exception that was never annotated, determine legal
+applicability or establish the truth of an interpretation. Such errors
+require separate source review and tests.</p>
+<h3 data-number="4.2" id="app-projection-and-dispatch"><span
+class="header-section-number">4.2</span> App projection and
+dispatch</h3>
+<p>The reviewed App source has a separate selector using lexical
+inverse-frequency matching, selected graph anchors and adjacent
+qualification handling. Its graph-context contract bounds selection to
+four graphs, 128 nodes, 256 edges, 24 KiB of graph context and 65,536
+bytes for the complete packet. These are operational limits, not
+experimentally selected optima. Python code-point offsets are mapped to
+the App’s UTF-16 convention against exact original text.</p>
+<p>The proposed dispatch contract retains the selected object and source
+versions, graph selection, packet hash, requested and reported model
+identity, settings, observed usage and resulting artefact. Conversation
+and Writing should share the same evidence contract. A local model may
+be another generator behind it, but local inference and hosted storage
+have separate data and resource boundaries. Historical receipts remain
+identifiable after a source update; new dispatch checks current access
+and eligible review state.</p>
+<h2 data-number="5" id="source-update-and-handover-case"><span
+class="header-section-number">5</span> Source-update and handover
+case</h2>
+<h3 data-number="5.1" id="a-real-identifier-collision"><span
+class="header-section-number">5.1</span> A real identifier
+collision</h3>
+<p>The archived April 2024 draft and July 2024 final editions of NIST AI
+600-1 provide a concrete source-maintenance problem <span
+class="citation" data-cites="nistdraft2024 nistfinal2024">(<a
+href="#ref-nistdraft2024" role="doc-biblioref">National Institute of
+Standards and Technology 2024a</a>, <a href="#ref-nistfinal2024"
+role="doc-biblioref">2024b</a>)</span>. In their MEASURE 2.5 tables, the
+action advising source-and-citation verification has the same wording,
+including pre-deployment measurement and ongoing monitoring. Its
+identifier changes from <strong>MS-2.5-008</strong> in the draft to
+<strong>MS-2.5-003</strong> in the final. The draft’s
+<strong>MS-2.5-003</strong> describes a different security-assessment
+practice.</p>
+<table>
+<caption>Table 2. The identifier alone is insufficient. This is a
+comparison of specified historical editions, not an assessment of all
+current NIST guidance.</caption>
+<colgroup>
+<col />
+<col />
+<col />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pinned edition</th>
+<th>Identifier</th>
+<th>Practice in the captured passage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>April draft, printed p. 39</td>
+<td>MS-2.5-008</td>
+<td>Source-and-citation verification</td>
+</tr>
+<tr class="even">
+<td>July final, printed p. 31</td>
+<td>MS-2.5-003</td>
+<td>The same verification wording</td>
+</tr>
+<tr class="odd">
+<td>April draft, printed p. 39</td>
+<td>MS-2.5-003</td>
+<td>Security assessments and integrity
+audits</td>
+</tr>
+</tbody>
+</table>
+<p>An analyst updating an internal review note should change the
+edition-bound citation while retaining the verification practice and its
+timing. Looking up only the final identifier in the draft would retrieve
+a different practice. A useful handover therefore carries all three
+spans and the authored rationale: change the reference, retain the cited
+advice, and distinguish the same-number collision. NIST describes
+suggested guidance; the example must preserve that modality rather than
+turn it into a statutory obligation.</p>
+<figure>
+<img
+src="/research/context-capsules/paper/v1.1/figures/edition-handover.svg"
+alt="Figure 2. Edition-bound identities prevent the same identifier from silently linking to a different practice. The source comparison supports an authored update recommendation; the receiving writer still reviews the recommendation and its intended use." />
+<figcaption aria-hidden="true">Figure 2. Edition-bound identities
+prevent the same identifier from silently linking to a different
+practice. The source comparison supports an authored update
+recommendation; the receiving writer still reviews the recommendation
+and its intended use.</figcaption>
+</figure>
+<p>The publication replay checks the exact captured text hashes, offsets
+and wording equality, then rebuilds a capsule containing three proposed
+statements from two source records. The recorded packet uses 4,726
+canonical UTF-8 bytes at a 24,000-byte budget. Its source capture
+records official PDF hashes and extraction rules; optional verification
+against those PDFs is available in the reference fixture. The replay
+establishes this assembly result, not better AI generation or saved
+analyst time.</p>
+<p>A careful ordinary note could express the same information. That is
+precisely why the evaluation must compare a capsule with a well-prepared
+note, not merely with a question lacking the relevant context. The case
+is development material already inspected by the builders and must be
+excluded from held-out efficacy testing. The package’s
+<code>source-edition-case.json</code> makes the source-to-interpretation
+mapping inspectable.</p>
+<h2 data-number="6" id="available-evidence-and-its-scope"><span
+class="header-section-number">6</span> Available evidence and its
+scope</h2>
+<p>Source validation, reference assembly and import contracts can be
+exercised without a model. The reviewed App source also includes context
+previews, saved objects, graph selection and interpretation-review
+records. The documented hosted release keeps generation paused; a
+configured model or billing guard is not end-to-end execution
+acceptance. This proposal does not establish a fresh audit of every
+deployed App feature.</p>
+<p>Six historical direct Cloudflare provider requests on 23 November
+2026 used one synthetic renewal question, with flat and graph-annotated
+arms for three model families. All six returned valid response
+structures and resolving citation identifiers. Qualitative review found
+that Gemma’s flat answer omitted a required condition, while its
+graph-assisted answer retained it; GPT-OSS retained the material
+distinctions in both arms; GLM’s graph-assisted answer strengthened the
+action’s procedural status and omitted duration.</p>
+<p>These observations were post-hoc, unblinded and AI-assisted. The
+graph arm added annotations, including a potentially misleading
+proposed-action label, so the arms were not information-equivalent. The
+recordings support provider compatibility and identify failure cases.
+They neither estimate an average quality effect nor validate the
+deployed App route. Their exact inputs, final answers, usage and hashes
+remain in the historical public record; this revision makes no new model
+calls.</p>
+<h2 data-number="7" id="proposed-evaluation"><span
+class="header-section-number">7</span> Proposed evaluation</h2>
+<h3 data-number="7.1"
+id="comparators-that-can-challenge-the-claim"><span
+class="header-section-number">7.1</span> Comparators that can challenge
+the claim</h3>
+<p>The primary practical comparison should use a strong retrieval
+system: lexical and dense candidates with a registered fusion and
+reranking procedure, selected on development collections and frozen
+before testing. Its actual retriever, embedding model, reranker, index
+cost and token limits must be disclosed. BM25 remains a useful
+inexpensive ablation rather than the sole primary comparator.</p>
+<table>
+<caption>Table 3. D–B measures the complete pipeline, including
+annotation effort. D–C is a representation diagnostic. C must retain
+relation meaning; it must not become a deliberately weaker answer
+context. Compare A only on a prespecified common eligible
+subset.</caption>
+<colgroup>
+<col />
+<col />
+<col />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Arm</th>
+<th>Information and preparation</th>
+<th>Question addressed</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A: full context and note</td>
+<td>Eligible source documents plus a carefully
+prepared working note</td>
+<td>Can ordinary context already solve the
+task?</td>
+</tr>
+<tr class="even">
+<td>B: strong retrieval</td>
+<td>Frozen hybrid retrieval, reranking and
+ordinary source metadata</td>
+<td>Does the complete capsule pipeline improve
+useful work?</td>
+</tr>
+<tr class="odd">
+<td>C: reviewed flat packet</td>
+<td>The same selected evidence, instructions,
+qualifications and relation meanings as D, rendered linearly</td>
+<td>What does reviewed content achieve without
+graph serialization?</td>
+</tr>
+<tr class="even">
+<td>D: capsule and graph</td>
+<td>The reviewed packet with explicit typed
+relationships and dependency records</td>
+<td>Does the proposed integration and
+representation add value?</td>
+</tr>
+</tbody>
+</table>
+<p>Within paired contrasts, freeze the model snapshot, source pool,
+task, system instructions, answer format, decoding settings and output
+cap. Report actual input tokens and information content, and include
+matched-budget sensitivity analyses when encodings differ. A hosted
+model and a runnable local model can form separate blocks after their
+routes and resources are accepted. Full-document cases must be
+identified before results, and model substitutions require a new
+recorded block.</p>
+<h3 data-number="7.2" id="tasks-review-and-analysis"><span
+class="header-section-number">7.2</span> Tasks, review and analysis</h3>
+<p>Start with at least 24 feasibility tasks across disjoint collections.
+A provisional confirmatory design is 120 tasks from 30 collections; its
+final size requires clustered power analysis from feasibility estimates
+before the held-out set is unlocked. Register the resulting sample,
+stopping rule, primary contrast, exclusions and analysis. These are
+planning quantities, not a completed or adequately powered trial.</p>
+<p>An independent panel should create held-out questions and prelist
+their critical facts, qualifications, source editions and acceptable
+abstentions. Include analytical writing, conflicting accounts, source
+updates, changed identifiers, multilingual modality and missing
+evidence. Freeze case annotations before builders see held-out questions
+or reference answers. Separate source preparation, retrieval and
+generation so the analysis can locate the stage of a failure.</p>
+<p>The primary endpoint is <strong>clean task completion</strong>: a
+valid completion handles every critical point, including justified
+abstention where required, and contains no consequential unsupported
+claim. Failed, missing and timed-out attempts remain assigned tasks. Two
+independent domain reviewers assess shuffled, de-identified answers
+using the frozen rubric, with adjudication and recorded disagreements.
+Content can reveal an arm despite removed labels; this limitation should
+be assessed. Automated judges are secondary and require calibration
+against human judgments.</p>
+<p>For paired task
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>,
+let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Y</mi><mrow><mi>i</mi><mi>a</mi></mrow></msub><annotation encoding="application/x-tex">Y_{ia}</annotation></semantics></math>
+denote clean completion under arm
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>.
+The primary effect is</p>
+<div class="paper-equation" tabindex="0" role="group" aria-label="Equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>Δ</mi><mo accent="true">̂</mo></mover><mo>=</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Y</mi><mrow><mi>i</mi><mi>D</mi></mrow></msub><mo>−</mo><msub><mi>Y</mi><mrow><mi>i</mi><mi>B</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\widehat{\Delta}=\frac{1}{n}\sum_{i=1}^{n}(Y_{iD}-Y_{iB}).
+</annotation></semantics></math></div>
+<p>Use uncertainty intervals resampled at the source-collection level,
+retaining complete clusters. Report effect sizes, all failed runs and
+reviewer agreement. Treat D–C, eligible A comparisons and subgroup
+analyses as secondary, with prespecified multiplicity handling or
+exploratory labels. Secondary measures include supported-claim precision
+and coverage together, retained conditions, actor/edition accuracy,
+correct updates, critical-span retrieval and useful revisions. Precision
+alone can reward an incomplete answer.</p>
+<h3 data-number="7.3" id="mechanisms-handover-and-cost"><span
+class="header-section-number">7.3</span> Mechanisms, handover and
+cost</h3>
+<p>Vary context budget, evidence position and graph size within actual
+runtime limits. Remove prior discussion, typed organization or
+dependency closure in separate ablations. Test incorrect annotations,
+same-name actors and outdated review records. A graph can spread a
+mistaken interpretation more consistently; adverse cases are a central
+outcome, not noise to discard.</p>
+<p>For handover, give a recipient an unfinished analysis after another
+analyst establishes its context. Compare ordinary documents and history
+with a capsule and artefact; balance recipient experience and task
+assignment, using separate cases to reduce learning carryover. Measure
+rationale-recovery time, consequential errors, clarifying questions,
+recognition of unresolved objections and time to an accepted result. A
+bounded agent can be a later recipient condition under the same allowed
+evidence and actions.</p>
+<p>Count preparation, annotation, review, indexing, retrieval,
+inference, failures, maintenance and revision. Attribute one-time
+construction costs across observed reuse rather than assuming unlimited
+future reuse. Report quality at the same budget and total cost at the
+same acceptance threshold. A system that saves input tokens but
+increases review time may have no economic advantage. The handover study
+requires consent and a fixed analysis protocol before participant
+work.</p>
+<h2 data-number="8" id="engineering-boundaries-and-deployment"><span
+class="header-section-number">8</span> Engineering boundaries and
+deployment</h2>
+<p>The initial design needs versioned records, exact-source storage and
+bounded traversal; a specialized graph database is optional. More
+infrastructure should follow measured workload needs. Schema checks
+should identify the operation performed—such as quotation
+identity—rather than present an undifferentiated trust score. Review
+authority, source rights, access scope and retention remain application
+responsibilities.</p>
+<p>Retrieved material can contain indirect prompt injection <span
+class="citation" data-cites="greshake2023">(<a href="#ref-greshake2023"
+role="doc-biblioref">Greshake et al. 2023</a>)</span>. Source text and
+graph annotations must remain task data, with server-side tool
+permissions and access controls. Separate integrity tests should cover
+tampered spans, forged approval metadata, revoked access, oversized
+packets and uncertain duplicate dispatch. Multiple model stages do not
+create independent evidence, and generated explanations remain
+attributed proposals.</p>
+<p>Deployment should progress through packet integrity, authenticated
+attachment and revocation, bounded dispatch and accounting, held-out
+evaluation, and measured team pilots. Software tests establish specific
+contracts, while truthfulness, legal applicability and customer value
+require separate evidence. Recurring tasks may amortize preparation;
+ordinary retrieval may better serve one-off questions.</p>
+<h2 data-number="9" id="conclusion-and-disclosures"><span
+class="header-section-number">9</span> Conclusion and disclosures</h2>
+<p>TACITUS proposes a reusable context contract across evidence
+selection, generation, updates and handover. Its reference algorithm
+enforces declared identity and qualification rules; the NIST case
+demonstrates a versioning problem. Graph organization, output quality
+and productivity remain empirical questions for the proposed
+comparisons.</p>
+<p>TACITUS is the author, developer and publisher, with a commercial
+interest. Proposal TAC-2026-01, version 1.1 has not undergone
+independent peer review; confirmatory studies have not been run or
+preregistered. AI assisted writing, source/code inspection and
+historical qualitative review, not independent domain review. Literature
+selection was targeted, not systematic. No endorsement or registered DOI
+is claimed.</p>
+<h2 class="unnumbered"
+id="appendix.-materials-and-reproduction">Appendix. Materials and
+reproduction</h2>
+<p>The package includes the manuscript, twenty-one references, vector
+figures, source-edition case, proposed protocol, implementation-status
+record and checksums. The earlier synthetic compatibility replay remains
+separate development material. Private App code and customer documents
+are excluded. Source rights, NIST attribution and capture rights notes
+are retained.</p>
+<p>Reviewed public reference commit:
+<code>9fa96f66593902c5631efc391ef449a9c724b958</code>. Private App
+source-review pin:
+<code>2f11863ed506502a2bc508840a8e4d30ff69f15f</code>; this does not
+publicly reproduce the application. From the repository root, Python
+3.11+ runs <code>research/context-capsules/v1.1/replay.py</code> and
+<code>verify.py</code> without credentials or inference. Publication
+rebuilding also requires Matplotlib, Pandoc/citeproc and XeLaTeX.
+Version 1.0 remains archived.</p>
+<h2 class="unnumbered" id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent"
+data-entry-spacing="0" role="list">
+<div id="ref-amershi2019" class="csl-entry" role="listitem">
+Amershi, Saleema, Dan Weld, Mihaela Vorvoreanu, Adam Fourney, Besmira
+Nushi, Penny Collisson, Jina Suh, et al. 2019. <span>“Guidelines for
+Human-AI Interaction.”</span> In <em>Proceedings of the 2019 CHI
+Conference on Human Factors in Computing Systems</em>. <a
+href="https://doi.org/10.1145/3290605.3300233">https://doi.org/10.1145/3290605.3300233</a>.
+</div>
+<div id="ref-asai2024" class="csl-entry" role="listitem">
+Asai, Akari, Zeqiu Wu, Yizhong Wang, Avirup Sil, and Hannaneh
+Hajishirzi. 2024. <span>“Self-RAG: Learning to Retrieve, Generate, and
+Critique Through Self-Reflection.”</span> In <em>International
+Conference on Learning Representations</em>. <a
+href="https://proceedings.iclr.cc/paper_files/paper/2024/hash/25f7be9694d7b32d5cc670927b8091e1-Abstract-Conference.html">https://proceedings.iclr.cc/paper_files/paper/2024/hash/25f7be9694d7b32d5cc670927b8091e1-Abstract-Conference.html</a>.
+</div>
+<div id="ref-edge2024" class="csl-entry" role="listitem">
+Edge, Darren, Ha Trinh, Newman Cheng, Joshua Bradley, Alex Chao, Apurva
+Mody, Steven Truitt, Dasha Metropolitansky, Robert Osazuwa Ness, and
+Jonathan Larson. 2024. <span>“From Local to Global: A Graph RAG Approach
+to Query-Focused Summarization.”</span> arXiv preprint 2404.16130. <a
+href="https://arxiv.org/abs/2404.16130">https://arxiv.org/abs/2404.16130</a>.
+</div>
+<div id="ref-gao2023" class="csl-entry" role="listitem">
+Gao, Tianyu, Howard Yen, Jiatong Yu, and Danqi Chen. 2023.
+<span>“Enabling Large Language Models to Generate Text with
+Citations.”</span> In <em>Proceedings of the 2023 Conference on
+Empirical Methods in Natural Language Processing</em>, 6465–88. <a
+href="https://doi.org/10.18653/v1/2023.emnlp-main.398">https://doi.org/10.18653/v1/2023.emnlp-main.398</a>.
+</div>
+<div id="ref-greshake2023" class="csl-entry" role="listitem">
+Greshake, Kai, Sahar Abdelnabi, Shailesh Mishra, Christoph Endres,
+Thorsten Holz, and Mario Fritz. 2023. <span>“Not What You’ve Signed Up
+For: Compromising Real-World LLM-Integrated Applications with Indirect
+Prompt Injection.”</span> arXiv preprint 2302.12173. <a
+href="https://arxiv.org/abs/2302.12173">https://arxiv.org/abs/2302.12173</a>.
+</div>
+<div id="ref-guo2025" class="csl-entry" role="listitem">
+Guo, Zirui, Lianghao Xia, Yanhua Yu, Tu Ao, and Chao Huang. 2025.
+<span>“LightRAG: Simple and Fast Retrieval-Augmented Generation.”</span>
+In <em>Findings of the Association for Computational Linguistics: EMNLP
+2025</em>, 10746–61. <a
+href="https://doi.org/10.18653/v1/2025.findings-emnlp.568">https://doi.org/10.18653/v1/2025.findings-emnlp.568</a>.
+</div>
+<div id="ref-gutierrez2024" class="csl-entry" role="listitem">
+Jiménez Gutiérrez, Bernal, Yiheng Shu, Yu Gu, Michihiro Yasunaga, and Yu
+Su. 2024. <span>“HippoRAG: Neurobiologically Inspired Long-Term Memory
+for Large Language Models.”</span> In <em>Advances in Neural Information
+Processing Systems</em>. Vol. 37. <a
+href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/6ddc001d07ca4f319af96a3024f6dbd1-Abstract-Conference.html">https://proceedings.neurips.cc/paper_files/paper/2024/hash/6ddc001d07ca4f319af96a3024f6dbd1-Abstract-Conference.html</a>.
+</div>
+<div id="ref-shacl2017" class="csl-entry" role="listitem">
+Knublauch, Holger, and Dimitris Kontokostas. 2017. <span>“Shapes
+Constraint Language (SHACL).”</span> W3C Recommendation. World Wide Web
+Consortium. <a
+href="https://www.w3.org/TR/2017/REC-shacl-20170720/">https://www.w3.org/TR/2017/REC-shacl-20170720/</a>.
+</div>
+<div id="ref-prov2013" class="csl-entry" role="listitem">
+Lebo, Timothy, Satya Sahoo, and Deborah McGuinness. 2013. <span>“PROV-O:
+The PROV Ontology.”</span> W3C Recommendation. World Wide Web
+Consortium. <a
+href="https://www.w3.org/TR/prov-o/">https://www.w3.org/TR/prov-o/</a>.
+</div>
+<div id="ref-lewis2020" class="csl-entry" role="listitem">
+Lewis, Patrick, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir
+Karpukhin, Naman Goyal, Heinrich Küttler, et al. 2020.
+<span>“Retrieval-Augmented Generation for Knowledge-Intensive NLP
+Tasks.”</span> In <em>Advances in Neural Information Processing
+Systems</em>. Vol. 33. <a
+href="https://proceedings.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html">https://proceedings.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html</a>.
+</div>
+<div id="ref-liu2024" class="csl-entry" role="listitem">
+Liu, Nelson F., Kevin Lin, John Hewitt, Ashwin Paranjape, Michele
+Bevilacqua, Fabio Petroni, and Percy Liang. 2024. <span>“Lost in the
+Middle: How Language Models Use Long Contexts.”</span> <em>Transactions
+of the Association for Computational Linguistics</em> 12: 157–73. <a
+href="https://doi.org/10.1162/tacl_a_00638">https://doi.org/10.1162/tacl_a_00638</a>.
+</div>
+<div id="ref-min2023" class="csl-entry" role="listitem">
+Min, Sewon, Kalpesh Krishna, Xinxi Lyu, Mike Lewis, Wen-tau Yih, Pang
+Koh, Mohit Iyyer, Luke Zettlemoyer, and Hannaneh Hajishirzi. 2023.
+<span>“FActScore: Fine-Grained Atomic Evaluation of Factual Precision in
+Long Form Text Generation.”</span> In <em>Proceedings of the 2023
+Conference on Empirical Methods in Natural Language Processing</em>,
+12076–100. <a
+href="https://doi.org/10.18653/v1/2023.emnlp-main.741">https://doi.org/10.18653/v1/2023.emnlp-main.741</a>.
+</div>
+<div id="ref-mitchell2019" class="csl-entry" role="listitem">
+Mitchell, Margaret, Simone Wu, Andrew Zaldivar, Parker Barnes, Lucy
+Vasserman, Ben Hutchinson, Elena Spitzer, Inioluwa Deborah Raji, and
+Timnit Gebru. 2019. <span>“Model Cards for Model Reporting.”</span> In
+<em>Proceedings of the Conference on Fairness, Accountability, and
+Transparency</em>, 220–29. <a
+href="https://doi.org/10.1145/3287560.3287596">https://doi.org/10.1145/3287560.3287596</a>.
+</div>
+<div id="ref-nistdraft2024" class="csl-entry" role="listitem">
+National Institute of Standards and Technology. 2024a. <span>“Artificial
+Intelligence Risk Management Framework: Generative Artificial
+Intelligence Profile (Initial Public Draft).”</span> NIST AI 600-1.
+National Institute of Standards and Technology. <a
+href="https://airc.nist.gov/docs/NIST.AI.600-1.GenAI-Profile.ipd.pdf">https://airc.nist.gov/docs/NIST.AI.600-1.GenAI-Profile.ipd.pdf</a>.
+</div>
+<div id="ref-nistfinal2024" class="csl-entry" role="listitem">
+———. 2024b. <span>“Artificial Intelligence Risk Management Framework:
+Generative Artificial Intelligence Profile.”</span> NIST AI 600-1.
+National Institute of Standards and Technology. <a
+href="https://doi.org/10.6028/NIST.AI.600-1">https://doi.org/10.6028/NIST.AI.600-1</a>.
+</div>
+<div id="ref-rashkin2023" class="csl-entry" role="listitem">
+Rashkin, Hannah, Vitaly Nikolaev, Matthew Lamm, Lora Aroyo, Michael
+Collins, Dipanjan Das, Slav Petrov, Gaurav Singh Tomar, Iulia Turc, and
+David Reitter. 2023. <span>“Measuring Attribution in Natural Language
+Generation Models.”</span> <em>Computational Linguistics</em> 49 (4):
+777–840. <a
+href="https://doi.org/10.1162/coli_a_00486">https://doi.org/10.1162/coli_a_00486</a>.
+</div>
+<div id="ref-robertson2009" class="csl-entry" role="listitem">
+Robertson, Stephen, and Hugo Zaragoza. 2009. <span>“The Probabilistic
+Relevance Framework: BM25 and Beyond.”</span> <em>Foundations and Trends
+in Information Retrieval</em>. <a
+href="https://doi.org/10.1561/1500000019">https://doi.org/10.1561/1500000019</a>.
+</div>
+<div id="ref-thakur2021" class="csl-entry" role="listitem">
+Thakur, Nandan, Nils Reimers, Andreas Rücklé, Abhishek Srivastava, and
+Iryna Gurevych. 2021. <span>“BEIR: A Heterogeneous Benchmark for
+Zero-Shot Evaluation of Information Retrieval Models.”</span> In
+<em>Proceedings of the Neural Information Processing Systems Track on
+Datasets and Benchmarks</em>. Vol. 1. <a
+href="https://datasets-benchmarks-proceedings.neurips.cc/paper_files/paper/2021/hash/65b9eea6e1cc6bb9f0cd2a47751a186f-Abstract-round2.html">https://datasets-benchmarks-proceedings.neurips.cc/paper_files/paper/2021/hash/65b9eea6e1cc6bb9f0cd2a47751a186f-Abstract-round2.html</a>.
+</div>
+<div id="ref-turpin2023" class="csl-entry" role="listitem">
+Turpin, Miles, Julian Michael, Ethan Perez, and Samuel Bowman. 2023.
+<span>“Language Models Don’t Always Say What They Think: Unfaithful
+Explanations in Chain-of-Thought Prompting.”</span> In <em>Advances in
+Neural Information Processing Systems</em>. Vol. 36. <a
+href="https://papers.nips.cc/paper/2023/hash/ed3fea9033a80fea1376299fa7863f4a-Abstract-Conference.html">https://papers.nips.cc/paper/2023/hash/ed3fea9033a80fea1376299fa7863f4a-Abstract-Conference.html</a>.
+</div>
+<div id="ref-wu2025" class="csl-entry" role="listitem">
+Wu, Di, Hongwei Wang, Wenhao Yu, Yuwei Zhang, Kai-Wei Chang, and Dong
+Yu. 2025. <span>“LongMemEval: Benchmarking Chat Assistants on Long-Term
+Interactive Memory.”</span> In <em>International Conference on Learning
+Representations</em>. <a
+href="https://arxiv.org/abs/2410.10813">https://arxiv.org/abs/2410.10813</a>.
+</div>
+<div id="ref-yao2023" class="csl-entry" role="listitem">
+Yao, Shunyu, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik
+Narasimhan, and Yuan Cao. 2023. <span>“ReAct: Synergizing Reasoning and
+Acting in Language Models.”</span> In <em>International Conference on
+Learning Representations</em>. <a
+href="https://arxiv.org/abs/2210.03629">https://arxiv.org/abs/2210.03629</a>.
+</div>
+</div>

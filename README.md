@@ -2,9 +2,17 @@
 
 <img src="docs/brand/tacitus-guide.v1.webp" width="59" height="88" align="right" alt="The TACITUS guide for reusable source-linked context">
 
-Build reusable, source-linked context for a team. The pipeline connects exact passages, authored interpretations and qualifications, then selects a bounded capsule for a task.
+TACITUS experiments with infrastructure for better AI knowledge generation. Build reusable, source-linked context for a team: exact passages, authored interpretations, qualifications and work products, selected into a bounded capsule for a task. The goal is to keep the context a teammate or agent needs when work continues.
 
 [Company](https://tacitus.me/) · [App](https://app.tacitus.me/) · [Organization](https://github.com/TACITUS-me) · [Reference implementation](reference-pipeline/)
+
+## Current research releases
+
+- **[TACITUS context capsules · v1.1](research/context-capsules/v1.1/README.md)** — [PDF](research/context-capsules/v1.1/tacitus-context-capsules-v1.1.pdf) · [read online](https://tacitus.me/research/context-capsules/paper/v1.1/). A source-backed architecture and controlled evaluation proposal, including a real NIST draft-to-final handover case and 21 references. Confirmatory efficacy studies have not been run.
+- **[Wind Tunnel methodology · v1.1](research/wind-tunnel-methodology/v1.1/README.md)** — [PDF](research/wind-tunnel-methodology/v1.1/wind-tunnel-methodology-v1.1.pdf) · [read online](https://tacitus.me/research/wind-tunnel/paper/v1.1/). An experimental research-preparation procedure and a replayable retrospective GSS comparison. On the twelve selected items, the conditioned recipe has no mean advantage over a national model call.
+- **[AI governance source map · v1](research/ai-governance-source-map/v1/README.md)** — **2,793 source-linked records and 4,517 typed links**, derived from pinned official AI Act and GDPR adopted texts. Exact quotations, source editions, structural links, lexical references and document-specific definitions are inspectable and rebuilt offline.
+
+The papers are institutional working research, not independently peer-reviewed. [The research index](research/README.md) separates implemented checks, recorded results and proposed studies. Both original v1.0 papers remain unchanged in their archived directories. The source map is a document graph of adopted editions, not a current consolidated legal analysis or a generation-quality benchmark; a task capsule selects a smaller subgraph for the actual question.
 
 ## Build and import a context graph
 
@@ -63,8 +71,16 @@ Original code is Apache-2.0. Source documents retain their original attribution 
 [Six live synthetic Cloudflare requests and their failures](reference-pipeline/evaluations/2026-11-23-provider-probe) retain exact inputs, final answers, model identities and token usage. All six responses satisfy the requested JSON schema and resolve their citation IDs. Gemma’s flat answer omits a required condition; GLM’s graph-assisted answer strengthens the procedural status. One task is not a quality benchmark or App/Gateway acceptance. No new inference is needed to inspect these records.
 
 
-## Research publications
+## Verify research releases
 
-[TACITUS context capsules · TAC-2026-01, version 1.0](research/context-capsules/v1/README.md) — a scientific architecture and evaluation proposal for capsules, artefacts, small graphs, and team/agent handover. Includes a 16-page PDF, eighteen references, an executable synthetic context package, and a controlled study design. Not independently peer-reviewed; confirmatory efficacy experiments have not been run.
+Python 3.11+ and Node.js 20+ are sufficient to verify the released artifacts, source spans, graph extraction and score replay. No model calls, credentials, package installation or PDF build tools are required for these checks.
 
-[Wind Tunnel methodology · WT-2026-01, version 1.0](research/wind-tunnel-methodology/v1/README.md) — the working paper, typeset PDF, source manuscript, fourteen references, vector figures and reproducible GSS scoring results. Published by TACITUS; not independently peer-reviewed.
+```sh
+python research/context-capsules/v1/verify.py
+python research/context-capsules/v1.1/verify.py
+python research/wind-tunnel-methodology/v1/verify.py
+python research/wind-tunnel-methodology/v1.1/verify.py
+python research/ai-governance-source-map/v1/verify.py
+```
+
+[CI](.github/workflows/context-proposal.yml) runs these checks for research changes. The paper manifests preserve publication hashes and source identities. The source-map verifier rebuilds every record and link from pinned XHTML and checks exact text offsets, relation constraints, counts and cross-instrument reference regressions. Rebuilding typeset PDFs requires the optional toolchain documented with each paper.

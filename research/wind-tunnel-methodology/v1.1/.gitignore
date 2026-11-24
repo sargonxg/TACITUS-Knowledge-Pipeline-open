@@ -1,0 +1,8 @@
+# Publication metadata is intentionally released despite the root JSON ignore.
+!manifest.json
+!paper.json
+!results.json
+!references.json
+!evaluation-agenda.json
+.qa/
+__pycache__/

@@ -1,0 +1,27 @@
+{
+  "publication": "WT-2026-01",
+  "version": "1.1",
+  "status": "proposed_not_run",
+  "separateQuestions": [
+    {
+      "id": "distribution-agreement",
+      "question": "Under which populations, instruments and periods does a frozen generation recipe agree with an independently observed human-survey reference?",
+      "requiredBeforeRun": ["Population universe and instrument", "Data cutoff and item-selection rule", "Model snapshot and complete prompt recipe", "Primary metrics and failures to report", "Analysis registered before target exposure"],
+      "comparators": ["Contemporaneous human reference with design uncertainty", "Simple historical or marginal baseline", "Unconditioned model call"],
+      "controlledComponents": ["Demographic prompting", "Aggregation weights", "Model-call count", "Qualitative dossier review"],
+      "outcomes": ["Item and subgroup distribution discrepancies", "Repeat-run and model-snapshot stability", "Coverage failures", "Survey uncertainty reported separately from generation variability"],
+      "notEstablishedByCurrentRelease": ["Representative opinion measurement", "A causal effect of weighting", "Performance on an unseen target", "Universal human/model ranking"]
+    },
+    {
+      "id": "research-preparation",
+      "question": "Does assisted preparation improve a researcher's instrument or assumption review at an acceptable error and total cost?",
+      "requiredBeforeRun": ["Independently specified consequential instrument defects", "Blinded scoring rubric", "Ordinary researcher-preparation comparator", "Complete model and reviewer time/cost accounting"],
+      "outcomes": ["Relevant defects found", "Unsupported criticisms and missed defects", "Usefulness of accepted revisions", "Time to usable instrument", "Handover clarity"],
+      "humanFollowUp": ["Expert review", "Cognitive interviews or target-setting human pilot", "Retain disagreements and failed revisions"],
+      "notEstablishedByCurrentRelease": ["Improved human comprehension", "Analyst time saving", "Successful production deployment", "Causal wording effects in people"]
+    }
+  ],
+  "publicReproductionLevel": "score_replay",
+  "currentBenchmarkDataChanged": false,
+  "newInferenceCalls": 0
+}

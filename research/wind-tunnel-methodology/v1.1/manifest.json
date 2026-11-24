@@ -1,0 +1,103 @@
+{
+  "publication": "WT-2026-01",
+  "version": "1.1",
+  "date": "2026-11-24",
+  "status": "working paper; not independently peer-reviewed",
+  "canonical": "https://tacitus.me/research/wind-tunnel/paper/v1.1/",
+  "benchmarkSourceCommit": "2b51dfee375b1ee0e5fd1ee7a99edd1623d8cac4",
+  "benchmarkSha256": "ade2489859e469c35218fd80cfd741d7343a92878ba7b8aae87e94c0bd0a57eb",
+  "files": {
+    "index.html": {
+      "bytes": 56466,
+      "sha256": "e6e93120c550acb42fe424577d78897402d0decce0bc401d42053a9f992133d3"
+    },
+    "article.html": {
+      "bytes": 46616,
+      "sha256": "052ddf2987d9ef8d406be270393b6229ca2f342812cc6264768da6df18283e9c"
+    },
+    "paper.json": {
+      "bytes": 50009,
+      "sha256": "6cfe8d4095c2ea0f429d9a2e35128b9503791ac012e7fff0e596c122a7ef2d1e"
+    },
+    "paper.css": {
+      "bytes": 6271,
+      "sha256": "0e18e085552c7427f7c733ef5eb79a24dfa04514f5130a2a82ae05717810cd76"
+    },
+    "citation.bib": {
+      "bytes": 412,
+      "sha256": "af98715b32ed792c38c4265b59e30ba69f5e4391b98f6ac6b37e9d1c201a0a1b"
+    },
+    "wind-tunnel-methodology-v1.1.pdf": {
+      "bytes": 140459,
+      "sha256": "952ddd2ef65843109e06a6906870a6217a3e3d27268048edadc5b5da873d2c99"
+    },
+    "wind-tunnel-methodology-v1.1.tex": {
+      "bytes": 47279,
+      "sha256": "3e9aab5daa2474c027f686f3139b3192c0d275b0625968649edad5b23411bbf7"
+    },
+    "paper.md": {
+      "bytes": 28734,
+      "sha256": "77e1612fd0bae938b161c2d7b09a5e58302fc606d50e083eeb3e7bed07b0c4e9"
+    },
+    "manuscript.md": {
+      "bytes": 29676,
+      "sha256": "104aedb89409904972000ac7bdc73b415b5cffa7f653d533ccc777ee1d022601"
+    },
+    "references.json": {
+      "bytes": 11071,
+      "sha256": "ee614076aa47dd81cc43827cdc3f3f9a517dc837038551bc79c6f6979efd6b03"
+    },
+    "header.tex": {
+      "bytes": 1015,
+      "sha256": "6920d5ed0b8918d9803f045945c7428c0996813b5a26189803f663ce3630f1d3"
+    },
+    "latex-layout.lua": {
+      "bytes": 318,
+      "sha256": "3716cf6dbd2fead5892c3a14e5bcd082f8956c647ab91ee2f0c5b15cd183db20"
+    },
+    "build.py": {
+      "bytes": 12589,
+      "sha256": "fcd46f0825153788f1e25227261f92ac3da486c73fa06c488a341314aab09530"
+    },
+    "web-template.html": {
+      "bytes": 3791,
+      "sha256": "ca53bd114688eeac71261230b382d7698ef07e4ffcd9bdaf7a6be4bdcee35644"
+    },
+    "results.json": {
+      "bytes": 5936,
+      "sha256": "1f5ce566878fc9a4e8b1a4c1ad8ddbcd2f4e47028d792acd7e9a498bddade03f"
+    },
+    "verify.py": {
+      "bytes": 3796,
+      "sha256": "dc11743d56bbcb575b50baaceac461316f19e8d614bd69ab2437939acaec2cd4"
+    },
+    "README.md": {
+      "bytes": 4157,
+      "sha256": "97159f8bb0c97036518d5207afc2611a152631990bb6a81e1f8ea0b309822539"
+    },
+    "figures/evidence-flow.pdf": {
+      "bytes": 27582,
+      "sha256": "e7cead0526c12e4f3135af4ee6f15a9f6d0b9d99cf564e5669ccc465c17d7242"
+    },
+    "figures/evidence-flow.svg": {
+      "bytes": 12019,
+      "sha256": "53e23d6e778d70bbe09d9c4daf7ef52880f46393940e2cc9c1da832199a12157"
+    },
+    "figures/benchmark-items.pdf": {
+      "bytes": 18887,
+      "sha256": "9025c9bef6673e65e1ed4c3aedb3694694497a51a93e47fbbcbece4e0cd186a9"
+    },
+    "figures/benchmark-items.svg": {
+      "bytes": 14217,
+      "sha256": "d17f2d14af0b67552875dca6685c8ea2e50ba5d2ea254c7c81a300a7be491f57"
+    },
+    "REVISION_NOTES.md": {
+      "bytes": 4751,
+      "sha256": "ffdad31bce54c8d3b96e3834275b4cf0eb857e7d4aec7ab2510e36c8c190c21b"
+    },
+    "evaluation-agenda.json": {
+      "bytes": 2230,
+      "sha256": "ced2289afba39f11f0f5d984670e4419b06105c22823991900d23023336cc7cc"
+    }
+  }
+}
