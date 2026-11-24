@@ -14,8 +14,8 @@
   },
   "files": {
     "README.md": {
-      "bytes": 2847,
-      "sha256": "bf348799951ae15b9ab184b163c393ba0fc72ede5efc8bd61c89cd2bade5fd32"
+      "bytes": 3060,
+      "sha256": "b9437d1104f7f41f15f166cd0a4ead94250a9908c2e1d17587a1a2f7ed84bd03"
     },
     "article.html": {
       "bytes": 60323,
@@ -135,7 +135,7 @@
     },
     "tacitus-context-capsules-v1.0.pdf": {
       "bytes": 157030,
-      "sha256": "c73e652c9579c594774b1b3e8e93ae34d0c94e242efb8ca61a5f46c3ff9a0ebe"
+      "sha256": "f733f364a23caecfd7d5dc2230baee84b9356a0127459cadd38afdc554712c02"
     },
     "tacitus-context-capsules-v1.0.tex": {
       "bytes": 59382,

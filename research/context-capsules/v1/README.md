@@ -13,8 +13,11 @@ The proposal describes reusable context, exact sources, qualifications, prior di
 From the repository root:
 
 ```sh
+git checkout tacitus-context-capsules-v1.0
 python research/context-capsules/v1/replay.py
 ```
+
+The release tag retains the exact reference code and historical receipts used by this proposal. Use that tag when later pipeline development changes the working branch.
 
 The replay validates three original synthetic sources, four proposed mappings and their exact qualifications, a bounded capsule, an App import bundle, and the hashes of six historical provider recordings. It verifies refusal when mandatory complete context cannot fit. It performs zero model calls and uses no network or credentials. The demonstration does not represent an actual meeting, real licence decision, or human-approved interpretation.
 
