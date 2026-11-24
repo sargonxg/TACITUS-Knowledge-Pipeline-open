@@ -70,3 +70,7 @@ service-account*.json
 !/research/ai-governance-source-map/v2/ontology.json
 !/research/ai-governance-source-map/v2/source-lock.json
 !/research/ai-governance-source-map/v2/previous-release-lock.json
+
+# Public, credential-free route-context packet publication; exact narrow file.
+!/research/ai-governance-source-map/context-packets-v1/packets.json
+/research/ai-governance-source-map/context-packets-v1/.packets.json.*.tmp
