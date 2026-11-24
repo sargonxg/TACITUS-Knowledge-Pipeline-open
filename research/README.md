@@ -13,13 +13,17 @@ Both revisions are dated **24 November 2026** and published by TACITUS. They are
 
 The papers preserve earlier observations and disclose commercial interests and AI assistance. Revision critiques, citation data, equations, vector figures, source identities and checksums accompany each release. [The TACITUS evaluation protocol](context-capsules/v1.1/evaluation-protocol.json) and [Wind Tunnel evaluation agenda](wind-tunnel-methodology/v1.1/evaluation-agenda.json) are proposals, not reported results.
 
-## Source graph · AI governance
+## Source atlas · Instruments and real judgments
 
-[Inspect the source-map release](ai-governance-source-map/v1/README.md) · [Graph JSON](ai-governance-source-map/v1/graph.json) · [Ontology](ai-governance-source-map/v1/ontology.json) · [Source lock](ai-governance-source-map/v1/source-lock.json) · [Records CSV](ai-governance-source-map/v1/records.csv)
+[Inspect v2](ai-governance-source-map/v2/README.md) · [Graph JSON](ai-governance-source-map/v2/graph.json) · [Ontology](ai-governance-source-map/v2/ontology.json) · [Source lock](ai-governance-source-map/v2/source-lock.json) · [Records CSV](ai-governance-source-map/v2/records.csv) · [Source audit](ai-governance-source-map/v2/SOURCE_AUDIT.md)
 
-The final graph contains **2,793 source-linked records and 4,517 typed links** from two pinned official adopted texts: the AI Act and GDPR. Those counts are computed from actual graph records and verified on rebuild. The map includes 212 articles, 353 recitals, 2,064 substantive passages and 94 document-specific definitions, plus document headings and annexes. Links distinguish published structure, lexical article/annex references, definitions and literal term mentions.
+The atlas contains **4,808 source-linked records and 7,427 typed links** from the adopted AI Act, GDPR, Digital Services Act and Law Enforcement Directive, plus three complete historical CJEU judgments. These counts are computed from actual records: 370 articles, 616 recitals, 3,581 substantive passages, 134 document-specific definition openings and published headings. All 359 numbered judgment paragraphs and 11 operative points are preserved as source records.
 
-This larger source map supports inspecting and selecting a small task subgraph; it is not itself a task capsule or a complete legal ontology. Exact quotes, Unicode offsets, source editions, link methods and extraction limits travel with the data. The pinned adopted editions do not represent today's consolidated legal position. Reading presets are authored inspection questions, not approved legal conclusions. No private team discussions, fake review approvals or generation gains are bundled.
+Three real case routes make the context questions concrete: **SCHUFA scoring (C-634/21, 7 December 2023)** preserves the third party's strong-reliance condition and the question left to the referring court; **online private-interest declarations (C-184/20, 1 August 2022)** preserves proportionality and indirect sensitive-data disclosure; **Meta/Bundeskartellamt (C-252/21, 4 July 2023)** preserves authority-cooperation requirements and the qualified effect of dominance on consent. These are issued preliminary-ruling judgments, not generated events or Advocate General opinions. Their exact operative texts, dates and official sources are linked in the release.
+
+The source atlas supports inspecting a small task subgraph; it is not itself a task capsule, an expert-approved ontology or current consolidated law. The judgments are English translations and do not establish later national outcomes or rulings under the subsequent AI Act. Editorial questions and case descriptions remain metadata, separate from extracted structure, lexical references, definitions and literal term mentions. No private discussions, fake approvals or generation gains are bundled.
+
+[Version 1](ai-governance-source-map/v1/README.md), with 2,793 records and 4,517 links, remains immutable. Version 2 verifies every original file hash and exact equality of every original graph record.
 
 ## Reproduce without inference
 
@@ -31,11 +35,12 @@ python research/context-capsules/v1.1/verify.py
 python research/wind-tunnel-methodology/v1/verify.py
 python research/wind-tunnel-methodology/v1.1/verify.py
 python research/ai-governance-source-map/v1/verify.py
+python research/ai-governance-source-map/v2/verify.py
 ```
 
 [The research CI workflow](../.github/workflows/context-proposal.yml) runs the archived and current paper verifiers and the source-graph verifier. Paper checks cover manifest hashes, reference inputs, context/score replay, citation coverage, semantic HTML and mathematical displays. The source-map check performs a byte-for-byte reconstruction, verifies exact quotation spans, checks every relation domain/range, and retains regressions for cross-instrument scope and important qualifiers. Passing establishes the tested artifact and source-fidelity properties, not answer quality or expert approval.
 
-To rebuild PDFs, install the additional Matplotlib/Pandoc/XeLaTeX toolchain documented in the paper directories. To rebuild the graph, run `python research/ai-governance-source-map/v1/build.py`; it uses only pinned local sources. New source editions belong in new version directories.
+To rebuild PDFs, install the additional Matplotlib/Pandoc/XeLaTeX toolchain documented in the paper directories. To rebuild the current atlas, run `python research/ai-governance-source-map/v2/build.py`; it uses only pinned local sources. Version 1 remains independently rebuildable. New source editions belong in new version directories.
 
 ## Preserved publication history
 

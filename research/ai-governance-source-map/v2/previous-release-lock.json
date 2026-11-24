@@ -1,0 +1,17 @@
+{
+  "release": "v1",
+  "files": {
+    "README.md": "2fa7808e4e2490ea8c57f564115c54c12c7411ecd7c67afd5d546195548bb784",
+    "RIGHTS.md": "49d4e080168a65115acdd5fa989a315aa2dff3a00cd0a53d47d6eefc3d453a1d",
+    "build.py": "364a85d843d89dc974ccda89848030b95ccc09dbe51f5659da2049287a7596fc",
+    "graph.json": "195322c5873b0c80fb2d96f005395cad2f05d25e911375e5c76af9f91bc724e5",
+    "ontology.json": "bc9af42e001e7665683b52558147e2d97150aa931c1aa25bea7dfd83e7d05086",
+    "records.csv": "a0524d2e7f9e7be0893d952e1f20e01c1caab45dcddcd7675eb5d554175f36b7",
+    "source-lock.json": "13950d4fdc1f66e5caa01b7b51696a86f097976fada1102ee756aedb0396c94f",
+    "sources/ai-act.html": "8f0b656302f9864cc87e040c371f209a9d65ae1a6cecc25ca5eb737e872d721a",
+    "sources/ai-act.txt": "8566ebebcd4b20c69b1566e9bea6720d2fe5e764a81326d7706427c04ec118f3",
+    "sources/gdpr.html": "962539af03738bf552319ff4ce42d69e5f95a576307c4dfed7bf87e81b646b9d",
+    "sources/gdpr.txt": "98c88be6dd4898534f67b79a9e367cab84565979b160402536c46581abf07254",
+    "verify.py": "d2209a63cb88f37e61d2063381145db52fca7f059a72304ec3af606e4bd1c6e5"
+  }
+}

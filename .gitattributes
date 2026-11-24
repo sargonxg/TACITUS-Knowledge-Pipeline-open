@@ -1,2 +1,7 @@
 # These retained outputs are hashed as exact UTF-8 bytes, including line endings.
 examples/political_semantics/worked_tasks/** -text
+
+# Source snapshots and their offset indexes are pinned to the publisher's bytes.
+research/ai-governance-source-map/v*/sources/** -text
+research/ai-governance-source-map/v*/sources/*.html -diff
+research/ai-governance-source-map/v*/sources/*.xhtml -diff

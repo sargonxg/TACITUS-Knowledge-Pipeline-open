@@ -1,0 +1,135 @@
+{
+  "schema": "tacitus.graph-vocabulary/1",
+  "title": "AI governance source-atlas vocabulary · v2",
+  "status": "Application vocabulary for a public source demonstrator; not an authoritative legal ontology",
+  "layers": {
+    "structure": "Published document structure and exact source passages.",
+    "references": "Lexical article/annex references with disclosed scope-resolution rules; not legal entailment.",
+    "terminology": "Document-specific literal definitions and aggregated exact-phrase occurrences. No automatic synonymy or cross-document equivalence.",
+    "interpretations": "Reserved for future separately attributed, reviewed annotations. There are no interpretation nodes or edges in this release. Authored reading presets remain metadata."
+  },
+  "node_kinds": {
+    "document": {
+      "layer": "structure",
+      "meaning": "One pinned adopted-text instrument or an English translation of a historical CJEU judgment."
+    },
+    "chapter": {
+      "layer": "structure",
+      "meaning": "A published chapter, identified by its XHTML anchor."
+    },
+    "section": {
+      "layer": "structure",
+      "meaning": "A published section within a chapter."
+    },
+    "article": {
+      "layer": "structure",
+      "meaning": "A numbered article. Its quote contains the published heading; its body passages are connected by contains edges."
+    },
+    "recital": {
+      "layer": "structure",
+      "meaning": "A numbered recital, with its substantive source text."
+    },
+    "annex": {
+      "layer": "structure",
+      "meaning": "A published annex, with its heading and body passages."
+    },
+    "passage": {
+      "layer": "structure",
+      "meaning": "One substantive legislative XHTML paragraph, or one published numbered judgment paragraph/operative point together with its continuation and list blocks. Bare list labels are not records. Record-role metadata distinguishes judgment sources."
+    },
+    "defined_term": {
+      "layer": "terminology",
+      "meaning": "A term extracted from a definition-opening pattern in Article 3 of the AI Act, DSA or Law Enforcement Directive, or GDPR Article 4. The original source paragraph is retained; some definitions continue in following passages. No cross-instrument equivalence is asserted."
+    }
+  },
+  "edge_relations": {
+    "contains": {
+      "layer": "structure",
+      "domain": [
+        "document",
+        "chapter",
+        "section",
+        "article",
+        "annex"
+      ],
+      "range": [
+        "chapter",
+        "section",
+        "article",
+        "recital",
+        "annex",
+        "passage"
+      ],
+      "meaning": "Nearest included published legislative ancestor, or the judgment document containing a numbered paragraph or operative point. Does not assert truth, legal applicability or TACITUS approval."
+    },
+    "references_article": {
+      "layer": "references",
+      "domain": [
+        "passage"
+      ],
+      "range": [
+        "article"
+      ],
+      "meaning": "A written article reference resolves under the declared local-document or explicit-instrument rule. Lists are tokenized; ranges retain written endpoints. Not a complete legal dependency graph."
+    },
+    "references_annex": {
+      "layer": "references",
+      "domain": [
+        "passage"
+      ],
+      "range": [
+        "annex"
+      ],
+      "meaning": "A literal local-annex reference. No inference that all annex provisions apply."
+    },
+    "defines_term": {
+      "layer": "terminology",
+      "domain": [
+        "passage"
+      ],
+      "range": [
+        "defined_term"
+      ],
+      "meaning": "The exact source passage opens a definition for this term in this document."
+    },
+    "mentions_term": {
+      "layer": "terminology",
+      "domain": [
+        "article"
+      ],
+      "range": [
+        "defined_term"
+      ],
+      "meaning": "At least one body passage in the article contains the literal case-insensitive singular term phrase. Aggregated occurrence and passage counts, plus the first exact evidence span, are retained. A lexical occurrence is not a legal applicability assertion."
+    }
+  },
+  "methods": {
+    "xhtml_ancestry": "Deterministic extraction of the nearest included XHTML ancestor.",
+    "literal_definition_pattern": "A literal definition opening, allowing the source's express qualifiers for consent and real-world testing subject.",
+    "lexical_local_article_reference": "A written reference in an included legislative passage, resolved to the same pinned instrument; foreign explicit scope, unresolved thereof antecedents and inserted amendment articles are excluded. Judgments do not guess local statute scope.",
+    "lexical_explicit_instrument_reference": "A written reference explicitly names one of the four included instruments, or the judgment uses the explicit GDPR abbreviation. Intervening point/subparagraph qualifiers are parsed conservatively; this is not an interpretation/applicability relation.",
+    "lexical_local_annex_reference": "A written Annex I–XIII reference to an included local annex.",
+    "case_insensitive_literal_phrase": "Whole-word-boundary literal singular phrase, aggregated by article. No stemming, synonym expansion, embeddings, language model or entailment.",
+    "published_judgment_structure": "Deterministically group the official numbered judgment paragraph or operative point with its published continuation/list paragraphs; connect it to its judgment source document."
+  },
+  "provenance": {
+    "source_start_source_end": "Zero-based Unicode code-point [start,end) offsets into the corresponding normalized sources/{document_id}.txt; not byte offsets into XHTML.",
+    "quote": "Exactly the substring between source_start and source_end in the pinned extracted representation.",
+    "match_start_match_end": "Zero-based Unicode code-point offsets into the evidence node's quote; references use the edge's source passage, mentions_term uses evidence_node.",
+    "source_url": "Official adopted-text ELI link with an existing XHTML fragment, or the official CURIA English judgment URL without an invented paragraph fragment. Raw retrieval URLs, byte sizes, SHA-256 and source-status labels are pinned in source-lock.json.",
+    "review_state": "No expert approval or verified legal interpretation is asserted. Exact source fidelity and reproducibility are tested separately from legal correctness.",
+    "reading_routes": "meta.presets and meta.cases are TACITUS-authored inspection guidance. They are not extracted edges, expert approvals, enforcement findings or later national-case outcomes."
+  },
+  "design_references": [
+    {
+      "title": "W3C PROV-O: The PROV Ontology",
+      "url": "https://www.w3.org/TR/prov-o/",
+      "use": "Provenance separation informed the design. The custom JSON format does not claim PROV-O serialization conformance."
+    },
+    {
+      "title": "W3C SKOS Simple Knowledge Organization System Reference",
+      "url": "https://www.w3.org/TR/skos-reference/",
+      "use": "Distinguishing vocabulary labels from claims informed the design. No skos:exactMatch or cross-instrument equivalence is generated."
+    }
+  ]
+}
