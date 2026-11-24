@@ -1,0 +1,539 @@
+[
+  {
+    "id": "argyle2023",
+    "type": "article-journal",
+    "title": "Out of One, Many: Using Language Models to Simulate Human Samples",
+    "author": [
+      {
+        "given": "Lisa P.",
+        "family": "Argyle"
+      },
+      {
+        "given": "Ethan C.",
+        "family": "Busby"
+      },
+      {
+        "given": "Nancy",
+        "family": "Fulda"
+      },
+      {
+        "given": "Joshua R.",
+        "family": "Gubler"
+      },
+      {
+        "given": "Christopher",
+        "family": "Rytting"
+      },
+      {
+        "given": "David",
+        "family": "Wingate"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2023,
+          2,
+          21
+        ]
+      ]
+    },
+    "DOI": "10.1017/pan.2023.2",
+    "URL": "https://doi.org/10.1017/pan.2023.2",
+    "container-title": "Political Analysis",
+    "volume": "31",
+    "issue": "3",
+    "page": "337-351"
+  },
+  {
+    "id": "bisbee2024",
+    "type": "article-journal",
+    "title": "Synthetic Replacements for Human Survey Data? The Perils of Large Language Models",
+    "author": [
+      {
+        "given": "James",
+        "family": "Bisbee"
+      },
+      {
+        "given": "Joshua D.",
+        "family": "Clinton"
+      },
+      {
+        "given": "Cassy",
+        "family": "Dorff"
+      },
+      {
+        "given": "Brenton",
+        "family": "Kenkel"
+      },
+      {
+        "given": "Jennifer M.",
+        "family": "Larson"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2024,
+          5,
+          17
+        ]
+      ]
+    },
+    "DOI": "10.1017/pan.2024.5",
+    "URL": "https://doi.org/10.1017/pan.2024.5",
+    "container-title": "Political Analysis",
+    "volume": "32",
+    "issue": "4",
+    "page": "401-416"
+  },
+  {
+    "id": "tjuatja2024",
+    "type": "article-journal",
+    "title": "Do LLMs Exhibit Human-like Response Biases? A Case Study in Survey Design",
+    "author": [
+      {
+        "given": "Lindia",
+        "family": "Tjuatja"
+      },
+      {
+        "given": "Valerie",
+        "family": "Chen"
+      },
+      {
+        "given": "Tongshuang",
+        "family": "Wu"
+      },
+      {
+        "given": "Ameet",
+        "family": "Talwalkwar"
+      },
+      {
+        "given": "Graham",
+        "family": "Neubig"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "DOI": "10.1162/tacl_a_00685",
+    "URL": "https://doi.org/10.1162/tacl_a_00685",
+    "container-title": "Transactions of the Association for Computational Linguistics",
+    "volume": "12",
+    "page": "1011-1026"
+  },
+  {
+    "id": "deming1940",
+    "type": "article-journal",
+    "title": "On a Least Squares Adjustment of a Sampled Frequency Table When the Expected Marginal Totals are Known",
+    "author": [
+      {
+        "given": "W. Edwards",
+        "family": "Deming"
+      },
+      {
+        "given": "Frederick F.",
+        "family": "Stephan"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1940,
+          12
+        ]
+      ]
+    },
+    "DOI": "10.1214/aoms/1177731829",
+    "URL": "https://doi.org/10.1214/aoms/1177731829",
+    "container-title": "The Annals of Mathematical Statistics",
+    "volume": "11",
+    "issue": "4",
+    "page": "427-444"
+  },
+  {
+    "id": "atari2023",
+    "type": "article-journal",
+    "title": "Morality beyond the WEIRD: How the nomological network of morality varies across cultures.",
+    "author": [
+      {
+        "given": "Mohammad",
+        "family": "Atari"
+      },
+      {
+        "given": "Jonathan",
+        "family": "Haidt"
+      },
+      {
+        "given": "Jesse",
+        "family": "Graham"
+      },
+      {
+        "given": "Sena",
+        "family": "Koleva"
+      },
+      {
+        "given": "Sean T.",
+        "family": "Stevens"
+      },
+      {
+        "given": "Morteza",
+        "family": "Dehghani"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2023,
+          11
+        ]
+      ]
+    },
+    "DOI": "10.1037/pspp0000470",
+    "URL": "https://doi.org/10.1037/pspp0000470",
+    "container-title": "Journal of Personality and Social Psychology",
+    "volume": "125",
+    "issue": "5",
+    "page": "1157-1188"
+  },
+  {
+    "id": "grimm2020",
+    "type": "article-journal",
+    "title": "The ODD Protocol for Describing Agent-Based and Other Simulation Models: A Second Update to Improve Clarity, Replication, and Structural Realism",
+    "author": [
+      {
+        "given": "Volker",
+        "family": "Grimm"
+      },
+      {
+        "given": "Steven F.",
+        "family": "Railsback"
+      },
+      {
+        "given": "Christian E.",
+        "family": "Vincenot"
+      },
+      {
+        "given": "Uta",
+        "family": "Berger"
+      },
+      {
+        "given": "Cara",
+        "family": "Gallagher"
+      },
+      {
+        "given": "Donald L.",
+        "family": "DeAngelis"
+      },
+      {
+        "given": "Bruce",
+        "family": "Edmonds"
+      },
+      {
+        "given": "Jiaqi",
+        "family": "Ge"
+      },
+      {
+        "given": "Jarl",
+        "family": "Giske"
+      },
+      {
+        "given": "Jürgen",
+        "family": "Groeneveld"
+      },
+      {
+        "given": "Alice S.A.",
+        "family": "Johnston"
+      },
+      {
+        "given": "Alexander",
+        "family": "Milles"
+      },
+      {
+        "given": "Jacob",
+        "family": "Nabe-Nielsen"
+      },
+      {
+        "given": "J. Gareth",
+        "family": "Polhill"
+      },
+      {
+        "given": "Viktoriia",
+        "family": "Radchuk"
+      },
+      {
+        "given": "Marie-Sophie",
+        "family": "Rohwäder"
+      },
+      {
+        "given": "Richard A.",
+        "family": "Stillman"
+      },
+      {
+        "given": "Jan C.",
+        "family": "Thiele"
+      },
+      {
+        "given": "Daniel",
+        "family": "Ayllón"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
+    "DOI": "10.18564/jasss.4259",
+    "URL": "https://doi.org/10.18564/jasss.4259",
+    "container-title": "Journal of Artificial Societies and Social Simulation",
+    "volume": "23",
+    "issue": "2"
+  },
+  {
+    "id": "mitchell2019",
+    "type": "paper-conference",
+    "title": "Model Cards for Model Reporting",
+    "author": [
+      {
+        "given": "Margaret",
+        "family": "Mitchell"
+      },
+      {
+        "given": "Simone",
+        "family": "Wu"
+      },
+      {
+        "given": "Andrew",
+        "family": "Zaldivar"
+      },
+      {
+        "given": "Parker",
+        "family": "Barnes"
+      },
+      {
+        "given": "Lucy",
+        "family": "Vasserman"
+      },
+      {
+        "given": "Ben",
+        "family": "Hutchinson"
+      },
+      {
+        "given": "Elena",
+        "family": "Spitzer"
+      },
+      {
+        "given": "Inioluwa Deborah",
+        "family": "Raji"
+      },
+      {
+        "given": "Timnit",
+        "family": "Gebru"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2019,
+          1,
+          29
+        ]
+      ]
+    },
+    "DOI": "10.1145/3287560.3287596",
+    "URL": "https://doi.org/10.1145/3287560.3287596",
+    "container-title": "Proceedings of the Conference on Fairness, Accountability, and Transparency",
+    "page": "220-229"
+  },
+  {
+    "id": "brier1950",
+    "type": "article-journal",
+    "title": "Verification of Forecasts Expressed in Terms of Probability",
+    "author": [
+      {
+        "given": "Glenn W.",
+        "family": "Brier"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1950,
+          1
+        ]
+      ]
+    },
+    "DOI": "10.1175/1520-0493(1950)078<0001:vofeit>2.0.co;2",
+    "URL": "https://doi.org/10.1175/1520-0493(1950)078<0001:vofeit>2.0.co;2",
+    "container-title": "Monthly Weather Review",
+    "volume": "78",
+    "issue": "1",
+    "page": "1-3"
+  },
+  {
+    "id": "gelman1997",
+    "type": "article-journal",
+    "title": "Poststratification into Many Categories Using Hierarchical Logistic Regression",
+    "author": [
+      {
+        "given": "Andrew",
+        "family": "Gelman"
+      },
+      {
+        "given": "Thomas C.",
+        "family": "Little"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1997
+        ]
+      ]
+    },
+    "container-title": "Survey Methodology",
+    "volume": "23",
+    "issue": "2",
+    "page": "127–135",
+    "URL": "https://www150.statcan.gc.ca/n1/pub/12-001-x/1997002/article/3616-eng.pdf"
+  },
+  {
+    "id": "baron1997",
+    "type": "article-journal",
+    "title": "Protected Values",
+    "author": [
+      {
+        "given": "Jonathan",
+        "family": "Baron"
+      },
+      {
+        "given": "Mark",
+        "family": "Spranca"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1997
+        ]
+      ]
+    },
+    "container-title": "Organizational Behavior and Human Decision Processes",
+    "volume": "70",
+    "issue": "1",
+    "page": "1–16",
+    "DOI": "10.1006/obhd.1997.2690",
+    "URL": "https://doi.org/10.1006/obhd.1997.2690"
+  },
+  {
+    "id": "acs2024",
+    "type": "dataset",
+    "title": "2020–2024 American Community Survey: Five-Year Estimates and Public Use Microdata Sample Documentation",
+    "author": [
+      {
+        "literal": "U.S. Census Bureau"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "URL": "https://www.census.gov/programs-surveys/acs/microdata/documentation.html",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          11,
+          23
+        ]
+      ]
+    }
+  },
+  {
+    "id": "gss2026",
+    "type": "dataset",
+    "title": "General Social Survey 1972–2024: Cross-Section Documentation and Public Data",
+    "author": [
+      {
+        "literal": "NORC at the University of Chicago"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "URL": "https://gss.norc.org/get-documentation.html",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          11,
+          23
+        ]
+      ]
+    }
+  },
+  {
+    "id": "aapor",
+    "type": "webpage",
+    "title": "Transparency Initiative: Disclosure Standards",
+    "author": [
+      {
+        "literal": "American Association for Public Opinion Research"
+      }
+    ],
+    "URL": "https://aapor.org/standards-and-ethics/transparency-initiative/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          11,
+          23
+        ]
+      ]
+    }
+  },
+  {
+    "id": "prov2013",
+    "type": "report",
+    "title": "PROV-O: The PROV Ontology",
+    "author": [
+      {
+        "given": "Timothy",
+        "family": "Lebo"
+      },
+      {
+        "given": "Satya",
+        "family": "Sahoo"
+      },
+      {
+        "given": "Deborah",
+        "family": "McGuinness"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2013,
+          4,
+          30
+        ]
+      ]
+    },
+    "publisher": "World Wide Web Consortium",
+    "genre": "W3C Recommendation",
+    "URL": "https://www.w3.org/TR/prov-o/"
+  }
+]
