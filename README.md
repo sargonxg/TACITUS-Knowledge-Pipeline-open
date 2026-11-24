@@ -61,3 +61,8 @@ Original code is Apache-2.0. Source documents retain their original attribution 
 ## Recorded provider compatibility check
 
 [Six live synthetic Cloudflare requests and their failures](reference-pipeline/evaluations/2026-11-23-provider-probe) retain exact inputs, final answers, model identities and token usage. All six responses satisfy the requested JSON schema and resolve their citation IDs. Gemma’s flat answer omits a required condition; GLM’s graph-assisted answer strengthens the procedural status. One task is not a quality benchmark or App/Gateway acceptance. No new inference is needed to inspect these records.
+
+
+## Research publications
+
+[Wind Tunnel methodology · WT-2026-01, version 1.0](research/wind-tunnel-methodology/v1/README.md) — the working paper, typeset PDF, source manuscript, fourteen references, vector figures and reproducible GSS scoring results. Published by TACITUS; not independently peer-reviewed.
