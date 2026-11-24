@@ -1,0 +1,153 @@
+{
+  "publication": "TAC-2026-01",
+  "version": "1.0",
+  "date": "2026-11-23",
+  "status": "research proposal; not independently peer-reviewed; confirmatory experiments not run",
+  "referenceSourceCommit": "4ea0d2725de97cedca1de391a7f0b495259288de",
+  "privateAppSourceReviewCommit": "2f11863ed506502a2bc508840a8e4d30ff69f15f",
+  "newInferenceCalls": 0,
+  "referenceInputs": {
+    "src/tacitus_pipeline/core.py": "43e92a18683d6d40a937d234e5bc4b56db541933b729e43f5a269790eb6aecf9",
+    "src/tacitus_pipeline/interchange.py": "ccde6471c07d90fba3dcb8f35ffba0037853a7feb613810946e3997c722fba59",
+    "ontology/team-knowledge.json": "47eea5610ca0bbd9517337f6d78652501a1d1e31ff769e407925fcf89bc18ad3",
+    "evaluations/2026-11-23-provider-probe/manifest.json": "c45c9e8286bc54ce06116935f0ad0c810ea44b208ce669d75e8d98b7dd02f8f4"
+  },
+  "files": {
+    "README.md": {
+      "bytes": 3060,
+      "sha256": "b9437d1104f7f41f15f166cd0a4ead94250a9908c2e1d17587a1a2f7ed84bd03"
+    },
+    "article.html": {
+      "bytes": 60323,
+      "sha256": "2e2b57d616af940f324a6a9d43afe67ea8a05b4b9202349b4c981e5949830fdc"
+    },
+    "build.py": {
+      "bytes": 10441,
+      "sha256": "40ea9eb62835967282653cb1b60cac334c6ba5a15ddcd69fb24861e7c2da0ff7"
+    },
+    "citation.bib": {
+      "bytes": 450,
+      "sha256": "7c7d7e53039840cc544553c08de218c2a2d0a95713c9a2577dd02824274dd260"
+    },
+    "demo/app-bundle.json": {
+      "bytes": 16668,
+      "sha256": "6dce6a1a3ef83f0a72854eaac349572fdd93db5d6022847f8f61b1564b6f9a94"
+    },
+    "demo/capsule.json": {
+      "bytes": 7250,
+      "sha256": "1d56f1a0272eb6cbbebb0b489251fc40af033f286d22fef19193e72238ceac2c"
+    },
+    "demo/collection.json": {
+      "bytes": 5649,
+      "sha256": "0d14d7859972f2ccd9e957e3a786ea26f62b27f63c9bce99c8e03ce21bc143f5"
+    },
+    "demo/graph.json": {
+      "bytes": 8671,
+      "sha256": "7749b358a5b4f8bc1b93b82ed70b7f88565419f0eb62b4f0cd3ad9aff08c0681"
+    },
+    "demo/handover.txt": {
+      "bytes": 373,
+      "sha256": "e1da0cb90cd0cbbda178d7308fdae652e9d86280f376d13769888f9801ad3358"
+    },
+    "demo/layer.json": {
+      "bytes": 617,
+      "sha256": "49f148ad477fb07edac556e2eef70edabdbc2a4d0af415b9bec042255c1dff09"
+    },
+    "demo/meeting.txt": {
+      "bytes": 200,
+      "sha256": "82135352c4cee69f39dba9e8e797620eb64f0c630b0f703e8f250a69906f7357"
+    },
+    "demo/permission.txt": {
+      "bytes": 183,
+      "sha256": "c56926972a3db0517ddb0eb4551c89fc837f9fe889706d84e5c8421469329a74"
+    },
+    "demo/receipt.json": {
+      "bytes": 325,
+      "sha256": "ee8d7c6af238bddabae5838c8d86010bc825484140301f65bfe0bf0696acf28d"
+    },
+    "evaluation-protocol.json": {
+      "bytes": 4326,
+      "sha256": "bfe0a04dc6e42c75d9cd5c8969c94aebd63e3145963d9c5a2be143d707a5453b"
+    },
+    "figures/context-flow.pdf": {
+      "bytes": 24869,
+      "sha256": "c023237de49a6bb0c9b3050122c13a166e83bf9b6780aacb8d396e1f7c091a1a"
+    },
+    "figures/context-flow.svg": {
+      "bytes": 13000,
+      "sha256": "191894dc9ad87853c22f9987a708486c64c4b3b6f567f8a948405b080c90da58"
+    },
+    "figures/qualified-context.pdf": {
+      "bytes": 26720,
+      "sha256": "adacd03332c9cf7881ef75f31a5e93fc65e5052d455374fc84ed0550313548c4"
+    },
+    "figures/qualified-context.svg": {
+      "bytes": 11792,
+      "sha256": "872c1e0909a082d162be8e09bcdf7aa7c7b83fc0b2785948ece1d8f42eec5a1c"
+    },
+    "header.tex": {
+      "bytes": 1030,
+      "sha256": "75719610fa21a3c69add091edda6e5d64e74e847ce89049958fcbee8fadb6fa4"
+    },
+    "implementation-status.json": {
+      "bytes": 2615,
+      "sha256": "b760f2d6433963d5473a52ad1b17387276f6db5557cbd2b247874fa74525903d"
+    },
+    "index.html": {
+      "bytes": 70454,
+      "sha256": "4ae637155afbf22cfe377a5808d4650a2e61328543c2496e22f804530c0525f4"
+    },
+    "latex-layout.lua": {
+      "bytes": 318,
+      "sha256": "3716cf6dbd2fead5892c3a14e5bcd082f8956c647ab91ee2f0c5b15cd183db20"
+    },
+    "literature-map.json": {
+      "bytes": 4337,
+      "sha256": "eb7d172a8d164be5775986601f0ac22f3455f722fb07d12a45f5202417059a31"
+    },
+    "manuscript.md": {
+      "bytes": 39816,
+      "sha256": "074c9a5f717f8cc2ad333cf284e98ea026577ef51547fe2a293dcb00a9db5bed"
+    },
+    "observations.json": {
+      "bytes": 280,
+      "sha256": "13d3eb3d0c77971d7a458d8d617fa5d409bc506250400a70aa78dd6ddf2b25c4"
+    },
+    "paper.css": {
+      "bytes": 6328,
+      "sha256": "f287e99d3628bbdbcecad65870cdf1eb4b2ddd720cc35299990502ff63b0df32"
+    },
+    "paper.json": {
+      "bytes": 64073,
+      "sha256": "e248cca21ccaf4a37036260c3a517c477e9d129e470b617e36a0739bc8abeca4"
+    },
+    "paper.md": {
+      "bytes": 39816,
+      "sha256": "074c9a5f717f8cc2ad333cf284e98ea026577ef51547fe2a293dcb00a9db5bed"
+    },
+    "references.json": {
+      "bytes": 16457,
+      "sha256": "543d91dc4f93c4f0a61ccee6114425b5e445d96b78e8863b1db8fa5a85301534"
+    },
+    "replay.py": {
+      "bytes": 3810,
+      "sha256": "3ddbfdfec7438636d16dfefa8b8a32a8536fc464e714e24e346dd3b49df50c82"
+    },
+    "tacitus-context-capsules-v1.0.pdf": {
+      "bytes": 157030,
+      "sha256": "f733f364a23caecfd7d5dc2230baee84b9356a0127459cadd38afdc554712c02"
+    },
+    "tacitus-context-capsules-v1.0.tex": {
+      "bytes": 59382,
+      "sha256": "1f5dc7aab2f276ab1703f70ad88477edf3f96547cb1159fdbbaeb532b5b80f7e"
+    },
+    "verify.py": {
+      "bytes": 2774,
+      "sha256": "e3bf6245a8181e743bf5cc890551c0692d3fc8756dba7bccaf3670e5b319edce"
+    },
+    "web-template.html": {
+      "bytes": 3690,
+      "sha256": "d822547f06188ed8e8139b56a9b90b90e4fde58c262d41928fe2855dc0053cbe"
+    }
+  }
+}

@@ -1,5 +1,11 @@
 # Research behind the policy-data workflow
 
+## TACITUS App architecture and evaluation proposal
+
+[Context capsules, artefacts, and small knowledge graphs · TAC-2026-01](context-capsules/v1/README.md). The scientific proposal connects the existing reference contracts with a controlled generation study and a team-handover study. Its 16-page PDF has eighteen primary research and standards references, two vector diagrams, a synthetic context replay, and a proposed registration protocol. The earlier provider observations remain mixed. The proposal is not independently peer-reviewed, and its confirmatory experiments have not been run.
+
+## Reading index
+
 A small, versioned reading index: primary paper links, the engineering question each raises, and the boundary between that research and this implementation. Reviewed 10 November 2026 at landing-page/abstract level. These are design references, not evidence that TACITUS reproduces their results. No copyrighted paper archive is bundled.
 
 ## Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks

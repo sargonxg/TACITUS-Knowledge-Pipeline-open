@@ -1,0 +1,8 @@
+{
+  "historical_provider_responses": 6,
+  "historical_prompt_tokens": 1257,
+  "historical_completion_tokens": 450,
+  "general_quality_gain_established": false,
+  "new_model_calls": 0,
+  "probe_manifest_sha256": "c45c9e8286bc54ce06116935f0ad0c810ea44b208ce669d75e8d98b7dd02f8f4"
+}

@@ -1,0 +1,22 @@
+\usepackage{fancyhdr}
+\usepackage{microtype}
+\usepackage{needspace}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{seqsplit}
+\captionsetup{font=small,labelfont=bf}
+\floatplacement{figure}{H}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize\textsc{TACITUS · Context capsules}}
+\fancyhead[R]{\footnotesize Research proposal TAC-2026-01 · v1.0}
+\fancyfoot[C]{\small\thepage}
+\setlength{\headheight}{14pt}
+\setlength{\emergencystretch}{3em}
+\setlength{\parskip}{5pt}
+\setlength{\parindent}{0pt}
+\AtBeginEnvironment{CSLReferences}{\interlinepenalty=10000}
+\renewcommand{\headrulewidth}{0.3pt}
+\AtBeginDocument{\hypersetup{pdftitle={TACITUS: Context Capsules, Artefacts, and Small Knowledge Graphs for AI Generation},pdfauthor={TACITUS},pdfsubject={Research proposal TAC-2026-01, version 1.0; not independently peer-reviewed},pdfkeywords={context capsules, artefacts, knowledge graphs, provenance, generation, evaluation}}}
+\let\originalsection\section
+\renewcommand{\section}{\Needspace{5\baselineskip}\originalsection}

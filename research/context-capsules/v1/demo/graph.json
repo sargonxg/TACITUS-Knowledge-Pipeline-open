@@ -1,0 +1,283 @@
+{
+  "format": "tacitus-reference-graph/1",
+  "nodes": [
+    {
+      "id": "entity:decision-template",
+      "kind": "Artefact",
+      "label": "Decision-note format"
+    },
+    {
+      "id": "entity:meeting-discussion",
+      "kind": "Discussion",
+      "label": "Recorded meeting objection"
+    },
+    {
+      "id": "entity:permission-passage",
+      "kind": "Passage",
+      "label": "Conditional permission text"
+    },
+    {
+      "id": "entity:renewal-status",
+      "kind": "Claim",
+      "label": "Renewal approval status"
+    },
+    {
+      "id": "entity:team-discussion",
+      "kind": "Discussion",
+      "label": "Authored handover discussion"
+    },
+    {
+      "id": "entity:wording-decision",
+      "kind": "Decision",
+      "label": "Preserve the qualifications"
+    },
+    {
+      "id": "source:2aa0b208eb2eb314cd5fb2afccb0bbeb88bcebc38d62bba5d736e9736279f20f",
+      "kind": "Source",
+      "label": "Conditional permission · synthetic fixture",
+      "url": "https://example.org/tacitus/renewal/e1",
+      "version": "c56926972a3db0517ddb0eb4551c89fc837f9fe889706d84e5c8421469329a74"
+    },
+    {
+      "id": "source:8416f3e5cbac16b7a4f5910779c844fdc5b0d481108cd1c58b04f15ae83ff835",
+      "kind": "Source",
+      "label": "Authored handover guidance · synthetic fixture",
+      "url": "https://example.org/tacitus/renewal/guidance",
+      "version": "e1da0cb90cd0cbbda178d7308fdae652e9d86280f376d13769888f9801ad3358"
+    },
+    {
+      "id": "source:87787386313c24d70831ebf17cb3b5b40c1df8b708cf10f707749364a0056e56",
+      "kind": "Source",
+      "label": "Recorded objection · synthetic fixture",
+      "url": "https://example.org/tacitus/renewal/e2",
+      "version": "82135352c4cee69f39dba9e8e797620eb64f0c630b0f703e8f250a69906f7357"
+    },
+    {
+      "id": "statement:handover-rule",
+      "kind": "Statement",
+      "label": "Carry the condition and objection when reusing the recommendation.",
+      "predicate": "supports",
+      "modality": "authored_synthetic_interpretation",
+      "review_state": "proposed",
+      "qualifiers": [
+        {
+          "text": "does not establish that renewal was approved",
+          "start": 126,
+          "end": 170
+        }
+      ]
+    },
+    {
+      "id": "evidence:handover-rule",
+      "kind": "EvidenceSpan",
+      "quote": "Retain the six-month duration, reviewer condition and recorded objection whenever the recommendation is reused. This guidance does not establish that renewal was approved.",
+      "start": 88,
+      "end": 259,
+      "offset_unit": "unicode_codepoints"
+    },
+    {
+      "id": "qualification:handover-rule:0",
+      "kind": "Qualification",
+      "label": "does not establish that renewal was approved",
+      "source_start": 214,
+      "source_end": 258,
+      "review_state": "proposed"
+    },
+    {
+      "id": "statement:note-format",
+      "kind": "Statement",
+      "label": "Use an explicit decision-note structure, with missing evidence and a next check.",
+      "predicate": "guides",
+      "modality": "authored_synthetic_interpretation",
+      "review_state": "proposed",
+      "qualifiers": []
+    },
+    {
+      "id": "evidence:note-format",
+      "kind": "EvidenceSpan",
+      "quote": "Use a decision note with five fields: status, conditions, recorded objections, missing evidence and next check.",
+      "start": 261,
+      "end": 372,
+      "offset_unit": "unicode_codepoints"
+    },
+    {
+      "id": "statement:objection",
+      "kind": "Statement",
+      "label": "The record contains an objection and no final renewal approval.",
+      "predicate": "supports",
+      "modality": "authored_synthetic_interpretation",
+      "review_state": "proposed",
+      "qualifiers": [
+        {
+          "text": "no final renewal approval",
+          "start": 89,
+          "end": 114
+        }
+      ]
+    },
+    {
+      "id": "evidence:objection",
+      "kind": "EvidenceSpan",
+      "quote": "The meeting discussion records an objection that the risk note is incomplete. It records no final renewal approval.",
+      "start": 84,
+      "end": 199,
+      "offset_unit": "unicode_codepoints"
+    },
+    {
+      "id": "qualification:objection:0",
+      "kind": "Qualification",
+      "label": "no final renewal approval",
+      "source_start": 173,
+      "source_end": 198,
+      "review_state": "proposed"
+    },
+    {
+      "id": "statement:permission",
+      "kind": "Statement",
+      "label": "The source describes conditional permission, not a recorded final approval.",
+      "predicate": "supports",
+      "modality": "authored_synthetic_interpretation",
+      "review_state": "proposed",
+      "qualifiers": [
+        {
+          "text": "only if the independent reviewer accepts the risk note",
+          "start": 47,
+          "end": 101
+        }
+      ]
+    },
+    {
+      "id": "evidence:permission",
+      "kind": "EvidenceSpan",
+      "quote": "The board may renew the licence for six months only if the independent reviewer accepts the risk note.",
+      "start": 80,
+      "end": 182,
+      "offset_unit": "unicode_codepoints"
+    },
+    {
+      "id": "qualification:permission:0",
+      "kind": "Qualification",
+      "label": "only if the independent reviewer accepts the risk note",
+      "source_start": 127,
+      "source_end": 181,
+      "review_state": "proposed"
+    }
+  ],
+  "edges": [
+    {
+      "id": "handover-rule:cites",
+      "source": "statement:handover-rule",
+      "target": "evidence:handover-rule",
+      "relation": "cites"
+    },
+    {
+      "id": "handover-rule:fromSource",
+      "source": "evidence:handover-rule",
+      "target": "source:8416f3e5cbac16b7a4f5910779c844fdc5b0d481108cd1c58b04f15ae83ff835",
+      "relation": "fromSource"
+    },
+    {
+      "id": "handover-rule:subject",
+      "source": "statement:handover-rule",
+      "target": "entity:team-discussion",
+      "relation": "subject"
+    },
+    {
+      "id": "handover-rule:object",
+      "source": "statement:handover-rule",
+      "target": "entity:wording-decision",
+      "relation": "object"
+    },
+    {
+      "id": "handover-rule:qualification:0",
+      "source": "statement:handover-rule",
+      "target": "qualification:handover-rule:0",
+      "relation": "qualifiedBy"
+    },
+    {
+      "id": "note-format:cites",
+      "source": "statement:note-format",
+      "target": "evidence:note-format",
+      "relation": "cites"
+    },
+    {
+      "id": "note-format:fromSource",
+      "source": "evidence:note-format",
+      "target": "source:8416f3e5cbac16b7a4f5910779c844fdc5b0d481108cd1c58b04f15ae83ff835",
+      "relation": "fromSource"
+    },
+    {
+      "id": "note-format:subject",
+      "source": "statement:note-format",
+      "target": "entity:decision-template",
+      "relation": "subject"
+    },
+    {
+      "id": "note-format:object",
+      "source": "statement:note-format",
+      "target": "entity:wording-decision",
+      "relation": "object"
+    },
+    {
+      "id": "objection:cites",
+      "source": "statement:objection",
+      "target": "evidence:objection",
+      "relation": "cites"
+    },
+    {
+      "id": "objection:fromSource",
+      "source": "evidence:objection",
+      "target": "source:87787386313c24d70831ebf17cb3b5b40c1df8b708cf10f707749364a0056e56",
+      "relation": "fromSource"
+    },
+    {
+      "id": "objection:subject",
+      "source": "statement:objection",
+      "target": "entity:meeting-discussion",
+      "relation": "subject"
+    },
+    {
+      "id": "objection:object",
+      "source": "statement:objection",
+      "target": "entity:renewal-status",
+      "relation": "object"
+    },
+    {
+      "id": "objection:qualification:0",
+      "source": "statement:objection",
+      "target": "qualification:objection:0",
+      "relation": "qualifiedBy"
+    },
+    {
+      "id": "permission:cites",
+      "source": "statement:permission",
+      "target": "evidence:permission",
+      "relation": "cites"
+    },
+    {
+      "id": "permission:fromSource",
+      "source": "evidence:permission",
+      "target": "source:2aa0b208eb2eb314cd5fb2afccb0bbeb88bcebc38d62bba5d736e9736279f20f",
+      "relation": "fromSource"
+    },
+    {
+      "id": "permission:subject",
+      "source": "statement:permission",
+      "target": "entity:permission-passage",
+      "relation": "subject"
+    },
+    {
+      "id": "permission:object",
+      "source": "statement:permission",
+      "target": "entity:renewal-status",
+      "relation": "object"
+    },
+    {
+      "id": "permission:qualification:0",
+      "source": "statement:permission",
+      "target": "qualification:permission:0",
+      "relation": "qualifiedBy"
+    }
+  ],
+  "scope": "Source-backed authored mappings, not independently established case facts."
+}
