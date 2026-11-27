@@ -10,6 +10,8 @@ TACITUS experiments with infrastructure for better AI knowledge generation. Buil
 
 Open the public source atlas and search for **Article 35(2)**. Inspect the phrase **“where designated”** in the saved edition and follow the typed links to related provisions. Choose **Keep the qualifier** to inspect the reading route and download its context packet. That same approach is available offline in this repository. The conversation practice lets you build and attach a separate capsule without signing in. [Open the source atlas](https://tacitus.me/structures/#source-map) · [Try a conversation](https://app.tacitus.me/try.html) · [Reference implementation](reference-pipeline/)
 
+The Hugging Face profile also hosts separate TACITUS research demos. Use DOXA to explore an audit of political discourse and Wind Tunnel to inspect population-response research. Each Space describes its inputs, evaluation and limits. [DOXA Lab](https://huggingface.co/spaces/Giuliocc/doxa-lab) · [Wind Tunnel Lab](https://huggingface.co/spaces/Giuliocc/windtunnel-lab)
+
 ## Current research releases
 
 - **[TACITUS context capsules · v1.1](research/context-capsules/v1.1/README.md)** — [PDF](research/context-capsules/v1.1/tacitus-context-capsules-v1.1.pdf) · [read online](https://tacitus.me/research/context-capsules/paper/v1.1/). A source-backed architecture and controlled evaluation proposal, including a real NIST draft-to-final handover case and 21 references. Confirmatory efficacy studies have not been run.
