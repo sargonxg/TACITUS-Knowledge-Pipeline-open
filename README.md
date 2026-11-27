@@ -6,9 +6,11 @@ TACITUS experiments with infrastructure for better AI knowledge generation. Buil
 
 [Company](https://tacitus.me/) · [App](https://app.tacitus.me/) · [TACITUS on GitHub](https://github.com/TACITUS-me) · [Giuliocc on Hugging Face](https://huggingface.co/Giuliocc)
 
-## Inspect a worked result
+## Use the pipeline in Conversation
 
-Sign in to TACITUS and choose **Worked examples**. Open a prepared source comparison or policy brief, read the passages behind its decision and save the result as a private artefact. The public technology page explains how the source map was built. This repository contains the data, code and verifier for reproducing the research offline. [Sign in to the App](https://app.tacitus.me/?examples=1) · [Technology and method](https://tacitus.me/structures/#source-map) · [Reference implementation](reference-pipeline/)
+Sign in to TACITUS, ask a question and attach a capsule, artefact or source. Exact versions travel with the request. Open an answer's citations to check its wording, then save the answer and passages together for reuse. [Open TACITUS App](https://app.tacitus.me/) · [Technology and method](https://tacitus.me/structures/#source-map) · [Reference implementation](reference-pipeline/)
+
+The App's DOXA review model flags English claim and passage pairs that deserve a closer look. Reproduce its fit from pinned Hugging Face benchmark inputs and examine the separate conflict-context test. [Training and evaluation](https://github.com/sargonxg/TACITUS_App/tree/main/docs/generation/doxa-review)
 
 The Hugging Face profile also hosts separate TACITUS research demos. Use DOXA to explore an audit of political discourse and Wind Tunnel to inspect population-response research. Each Space describes its inputs, evaluation and limits. [DOXA Lab](https://huggingface.co/spaces/Giuliocc/doxa-lab) · [Wind Tunnel Lab](https://huggingface.co/spaces/Giuliocc/windtunnel-lab)
 
