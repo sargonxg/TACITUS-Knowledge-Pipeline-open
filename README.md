@@ -4,7 +4,13 @@
 
 TACITUS experiments with infrastructure for better AI knowledge generation. Build reusable, source-linked context for a team: exact passages, authored interpretations, qualifications and work products, selected into a bounded capsule for a task. The goal is to keep the context a teammate or agent needs when work continues.
 
-[Company](https://tacitus.me/) · [App](https://app.tacitus.me/) · [Organization](https://github.com/TACITUS-me) · [Reference implementation](reference-pipeline/)
+[Company](https://tacitus.me/) · [App](https://app.tacitus.me/) · [TACITUS on GitHub](https://github.com/TACITUS-me) · [Giuliocc on Hugging Face](https://huggingface.co/Giuliocc)
+
+## Try it in a browser
+
+Open the public source atlas and search for **Article 35(2)**. Inspect the phrase **“where designated”** in the saved edition and follow the typed links to related provisions. Choose **Keep the qualifier** to inspect the reading route and download its context packet. That same approach is available offline in this repository. The conversation practice lets you build and attach a separate capsule without signing in. [Open the source atlas](https://tacitus.me/structures/#source-map) · [Try a conversation](https://app.tacitus.me/try.html) · [Reference implementation](reference-pipeline/)
+
+The Hugging Face profile also hosts separate TACITUS research demos. Use DOXA to explore an audit of political discourse and Wind Tunnel to inspect population-response research. Each Space describes its inputs, evaluation and limits. [DOXA Lab](https://huggingface.co/spaces/Giuliocc/doxa-lab) · [Wind Tunnel Lab](https://huggingface.co/spaces/Giuliocc/windtunnel-lab)
 
 ## Current research releases
 
