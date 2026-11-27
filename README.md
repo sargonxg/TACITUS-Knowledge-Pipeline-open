@@ -6,9 +6,9 @@ TACITUS experiments with infrastructure for better AI knowledge generation. Buil
 
 [Company](https://tacitus.me/) · [App](https://app.tacitus.me/) · [TACITUS on GitHub](https://github.com/TACITUS-me) · [Giuliocc on Hugging Face](https://huggingface.co/Giuliocc)
 
-## Try it in a browser
+## Inspect a worked result
 
-Open the public source atlas and search for **Article 35(2)**. Inspect the phrase **“where designated”** in the saved edition and follow the typed links to related provisions. Choose **Keep the qualifier** to inspect the reading route and download its context packet. That same approach is available offline in this repository. The conversation practice lets you build and attach a separate capsule without signing in. [Open the source atlas](https://tacitus.me/structures/#source-map) · [Try a conversation](https://app.tacitus.me/try.html) · [Reference implementation](reference-pipeline/)
+Sign in to TACITUS and choose **Worked examples**. Open a prepared source comparison or policy brief, read the passages behind its decision and save the result as a private artefact. The public technology page explains how the source map was built. This repository contains the data, code and verifier for reproducing the research offline. [Sign in to the App](https://app.tacitus.me/?examples=1) · [Technology and method](https://tacitus.me/structures/#source-map) · [Reference implementation](reference-pipeline/)
 
 The Hugging Face profile also hosts separate TACITUS research demos. Use DOXA to explore an audit of political discourse and Wind Tunnel to inspect population-response research. Each Space describes its inputs, evaluation and limits. [DOXA Lab](https://huggingface.co/spaces/Giuliocc/doxa-lab) · [Wind Tunnel Lab](https://huggingface.co/spaces/Giuliocc/windtunnel-lab)
 
