@@ -1,6 +1,6 @@
 # Reproduce the TACITUS Hugging Face context release
 
-[GitHub pipeline](https://github.com/sargonxg/TACITUS-Knowledge-Pipeline-open) · [Hugging Face dataset](https://huggingface.co/datasets/Giuliocc/tacitus-context-capsules)
+[GitHub pipeline](https://github.com/sargonxg/TACITUS-Knowledge-Pipeline-open) · [Hugging Face research profile](https://huggingface.co/Giuliocc)
 
 This release packages the unchanged v2 source atlas and seven verified reading packets for public inspection. The builder copies exact source editions and retains the explicit absence of expert approval. It adds dataset-viewer rows, a release manifest and a standalone offline verifier. It makes zero inference calls.
 

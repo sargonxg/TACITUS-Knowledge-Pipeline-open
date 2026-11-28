@@ -12,11 +12,11 @@ Sign in to TACITUS, ask a question and attach a capsule, artefact or source. Exa
 
 The App's DOXA review model flags English claim and passage pairs that deserve a closer look. Reproduce its fit from pinned Hugging Face benchmark inputs and examine the separate conflict-context test. [Training and evaluation](https://github.com/sargonxg/TACITUS_App/tree/main/docs/generation/doxa-review)
 
-GitHub and Hugging Face publish reproducible source releases, models, datasets and their limits. Working tools require sign-in at their product domains: [DOXA](https://doxa.tacitus.me/) and [Wind Tunnel](https://windtunnel.tacitus.me/). The Spaces present the public research and link to those products. [DOXA Lab](https://huggingface.co/spaces/Giuliocc/doxa-lab) · [Wind Tunnel Lab](https://huggingface.co/spaces/Giuliocc/windtunnel-lab)
+GitHub and Hugging Face publish reproducible source releases, models, datasets and their limits. Working tools require sign-in at their product domains: [DOXA](https://doxa.tacitus.me/) and [Wind Tunnel](https://windtunnel.tacitus.me/). The Spaces currently include legacy public research demos. Their entry-point migration to research landing pages linking to the authenticated products is prepared but requires Hugging Face publishing access. [DOXA Lab](https://huggingface.co/spaces/Giuliocc/doxa-lab) · [Wind Tunnel Lab](https://huggingface.co/spaces/Giuliocc/windtunnel-lab)
 
 ## Public context dataset
 
-[GitHub builder and offline verifier](research/hub-context-capsules/v1/) · [TACITUS context capsules on Hugging Face](https://huggingface.co/datasets/Giuliocc/tacitus-context-capsules)
+[GitHub builder and offline verifier](research/hub-context-capsules/v1/) · [Hugging Face research profile](https://huggingface.co/Giuliocc) — dataset publication pending
 
 Inspect the same 4,808 source records, 7,427 typed links and seven bounded reading packets shown on the company Technology page. Every quotation remains tied to a source edition and Unicode offsets. The release includes no customer data, model answers or independent expert approvals.
 
