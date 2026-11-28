@@ -12,7 +12,13 @@ Sign in to TACITUS, ask a question and attach a capsule, artefact or source. Exa
 
 The App's DOXA review model flags English claim and passage pairs that deserve a closer look. Reproduce its fit from pinned Hugging Face benchmark inputs and examine the separate conflict-context test. [Training and evaluation](https://github.com/sargonxg/TACITUS_App/tree/main/docs/generation/doxa-review)
 
-The Hugging Face profile also hosts separate TACITUS research demos. Use DOXA to explore an audit of political discourse and Wind Tunnel to inspect population-response research. Each Space describes its inputs, evaluation and limits. [DOXA Lab](https://huggingface.co/spaces/Giuliocc/doxa-lab) · [Wind Tunnel Lab](https://huggingface.co/spaces/Giuliocc/windtunnel-lab)
+GitHub and Hugging Face publish reproducible source releases, models, datasets and their limits. Working tools require sign-in at their product domains: [DOXA](https://doxa.tacitus.me/) and [Wind Tunnel](https://windtunnel.tacitus.me/). The Spaces currently include legacy public research demos. Their entry-point migration to research landing pages linking to the authenticated products is prepared but requires Hugging Face publishing access. [DOXA Lab](https://huggingface.co/spaces/Giuliocc/doxa-lab) · [Wind Tunnel Lab](https://huggingface.co/spaces/Giuliocc/windtunnel-lab)
+
+## Public context dataset
+
+[GitHub builder and offline verifier](research/hub-context-capsules/v1/) · [Hugging Face research profile](https://huggingface.co/Giuliocc) — dataset publication pending
+
+Inspect the same 4,808 source records, 7,427 typed links and seven bounded reading packets shown on the company Technology page. Every quotation remains tied to a source edition and Unicode offsets. The release includes no customer data, model answers or independent expert approvals.
 
 ## Current research releases
 
@@ -48,11 +54,11 @@ Open the App Library, select **Saved capsules → Import context graph**, and up
 - Exports `tacitus-pipeline-import/1` for the App. Native App records have their own versions and review history.
 - Writes a complete output directory with rollback if the final directory replacement fails.
 
-The App preview checks exact text and maps Python code-point offsets to UTF-16 offsets. Importing context makes no model call. Hosted App generation is paused.
+The App preview checks exact text and maps Python code-point offsets to UTF-16 offsets. Importing context makes no model call. Google Quick conversations are available in the authenticated App with a one-time $5 AI reservation budget for new accounts, subject to shared capacity. Other tool and model routes retain their own availability checks.
 
 ## Connect a local model to the App
 
-The [local companion](local-companion/) pairs an Ollama or LM Studio server with one authenticated App workspace. Choose an installed model in Conversation or Writing; the companion receives a bounded request, calls your configured loopback server and returns a validated result. Pairing and discovery make no inference calls. The companion downloads no model weights, exposes no public inference endpoint and never automatically repeats an uncertain generation attempt. Generation follows the App's workspace control and remains paused in the hosted release.
+The [local companion](local-companion/) pairs an Ollama or LM Studio server with one authenticated App workspace. Choose an installed model in Conversation or Writing; the companion receives a bounded request, calls your configured loopback server and returns a validated result. Pairing and discovery make no inference calls. The companion downloads no model weights, exposes no public inference endpoint and never automatically repeats an uncertain generation attempt. Execution follows the App's workspace and model-specific controls. A connection listing is not a model-quality guarantee, and no cloud model is substituted silently.
 
 Node 24+, with no package dependencies. [Setup, data boundaries and testing limits](local-companion/README.md).
 

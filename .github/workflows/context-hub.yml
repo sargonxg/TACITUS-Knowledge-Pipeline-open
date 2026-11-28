@@ -1,0 +1,19 @@
+name: Public context dataset
+on:
+  push:
+    paths: ['research/hub-context-capsules/**', '.github/workflows/context-hub.yml']
+  pull_request:
+    paths: ['research/hub-context-capsules/**', '.github/workflows/context-hub.yml']
+permissions:
+  contents: read
+jobs:
+  offline-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s research/hub-context-capsules/v1 -p test_release.py -v
+      - run: python research/hub-context-capsules/v1/build.py --output /tmp/tacitus-context-release
+      - run: python /tmp/tacitus-context-release/verify.py
